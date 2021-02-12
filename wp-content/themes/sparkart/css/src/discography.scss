@@ -1,0 +1,45 @@
+.album-display{
+	margin-bottom: 20px;
+	position:relative;
+	border-radius: 20px;
+
+	.album-thumbnail img{
+		border-radius: 20px;
+	}
+	.album-overlay{
+		cursor: pointer;
+		position:absolute;
+		background: rgba(0,0,0,0.5);
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		color: #fff;
+		text-align: center;
+		border-radius: 20px;
+		display:none;
+		div.album-details{
+			display:table-cell;
+  			vertical-align: middle;
+  			.album-title{
+  				font-size: $fontSize20;
+
+  			}
+  			.album-date{
+  				font-size: $fontSize13;
+  			}
+  			a{
+  				margin-top: 30px;
+  				font-size: $fontSize13;
+
+  			}
+		}
+
+	}
+	
+}
+.album-display:hover {
+	.album-overlay{
+		display: table;
+		
+	}	
+}

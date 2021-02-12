@@ -1,0 +1,79 @@
+.navbar{
+	padding: 0.01rem 1rem;
+	-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+}
+.navbar-light .navbar-toggler{
+	border:none;
+	padding: 0;
+}
+.navbar-brand{
+	margin: 0 auto;
+}
+header .nav-item{
+	margin: 10px 22px;
+}
+.nav-item{
+	text-align: center;
+	@media (min-width: 768px) { 
+		margin: 10px 22px;
+	}
+	a{
+		color: $colorDark;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+.nav-item.active .nav-link {
+	border-bottom: 2px solid $colorMild;
+}
+.nav-item:not(.active):hover .nav-link{
+	background: $hoverBackgroundColor;
+	border-radius: 25px;
+}
+.dropdown:hover>.dropdown-menu {
+  	display: block;
+    margin-top: 0;
+    padding-top: 0;
+    right: 0;
+    left: auto;
+    border: none;
+    border-radius: 16px;
+}
+
+.nav-pills .nav-link.active{
+	background: $colorDarkest;
+	color: $colorLightest;
+	border-radius: 25px;
+}
+.home{
+	.navbar-default{
+		display:none;
+	}
+}
+.site-footer .nav-item:not(.active):hover .nav-link {
+    background: transparent;
+    border-radius: unset;
+    color: $colorDark;
+    
+}
+/* hide close when burger shown */
+   .navbar-toggler.collapsed .close-icon {
+      display: none;
+   }
+
+   .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+      display: inline;
+   }
+.footer-nav {
+	.nav-item{
+		width: 100%;
+		@include media-breakpoint-up(lg) {  
+		  	width: unset;
+		}
+
+	}
+}

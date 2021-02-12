@@ -1,0 +1,16 @@
+.slider > .container-fluid{
+	padding-left:0;
+	padding-right:0;
+}
+.swiper-pagination{
+	display: block;
+	position: unset;
+	background: $colorLight;
+	padding: 10px;
+	@include media-breakpoint-up(md) {  
+		position:absolute;
+		padding: unset;
+		background: transparent;
+
+	}
+}

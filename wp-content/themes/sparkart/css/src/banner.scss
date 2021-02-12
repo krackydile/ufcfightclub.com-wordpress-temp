@@ -1,0 +1,118 @@
+.banner{
+	min-height: 350px;
+
+	@include media-breakpoint-up(md) {  
+		min-height: 470px;
+		padding-top: 42px;
+
+	}
+	@include media-breakpoint-up(lg) {  
+		min-height: 687px;
+		padding-top: 42px;
+
+	}
+	.banner-panel-left{
+		display:none;
+		
+		@include media-breakpoint-up(md) {  
+			display:block;
+
+			position: absolute;
+		    left: 63px;
+	    	margin-top: 50px;
+	    	width: 45%;
+	    	
+    	}
+		@include media-breakpoint-up(lg) {  
+	    	margin-top: 102px;
+		    left: 180px;
+
+    	}
+
+	}
+	.banner-panel-right{
+		width: 100%;
+	    position: relative;
+	    text-align: center;
+	    height: 550px;
+	    overflow:hidden;
+	    margin-top: 20px;
+
+		@include media-breakpoint-up(md) {  
+			margin-top: unset;
+	    	height: unset;
+
+			position: absolute;
+	    	right: 120px;
+	    	width: 35%;
+	    	.cta-buttons{
+				display:none;
+
+			}
+    	}
+	}
+	.list-social-handles{
+	    justify-content: center;
+	    .list-group-item{
+	    	background: transparent;
+    		border: none;
+    		a{
+    			color: $colorDark;
+    			i{
+    				font-size: 1.6em;
+    			}
+    		}
+	    }
+	}
+	.social-holder{
+		margin: 40px;
+	}
+}
+
+
+.custom-swiper-controls{
+
+}
+.custom-swiper-controls{
+	display: block;
+	position: unset;
+	background: $colorLight;
+	padding: 10px;
+	@include media-breakpoint-up(md) { 
+	background: transparent; 
+		position: absolute;
+		z-index: 1111;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+
+	}
+}
+.swipe-btn-prev, .swipe-btn-next{
+	background: transparent;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+}
+.list-swiper-pagination{
+	background: transparent;
+	border:none;
+    padding: 24px 0px;
+}
+.swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 10px 4px;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+	color: #fff;
+    background: #fff;
+}
+.swiper-pagination-bullet{
+    background: transparent;
+    border: 1px solid #fff;
+    opacity: 1;
+        display: inline-block;
+    vertical-align: middle;
+}
