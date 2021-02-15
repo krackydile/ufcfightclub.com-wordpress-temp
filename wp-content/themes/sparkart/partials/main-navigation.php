@@ -11,18 +11,26 @@
 			    <span class="navbar-toggler-icon"></span>
 			    <div class="close-icon py-1">✖</div>
 			  </button>
+			  <div id="navbarSupportedContent" class="collapse navbar-collapse">
 			    <?php 
 					wp_nav_menu( array(
 						'theme_location'  => 'primary',
 						'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
-						'container'       => 'div',
-						'container_class' => 'collapse navbar-collapse',
+						'container'       => '',
+						// 'container_class' => 'collapse navbar-collapse',
 						'container_id'    => 'navbarSupportedContent',
 						'menu_class'      => 'navbar-nav ml-auto',
 						'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'          => new WP_Bootstrap_Navwalker(),
 					) );
 				?>
+				<?php
+		          echo fw_get_social_list([
+		            'parent_class' => 'nav nav-social-brand-container',
+		            // 'item_class' => 'nav-item'
+		          ]);
+		        ?>
+				</div>
 			  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav ml-auto">
 			      <li class="nav-item active">

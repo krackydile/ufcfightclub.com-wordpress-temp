@@ -58,3 +58,8 @@ function event_card(){
 		</div>
 	<?php
 }
+function get_universe_links(){
+	// global $WPUniverse;
+	// var_dump(fw_get_db_settings_option('universe_base'));
+	// $WPUniverse->getLinks();
+}

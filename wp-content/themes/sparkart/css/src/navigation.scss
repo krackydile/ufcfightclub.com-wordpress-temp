@@ -1,8 +1,27 @@
+header.site-header{
+		-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+		box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+}
+.home{
+	
+	header.site-header{
+		box-shadow:none;
+
+		nav.homepage-navbar{
+			box-shadow:none;
+		}
+		nav{
+
+		-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+		-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+		box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+		}
+	}
+}
 .navbar{
 	padding: 0.01rem 1rem;
-	-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
-	box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+	
 }
 .navbar-light .navbar-toggler{
 	border:none;
@@ -75,5 +94,85 @@ header .nav-item{
 		  	width: unset;
 		}
 
+	}
+}
+.secondary-navigation{
+	background: $colorMild;
+	.container-fluid.container-second-nav{
+		padding: 0px 38px;
+		.list-social-handles{
+		/*    justify-content: center;*/
+		    .list-group-item{
+		    	padding-bottom: 0px;
+		    	padding-top: 8px;
+		    	margin: 3px 0px;
+		    	background: transparent;
+	    		border: none;
+	    		a{
+	    			color: #fff;
+	    			i{
+	    				font-size: 1.2em;
+	    			}
+	    		}
+		    }
+		}
+
+		.nav-item{
+			margin: 6px 22px;
+			margin-right: 0;
+			a{
+				font-size: 12px;
+				color: #fff;
+			}
+		}
+	}
+
+}
+.secondary-signin-button {
+	border: 1px solid #fff;
+	border-radius: 25px;
+
+	a{
+		    color: #fff;
+		    padding: 8px 16px;
+		    font-weight: 300;
+		    font-size: 12px;
+		
+	}
+}
+.secondary-emphasis-button {
+	border: 1px solid #fff;
+	border-radius: 25px;
+	a{
+		    color: #fff;
+		    padding: 8px 3px;
+
+		    font-weight: 300;
+		    font-size: 12px;
+		    span{
+		        background: #fff;
+			    color: #000;
+			    border-radius: 25px;
+			    padding: 8px 10px;
+		    }
+	}
+}
+.nav-social-brand-container{
+	display:flex;
+	justify-content: center;
+	@include media-breakpoint-up(lg) {  
+		display:none;
+	}
+	li{
+		background: transparent;
+		border:none;
+
+		a{
+
+			color: $colorMild;
+			i{
+				font-size: 1.4rem;
+			}
+		}
 	}
 }

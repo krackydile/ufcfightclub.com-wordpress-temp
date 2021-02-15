@@ -40,9 +40,14 @@
 	<header class="site-header sticky-top">
 		<?php 
 			get_template_part('partials/main', 'navigation');
+			if(!is_front_page()){
+
+				get_template_part('partials/sub', 'navigation');
+			}
 		?>
 			
 		
 	</header>	
 	
 	<div id="main"  class="site-main">
+		
