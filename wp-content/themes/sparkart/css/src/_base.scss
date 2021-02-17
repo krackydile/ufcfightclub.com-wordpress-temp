@@ -104,15 +104,21 @@ small, .text_small {font-size: 0.8rem;}
       font-weight: bold;
     }
     .card-title{
-      font-size: $fontSize16;
+      font-size: $fontSize20;
     }
     .event-venue{
       font-weight: normal;
       font-size: $fontSize13;
       text-transform:none;
     }
+    .btn{
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px 16px;
+    }
     .btn.btn-primary{
-      margin-right: 20px;
+      /*margin-right: 20px;*/
+
 
     }
 }
@@ -175,6 +181,7 @@ small, .text_small {font-size: 0.8rem;}
 /*Button*/
 .btn{
     padding: 5px 12px;
+
 }
 .btn-primary{
   background-color: $colorMild;
