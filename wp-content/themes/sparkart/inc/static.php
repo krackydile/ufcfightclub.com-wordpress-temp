@@ -36,9 +36,9 @@ wp_enqueue_style(
 );
 wp_enqueue_style(
 	'sparkart-theme-style',
-	get_template_directory_uri().'/css/build/main.min.css',
-	array( 'genericons' ),
-	'1.0'
+	get_template_directory_uri().'/css/build/main.min.css'
+	// array( 'genericons' ),
+	// '1.0'
 );
 
 // Load the Internet Explorer specific stylesheet.
@@ -117,9 +117,9 @@ wp_enqueue_script(
 wp_enqueue_script(
 	'sparkart-main-js',
 	get_template_directory_uri() . '/js/dist/app.js',
-	array( 'jquery' ),
-	'1.0',
-	true
+	array( 'jquery' )
+	// '1.0',
+	// true
 );
 
 

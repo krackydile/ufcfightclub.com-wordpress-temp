@@ -525,3 +525,25 @@ function fw_get_latest_posts($limit = 6){
 		echo fw_print_news_card($post);
 	}
 }
+function fw_get_inner_category_tabs($cat_id = null){
+	$categories = get_categories();
+	?>
+	<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
+		<li class="nav-item">
+			<a class="nav-link <?php if($cat_id == null){ echo 'active'; } ?>" id="pills-home-tab" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" role="tab" aria-controls="pills-home" aria-selected="true">All</a>
+		</li>
+		<?php 
+			foreach($categories as $category):
+		?>
+		<li class="nav-item">
+			<a class="nav-link <?php if($cat_id != null && $cat_id == $category->cat_ID){ echo 'active'; } ?>" id="pills-profile-tab" href="<?php echo get_category_link($category); ?>" role="tab" aria-controls="pills-profile" aria-selected="false"><?php echo $category->name; ?></a>
+		</li>
+		<?php 
+			endforeach;
+		?>
+		<li class="nav-item">
+			<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contests</a>
+		</li>
+	</ul>	
+	<?php
+}

@@ -63,3 +63,11 @@ function get_universe_links(){
 	// var_dump(fw_get_db_settings_option('universe_base'));
 	// $WPUniverse->getLinks();
 }
+// remove wp version number from scripts and styles
+function remove_css_js_version( $src ) {
+    if( strpos( $src, '?ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
+}
+add_filter( 'style_loader_src', 'remove_css_js_version', 9999 );
+add_filter( 'script_loader_src', 'remove_css_js_version', 9999 );
