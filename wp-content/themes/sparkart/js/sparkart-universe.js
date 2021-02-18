@@ -1,22 +1,41 @@
-const Handlebars = require("handlebars");
 const universejs = require('universe-js')({environment: 'production', key: '3af65919-3f76-46c8-b905-0f952ffcbd47'});
 
-require('handlebars-helpers')();
-
-universejs.init(function(err, data) {
+universejs.init(function (err, data) {
     if (err) throw err;
-    if(document.getElementById("authentication-template") !== null) {
-        let template = document.getElementById("authentication-template").innerHTML;
-        let renderFanClub = Handlebars.compile(template);
-        let redirectURL = window.location.origin;
-        document.getElementById("authentication-secondary").innerHTML = renderFanClub({
-            data: data,
-            redirectURL: redirectURL
-        });
+    if (data.customer) {
+        if (document.getElementById("secondary-navigation-box") !== null) {
+            document.getElementById("secondary-navigation-box").innerHTML = "" +
+                "<ul class=\"nav float-right\">" +
+                " <li class=\"nav-item secondary-emphasis-button\">\n" +
+                "    <a class=\"nav-link\" href=\"/join\">\n" +
+                "       <span>Message Board</span>\n" +
+                "    </a>\n" +
+                " </li>" +
+                " <li class=\"nav-item\">\n" +
+                "     <a class=\"nav-link\" href=\'" + data.fanclub.links.logout + "'\">\n" +
+                "       <span>Sign Out </span>\n" +
+                "     </a>\n" +
+                " </li>" +
+                "</ul>";
+        }
+    } else {
+        if (document.getElementById("secondary-navigation-box") !== null) {
+            document.getElementById("secondary-navigation-box").innerHTML = "" +
+                "<ul class=\"nav float-right\">" +
+                " <li class=\"nav-item secondary-signin-button\">\n" +
+                "     <a class=\"nav-link\" href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(window.location.origin) + "'\">\n" +
+                "          <span>Sign In </span>\n" +
+                "     </a>\n" +
+                " </li>" +
+                "  <li class=\"nav-item secondary-emphasis-button\">\n" +
+                "       <a class=\"nav-link\" href=\"/join\"><span>Join The Fan Club</span></a>\n" +
+                " </li>" +
+                "</ul>"
+        }
     }
 });
 
-universejs.on('error', function(err) {
+universejs.on('error', function (err) {
     throw err;
 });
 
