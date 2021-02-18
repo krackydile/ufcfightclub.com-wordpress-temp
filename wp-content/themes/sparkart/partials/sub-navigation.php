@@ -26,6 +26,9 @@
           <template id="authentication-template">
             <ul class="">
                 {{#if data.customer}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/join">Message Board</a>
+                </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ data.fanclub.links.logout }}">Sign Out </a>
               </li>
@@ -33,9 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ data.fanclub.links.login }}?redirect={{ encodeURI redirectURL }}">Sign In </a>
                 </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/join">Message Board</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/join">Join The Fan Club</a>
+                </li>
                 {{/if}}
             </ul>
           </template>
