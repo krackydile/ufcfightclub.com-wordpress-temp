@@ -23,25 +23,35 @@
 //          ) );
 //        ?>
           <div id="authentication-secondary"></div>
+            <div id="navbarSupportedContent">
           <template id="authentication-template">
-            <ul class="">
-                {{#if data.customer}}
+              <ul class="nav float-right">
+                  {{#if data.customer}}
+                  <li class="nav-item secondary-emphasis-button">
+                      <a class="nav-link" href="/join">
+                        <span>
+                        Message Board
+                        </span>
+                      </a>
+                  </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/join">Message Board</a>
+                  <a class="nav-link" href="{{ data.fanclub.links.logout }}">
+                    <span>Sign Out </span>
+                    </a>
                 </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ data.fanclub.links.logout }}">Sign Out </a>
-              </li>
-                {{else}}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ data.fanclub.links.login }}?redirect={{ encodeURI redirectURL }}">Sign In </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/join">Join The Fan Club</a>
-                </li>
-                {{/if}}
-            </ul>
+                  {{else}}
+                  <li class="nav-item secondary-signin-button">
+                      <a class="nav-link" href="{{ data.fanclub.links.login }}?redirect={{ encodeURI redirectURL }}">
+                      <span>Sign In </span>  
+                    </a>
+                  </li>
+                  <li class="nav-item secondary-emphasis-button">
+                      <a class="nav-link" href="/join"><span>Join The Fan Club</span></a>
+                  </li>
+                  {{/if}}
+              </ul>
           </template>
+            </div>
       </div>
 
     </div>
