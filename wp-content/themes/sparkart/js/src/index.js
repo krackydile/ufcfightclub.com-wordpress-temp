@@ -51,22 +51,3 @@ jQuery(document).ready(function ($) {
         $('a[href="' + id + '"]').tab('show');
     });
 });
-
-$(() => {
-    $('a.sign-out').on('click', function () {
-        alert("HHH");
-        $.ajax({
-            url: ajaxURL,
-            method: 'POST',
-            data: {
-                action: 'sparkart_ajax_logout',
-            }
-        }).done(function (response) {
-            if (response) {
-                window.location.reload(false);
-            }
-        }).fail(function (response) {
-            console.log('Sign Out failed. Please try again.');
-        });
-    });
-});

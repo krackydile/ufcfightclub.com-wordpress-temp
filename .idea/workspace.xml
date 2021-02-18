@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3481221-0312-409e-875b-633808b010a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/category.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/css/build/main.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/css/build/main.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/css/src/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/css/src/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/css/src/navigation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/css/src/navigation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/inc/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/inc/helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/inc/static.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/inc/static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/partials/sub-navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/partials/sub-navigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/wp-content/themes/sparkart/node_modules/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,19 +43,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
+            <state relative-caret-position="320">
               <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/partials/sub-navigation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
+            <state relative-caret-position="64">
               <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="e#417#448#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="52" column="3" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,7 +118,6 @@
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/footer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/css/src/model.scss" />
         <option value="$PROJECT_DIR$/wp-config.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/webpack.config.js" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/page-templates/login-reload.php" />
@@ -122,6 +125,7 @@
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/js/sparkart-universe.js" />
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/functions.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/sparkart/partials/sub-navigation.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js" />
       </list>
     </option>
   </component>
@@ -183,6 +187,15 @@
               <item name="themes" type="462c0819:PsiDirectoryNode" />
               <item name="sparkart" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Underwood-wp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Underwood-wp" type="462c0819:PsiDirectoryNode" />
+              <item name="wp-content" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="sparkart" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Underwood-wp" type="b2602c69:ProjectViewProjectNode" />
@@ -253,12 +266,12 @@
       <workItem from="1613574045835" duration="97000" />
       <workItem from="1613585755725" duration="300000" />
       <workItem from="1613621470098" duration="11100000" />
-      <workItem from="1613636146887" duration="1411000" />
+      <workItem from="1613636146887" duration="1656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71449000" />
+    <option name="totallyTimeSpent" value="71694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -402,16 +415,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/bundle.js" />
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="3" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/js/sparkart-universe-bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -491,17 +494,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="320">
           <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/partials/sub-navigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
+        <state relative-caret-position="64">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
           <folding>
             <element signature="e#417#448#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/sparkart/js/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="52" column="3" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
