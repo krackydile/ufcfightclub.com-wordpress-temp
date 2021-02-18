@@ -1,59 +1,29 @@
 <div class="secondary-navigation">
-  <div class="container-fluid container-second-nav">
-    <div class="row">
-      <div class="col-3 d-none d-lg-block">
-        <?php
-          echo fw_get_social_list([
-            // 'parent_class' => 'nav',
-            // 'item_class' => 'nav-item'
-          ]);
-        ?>
-      </div>
-      <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 secondary-navigation-container">
-<!--        --><?php
-//          wp_nav_menu( array(
-//            'theme_location'  => 'secondary',
-//            'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
-//            'container'       => '',
-//            'container_class' => 'collapse navbar-collapse',
-//            'container_id'    => 'navbarSupportedContent',
-//            'menu_class'      => 'nav float-right',
-//            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-//            'walker'          => new WP_Bootstrap_Navwalker(),
-//          ) );
-//        ?>
-          <div id="authentication-secondary"></div>
-            <div id="navbarSupportedContent">
-          <template id="authentication-template">
-              <ul class="nav float-right">
-                  {{#if data.customer}}
-                  <li class="nav-item secondary-emphasis-button">
-                      <a class="nav-link" href="/join">
-                        <span>
-                        Message Board
-                        </span>
-                      </a>
-                  </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ data.fanclub.links.logout }}">
-                    <span>Sign Out </span>
-                    </a>
-                </li>
-                  {{else}}
-                  <li class="nav-item secondary-signin-button">
-                      <a class="nav-link" href="{{ data.fanclub.links.login }}?redirect={{ encodeURI redirectURL }}">
-                      <span>Sign In </span>  
-                    </a>
-                  </li>
-                  <li class="nav-item secondary-emphasis-button">
-                      <a class="nav-link" href="/join"><span>Join The Fan Club</span></a>
-                  </li>
-                  {{/if}}
-              </ul>
-          </template>
+    <div class="container-fluid container-second-nav">
+        <div class="row">
+            <div class="col-3 d-none d-lg-block">
+                <?php
+                echo fw_get_social_list([
+                    // 'parent_class' => 'nav',
+                    // 'item_class' => 'nav-item'
+                ]);
+                ?>
             </div>
-      </div>
-
+            <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 secondary-navigation-container">
+                <!--        --><?php
+                //          wp_nav_menu( array(
+                //            'theme_location'  => 'secondary',
+                //            'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
+                //            'container'       => '',
+                //            'container_class' => 'collapse navbar-collapse',
+                //            'container_id'    => 'navbarSupportedContent',
+                //            'menu_class'      => 'nav float-right',
+                //            'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                //            'walker'          => new WP_Bootstrap_Navwalker(),
+                //          ) );
+                //        ?>
+                <div id="secondary-navigation-box"></div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
