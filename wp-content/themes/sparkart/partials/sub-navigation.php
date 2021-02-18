@@ -9,7 +9,7 @@
           ]);
         ?>
       </div>
-      <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12">
+      <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 secondary-navigation-container">
 <!--        --><?php
 //          wp_nav_menu( array(
 //            'theme_location'  => 'secondary',

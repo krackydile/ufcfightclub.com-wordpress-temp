@@ -84,3 +84,12 @@ function sparkart__load_profile_scripts()
     wp_enqueue_script('universe', get_template_directory_uri() . '/js/sparkart-universe-bundle.js', [], '1.0', true);
 
 }
+
+// remove wp version number from scripts and styles
+function remove_css_js_version( $src ) {
+    if( strpos( $src, '?ver=' ) )
+        $src = remove_query_arg( 'ver', $src );
+    return $src;
+}
+add_filter( 'style_loader_src', 'remove_css_js_version', 9999 );
+add_filter( 'script_loader_src', 'remove_css_js_version', 9999 );
