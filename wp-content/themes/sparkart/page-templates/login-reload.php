@@ -1,3 +1,9 @@
+<?php
+/**
+ * Template Name: Universe Login Reload
+ */
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <body>
