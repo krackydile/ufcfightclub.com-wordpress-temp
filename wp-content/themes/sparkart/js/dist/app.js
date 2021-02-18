@@ -13,10 +13,10 @@
 /*!*************************!*\
   !*** ./js/src/index.js ***!
   \*************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("\n\nvar _jquery = __webpack_require__(/*! jquery */ \"jquery\");\n\nvar _jquery2 = _interopRequireDefault(_jquery);\n\n__webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n\nvar _bundle = __webpack_require__(/*! swiper/bundle */ \"./node_modules/swiper/swiper-bundle.esm.js\");\n\nvar _bundle2 = _interopRequireDefault(_bundle);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// import Swiper bundle with all modules installed\n// init Swiper:\n// const swiper = new Swiper();\nvar swiper = new _bundle2.default('.swiper-container', {\n  // Optional parameters\n  direction: 'horizontal',\n  loop: true,\n  // If we need pagination\n  pagination: {\n    el: '.list-swiper-pagination'\n  },\n  // Navigation arrows\n  navigation: {\n    nextEl: '.swipe-btn-next',\n    prevEl: '.swipe-btn-prev'\n  },\n  // And if we need scrollbar\n  scrollbar: {\n    el: '.swiper-scrollbar'\n  },\n  renderBullet: function renderBullet(index, className) {\n    return '<li><span class=\"' + className + '\">' + (index + 1) + '</span></li>';\n  }\n});\n(0, _jquery2.default)(window).scroll(function ($) {\n  if ((0, _jquery2.default)(this).scrollTop() >= 61) {\n    //actions...\n    (0, _jquery2.default)('.hnav').removeClass('homepage-navbar'); // alert('do some action');\n  } else {\n    //actions...\n    (0, _jquery2.default)('.hnav').addClass('homepage-navbar'); // alert('some action in else');\n  }\n});\n(0, _jquery2.default)(document).ready(function ($) {\n  // alert('i am ready');\n  $('.select-pills').on('change', function (e) {\n    var id = $(this).val();\n    $('a[href=\"' + id + '\"]').tab('show');\n  });\n});\n\n//# sourceURL=webpack://sparkart/./js/src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"jquery\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap */ \"./node_modules/bootstrap/dist/js/bootstrap.js\");\n/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bootstrap__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! swiper/bundle */ \"./node_modules/swiper/swiper-bundle.esm.js\");\n\n\n\n // import Swiper bundle with all modules installed\n\n // init Swiper:\n// const swiper = new Swiper();\n\nvar swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_2__.default('.swiper-container', {\n  // Optional parameters\n  direction: 'horizontal',\n  loop: true,\n  // If we need pagination\n  pagination: {\n    el: '.list-swiper-pagination'\n  },\n  // Navigation arrows\n  navigation: {\n    nextEl: '.swipe-btn-next',\n    prevEl: '.swipe-btn-prev'\n  },\n  // And if we need scrollbar\n  scrollbar: {\n    el: '.swiper-scrollbar'\n  },\n  renderBullet: function renderBullet(index, className) {\n    return '<li><span class=\"' + className + '\">' + (index + 1) + '</span></li>';\n  }\n});\njquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scroll(function ($) {\n  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).scrollTop() >= 61) {\n    //actions...\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hnav').removeClass('homepage-navbar'); // alert('do some action');\n  } else {\n    //actions...\n    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.hnav').addClass('homepage-navbar'); // alert('some action in else');\n  }\n});\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {\n  // alert('i am ready');\n  $('.select-pills').on('change', function (e) {\n    var id = $(this).val();\n    $('a[href=\"' + id + '\"]').tab('show');\n  });\n});\njquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {\n  jquery__WEBPACK_IMPORTED_MODULE_0___default()('a.sign-out').on('click', function () {\n    alert(\"HHH\");\n    jquery__WEBPACK_IMPORTED_MODULE_0___default().ajax({\n      url: ajaxURL,\n      method: 'POST',\n      data: {\n        action: 'sparkart_ajax_logout'\n      }\n    }).done(function (response) {\n      if (response) {\n        window.location.reload(false);\n      }\n    }).fail(function (response) {\n      console.log('Sign Out failed. Please try again.');\n    });\n  });\n});\n\n//# sourceURL=webpack://sparkart/./js/src/index.js?");
 
 /***/ }),
 
@@ -1090,6 +1090,18 @@ module.exports = jQuery;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -1134,7 +1146,7 @@ module.exports = jQuery;
 /******/ 	// startup
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./js/src/index.js");
-/******/ 	__webpack_require__("./css/src/app.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ 	__webpack_require__("./css/src/app.scss");
 /******/ })()
 ;

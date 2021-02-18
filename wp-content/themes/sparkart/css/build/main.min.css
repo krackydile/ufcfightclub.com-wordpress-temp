@@ -7835,13 +7835,17 @@ small, .text_small {
   .card.events-card .card-subtitle {
     font-weight: bold; }
   .card.events-card .card-title {
-    font-size: 16px; }
+    font-size: 20px; }
   .card.events-card .event-venue {
     font-weight: normal;
     font-size: 13px;
     text-transform: none; }
+  .card.events-card .btn {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px; }
   .card.events-card .btn.btn-primary {
-    margin-right: 20px; }
+    /*margin-right: 20px;*/ }
 
 @media (min-width: 992px) {
   .home .site-header {
@@ -7982,11 +7986,22 @@ small, .text_small {
 .cta-buttons a {
   margin-right: 10px; }
 
-.navbar {
-  padding: 0.01rem 1rem;
+header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75); }
+
+.home header.site-header {
+  box-shadow: none; }
+  .home header.site-header nav.homepage-navbar {
+    box-shadow: none; }
+  .home header.site-header nav {
+    -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75); }
+
+.navbar {
+  padding: 0.01rem 1rem; }
 
 .navbar-light .navbar-toggler {
   border: none;
@@ -8051,6 +8066,95 @@ header .nav-item {
   @media (min-width: 992px) {
     .footer-nav .nav-item {
       width: unset; } }
+
+.secondary-navigation {
+  background: #6E8776; }
+  .secondary-navigation .secondary-navigation-container {
+    padding: 0px; }
+  .secondary-navigation .container-fluid.container-second-nav, .secondary-navigation .container-second-nav.container-sm, .secondary-navigation .container-second-nav.container-md, .secondary-navigation .container-second-nav.container-lg, .secondary-navigation .container-second-nav.container-xl {
+    padding: 0px 38px; }
+    .secondary-navigation .container-fluid.container-second-nav .list-social-handles, .secondary-navigation .container-second-nav.container-sm .list-social-handles, .secondary-navigation .container-second-nav.container-md .list-social-handles, .secondary-navigation .container-second-nav.container-lg .list-social-handles, .secondary-navigation .container-second-nav.container-xl .list-social-handles {
+      /*    justify-content: center;*/ }
+      .secondary-navigation .container-fluid.container-second-nav .list-social-handles .list-group-item, .secondary-navigation .container-second-nav.container-sm .list-social-handles .list-group-item, .secondary-navigation .container-second-nav.container-md .list-social-handles .list-group-item, .secondary-navigation .container-second-nav.container-lg .list-social-handles .list-group-item, .secondary-navigation .container-second-nav.container-xl .list-social-handles .list-group-item {
+        padding-bottom: 0px;
+        padding-top: 8px;
+        margin: 3px 0px;
+        background: transparent;
+        border: none; }
+        .secondary-navigation .container-fluid.container-second-nav .list-social-handles .list-group-item a, .secondary-navigation .container-second-nav.container-sm .list-social-handles .list-group-item a, .secondary-navigation .container-second-nav.container-md .list-social-handles .list-group-item a, .secondary-navigation .container-second-nav.container-lg .list-social-handles .list-group-item a, .secondary-navigation .container-second-nav.container-xl .list-social-handles .list-group-item a {
+          color: #fff; }
+          .secondary-navigation .container-fluid.container-second-nav .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-sm .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-md .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-lg .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-xl .list-social-handles .list-group-item a i {
+            font-size: 1.2em; }
+    .secondary-navigation .container-fluid.container-second-nav .nav-item, .secondary-navigation .container-second-nav.container-sm .nav-item, .secondary-navigation .container-second-nav.container-md .nav-item, .secondary-navigation .container-second-nav.container-lg .nav-item, .secondary-navigation .container-second-nav.container-xl .nav-item {
+      margin: 6px 0px;
+      margin-right: 0; }
+      @media (min-width: 992px) {
+        .secondary-navigation .container-fluid.container-second-nav .nav-item, .secondary-navigation .container-second-nav.container-sm .nav-item, .secondary-navigation .container-second-nav.container-md .nav-item, .secondary-navigation .container-second-nav.container-lg .nav-item, .secondary-navigation .container-second-nav.container-xl .nav-item {
+          margin: 6px; } }
+      .secondary-navigation .container-fluid.container-second-nav .nav-item a, .secondary-navigation .container-second-nav.container-sm .nav-item a, .secondary-navigation .container-second-nav.container-md .nav-item a, .secondary-navigation .container-second-nav.container-lg .nav-item a, .secondary-navigation .container-second-nav.container-xl .nav-item a {
+        font-size: 12px;
+        color: #fff; }
+    .secondary-navigation .container-fluid.container-second-nav .nav-item:hover a, .secondary-navigation .container-second-nav.container-sm .nav-item:hover a, .secondary-navigation .container-second-nav.container-md .nav-item:hover a, .secondary-navigation .container-second-nav.container-lg .nav-item:hover a, .secondary-navigation .container-second-nav.container-xl .nav-item:hover a {
+      color: #6E8776; }
+
+.secondary-signin-button {
+  border: 1px solid #fff;
+  border-radius: 25px; }
+  .secondary-signin-button a {
+    color: #fff;
+    padding: 8px 16px;
+    font-weight: 300;
+    font-size: 12px; }
+
+.secondary-emphasis-button {
+  border: 1px solid #fff;
+  border-radius: 25px; }
+  .secondary-emphasis-button a {
+    color: #fff;
+    padding: 8px 3px;
+    font-weight: 300;
+    font-size: 12px; }
+    .secondary-emphasis-button a span {
+      background: #fff;
+      color: #000;
+      border-radius: 25px;
+      padding: 8px 10px; }
+
+.nav-social-brand-container {
+  display: flex;
+  justify-content: center; }
+  @media (min-width: 992px) {
+    .nav-social-brand-container {
+      display: none; } }
+  .nav-social-brand-container li {
+    background: transparent;
+    border: none; }
+    .nav-social-brand-container li a {
+      color: #6E8776; }
+      .nav-social-brand-container li a i {
+        font-size: 1.4rem; }
+
+.navbar-collapse.collapse.show {
+  position: fixed;
+  top: 3px;
+  background: #fff;
+  z-index: 1111;
+  right: 1px;
+  width: 94%;
+  padding-top: 40px;
+  max-height: 100vh;
+  overflow-y: auto; }
+
+.navbar-toggler:not(.collapsed) {
+  position: fixed;
+  right: 14px;
+  z-index: 1222;
+  top: 16px; }
+
+.collapsing {
+  -webkit-transition: none;
+  transition: none;
+  display: none; }
 
 .banner {
   min-height: 350px; }

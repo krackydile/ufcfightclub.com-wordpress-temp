@@ -1,3 +1,6 @@
+<?php 
+get_universe_links();
+?>
 <section class="banner" style="background-color: #E6E8E5;">
 	
 	<div class="container-fluid" >

@@ -7,7 +7,7 @@ module.exports = {
 	watch: true,
   	// entry: './js/src/index.js',
   	entry: ['./js/src/index.js', './css/src/app.scss'],
-  	// 
+  	//
   	output: {
     	filename: './js/dist/app.js',
     	path: path.resolve(__dirname)
@@ -20,7 +20,7 @@ module.exports = {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['babel-preset-env']
+              presets: ['@babel/preset-env']
             }
           }
         },
@@ -31,7 +31,7 @@ module.exports = {
 		  	},
 		  	// {
 		       // loader: "style-loader" // creates style nodes from JS strings
-		    //}, 
+		    //},
 		    {
 		        loader: "css-loader" // translates CSS into CommonJS
 		    }, {
