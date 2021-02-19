@@ -1,4 +1,8 @@
 <?php 
+/**
+ * Template Name: No Heading
+ */
+
 get_header();
 if(have_posts()):
 	while(have_posts()):
@@ -7,8 +11,7 @@ if(have_posts()):
 				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
-		
+		<div class=" mt-4 mb-5"><span>&nbsp; </span></div>
 
 		<?php the_content(); ?>
 		

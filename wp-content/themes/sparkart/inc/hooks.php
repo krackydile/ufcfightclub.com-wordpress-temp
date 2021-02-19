@@ -144,6 +144,12 @@ function _filter_theme_body_classes( $classes ) {
 
 	if ( is_singular() && ! is_front_page() ) {
 		$classes[] = 'singular';
+		global $post;
+		if(fw_get_db_post_option($post->id, 'login_switch') == 'yes'){
+			$classes[] = 'protected';
+
+		}
+
 	}
 
 	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
@@ -152,6 +158,7 @@ function _filter_theme_body_classes( $classes ) {
 		$classes[] = 'grid';
 	}
 
+	
 	return $classes;
 }
 
@@ -367,3 +374,68 @@ if ( defined( 'FW' ) ):
 	endif;
 	add_action('wp_enqueue_scripts', '_action_theme_display_form_errors');
 endif;
+
+// https://rudrastyh.com/wordpress/load-more-posts-ajax.html
+// Load more section
+
+function sparkart_load_more_scripts() {
+ 
+	global $wp_query; 
+ 
+	// var_dump('i am here');
+	// die();
+	echo '<script>' .'const sparkart_loadmore_params = ' . json_encode( array(
+	    'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+	    'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+	echo '</script>';	
+	// $handle = wp_add_inline_script( 'sparkart-main-js', , 'before' );
+	// var_dump($handle);
+	// die();
+ 
+ 	// wp_enqueue_script( 'sparkart-main-js' );
+}
+
+ 
+add_action( 'wp_head', 'sparkart_load_more_scripts' );
+
+function _action_load_more_items(){
+	// this is used create stuff here hai
+}
+function sparkart_loadmore_ajax_handler(){
+ 
+	// prepare our arguments for the query
+	$args = json_decode( stripslashes( $_GET['query'] ), true );
+	$args['paged'] = $_GET['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+ 	// var_dump($args);
+ 	// die();
+	// it is always better to use WP_Query but not here
+	query_posts( $args );
+ 
+	if( have_posts() ) :
+ 
+		// run the loop
+		while( have_posts() ): the_post();
+ 		?>
+
+ 		<?php
+			// look into your theme code how the posts are inserted, but you can use your own HTML of course
+			// do you remember? - my example is adapted for Twenty Seventeen theme
+			get_template_part( 'template-parts/post/content', get_post_format() );
+			// for the test purposes comment the line above and uncomment the below one
+			// the_title();
+ 
+ 
+		endwhile;
+ 
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+}
+ 
+ 
+ 
+add_action('wp_ajax_loadmore', 'sparkart_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'sparkart_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}

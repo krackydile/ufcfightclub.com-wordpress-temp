@@ -547,3 +547,12 @@ function fw_get_inner_category_tabs($cat_id = null){
 	</ul>	
 	<?php
 }
+function fw_get_events_detail_page(){
+	$page_id = fw_get_db_settings_option('events_detail_page');
+	if($page_id != ''){
+		return get_the_permalink($page_id[0]);
+	}else{
+		return '#';
+	}
+	// var_dump($page_id);
+}
