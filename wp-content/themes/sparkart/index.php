@@ -19,53 +19,19 @@ get_header();
 								if(have_posts()):
 									while(have_posts()):
 										the_post();
+										get_template_part( 'template-parts/post/content', get_post_format() );
+
 							?>
-							<div class="card">
-							    <div class="card-body">
-								    <h6 class="card-subtitle mb-2"><?php the_date(); ?></h6>
-								    <h5 class="card-title"><?php the_title(); ?></h5>
-								    <p class="card-text"><?php the_excerpt(); ?></p>
-								    <a href="<?php echo get_permalink() ?>" class="btn btn-primary">Read More</a>
-								</div>
-							</div>
+							
 							<?php 
 									endwhile;
 								endif;
 							?> 
  							<div class="text-center mt-4 mb-5">
-								<a class="btn btn-outline-primary">Load More</a>
+								<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
 							</div>
 						</div>
-						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-							<?php for($i = 0; $i<6; $i++): ?>
-							<div class="card">
-							    <div class="card-body">
-								    <h6 class="card-subtitle mb-2">November 17, 2020</h6>
-								    <h5 class="card-title">My Gift: A Cristmas Special From Carrie Underwood to Debut December 3 on HBO Max</h5>
-								    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								    consequat. Duis aute irure dolor in </p>
-								    <a href="http://dev.carrieunderwood/2021/02/02/hello-world/" class="btn btn-primary">Read More</a>
-								</div>
-							</div> 
- 							<?php endfor; ?>
-						</div>
-						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-							<?php for($i = 0; $i<6; $i++): ?>
-							<div class="card">
-							    <div class="card-body">
-								    <h6 class="card-subtitle mb-2">November 17, 2020</h6>
-								    <h5 class="card-title">My Gift: A Cristmas Special From Carrie Underwood to Debut December 3 on HBO Max</h5>
-								    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								    consequat. Duis aute irure dolor in </p>
-								    <a href="http://dev.carrieunderwood/2021/02/02/hello-world/" class="btn btn-primary">Read More</a>
-								</div>
-							</div> 
- 							<?php endfor; ?>
-						</div>
+						
 				</div>			
 			</div>
 		</div>
