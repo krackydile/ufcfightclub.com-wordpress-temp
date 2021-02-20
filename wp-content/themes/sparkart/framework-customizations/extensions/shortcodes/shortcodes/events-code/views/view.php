@@ -9,8 +9,8 @@
 				<p class="event-code-heading"><?php echo $atts['subheading']; ?></p>
 					<div class="accesscode protected block-protected">
 							<div class="input-group my-2">
-								<input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2" value="XJ2AH98SIS3y">
-								<button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa fa-copy"></i></button>
+								<input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="XJ2AH98SIS3y">
+								<button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
 							</div>
 					</div>
 					<div class="block-unprotected">

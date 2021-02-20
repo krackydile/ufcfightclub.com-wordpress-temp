@@ -2,11 +2,28 @@ import "jquery";
 import jQuery from 'jquery';
 import $ from 'jquery';
 import 'bootstrap';
+import {Tooltip} from 'bootstrap';
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
+import ClipboardJS from 'clipboard';
 
 // init Swiper:
-// const swiper = new Swiper();
+// const swiper = new Wi(;
+var clipboard = new ClipboardJS('.clipboard-button');
+clipboard.on('success', function(e) {
+    var exampleEl = document.getElementById('button-addon2')
+    var tooltip = new Tooltip(exampleEl, {
+        title: 'Copied to Clipboard',
+        placement: 'bottom'
+    });
+    tooltip.show();
+    setTimeout(function(){
+        tooltip.hide();
+
+    },2000);
+    
+    // e.clearSelection();
+});
 var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',

@@ -305,3 +305,85 @@ small, .text_small {font-size: 0.8rem;}
     margin-right: 10px;
   }
 }
+.event-information-header{
+  h3{
+    color: $colorDark;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+    font-size: $fontSize20;
+    padding-bottom: 29px;
+    font-weight: 600;
+  }
+}
+.large-event-date{
+  color: $colorMild;
+  font-size: $fontSize39;
+
+}
+.event-detail ul{
+  padding:0;
+  margin:0;
+  margin-bottom: 15px;
+}
+.event-detail ul li{
+  padding:0;
+  margin:0;
+  list-style: none;
+  margin-bottom: 8px;
+  strong{
+    color: $colorMild;
+    font-size: #fontSize20;
+    font-weight: 600;
+  }
+}
+.event-detail{
+  .btn{
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+}
+.panel-contest{
+  border-radius: 25px;
+  background: $colorLighter;
+  margin-top: 40px;
+  
+
+  .btn{
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+.contest-header{
+  background: $colorMild;
+  color: #fff;
+  border-radius: 25px 25px 0px 0px;
+  font-weight: 600;
+}
+ 
+.contest-body{
+  padding:40px;
+}
+
+.card-comment-event{
+  margin-top: 40px;
+}
+.contest-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: $colorDark;
+
+}
+.contest-body{
+  p{
+    font-size: $fontSize13;
+    color: $colorMild;
+    font-weight:500;
+  }
+}
+.event-detail-card{
+  padding:22px;
+  @include media-breakpoint-up(md) {  
+      padding:72px;
+  }
+}
