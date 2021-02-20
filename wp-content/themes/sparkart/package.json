@@ -34,6 +34,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "browserify": "^17.0.0",
+    "clipboard": "^2.0.6",
     "swiper": "^6.4.10"
   }
 }
