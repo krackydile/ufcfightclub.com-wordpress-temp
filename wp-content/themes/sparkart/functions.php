@@ -31,16 +31,27 @@ require_once get_template_directory() . '/inc/init.php';
 
 function homepage_event_cards()
 {
-    ?>
-    <div class="row">
-        <?php
-        for ($i = 0; $i <= 2; $i++):
-            echo '<div class="col-lg-4 col-sm-12 col-xs-12">';
-            event_card();
-            echo '</div>';
-        endfor;
+    $unique_presales = Universe\fetch_resource('events?scope=upcoming&limit=3', '3af65919-3f76-46c8-b905-0f952ffcbd47');
+    if ($unique_presales->events) {
         ?>
-    </div>
+        <div class="row">
+            <?php
+            foreach ($unique_presales->events as $event):
+                echo '<div class="col-lg-4 col-sm-12 col-xs-12">';
+                event_card($event);
+                echo '</div>';
+            endforeach;
+            ?>
+        </div>
+        <?php
+    } else {
+        ?>
+        <div class="text-center">
+            <p style="color:#fff;">No events have been scheduled at this time.</p>
+        </div>
+        <?php
+    }
+    ?>
     <?php
 }
 
@@ -53,20 +64,29 @@ function homepage_more_events()
     <?php
 }
 
-function event_card()
+function event_card($event)
 {
     ?>
     <div class="card events-card">
         <div class="card-body">
-            <h6 class="card-subtitle mb-3">November 17, 2020</h6>
-            <h5 class="card-title mb-3">My Gift: A Cristmas Special From Carrie Underwood to Debut December 3 on HBO
-                Max</h5>
-            <h6 class="card-subtitle mb-4 event-venue">Allentown, PA</h6>
-            <a href="#" class="btn btn-primary">Buy Tickets</a>
+            <h6 class="card-subtitle mb-3"><?php echo format_date($event->date, 'F d, Y', $event->timezone->tz) ?></h6>
+            <h5 class="card-title mb-3"><?php echo $event->venue->name ?></h5>
+            <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
+                , <?php echo $event->venue->state ?></h6>
+            <?php if ($event->links) { ?>
+                <a href="<?php echo $event->links[0]->url ?>" class="btn btn-primary">Buy Tickets</a>
+            <?php } ?>
             <a href="#" class="btn btn-outline-primary">Meet & Greet</a>
         </div>
     </div>
     <?php
+}
+
+function format_date($date, $format, $timezone = '')
+{
+    if (is_string($date)) $date = \DateTime::createFromFormat(\DateTime::ISO8601, $date);
+    if ($timezone) $date->setTimezone(new \DateTimeZone($timezone));
+    return $date->format($format);
 }
 
 function get_universe_links()
@@ -86,9 +106,10 @@ function sparkart__load_profile_scripts()
 }
 
 // remove wp version number from scripts and styles
-function remove_css_js_version( $src ) {
-    if( strpos( $src, '?ver=' ) )
-        $src = remove_query_arg( 'ver', $src );
+function remove_css_js_version($src)
+{
+    if (strpos($src, '?ver='))
+        $src = remove_query_arg('ver', $src);
     return $src;
 }
 // add_filter( 'style_loader_src', 'remove_css_js_version', 9999 );
