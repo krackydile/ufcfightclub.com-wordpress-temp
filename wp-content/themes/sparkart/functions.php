@@ -29,6 +29,7 @@ require_once get_template_directory() . '/inc/init.php';
     add_action('tgmpa_register', '_action_theme_register_required_plugins');
 }
 
+
 function homepage_event_cards()
 {
     $unique_presales = Universe\fetch_resource('events?scope=upcoming&limit=3', '3af65919-3f76-46c8-b905-0f952ffcbd47');
@@ -76,7 +77,7 @@ function event_card($event)
             <?php if ($event->links) { ?>
                 <a href="<?php echo $event->links[0]->url ?>" class="btn btn-primary">Buy Tickets</a>
             <?php } ?>
-            <a href="#" class="btn btn-outline-primary">Meet & Greet</a>
+            <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-outline-primary">Meet & Greet</a>
         </div>
     </div>
     <?php
@@ -87,6 +88,52 @@ function format_date($date, $format, $timezone = '')
     if (is_string($date)) $date = \DateTime::createFromFormat(\DateTime::ISO8601, $date);
     if ($timezone) $date->setTimezone(new \DateTimeZone($timezone));
     return $date->format($format);
+}
+
+function event_detail_cards($id)
+{
+    $event_details = Universe\fetch_resource('events/'.$id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
+    if ($event_details->event) {?>
+        <div class="col-md-7 col-sm-12">
+            <h2 class="large-event-date"><?php echo format_date($event_details->event->date, 'F d, Y', $event_details->event->timezone->tz) ?></h2>
+            <div class="event-detail">
+                <ul>
+                    <li><strong>Venue:</strong><?php echo $event_details->event->venue->name ?></li>
+                    <li><strong>City:</strong><?php echo $event_details->event->venue->city ?>, <?php echo $event_details->event->venue->state ?></li>
+                    <li><strong>Country:</strong><?php echo $event_details->event->venue->country_name ?></li>
+                    <li><strong>Directions:</strong><a href="">Google Maps</a></li>
+                </ul>
+                <?php foreach ($event_details->event->links as $link) {?>
+                <a class="btn btn-primary" href="<?php echo $link->url?>">Buy Tickets</a>
+            <?php } ?>
+            </div>
+        </div>
+        <?php  if ($event_details->contests) {?>
+        <div class="col-md-5 col-sm-12">
+            <div class="panel-contest">
+                <div class="contest-header text-center">
+                    Contests
+                </div>
+            <?php foreach ($event_details->contests as $contest) {?>
+                <div class="contest-body">
+                    <h4 class="contest-title"><?php echo $contest->name?></h4>
+                    <p>Contest Ends <?php echo $contest->ends_at?></p>
+                    <a class="btn btn-outline-secondary">Enter Now</a>
+                </div>
+            <?php } ?>
+            </div>
+        </div>
+        <?php } ?>
+        <?php
+    } else {
+        ?>
+        <div class="text-center">
+            <p style="color:#fff;">No events found.</p>
+        </div>
+        <?php
+    }
+    ?>
+    <?php
 }
 
 function get_universe_links()
