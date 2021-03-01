@@ -9,6 +9,57 @@ import ClipboardJS from 'clipboard';
 
 // init Swiper:
 // const swiper = new Wi(;
+// 
+// 
+// setTimeout(function(){
+        // $('body').addClass('loaded');
+        // $('h1').css('color','#222222');
+// }, 3000);
+
+
+
+$('#watchModal').on('hide.bs.modal', function (event) {
+  // do something...
+    var modal = $(this)
+    modal.find('.modal-body').html('');
+})
+$('#watchModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = button.data('video') // Extract info from data-* attributes
+    // console.log(recipient);
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-body').html(recipient);
+})
+$('#accordion').on('shown.bs.collapse', function (e) {
+      // do something...
+        console.log($(e.target).attr('id'));
+        var clickedBtn = $($(e.target).data('bs.collapse')._triggerArray);
+        if(clickedBtn != undefined && clickedBtn.length > 1){
+
+            $(clickedBtn[1]).find('i').removeClass('fa-angle-down').addClass('fa-angle-up');
+            
+        }
+        var $card = $(e.target);
+          $('html,body').animate({
+            // scrollTop: $card.offset().top
+            scrollTop: $card.offset().top - 215
+            // $(e.target)
+          }, 500);
+    });
+    
+    $('#accordion').on('hidden.bs.collapse', function (e) {
+      // do something...
+        var clickedBtn = $($(e.target).data('bs.collapse')._triggerArray);
+        if(clickedBtn != undefined && clickedBtn.length > 1){
+
+            $(clickedBtn[1]).find('i').removeClass('fa-angle-up').addClass('fa-angle-down');
+        }
+        
+
+        
+    });
 var clipboard = new ClipboardJS('.clipboard-button');
 clipboard.on('success', function(e) {
     var exampleEl = document.getElementById('button-addon2')

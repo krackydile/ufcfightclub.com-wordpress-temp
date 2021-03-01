@@ -8363,6 +8363,7 @@ const universejs = require('universe-js')({environment: 'production', key: '3af6
 universejs.init(function (err, data) {
     if (err) throw err;
     if (data.customer) {
+        
         if (document.getElementById("secondary-navigation-box") !== null) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
