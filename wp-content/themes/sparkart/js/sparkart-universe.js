@@ -1,7 +1,15 @@
 const universejs = require('universe-js')({environment: 'production', key: '3af65919-3f76-46c8-b905-0f952ffcbd47'});
-
 universejs.init(function (err, data) {
     if (err) throw err;
+    /* Checks if the page is login protected and redirects to join page */
+    if (document.getElementById("loader-wrapper") !== null) {
+      if (!data.customer) {
+        window.location= document.getElementById("loader-wrapper").dataset.join;
+      }else{
+        document.body.classList.remove("protected");
+        document.body.classList.add("loaded");
+      }  
+    }
     if (data.customer) {
         if (document.getElementById("secondary-navigation-box") !== null) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
@@ -32,7 +40,10 @@ universejs.init(function (err, data) {
                 " </li>" +
                 "</ul>"
         }
+        
+
     }
+    
 });
 
 universejs.on('error', function (err) {
@@ -41,4 +52,5 @@ universejs.on('error', function (err) {
 
 universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
+    console.log('in here');
 });

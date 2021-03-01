@@ -91,5 +91,34 @@ function remove_css_js_version( $src ) {
         $src = remove_query_arg( 'ver', $src );
     return $src;
 }
+
+function checkPHPLogin(){
+    // This is where you run the code and display the output
+          $curl = curl_init();
+          $url = "https://services.sparkart.net/api/v1/account?key=3af65919-3f76-46c8-b905-0f952ffcbd47";
+          curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_ENCODING => "",
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            
+          ));
+          $response = curl_exec($curl);
+          $err = curl_error($curl);
+          curl_close($curl);
+          if ($err) {
+        //Only show errors while testing
+        //echo "cURL Error #:" . $err;
+        } else {
+        //The API returns data in JSON format, so first convert that to an array of data objects
+            $responseObj = json_decode($response);
+            var_dump($responseObj);
+        }
+}
+// add_action('init', 'checkPHPLogin');
 // add_filter( 'style_loader_src', 'remove_css_js_version', 9999 );
 // add_filter( 'script_loader_src', 'remove_css_js_version', 9999 );

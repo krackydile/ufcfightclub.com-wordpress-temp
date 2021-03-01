@@ -6,34 +6,51 @@
 get_header();
 
 ?>
-				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading text-center mt-4 mb-5"><span>Music </span></h3>
+		<?php
+			if(have_posts()):
+				while(have_posts()):
+					the_post()
+		?>
+		<h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
 		
 		<div class="row">
+
 			<?php 
-				for($i = 1; $i<=8; $i ++):
+				$albums = get_terms('albums',[
+					'hide_empty' => false
+				]);
+
+				foreach($albums as $album):
 			?>
 			<div class="col-md-4 col-xs-12 col-sm-12">
 				<div class="album-display">
 					<div class="album-thumbnail">
-						<img src="<?php echo get_template_directory_uri() ?>/images/<?php echo $i ?>.jpg" class="img-responsive">
+						<img src="<?php echo fw_album_thumbnail($album) ?>" class="img-responsive">
 					</div>
 					<div class="album-overlay" style="">
 						<div class="album-details">
 							
-							<h4 class="album-title">Cry Pretty</h4>
-							<h6 class="album-date">09/14/2018</h6>
-							<a href="http://dev.carrieunderwood/albums/cry-pretty/" class="btn btn-outline-light">VIEW ALBUM</a>
+							<h4 class="album-title"><?php echo $album->name ?></h4>
+							<h6 class="album-date">
+							
+								<?php echo fw_get_db_term_option($album->id, 'albums', 'release_date'); ?>
+									
+							</h6>
+							<a href="<?php echo get_term_link($album); ?>" class="btn btn-outline-light">VIEW ALBUM</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<?php 
-				endfor;
+				endforeach;
 			?>
 		</div>
+		<?php 
+				endwhile;
+			endif;
+		?>
 	</div>
 </section>
 

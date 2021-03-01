@@ -556,3 +556,70 @@ function fw_get_events_detail_page(){
 	}
 	// var_dump($page_id);
 }
+function fw_album_thumbnail($album){
+	$image = fw_get_db_term_option($album->term_id, 'albums', 'album_thumbnail');
+	// var_dump($image);
+	if(is_array($image)){
+		$url = $image['url'];
+	}else{
+		$url = get_template_directory_uri().'/images/1.jpg';
+	}
+	return $url;
+}
+
+function fw_show_album_buy_links($post_id){
+	$main_link = fw_get_db_post_option($post_id, 'store_link');
+	$itunes = fw_get_db_post_option($post_id, 'itunes_link');
+	$amazon = fw_get_db_post_option($post_id, 'amazon_music');
+
+	if($main_link != ''){
+
+	echo '<p class="mt-2">
+			<a href="'.$main_link.'" class="btn btn-primary">Carrie Underwood Store</a>
+			</p>';
+	}
+
+	echo '<p class="mt-2">';
+	if($itunes != ''){
+		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes"><i class="fa fa-apple"></i> iTUNES</a>';
+	}
+	if($amazon != ''){
+		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+	}
+	echo '</p>';
+}
+function _filter_my_custom_breadcrumbs_items( $items ) {
+    // do some changes ...
+    $object = get_queried_object();
+    // var_dump($object);
+    if($object->post_type == 'music'){
+    	$items[0] = [
+    		'name' => 'Music',
+    		'url' => get_bloginfo('wpurl').'/music/all',
+    		'type' => 'archive_page'
+    	];
+    }elseif($object->post_type == 'videos'){
+    	$items[0] = [
+    		'name' => 'Media',
+    		'url' => get_bloginfo('wpurl').'/sample-page',
+    		'type' => 'archive_page'
+    	];
+    }
+	// var_dump($items);
+    return $items;
+}
+add_filter( 'fw_ext_breadcrumbs_build', '_filter_my_custom_breadcrumbs_items' );
+function fw_embed_shortcode($content){
+	$code =  wp_oembed_get(strip_tags($content), ['width' => 800]); 
+	if($code != ''){
+		echo $code;
+		return ;
+	}
+	global $wp_embed;
+
+	echo $wp_embed->run_shortcode($content);
+
+}
+function fw_count_photo_album($album){
+	return count(fw_get_db_post_option($album->ID, 'photo_gallery'));
+}
