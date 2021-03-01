@@ -75,20 +75,20 @@ $args = array(
 register_taxonomy( 'genre', array( 'book' ), $args );*/
 
 $labels = array(
-	'name'               => __( 'Tracks', 'unyson' ),
-	'singular_name'      => __( 'Track', 'unyson' ),
+	'name'               => __( 'Albums', 'unyson' ),
+	'singular_name'      => __( 'Albums', 'unyson' ),
 	'menu_name'          => __( 'Discography', 'unyson' ),
-	'name_admin_bar'     => __( 'Track', 'unyson' ),
+	'name_admin_bar'     => __( 'Album', 'unyson' ),
 	'add_new'            => __( 'Add New', 'unyson' ),
-	'add_new_item'       => __( 'Add New Track', 'unyson' ),
-	'new_item'           => __( 'New Track', 'unyson' ),
-	'edit_item'          => __( 'Edit Track', 'unyson' ),
-	'view_item'          => __( 'View Track', 'unyson' ),
-	'all_items'          => __( 'All Tracks', 'unyson' ),
-	'search_items'       => __( 'Search Tracks', 'unyson' ),
-	'parent_item_colon'  => __( 'Parent Tracks:', 'unyson' ),
-	'not_found'          => __( 'No tracks found.', 'unyson' ),
-	'not_found_in_trash' => __( 'No tracks found in Trash.', 'unyson' )
+	'add_new_item'       => __( 'Add New Album', 'unyson' ),
+	'new_item'           => __( 'New Album', 'unyson' ),
+	'edit_item'          => __( 'Edit Album', 'unyson' ),
+	'view_item'          => __( 'View Album', 'unyson' ),
+	'all_items'          => __( 'All Albums', 'unyson' ),
+	'search_items'       => __( 'Search Albums', 'unyson' ),
+	'parent_item_colon'  => __( 'Parent Albums:', 'unyson' ),
+	'not_found'          => __( 'No albums found.', 'unyson' ),
+	'not_found_in_trash' => __( 'No albums found in Trash.', 'unyson' )
 );
 
 $args = array(
@@ -98,12 +98,12 @@ $args = array(
 	'show_ui'            => true,
 	'show_in_menu'       => true,
 	'query_var'          => true,
-	'rewrite'            => array( 'slug' => 'discography' ),
+	'rewrite'            => array( 'slug' => 'music/all' ),
 	'capability_type'    => 'post',
 	'has_archive'        => true,
 	'hierarchical'       => false,
 	'menu_position'      => null,
-	'supports'           => array( 'title', 'page-attributes' )
+	'supports'           => array( 'title', 'page-attributes', 'thumbnail', 'comments' )
 );
 
 register_post_type( 'music', $args );
@@ -128,9 +128,77 @@ $args = array(
 	'show_ui'           => true,
 	'show_admin_column' => true,
 	'query_var'         => true,
-	'rewrite'           => array( 'slug' => 'albums' ),
+	'rewrite'           => array( 'slug' => 'music/all' ),
 	'public'             => true,
 	'publicly_queryable' => true,
 );
 
-register_taxonomy( 'albums', array( 'music' ), $args );
+// register_taxonomy( 'albums', array( 'music' ), $args );
+// 
+$labels = array(
+	'name'               => __( 'Photo Albums', 'unyson' ),
+	'singular_name'      => __( 'Photo Albums', 'unyson' ),
+	'menu_name'          => __( 'Photos', 'unyson' ),
+	'name_admin_bar'     => __( 'Photo Album', 'unyson' ),
+	'add_new'            => __( 'Add New', 'unyson' ),
+	'add_new_item'       => __( 'Add New Photo Album', 'unyson' ),
+	'new_item'           => __( 'New Photo Album', 'unyson' ),
+	'edit_item'          => __( 'Edit Photo Album', 'unyson' ),
+	'view_item'          => __( 'View Photo Album', 'unyson' ),
+	'all_items'          => __( 'All Photo Album', 'unyson' ),
+	'search_items'       => __( 'Search Photo Album', 'unyson' ),
+	'parent_item_colon'  => __( 'Parent Photo Album:', 'unyson' ),
+	'not_found'          => __( 'No albums found.', 'unyson' ),
+	'not_found_in_trash' => __( 'No albums found in Trash.', 'unyson' )
+);
+
+$args = array(
+	'labels'             => $labels,
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'photoalbum' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
+	'hierarchical'       => false,
+	'menu_position'      => null,
+	'supports'           => array( 'title', 'thumbnail' )
+);
+
+register_post_type( 'photoalbums', $args );
+
+$labels = array(
+	'name'               => __( 'Videos', 'unyson' ),
+	'singular_name'      => __( 'Videos', 'unyson' ),
+	'menu_name'          => __( 'Videos', 'unyson' ),
+	'name_admin_bar'     => __( 'Videos', 'unyson' ),
+	'add_new'            => __( 'Add New', 'unyson' ),
+	'add_new_item'       => __( 'Add New Videos', 'unyson' ),
+	'new_item'           => __( 'New Videos', 'unyson' ),
+	'edit_item'          => __( 'Edit Videos', 'unyson' ),
+	'view_item'          => __( 'View Videos', 'unyson' ),
+	'all_items'          => __( 'All Videos', 'unyson' ),
+	'search_items'       => __( 'Search Videos', 'unyson' ),
+	'parent_item_colon'  => __( 'Parent Videos:', 'unyson' ),
+	'not_found'          => __( 'No albums found.', 'unyson' ),
+	'not_found_in_trash' => __( 'No albums found in Trash.', 'unyson' )
+);
+
+$args = array(
+	'labels'             => $labels,
+	'public'             => true,
+	'publicly_queryable' => true,
+	'show_ui'            => true,
+	'show_in_menu'       => true,
+	'query_var'          => true,
+	'rewrite'            => array( 'slug' => 'videos' ),
+	'capability_type'    => 'post',
+	'has_archive'        => true,
+	'hierarchical'       => false,
+	'menu_position'      => null,
+	'supports'           => array( 'title', 'thumbnail' ,'comments')
+);
+
+register_post_type( 'videos', $args );

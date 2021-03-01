@@ -12,7 +12,7 @@ get_header();
 		<h3 class="block-heading text-center mt-4 mb-5"><span>Media</span></h3>
 		
 		<div class="row">
-			<div class="col">
+			<div class="col-12">
 				<nav class="text-center mb-5">
 					<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 						<li class="nav-item">
@@ -27,50 +27,80 @@ get_header();
 				<div class="tab-pane fade show active" id="official-photos" role="tabpanel" aria-labelledby="pills-home-tab">
 					<div class="row">
 						<?php 
-							for($i = 1; $i<=8; $i ++):
+							$official_photos = get_posts([
+								'post_type' => 'photoalbums'
+							]);
+
+							if(!empty($official_photos)):
+								foreach($official_photos as $photo):
+
 						?>
 						<div class="col-md-3 col-xs-12 col-sm-12">
 							<div class="media-display">
 								<div class="media-thumbnail">
-									<img src="<?php echo get_template_directory_uri() ?>/images/<?php echo $i ?>.jpg" class="img-responsive">
+									<a href="<?php echo get_the_permalink($photo) ?>">
+										
+										<img src="<?php echo get_the_post_thumbnail_url($photo, 'spartkartSquare') ?>" class="img-responsive">
+									</a>
 								</div>
 								<div class="media-simple mt-3" style="">
 									<div class="album-details text-center">
-										<h6>Fan club Party</h6>
-										<p><?php echo $i; ?> Photo</p>
+										<h6>
+
+											<?php echo $photo->post_title; ?>
+												
+										</h6>
+										<p><?php echo fw_count_photo_album($photo); ?> Photo</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<?php 
-							endfor;
+								endforeach;
+							endif
 						?>
+					</div>
+					<div class="text-center mt-4 mb-5">
+						<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
 					</div>
 				</div>
 				<div class="tab-pane fade " id="official-videos" role="tabpanel" aria-labelledby="pills-home-tab">
 					<div class="row">
 						<?php 
-							for($i = 1; $i<=8; $i ++):
+							$official_videos = get_posts([
+								'post_type'=> 'videos'
+							]);
+							if(!empty($official_videos)):
+								foreach($official_videos as $video):
+							
 						?>
-						<div class="col-md-4 col-xs-12 col-sm-12">
-							<div class="album-display">
-								<div class="album-thumbnail">
-									<img src="<?php echo get_template_directory_uri() ?>/images/<?php echo $i ?>.jpg" class="img-responsive">
-								</div>
-								<div class="album-overlay" style="">
-									<div class="album-details">
+						<div class="col-md-3 col-xs-12 col-sm-12">
+							<div class="media-display">
+								<div class="media-thumbnail">
+									<a href="<?php echo get_the_permalink($video) ?>">
 										
-										<h4 class="album-title">Cry Pretty</h4>
-										<h6 class="album-date">09/14/2018</h6>
-										<a href="http://dev.carrieunderwood/albums/cry-pretty/" class="btn btn-outline-light">VIEW ALBUM</a>
+										<img src="<?php echo get_the_post_thumbnail_url($video, 'spartkartSquare') ?>" class="img-responsive">
+									</a>
+								</div>
+								<div class="media-simple mt-3" style="">
+									<div class="album-details text-center">
+										<h6>
+
+											<?php echo $video->post_title; ?>
+												
+										</h6>
 									</div>
 								</div>
 							</div>
 						</div>
 						<?php 
-							endfor;
+								endforeach;
+							endif;
 						?>
 					</div>
+					<div class="text-center mt-4 mb-5">
+								<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
+							</div>
 				</div>
 			</div>
 

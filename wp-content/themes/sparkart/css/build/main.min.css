@@ -7961,7 +7961,10 @@ small, .text_small {
 /*Button End*/
 /* Single page start */
 .content-area.single-page-content {
-  margin: 100px auto; }
+  margin: 20px auto; }
+  @media (min-width: 768px) {
+    .content-area.single-page-content {
+      margin: 100px auto; } }
 
 .site-content {
   margin-bottom: 20px;
@@ -8052,6 +8055,325 @@ small, .text_small {
   @media (min-width: 768px) {
     .event-detail-card {
       padding: 72px; } }
+
+.btn-itunes {
+  background: #000;
+  color: #fff; }
+
+.btn-amazon {
+  background: #4400FF;
+  color: #fff; }
+
+.site-content-transparent {
+  background: transparent; }
+
+.album-thumbnail-inner img {
+  border-radius: 25px; }
+
+.lyrics {
+  margin-top: 70px; }
+  .lyrics .card {
+    padding: unset;
+    margin: 0; }
+    .lyrics .card .card-header {
+      margin: 0;
+      padding-left: 0;
+      background: transparent; }
+      .lyrics .card .card-header .btn.btn-link {
+        padding-left: 0;
+        font-weight: bold;
+        color: #49504A;
+        text-decoration: none; }
+        .lyrics .card .card-header .btn.btn-link strong {
+          vertical-align: text-bottom; }
+
+i.fa.angle-trigger {
+  padding: 10px;
+  font-size: 23px;
+  font-weight: bold; }
+
+.track-group .list-group-item {
+  background: transparent;
+  border: none; }
+  .track-group .list-group-item .btn-group .btn {
+    font-size: 14px;
+    font-weight: bold; }
+  .track-group .list-group-item strong {
+    vertical-align: sub;
+    font-weight: bold;
+    color: #49504A; }
+  .track-group .list-group-item span {
+    font-weight: bold;
+    color: #49504A;
+    vertical-align: text-top; }
+
+.track-group .list-group-item:nth-child(odd) {
+  background: #E5EBE5; }
+
+.lyrics-section-heading {
+  font-size: 31px;
+  color: #6E8776; }
+
+.album-title-inner {
+  margin-top: 30px;
+  color: #313531;
+  font-size: 31px;
+  font-weight: bold; }
+  @media (min-width: 992px) {
+    .album-title-inner {
+      margin-top: unset; } }
+
+.track-info-btn-group {
+  float: left !important;
+  display: block;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .track-info-btn-group {
+      float: right !important;
+      display: inline-flex;
+      width: unset; } }
+
+.breadcrumbs a {
+  color: #313531; }
+
+.payment-cards {
+  background: #6E8776;
+  padding: 40px 0px; }
+  @media (min-width: 768px) {
+    .payment-cards {
+      padding: 72px; } }
+  .payment-cards .main-head {
+    color: #fff; }
+  .payment-cards .main-card {
+    background: #F0F4F4;
+    border-radius: 25px;
+    text-align: center;
+    padding: 40px;
+    min-height: 360px; }
+  .payment-cards .additional a {
+    color: #fff;
+    text-decoration: underline; }
+
+.imageblocks {
+  padding: 40px 0px; }
+  @media (min-width: 768px) {
+    .imageblocks {
+      padding: 50px; } }
+  .imageblocks h2 {
+    margin-bottom: 46px;
+    font-weight: bold;
+    color: #49504A; }
+  @media (max-width: 575.98px) {
+    .imageblocks .order-last, .imageblocks .order-first {
+      order: unset; } }
+
+.image-text h4 {
+  margin: 24px 0px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #6E8776; }
+
+.image-text p {
+  color: #313531; }
+
+.benefits {
+  background: #F0F4F4;
+  padding: 50px; }
+  .benefits h2 {
+    margin-bottom: 46px;
+    font-weight: bold;
+    color: #49504A; }
+  .benefits .list-group.benefits-list li {
+    background: transparent;
+    border: none;
+    text-align: center;
+    color: #49504A;
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 500; }
+    .benefits .list-group.benefits-list li hr {
+      width: 110px;
+      height: 2px;
+      background: #6E8776;
+      margin-top: 70px; }
+
+.related_videos h2 {
+  color: #49504A;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+.content-area.single-page-content.video-page {
+  margin: 20px auto; }
+  @media (min-width: 768px) {
+    .content-area.single-page-content.video-page {
+      margin: 100px auto; } }
+  .content-area.single-page-content.video-page .site-content {
+    background: transparent; }
+  .content-area.single-page-content.video-page .video-frame iframe {
+    max-height: 205px; }
+    @media (min-width: 768px) {
+      .content-area.single-page-content.video-page .video-frame iframe {
+        max-height: 400px; } }
+    @media (min-width: 992px) {
+      .content-area.single-page-content.video-page .video-frame iframe {
+        max-height: unset; } }
+
+.sparkart-text {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  .sparkart-text p {
+    color: #6E8776;
+    font-size: 14px;
+    font-weight: bold; }
+
+.protected #page {
+  display: none; }
+
+/*
+
+  Page Preloader script
+  https://ihatetomatoes.net/demos/css3-preloader-transition/
+*/
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; }
+
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */
+  z-index: 1001; }
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  -webkit-animation: spin 3s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 3s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */ }
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  -webkit-animation: spin 1.5s linear infinite;
+  /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 1.5s linear infinite;
+  /* Chrome, Firefox 16+, IE 10+, Opera */ }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */ } }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */ }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */ } }
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #B7C8B7;
+  z-index: 1000; }
+
+#loader-wrapper .loader-section.section-left {
+  left: 0; }
+
+#loader-wrapper .loader-section.section-right {
+  right: 0; }
+
+/* Loaded styles */
+.loaded-22 #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(-100%);
+  /* IE 9 */
+  transform: translateX(-100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.loaded-22 #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  /* Chrome, Opera 15+, Safari 3.1+ */
+  -ms-transform: translateX(100%);
+  /* IE 9 */
+  transform: translateX(100%);
+  /* Firefox 16+, IE 10+, Opera */
+  -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease-out;
+  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+  transition: all 0.3s ease-out;
+  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */ }
 
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);

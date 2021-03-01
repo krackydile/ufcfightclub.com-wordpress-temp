@@ -39,7 +39,7 @@ if ( ! function_exists( '_action_theme_setup' ) ) : /**
 		// Enable support for Post Thumbnails, and declare two sizes.
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 811, 372, true );
-		add_image_size( 'fw-theme-full-width', 1038, 576, true );
+
 		add_theme_support( 'custom-logo' );
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -75,6 +75,8 @@ if ( ! function_exists( '_action_theme_setup' ) ) : /**
 
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
+        add_image_size('spartkartSquare', 600, 600, true);
+		
 	}
 }
 endif;
@@ -401,6 +403,39 @@ function sparkart_load_more_scripts() {
  
 add_action( 'wp_head', 'sparkart_load_more_scripts' );
 
+
+add_action('wp_footer', 'add_load_more_script');
+/**
+ * Custom page loader script
+ * https://ihatetomatoes.net/create-custom-preloading-screen/
+ */
+function add_load_more_script(){
+	$join_page_id = fw_get_db_settings_option('protection_page');
+	if(!empty($join_page_id)){
+		$join_page = get_post($join_page_id[0]);
+		$join_page_link = get_permalink($join_page);
+	}
+	// var_dump($join_page_link);
+	// die();
+	// var_dump(fw_get_s)
+	if ( is_singular() && ! is_front_page() ) {
+		$classes[] = 'singular';
+		global $post;
+		if(fw_get_db_post_option($post->id, 'login_switch') == 'yes'){
+			?>
+			<div id="loader-wrapper" data-join="<?php echo $join_page_link ?>">
+			    <div id="loader"></div>
+			 
+			    <div class="loader-section section-left"></div>
+			    <div class="loader-section section-right"></div>
+			 
+			</div>
+			<?php
+
+		}
+
+	}
+}
 function _action_load_more_items(){
 	// this is used create stuff here hai
 }

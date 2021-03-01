@@ -268,7 +268,10 @@ small, .text_small {font-size: 0.8rem;}
 
 /* Single page start */
 .content-area.single-page-content{
-  margin: 100px auto;
+  margin: 20px auto;
+  @include media-breakpoint-up(md) {  
+        margin: 100px auto;
+      }
 }
 .site-content{
   margin-bottom: 20px;
@@ -387,3 +390,370 @@ small, .text_small {font-size: 0.8rem;}
       padding:72px;
   }
 }
+
+.btn-itunes{
+  background: #000;
+  color: #fff;
+
+}
+.btn-amazon{
+  background: #4400FF;
+  color: #fff;
+}
+.site-content-transparent{
+  background: transparent;
+}
+.album-thumbnail-inner {
+  img{
+    border-radius: 25px;
+  }
+}
+.lyrics {
+    margin-top: 70px;
+  .card{
+    padding:unset;  
+    margin:0;
+    .card-header{
+        margin:0;
+        padding-left:0;
+        background: transparent;
+
+        .btn.btn-link{
+          padding-left: 0;
+          font-weight: bold;
+          color: $colorDark;
+          text-decoration: none;
+          strong{
+              vertical-align: text-bottom;
+          }
+        }
+    }
+  }
+}
+i.fa.angle-trigger{
+    padding: 10px;
+    font-size: 23px;
+    font-weight: bold;
+}
+.track-group{
+  
+  .list-group-item{
+    background:transparent;
+    border: none;
+    .btn-group{
+       .btn{
+          font-size: 14px;
+          font-weight: bold;
+       }
+
+    }
+    strong{
+    vertical-align: sub;
+    font-weight: bold;
+          color: $colorDark;
+    }
+    span{
+
+      font-weight: bold;
+          color: $colorDark;
+      vertical-align: text-top;
+
+    }
+  }
+  .list-group-item:nth-child(odd) { background: $colorLighter; }
+}
+
+.lyrics-section-heading{
+  font-size: $fontSize31;
+  color: $colorMild;
+
+}
+
+.album-title-inner{
+    margin-top: 30px;
+    color: $colorDarkest;
+    font-size: $fontSize31;
+    font-weight: bold;
+    @include media-breakpoint-up(lg) {  
+        margin-top: unset;
+    }   
+}
+.track-info-btn-group{
+    float: left !important;  
+        display: block;
+    width: 100%;
+    @include media-breakpoint-up(md) {  
+        float: right !important;
+        display: inline-flex;
+        width: unset;
+    }   
+}
+.breadcrumbs{
+  a{
+    color: $colorDarkest;
+  }
+}
+.payment-cards{
+  background: $colorMild;
+      padding: 40px 0px;
+    @include media-breakpoint-up(md) {  
+
+      padding: 72px;
+    }
+
+  .main-head{
+    color: #fff;
+  }
+  .main-card{
+    background: $colorLightest;
+    border-radius: 25px;
+    text-align: center;
+    padding: 40px;
+    min-height:360px;
+
+  }
+  .additional{
+    a{
+    
+
+      color: #fff;
+      text-decoration:underline;
+    }
+  }
+}
+.imageblocks{
+      padding: 40px 0px;
+
+    @include media-breakpoint-up(md) {  
+      padding: 50px;
+    }
+  h2{
+      margin-bottom: 46px;
+      font-weight: bold;
+      color: $colorDark;
+  }
+    @include media-breakpoint-only(xs) { 
+      .order-last, .order-first{
+        order:unset;
+      }
+    }
+  
+}
+.image-text{
+  h4{
+    margin: 24px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $colorMild;
+  }
+  p{
+    color: $colorDarkest;
+  }
+}
+.benefits{
+  background: $colorLightest;
+  padding: 50px;
+  h2{
+    margin-bottom: 46px;
+    font-weight:bold;
+    color: $colorDark;
+  }
+  .list-group.benefits-list{
+      li{
+          background: transparent;
+          border: none;
+          text-align: center;
+          color:$colorDark;
+          font-size: $fontSize20;
+          margin: 20px;
+          font-weight: 500;
+          hr{
+              width: 110px;
+              height: 2px;
+              background: $colorMild;
+              margin-top: 70px;
+          }
+      }
+  }
+}
+.related_videos{
+  h2{
+    color: $colorDark;
+    font-size: $fontSize20;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+}
+.content-area.single-page-content.video-page {
+
+     margin: 20px auto;
+      @include media-breakpoint-up(md) {  
+        margin: 100px auto;
+      }
+      .site-content{
+        background: transparent;
+      }
+.video-frame{
+  iframe{
+    max-height: 205px;
+      @include media-breakpoint-up(md) {  
+        max-height: 400px;
+
+      }
+      @include media-breakpoint-up(lg) {  
+      max-height: unset;
+
+      }
+  }
+}
+   
+}
+.sparkart-text{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  p{
+    color: $colorMild;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.protected #page{
+  display:none;
+}
+
+/*
+
+  Page Preloader script
+  https://ihatetomatoes.net/demos/css3-preloader-transition/
+*/
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #3498db;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    z-index: 1001;
+}
+
+    #loader:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #e74c3c;
+
+        -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #f9c922;
+
+        -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+          animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+    }
+
+    @-webkit-keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+    @keyframes spin {
+        0%   { 
+            -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(0deg);  /* IE 9 */
+            transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+        100% {
+            -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: rotate(360deg);  /* IE 9 */
+            transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+        }
+    }
+
+    #loader-wrapper .loader-section {
+        position: fixed;
+        top: 0;
+        width: 51%;
+        height: 100%;
+        background: $colorLight;
+        z-index: 1000;
+    }
+
+    #loader-wrapper .loader-section.section-left {
+        left: 0;
+    }
+    #loader-wrapper .loader-section.section-right {
+        right: 0;
+    }
+
+    /* Loaded styles */
+
+    .loaded-22 #loader-wrapper .loader-section.section-left {
+        -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(-100%);  /* IE 9 */
+                transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+    }
+    .loaded-22 #loader-wrapper .loader-section.section-right {
+        -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+            -ms-transform: translateX(100%);  /* IE 9 */
+                transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+        -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+    }
+    .loaded #loader {
+        opacity: 0;
+
+        -webkit-transition: all 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+                transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+
+    }
+    .loaded #loader-wrapper {
+        visibility: hidden;
+
+      
+    
+        -webkit-transition: all 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+                transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+    }
