@@ -8373,7 +8373,7 @@ universejs.init(function (err, data) {
             document.body.classList.add("loaded");
         }
     }
-    
+
     if (data.customer) {
         if (document.getElementById("secondary-navigation-box") !== null) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
@@ -8439,7 +8439,6 @@ universejs.on('error', function (err) {
 
 universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
-    console.log('in here');
 });
 
 let tempUpcomingTourArray = [];
@@ -8473,41 +8472,44 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
-    const loadMore = pagination?.current_page < pagination.total_pages;
+    const loadMore = pagination?.current_page < pagination?.total_pages;
     const container = document.getElementById(containerId);
-    loading = false;
-    container.innerHTML = `
+    if (container !== null) {
+        loading = false;
+        container.innerHTML = `
                 ${data.length > 0 ? `
                 ${data?.map(group => `
                  <div class="event-block">
-				 <h3 class="event-heading">${moment(group?.date).format('MMMM, Y')}</h3>
+				 <h3 class="event-heading" style="text-transform: uppercase;">${group?.date}</h3>
                  <div class="row">
                  ${group?.events?.map(item => `
                     <div class="col-lg-4 col-sm-12 col-xs-12">
                      <div class="card events-card">
                       <div class="card-body">
-                      <h6 class="card-subtitle mb-3">${moment.tz(item?.date, item?.timezone?.tz).format('MMMM D, Y')}</h6>
+                      <h6 class="card-subtitle mb-3">${moment.tz(item?.date, item?.timezone?.tz).format('D MMMM')}</h6>
                       <h5 class="card-title mb-3">${item?.venue?.name}</h5>
                        <h6 class="card-subtitle mb-4 event-venue">${item?.venue?.city}, ${item?.venue?.state}</h6>
                       ${item.links.length > 0 ? `
                        <a href="${item?.links[0]?.url}" class="btn btn-primary">Buy Tickets</a>` : ``
-            }
-                       <a href="/events-details/${item?.id}" class="btn btn-outline-primary">Meet & Greet</a>
+                }
+                       <a href="/events-details/?event=${item?.id}" class="btn btn-outline-primary">Meet & Greet</a>
                       </div>
                      </div>
                     </div>`
-        ).join('')}
+            ).join('')}
                  </div>
                  </div>`
-    ).join('')}
+        ).join('')}
                     ${loadMore ? `
                         <div class="text-center mt-4 mb-5">
                         <a id ="load-more" class="btn btn-outline-primary" onclick="loadMorePagination(event,'${type}', '${pagination?.current_page + 1}')">Load More</a> 
                         <a id ="load-more-loading" style="display: none;" class="btn btn-outline-primary events-load-more-loading"><i class="fa fa-circle-o-notch fa-spin"></i> Loading</a>` : ``
-        
-        }
+
+            }
                 </div>` : `<div class="text-center"><p style="color:#6E8776;">No events have been scheduled at this time.</p></div>`}
                 `;
+    }
+
 };
 
 upcomingTourAPI = (tempUpcomingTourArray, eventScope) => {
@@ -8516,7 +8518,7 @@ upcomingTourAPI = (tempUpcomingTourArray, eventScope) => {
             tempUpcomingTourArray.push(...data?.events);
         }
         const groups = tempUpcomingTourArray?.reduce((groups, event) => {
-            const date = moment(event.date).format('MMMM, YYYY');
+            const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
             }
@@ -8537,10 +8539,10 @@ upcomingTourAPI = (tempUpcomingTourArray, eventScope) => {
 preSaleAPI = (tempPreSaleArray, eventScope) => {
     universejs.get(eventScope, function (err, data) {
         if (data?.events?.length > 0) {
-            tempPreSaleArray.push(...data?.events);
+            tempPreSaleArray.push(...data?.events).format('MMMM Y');
         }
         const groups = tempPreSaleArray?.reduce((groups, event) => {
-            const date = moment(event.date).format('MMMM, YYYY');
+            const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
             }
@@ -8564,7 +8566,7 @@ upcomingAppearanceAPI = (tempUpcomingAppearanceArray, eventScope) => {
             tempUpcomingAppearanceArray.push(...data?.events);
         }
         const groups = tempUpcomingAppearanceArray?.reduce((groups, event) => {
-            const date = moment(event.date).format('MMMM, YYYY');
+            const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
             }
@@ -8588,7 +8590,7 @@ pastEventAPI = (tempPastEventArray, eventScope) => {
             tempPastEventArray.push(...data?.events);
         }
         const groups = tempPastEventArray?.reduce((groups, event) => {
-            const date = moment(event.date).format('MMMM, YYYY');
+            const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
             }

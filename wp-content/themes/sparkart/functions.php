@@ -70,7 +70,7 @@ function event_card($event)
     ?>
     <div class="card events-card">
         <div class="card-body">
-            <h6 class="card-subtitle mb-3"><?php echo format_date($event->date, 'F d, Y', $event->timezone->tz) ?></h6>
+            <h6 class="card-subtitle mb-3"><?php echo format_date($event->date, 'd F', $event->timezone->tz) ?></h6>
             <h5 class="card-title mb-3"><?php echo $event->venue->name ?></h5>
             <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
                 , <?php echo $event->venue->state ?></h6>
@@ -95,13 +95,13 @@ function event_detail_cards($id)
     $event_details = Universe\fetch_resource('events/'.$id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
     if ($event_details->event) {?>
         <div class="col-md-7 col-sm-12">
-            <h2 class="large-event-date"><?php echo format_date($event_details->event->date, 'F d, Y', $event_details->event->timezone->tz) ?></h2>
+            <h2 class="large-event-date" style="text-transform: uppercase"><?php echo format_date($event_details->event->date, 'F d, Y', $event_details->event->timezone->tz) ?></h2>
             <div class="event-detail">
                 <ul>
-                    <li><strong>Venue:</strong><?php echo $event_details->event->venue->name ?></li>
-                    <li><strong>City:</strong><?php echo $event_details->event->venue->city ?>, <?php echo $event_details->event->venue->state ?></li>
-                    <li><strong>Country:</strong><?php echo $event_details->event->venue->country_name ?></li>
-                    <li><strong>Directions:</strong><a href="">Google Maps</a></li>
+                    <li><strong>Venue: </strong><?php echo $event_details->event->venue->name ?></li>
+                    <li><strong>City: </strong><?php echo $event_details->event->venue->city ?>, <?php echo $event_details->event->venue->state ?></li>
+                    <li><strong>Country: </strong><?php echo $event_details->event->venue->country_name ?></li>
+                    <li><strong>Directions: </strong><a href="">Google Maps</a></li>
                 </ul>
                 <?php foreach ($event_details->event->links as $link) {?>
                 <a class="btn btn-primary" href="<?php echo $link->url?>">Buy Tickets</a>
@@ -173,7 +173,7 @@ function checkPHPLogin(){
             CURLOPT_TIMEOUT => 30,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
-            
+
           ));
           $response = curl_exec($curl);
           $err = curl_error($curl);

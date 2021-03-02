@@ -26,22 +26,38 @@
 					<div class="tab-content" id="pills-tabContent">
 						<div class="tab-pane fade show active" id="pills-upcoming-tour-dates" role="tabpanel" aria-labelledby="pills-upcoming-tour-dates-tab">
 
-                            <div id="upcoming-tour-dates-container"></div>
+                            <div id="upcoming-tour-dates-container">
+                                <div style="display: block;text-align: center;margin-bottom: 10px;">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+                                </div>
+                            </div>
 
 						</div>
 						<div class="tab-pane fade" id="pills-fan-club-presales" role="tabpanel" aria-labelledby="pills-fan-club-presales-tab">
 
-                            <div id="fan-club-presales-container"></div>
+                            <div id="fan-club-presales-container">
+                                <div style="display: block;text-align: center;margin-bottom: 10px;">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+                                </div>
+                            </div>
 
 						</div>
 						<div class="tab-pane fade" id="pills-upcoming-appearances" role="tabpanel" aria-labelledby="pills-upcoming-appearances-tab">
 
-                            <div id="upcoming-appearances-container"></div>
+                            <div id="upcoming-appearances-container">
+                                <div style="display: block;text-align: center;margin-bottom: 10px;">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+                                </div>
+                            </div>
 
 						</div>
                         <div class="tab-pane fade" id="pills-past-events" role="tabpanel" aria-labelledby="pills-past-events-tab">
 
-                            <div id="past-events-container"></div>
+                            <div id="past-events-container">
+                                <div style="display: block;text-align: center;margin-bottom: 10px;">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>Loading
+                                </div>
+                            </div>
 
                         </div>
 				</div>
