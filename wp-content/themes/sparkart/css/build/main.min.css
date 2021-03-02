@@ -8774,3 +8774,7 @@ header .nav-item {
     .event-pills {
       display: flex; } }
 
+.events-load-more-loading {
+  width: 162px;
+  margin: 0 auto; }
+
