@@ -31,7 +31,8 @@ get_header(); ?>
 //									echo '</div>';
 //
 //								}
-                        ?>      <div class="card card-comment">
+                            ?>
+                                <div class="card card-comment">
                                     <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="wordpress-<?php echo get_post_field( 'post_name', get_post() ); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
                                         <h3>Comments</h3>
 
