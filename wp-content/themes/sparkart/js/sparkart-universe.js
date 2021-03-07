@@ -39,9 +39,12 @@ universejs.init(function (err, data) {
                 " </div>" +
                 "</div>";
         }
-
-        document.getElementById("presale-access-code-signin-text").style.display='none';
-        document.getElementById("presale-access-code-text").style.display='block';
+        if (document.getElementById("presale-access-code-signin-text") !== null) {
+            document.getElementById("presale-access-code-signin-text").style.display = 'none';
+        }
+        if (document.getElementById("presale-access-code-text") !== null) {
+            document.getElementById("presale-access-code-text").style.display = 'block';
+        }
 
     } else {
         if (document.getElementById("secondary-navigation-box") !== null) {
