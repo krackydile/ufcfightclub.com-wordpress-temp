@@ -9,6 +9,7 @@
 
 $options = array(
 	fw()->theme->get_options( 'general-settings' ),
+	fw()->theme->get_options( 'archive-settings' ),
 	fw()->theme->get_options( 'universe-settings' ),
 	// fw()->theme->get_options( 'demo-box' ),
 );

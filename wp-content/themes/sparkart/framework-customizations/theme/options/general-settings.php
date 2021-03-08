@@ -23,6 +23,15 @@ $options = array(
 						'value' => 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
 						'reinit' => true,
 					),
+					'media_page'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Media main page', 'unyson' ),
+						'population' => 'posts',
+						'source'     => 'page',
+						'desc'       => __( 'This is used to manage the breadcrumb.',
+							'unyson' ),
+						'limit' => 1
+					),
 
 				)
 			),

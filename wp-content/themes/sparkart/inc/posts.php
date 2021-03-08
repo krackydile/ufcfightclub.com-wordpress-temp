@@ -164,7 +164,7 @@ $args = array(
 	'has_archive'        => true,
 	'hierarchical'       => false,
 	'menu_position'      => null,
-	'supports'           => array( 'title', 'thumbnail' )
+	'supports'           => array( 'title', 'thumbnail','comments' )
 );
 
 register_post_type( 'photoalbums', $args );

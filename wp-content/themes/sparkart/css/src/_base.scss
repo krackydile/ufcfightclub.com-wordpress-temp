@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
@@ -12,17 +13,29 @@ body {
   background: $colorLighter;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.85;
   color: #000000;
 }
 
-p {margin-bottom: 1rem;}
+p {
+margin-bottom: 1rem;
+  a{
+    color: #6E8776;
+  }
+  a:hover{
+    color: $colorDark;
+  }
+}
 
 h1, h2, h3, h4, h5 {
   /*margin: 3rem 0 1.38rem;*/
   font-family: 'Lato', sans-serif;
   font-weight: 400;
-  line-height: 1.3;
+  line-height: 1.65;
+}
+p, span{
+  line-height: 1.65;
+  
 }
 
 h1 {
@@ -87,6 +100,7 @@ small, .text_small {font-size: 0.8rem;}
   font-size: $fontSize16;
   text-transform: uppercase;
   color: $colorMild;
+  letter-spacing: 0.15em;
 
 }
 .card-title{
@@ -147,7 +161,7 @@ small, .text_small {font-size: 0.8rem;}
         }
         @media (min-width: 1300px) { 
           .nav-item{
-             margin: 10px 60px;
+             margin: 10px 54px;
           }
         }
         
@@ -180,8 +194,9 @@ small, .text_small {font-size: 0.8rem;}
 }
 /*Button*/
 .btn{
-    padding: 5px 12px;
-
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 22px;
 }
 .btn-primary{
   background-color: $colorMild;
@@ -226,10 +241,18 @@ small, .text_small {font-size: 0.8rem;}
     border: 2px solid $colorDark;
     padding: 4px 32px;
 }
+.btn-cta-primary:hover, .btn-cta-outline:hover{
+  background: $colorDark;
+  color: $colorLightest;
+}
+.btn-cta-primary:hover span{
+  background: $colorDark;
+  color: $colorLightest;
+}
 .block-heading{
     font-family: Aurora;
-    line-height: 100px;
-  /*position: relative;*/
+  /*  line-height: 100px;
+  position: relative;*/
 }
 
 /* headlines with lines */
@@ -237,6 +260,7 @@ small, .text_small {font-size: 0.8rem;}
      overflow: hidden;
      text-align: center;
      font-size: $fontSize61;
+     padding: 14px
 
  }
 .block-heading > span{
@@ -248,7 +272,7 @@ small, .text_small {font-size: 0.8rem;}
     position: absolute;
     top: 50%;
     border-bottom: 5px solid;
-    border-color: #000;
+    border-color: $colorDark;
     width: 100vw;
     margin: 0 20px;
 }
@@ -394,6 +418,7 @@ small, .text_small {font-size: 0.8rem;}
 .btn-itunes{
   background: #000;
   color: #fff;
+  margin-right: 10px;
 
 }
 .btn-amazon{
@@ -589,7 +614,7 @@ i.fa.angle-trigger{
 
      margin: 20px auto;
       @include media-breakpoint-up(md) {  
-        margin: 100px auto;
+        /*margin: 100px auto;*/
       }
       .site-content{
         background: transparent;
@@ -757,3 +782,82 @@ i.fa.angle-trigger{
         -webkit-transition: all 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
                 transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
     }
+
+.col-official-image{
+    margin-bottom: 10px; 
+}
+.official-photo-title{
+  font-size: $fontSize31;
+  font-weight: bold;
+  color: $colorDark;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+}
+.breadcrumbs {
+  
+  span{
+    font-weight:600;
+    margin-right: 5px;
+  }
+  span.last-item{
+    font-weight: 500;
+    color: $colorMild;
+  }
+}
+.content-area.single-page-content.single-photo-gallery-page{
+  margin-top: 0;
+  .site-content{
+
+    background: transparent;
+  }
+}
+.gallery-main-photo{
+  text-align: center;
+  background: $colorLightest;
+  border-radius: 0 0 25px 25px;
+  img{
+    width: 100%;
+  }
+  p{
+    padding: 10px;
+    text-transform: uppercase;
+  }
+}
+.gallery_nav_button{
+  text-align:center;
+
+  .btn{
+    margin: 10px
+  }
+}
+
+.more-photos{
+      font-size: $fontSize20;
+      text-align: center;
+      margin-top: 33px;
+      font-weight: 600;
+      color: $colorDark;
+      text-transform: uppercase;
+  }
+.photo-thumbnails{
+  margin-bottom: 32px;
+}
+#photos_paginated{
+  text-align:center;
+  margin: 38px;
+  li{
+    list-style:none;
+  }
+  .paginationjs-next a{
+    color: #6E8776;
+    border-color: #6E8776;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 22px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    border: 1px solid;
+  }
+
+}
