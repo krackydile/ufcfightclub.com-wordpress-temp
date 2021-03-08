@@ -6,17 +6,66 @@ import {Tooltip} from 'bootstrap';
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 import ClipboardJS from 'clipboard';
-
-// init Swiper:
-// const swiper = new Wi(;
-// 
-// 
-// setTimeout(function(){
-        // $('body').addClass('loaded');
-        // $('h1').css('color','#222222');
-// }, 3000);
+import pagination from 'paginationjs';
 
 
+// enable tab view by location
+var url = window.location.href;
+console.log(url);
+// var url = 'http://dev.carrieunderwood/sample-page/#official-videos';
+
+if (url.match('#')) {
+    $('.nav-item a[href="#' + url.split('#')[1] + '"]').tab('show');
+} 
+
+if(document.getElementById("photos_paginated") != 'undefined' && document.getElementById("photos_paginated") != null){
+
+
+$('#photos_paginated').pagination({
+    showPageNumbers : false,
+    pageSize: sparkart_loadmore_params.pageSize,
+    showPrevious: false,
+    nextText : 'Load More',
+    dataSource: function(done) {
+        $.ajax({
+            type: 'GET',
+            url : sparkart_loadmore_params.ajaxUrl, // AJAX handler
+            dataType: 'json',
+            data: {
+                'action': 'loadPhotoThumbnails',
+                'type': 'photoalbums',
+                'album': $('#photos_paginated').data('album')
+
+            },
+            success: function(response) {
+                // console.log( typeof(response) );
+                done(response);
+            }
+        });
+     },
+    callback: function(data, pagination) {
+        // template method of yourself
+        var html = template(data, 'photoalbums');
+
+        $('#photo-data').append(html);
+    }
+})
+}
+function template(data, type){
+    var html = '';
+    if(type == 'photoalbums'){
+        $.each(data, function(index, item){
+            html += `<div class="col-3 col-official-image">
+                            <a href="${sparkart_loadmore_params.current_url}?active=${item.attachment_id}">
+                                <img src="${item.url}" class="img-responsive" />
+                            </a>
+                        </div>`;
+        });
+    }else{
+
+    }
+    return html; 
+}
 
 $('#watchModal').on('hide.bs.modal', function (event) {
   // do something...
@@ -118,6 +167,38 @@ jQuery(document).ready(function ($) {
         var id = $(this).val();
         $('a[href="' + id + '"]').tab('show');
     });
+    $(document).on('click', '.ajax-load-more-photo-albums', function(){
+        var button = $(this);
+        var  data = {
+            'action': 'loadmoremedia',
+            'query': button.data('type'), // that's how we get params from wp_localize_script() function
+            'page' : button.data('page')
+        };
+        $.ajax({ // you can also use $.post here
+            url : sparkart_loadmore_params.ajaxUrl, // AJAX handler
+            data : data,
+            type : 'GET',
+            beforeSend : function ( xhr ) {
+                button.text('Loading...'); // change the button text, you can also add a preloader image
+            },
+            success : function( data ){
+                if( data ) { 
+                    button.text( 'Load More' ); // insert new posts
+                    $(button.data('target')).append(data);
+                    // button.parent().before(data);
+                    button.data('page', button.data('page') +   1);
+ 
+                    // if ( sparkart_loadmore_params.current_page == sparkart_loadmore_params.max_page ) 
+                        // button.remove(); // if last page, remove the button
+ 
+                    // you can also fire the "post-load" event here if you use a plugin that requires it
+                    // $( document.body ).trigger( 'post-load' );
+                } else {
+                    button.remove(); // if no data, remove the button as well
+                }
+            }
+        });
+    })
     $(document).on('click','.ajax-load-more', function(){
         // alert(sparkart_loadmore_params);
         console.log(sparkart_loadmore_params);

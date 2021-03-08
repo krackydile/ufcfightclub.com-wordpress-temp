@@ -151,6 +151,10 @@ function _filter_theme_body_classes( $classes ) {
 			$classes[] = 'protected';
 
 		}
+		if(is_protected_post_type()){
+			$classes[] = 'protected';
+
+		}
 
 	}
 
@@ -387,10 +391,12 @@ function sparkart_load_more_scripts() {
 	// var_dump('i am here');
 	// die();
 	echo '<script>' .'const sparkart_loadmore_params = ' . json_encode( array(
+		'current_url' => get_permalink(),
 	    'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 	    'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
 		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-		'max_page' => $wp_query->max_num_pages
+		'max_page' => $wp_query->max_num_pages,
+		'pageSize' => get_option('posts_per_page')
 	) );
 	echo '</script>';	
 	// $handle = wp_add_inline_script( 'sparkart-main-js', , 'before' );
@@ -421,7 +427,7 @@ function add_load_more_script(){
 	if ( is_singular() && ! is_front_page() ) {
 		$classes[] = 'singular';
 		global $post;
-		if(fw_get_db_post_option($post->id, 'login_switch') == 'yes'){
+		if(fw_get_db_post_option($post->id, 'login_switch') == 'yes' || is_protected_post_type()){
 			?>
 			<div id="loader-wrapper" data-join="<?php echo $join_page_link ?>">
 			    <div id="loader"></div>
@@ -439,6 +445,101 @@ function add_load_more_script(){
 function _action_load_more_items(){
 	// this is used create stuff here hai
 }
+/**
+ * template used for the load more in the media main page.
+ * @return [type] [description]
+ */
+function template_albums(){
+	$template =  '<div class="col-md-3 col-xs-12 col-sm-12">
+							<div class="media-display">
+								<div class="media-thumbnail">
+									<a href="'.get_the_permalink().'">
+										
+										<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'spartkartSquare').'" class="img-responsive">
+									</a>
+								</div>
+								<div class="media-simple mt-3" style="">
+									<div class="album-details text-center">
+										<h6>
+
+											'.get_the_title().'
+												
+										</h6>
+										<p>'.fw_count_photo_album(get_post()).' Photo</p>
+									</div>
+								</div>
+							</div>
+						</div>';
+	return $template;
+}
+/**
+ * Get the template for videos that will be used in the pagination page.
+ * @return [type] [description]
+ */
+function template_videos(){
+	$template = '<div class="col-md-3 col-xs-12 col-sm-12">
+								<div class="media-display">
+									<div class="media-thumbnail">
+										<a href="'.get_the_permalink().'">
+											
+											<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'spartkartSquare').'" class="img-responsive">
+										</a>
+									</div>
+									<div class="media-simple mt-3" style="">
+										<div class="album-details text-center">
+											<h6>
+	
+												'.get_the_title().'
+													
+											</h6>
+										</div>
+									</div>
+								</div>
+							</div>';
+	return $template;
+}
+function sparkart_loadPhotoThumbnails_ajax_handler(){
+	$album_id = (int) $_GET['album'];
+	$album = get_post($album_id);
+	if($album != null){
+
+		$photos = fw_get_db_post_option($album_id, 'photo_gallery');
+		// var_dump($photos);
+		echo json_encode($photos);
+	}
+
+	die();
+}
+add_action('wp_ajax_loadPhotoThumbnails', 'sparkart_loadPhotoThumbnails_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadPhotoThumbnails', 'sparkart_loadPhotoThumbnails_ajax_handler'); // wp_ajax_nopriv_{action}
+
+function sparkart_loadmoremedia_ajax_handler(){
+	$args = json_decode( stripslashes( $_GET['query'] ), true );
+	$args['paged'] = $_GET['page'] + 1; // we need next page to be loaded
+	$args['post_status'] = 'publish';
+	$args['post_type'] = stripcslashes($_GET['query']);
+	query_posts( $args );
+	if( have_posts() ) :
+		// run the loop
+		while( have_posts() ): the_post();
+ 			if($args['post_type'] == 'photoalbums'){
+ 				echo template_albums();
+ 			}else{
+ 				echo template_videos();
+ 			}
+ 
+		endwhile;
+ 
+	endif;
+	die; // here we exit the script and even no wp_reset_query() required!
+	// var_dump($args);
+}
+/**
+ * Lazy load handler for photo and video albums landing page
+ */
+add_action('wp_ajax_loadmoremedia', 'sparkart_loadmoremedia_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmoremedia', 'sparkart_loadmoremedia_ajax_handler'); // wp_ajax_nopriv_{action}
+
 function sparkart_loadmore_ajax_handler(){
  
 	// prepare our arguments for the query
@@ -471,6 +572,74 @@ function sparkart_loadmore_ajax_handler(){
 }
  
  
- 
+ /**
+  * Lazy load handler for blog posts
+  */
 add_action('wp_ajax_loadmore', 'sparkart_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'sparkart_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+function active_image_query_vars( $qvars ) {
+    $qvars[] = 'active';
+    return $qvars;
+}
+add_filter( 'query_vars', 'active_image_query_vars' );
+
+/**
+ * Add class to nav item when the type is media
+ */
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+	if(!empty(fw_get_db_settings_option('media_page'))){
+		if(is_protected_post_type() && fw_get_db_settings_option('media_page')[0] ===  $item->object_id){
+	        $classes[] = 'active ';
+		}
+	}
+    return $classes;
+}
+/**
+ * Part of the original migration added by the previous dev
+ * nochanges required
+ */
+add_action('init', 'carrieunderwood_fm_add_custom_urls');
+function carrieunderwood_fm_add_custom_urls() {
+  $dps = '([^/]+)'; // Dynamic path segment ({tag}, {topic})
+
+  // /news => page-news.php (default)
+  add_rewrite_rule("^news/$dps/?$", 'index.php?category_name=$matches[2]'); // category.php
+  add_rewrite_rule("^news/$dps/$dps/?$", 'index.php?name=$matches[2]', 'top'); // single.php, 'top' prevents redirect to /news/{parent category}/{category}/{post}
+
+  // /events => page-events.php (default)
+  // add_rewrite_rule("^(event|contest)s/$dps/$dps/?$", 'index.php?pagename=$matches[1]'); // page-event.php, page-contest.php
+
+  // (no browse page)
+  // add_rewrite_rule("^music/$dps/$dps/?$", 'index.php?post_type=release&name=$matches[2]'); // single-release.php
+
+  // /help => page-help.php (default)
+  // add_rewrite_rule("^help/$dps/?$", 'index.php?category_name=support'); // category-support.php
+  // add_rewrite_rule("^help/$dps/$dps/?$", 'index.php?name=$matches[2]'); // single-category-support.php (see single_template action below)
+
+  // Uncomment the following line when developing the rewrite rules
+  // flush_rewrite_rules(); // DO NOT COMMIT THIS LINE
+}
+/**
+ * Apply the following hook to add extra "news" to maintain legacy
+ * url consistancy
+ */
+add_filter('post_link' , 'special_default_blog_slug' , 10 , 3);
+function special_default_blog_slug($permalink, $post, $leavename){
+	if($post->post_type = 'post'){
+		return str_replace(get_bloginfo('wpurl').'/', get_bloginfo('wpurl').'/news/', $permalink);
+	}
+	return $permalink;
+}
+
+
+add_action( 'pre_get_posts','_filter_mod_main_query' );
+function _filter_mod_main_query( $query ) {
+	if($query->is_main_query() && $query->get('post_type') == 'music'){
+		$query->set('orderby', 'menu_order');
+		$query->set('order', 'ASC');
+		// $query->query_vars['order'] = 'ASC';
+
+	}
+}

@@ -19,7 +19,8 @@ get_header();
 
 			<?php 
 				$albums = get_terms('albums',[
-					'hide_empty' => false
+					'hide_empty' => false,
+					
 				]);
 
 				foreach($albums as $album):

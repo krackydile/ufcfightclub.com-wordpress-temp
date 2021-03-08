@@ -526,7 +526,10 @@ function fw_get_latest_posts($limit = 6){
 	}
 }
 function fw_get_inner_category_tabs($cat_id = null){
-	$categories = get_categories();
+	$selected_categories = fw_get_db_settings_option('archive_active_categories');
+	// var_dump();
+	// die();
+	$categories = get_categories(['term_taxonomy_id' => $selected_categories]);
 	?>
 	<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 		<li class="nav-item">
@@ -541,9 +544,7 @@ function fw_get_inner_category_tabs($cat_id = null){
 		<?php 
 			endforeach;
 		?>
-		<li class="nav-item">
-			<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contests</a>
-		</li>
+		
 	</ul>	
 	<?php
 }
@@ -598,12 +599,34 @@ function _filter_my_custom_breadcrumbs_items( $items ) {
     		'url' => get_bloginfo('wpurl').'/music/all',
     		'type' => 'archive_page'
     	];
-    }elseif($object->post_type == 'videos'){
+    }elseif($object->post_type == 'photoalbums'){
     	$items[0] = [
-    		'name' => 'Media',
-    		'url' => get_bloginfo('wpurl').'/sample-page',
+    		'name' => 'Official Photos',
+    		'url' => get_media_page(),
     		'type' => 'archive_page'
     	];
+    	if(get_query_var('active') != ''){
+    		$items[] = [
+    			'name' => 'Photo',
+	    		'url' => 'javascript:void(0);',
+	    		'type' => 'Single Page'
+    		];
+    	}
+    }elseif($object->post_type == 'videos'){
+    	$items[0] = [
+    		'name' => 'Official Videos',
+    		'url' => get_media_page().'#official-videos',
+    		'type' => 'archive_page'
+    	];
+    	if(get_query_var('active') != ''){
+    		// var_dump(get_query_var('active'));
+    		$string = (string) get_query_var('active');
+    		$items[] = [
+    			'name' => esc_html(ucfirst(str_replace('-', ' ', $string))),
+	    		'url' => 'javascript:void(0);',
+	    		'type' => 'single page'
+    		];
+    	}
     }
 	// var_dump($items);
     return $items;
@@ -622,4 +645,156 @@ function fw_embed_shortcode($content){
 }
 function fw_count_photo_album($album){
 	return count(fw_get_db_post_option($album->ID, 'photo_gallery'));
+}
+
+
+function fw_print_video_list($videos, $show = 6, $show_title = true){
+	$offset = 12/$show;
+	if(!empty($videos)){
+		if($show_title == true){
+
+			echo '<h1 class="text-center official-photo-title">'.get_the_title().'</h1>';
+		}
+		echo '<div class="row">';
+		foreach($videos as $key => $video){
+			$template = '<div class="col-'.$offset.' col-official-image">
+							<a href="%s">
+								<img src="%s" class="img-responsive" />
+								
+							</a>
+						</div>';
+			if($video['video_thumbnail']['url']){
+				$video_thumbnail = $video['video_thumbnail']['url'];
+			}else{
+				$video_thumbnail = get_template_directory_uri().'/images/carrie-fc.png';
+			}
+			echo sprintf($template, 
+					add_query_arg('active', sanitize_title_with_dashes($video['video_title']), get_permalink( get_the_ID() ) ), 
+					$video_thumbnail,
+					$video['video_title']
+				);
+		}
+		echo '</div>';
+	}
+}
+function fw_print_play_video($videos, $active){
+	if(!empty($videos)){
+		$active_video = array_filter($videos, function($video) use ($active) {
+			if(sanitize_title_with_dashes($video['video_title']) == $active){
+				return true;
+			}
+		});
+
+		if(!empty($active_video)){
+			foreach($active_video as $active_key => $vid){
+				// var_dump($vid);
+				$videoContent = $vid['video_info'];
+				// var_dump($videoContent);
+				echo '<div class="video-frame">';
+								if($videoContent['gadget'] == 'upload'){
+									echo do_shortcode('[video src="'.$videoContent['upload']['video_upload']['url'].'" poster="'.get_the_post_thumbnail_url().'" width="1200"]');
+								}else{
+									// global $wp_embed;
+									echo wp_oembed_get($videoContent['embed']['video_url'], ['width' => 1200]); 
+									// echo $wp_embed->run_shortcode();
+								}
+								echo '</div>';
+				$previous = $active_key-1;
+				$next = $active_key+1;
+			}
+			// echo '<div class="gallery_nav_button">';
+			// if(array_key_exists($previous, $videos)){
+			// 	echo '<a href="'.add_query_arg('active', $videos[$previous]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-outline-primary">Previous</a>';
+			// }
+			// if(array_key_exists($next, $videos)){
+			// 	echo '<a href="'.add_query_arg('active', $videos[$next]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-primary">Next photo</a>';
+			// }
+			// echo '</div>';
+			
+		}
+
+		echo '<div class="videos-thumbnails">';
+		echo '<h3 class="more-photos">Related Videos</h3>';
+		fw_print_video_list($videos, 6, false);
+		echo '</div>';
+		// var_dump($active_photo);
+	}
+}
+
+function fw_print_photo_list($photos, $show = 4){
+	$offset = 12/$show;
+	if(!empty($photos)){
+		echo '<div class="row">';
+		foreach($photos as $photo){
+			$template = '<div class="col-'.$offset.' col-official-image">
+							<a href="%s">
+								<img src="%s" class="img-responsive" />
+							</a>
+						</div>';
+			echo sprintf($template, add_query_arg('active', $photo['attachment_id'], get_permalink( get_the_ID() ) ), $photo['url']);
+		}
+		echo '</div>';
+	}
+}
+
+function fw_print_photo_slider($photos, $active){
+	// var_dump($photos);
+	if(!empty($photos)){
+		$active_photo = array_filter($photos, function($photo) use ($active) {
+			if($photo['attachment_id'] == $active){
+				return true;
+			}
+		});
+		if(!empty($active_photo)){
+			foreach($active_photo as $active_key => $active_value){
+
+				echo '<div class="gallery-main-photo">
+						<div class="active-image">
+							<img src="'.$active_value['url'].'" class="img-responsive" />
+							<p><strong>Added:</strong>'.get_the_date().'</p>
+						</div>
+					</div>';
+				$previous = $active_key-1;
+				$next = $active_key+1;
+			}
+			echo '<div class="gallery_nav_button">';
+			if(array_key_exists($previous, $photos)){
+				echo '<a href="'.add_query_arg('active', $photos[$previous]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-outline-primary">Previous</a>';
+			}
+			if(array_key_exists($next, $photos)){
+				echo '<a href="'.add_query_arg('active', $photos[$next]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-primary">Next photo</a>';
+			}
+			echo '</div>';
+			
+		}
+		echo '<div class="photo-thumbnails">';
+		echo '<h3 class="more-photos">more photos from this album</h3>';
+		fw_print_photo_list(array_slice($photos, $active_key, 6), 6);
+		echo '</div>';
+		// var_dump($active_photo);
+	}
+}
+function fw_get_registered_post_types(){
+	return array(
+			'photoalbums' => __( 'Photo Albums', 'unyson' ),
+			'videos' => __( 'Video Albums', 'unyson' ),
+		);
+}
+function is_protected_post_type(){
+	// get current content
+
+	$post = get_post();
+	// get all protected post types
+	$protected_post_types = fw_get_db_settings_option('protected_post_types');
+	if(in_array($post->post_type, $protected_post_types)){
+		return true;
+	}
+	return false;
+	
+}
+function get_media_page(){
+	$media = fw_get_db_settings_option('media_page');
+	if($media != ''){
+		return get_permalink($media[0]);
+	}
 }

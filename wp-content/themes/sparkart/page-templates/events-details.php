@@ -25,11 +25,14 @@ get_header();
 			</div>	
 			<div class="tab-content" id="pills-tabContent">
 				<div class="tab-pane fade show active" id="official-photos" role="tabpanel" aria-labelledby="pills-home-tab">
-					<div class="row">
+					<div class="row" id="albums-row">
 						<?php 
 							$official_photos = get_posts([
-								'post_type' => 'photoalbums'
+								'post_type' => 'photoalbums',
+								'numberposts' => get_option('posts_per_page')
 							]);
+							// $official_photos = WP_Query( $args )
+							// var_dump($official_photos);
 
 							if(!empty($official_photos)):
 								foreach($official_photos as $photo):
@@ -60,15 +63,20 @@ get_header();
 							endif
 						?>
 					</div>
-					<div class="text-center mt-4 mb-5">
-						<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
-					</div>
+					<div class="row mt-4 mb-5">
+							<div class="col text-center">
+								
+								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);" data-load-type="album-photos" data-page="1" data-type="photoalbums" data-target="#albums-row">Load More</a>
+							</div>
+						</div>
 				</div>
 				<div class="tab-pane fade " id="official-videos" role="tabpanel" aria-labelledby="pills-home-tab">
-					<div class="row">
+					<div class="row" id="video-row">
 						<?php 
 							$official_videos = get_posts([
-								'post_type'=> 'videos'
+								'post_type'=> 'videos',
+								'numberposts' => get_option('posts_per_page')
+
 							]);
 							if(!empty($official_videos)):
 								foreach($official_videos as $video):
@@ -98,9 +106,12 @@ get_header();
 							endif;
 						?>
 					</div>
-					<div class="text-center mt-4 mb-5">
-								<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
+					<div class="row mt-4 mb-5">
+							<div class="col text-center">
+								
+								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);"  data-page="1" data-type="videos" data-target="#video-row">Load More</a>
 							</div>
+						</div>
 				</div>
 			</div>
 

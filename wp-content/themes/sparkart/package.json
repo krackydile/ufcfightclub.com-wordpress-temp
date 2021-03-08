@@ -37,6 +37,7 @@
     "clipboard": "^2.0.6",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
+    "paginationjs": "^2.1.5",
     "swiper": "^6.4.10"
   }
 }
