@@ -29,6 +29,42 @@ require_once get_template_directory() . '/inc/init.php';
     add_action('tgmpa_register', '_action_theme_register_required_plugins');
 }
 
+function yahoo_maps_url($address) {
+    $url = 'http://maps.yahoo.com/maps_result?';
+    if ($address->address) $url .= 'addr=' . str_replace(' ', '+', $address->address);
+    $url .= '&csz=' . $address->city;
+    if ($address->state) $url .= '+' . $address->state;
+    if ($address->postalcode) $url .= '+' . $address->postalcode;
+    $url .= '&country=' . $address->country;
+    return $url;
+}
+
+function google_maps_url($address) {
+    $url = '';
+    if ($address->address) $url .= $address->address . ' ';
+    $url .= $address->city . ' ';
+    if ($address->state) $url .= $address->state . ' ';
+    if ($address->postalcode) $url .= $address->postalcode . ', ';
+    $url .= $address->country;
+    return 'http://www.google.com/maps?hl=en&q=' . str_replace(' ', '+', $url) . '&ie=UTF8&z=16';
+}
+
+function map_quest_url($address) {
+    $url = 'http://www.mapquest.com/maps/map.adp?';
+    $url .= 'country=' . $address->country;
+    if ($address->address) $url .= '&address=' . str_replace(' ', '+', $address->address);
+    $url .= '&city=' . $address->city;
+    if ($address->state) $url .= '&state=' . $address->state;
+    if ($address->postalcode) $url .= '&zipcode=' . $address->postalcode;
+    return $url;
+}
+
+function format_date($date, $format, $timezone = '')
+{
+    if (is_string($date)) $date = \DateTime::createFromFormat(\DateTime::ISO8601, $date);
+    if ($timezone) $date->setTimezone(new \DateTimeZone($timezone));
+    return $date->format($format);
+}
 
 function homepage_event_cards()
 {
@@ -75,7 +111,8 @@ function event_card($event)
             <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
                 , <?php echo $event->venue->state ?></h6>
             <?php if ($event->links) { ?>
-                <a href="<?php echo $event->links[0]->url ?>" class="btn btn-primary">Buy Tickets</a>
+<!--                <a href="--><?php //echo $event->links[0]->url ?><!--" class="btn btn-primary">Buy Tickets</a>-->
+                <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-primary">Buy Tickets</a>
             <?php } ?>
             <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-outline-primary">Meet & Greet</a>
         </div>
@@ -83,17 +120,11 @@ function event_card($event)
     <?php
 }
 
-function format_date($date, $format, $timezone = '')
-{
-    if (is_string($date)) $date = \DateTime::createFromFormat(\DateTime::ISO8601, $date);
-    if ($timezone) $date->setTimezone(new \DateTimeZone($timezone));
-    return $date->format($format);
-}
-
 function event_detail_cards($id)
 {
     $event_details = Universe\fetch_resource('events/'.$id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
-    if ($event_details->event) {?>
+    if ($event_details->event) {
+        ?>
         <div class="col-md-7 col-sm-12">
             <h2 class="large-event-date" style="text-transform: uppercase"><?php echo format_date($event_details->event->date, 'F d, Y', $event_details->event->timezone->tz) ?></h2>
             <div class="event-detail">
@@ -101,7 +132,11 @@ function event_detail_cards($id)
                     <li><strong>Venue: </strong><?php echo $event_details->event->venue->name ?></li>
                     <li><strong>City: </strong><?php echo $event_details->event->venue->city ?>, <?php echo $event_details->event->venue->state ?></li>
                     <li><strong>Country: </strong><?php echo $event_details->event->venue->country_name ?></li>
-                    <li><strong>Directions: </strong><a href="">Google Maps</a></li>
+                    <li><strong>Directions: </strong>
+                            <a href="<?php echo yahoo_maps_url($event_details->event->venue)?>" target="_blank">Yahoo! Maps</a> /
+                            <a href="<?php echo google_maps_url($event_details->event->venue) ?>" target="_blank">Google Maps</a> /
+                            <a href="<?php echo map_quest_url($event_details->event->venue) ?>" target="_blank">MapQuest</a>
+                        </li>
                 </ul>
                 <?php foreach ($event_details->event->links as $link) {?>
                 <a class="btn btn-primary" href="<?php echo $link->url?>">Buy Tickets</a>
