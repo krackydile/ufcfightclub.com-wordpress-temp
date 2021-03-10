@@ -26,7 +26,7 @@ get_header(); ?>
 									<div class="album-thumbnail-inner">
 										
 											<?php 
-												the_post_thumbnail();
+												the_post_thumbnail('spartkartSquare');
 											?>
 									</div>
 								</div>

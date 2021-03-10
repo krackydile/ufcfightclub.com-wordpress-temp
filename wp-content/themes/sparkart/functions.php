@@ -71,9 +71,11 @@ function event_card($event)
     <div class="card events-card">
         <div class="card-body">
             <h6 class="card-subtitle mb-3"><?php echo format_date($event->date, 'd F', $event->timezone->tz) ?></h6>
-            <h5 class="card-title mb-3"><?php echo $event->venue->name ?></h5>
-            <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
-                , <?php echo $event->venue->state ?></h6>
+            <div class="card-content">
+                <h5 class="card-title mb-3"><?php echo $event->venue->name ?></h5>
+                <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
+                    , <?php echo $event->venue->state ?></h6>
+            </div>
             <?php if ($event->links) { ?>
                 <a href="<?php echo $event->links[0]->url ?>" class="btn btn-primary">Buy Tickets</a>
             <?php } ?>
