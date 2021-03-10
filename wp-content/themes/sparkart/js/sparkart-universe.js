@@ -39,9 +39,12 @@ universejs.init(function (err, data) {
                 " </div>" +
                 "</div>";
         }
-
-        document.getElementById("presale-access-code-signin-text").style.display='none';
-        document.getElementById("presale-access-code-text").style.display='block';
+        if (document.getElementById("presale-access-code-signin-text") !== null) {
+            document.getElementById("presale-access-code-signin-text").style.display = 'none';
+        }
+        if (document.getElementById("presale-access-code-text") !== null) {
+            document.getElementById("presale-access-code-text").style.display = 'block';
+        }
 
     } else {
         if (document.getElementById("secondary-navigation-box") !== null) {
@@ -67,8 +70,12 @@ universejs.init(function (err, data) {
                 "</div>";
         }
 
-        document.getElementById("presale-access-code-text").style.display='none';
-        document.getElementById("presale-access-code-signin-text").style.display='block'
+        if (document.getElementById("presale-access-code-text") !== null) {
+           document.getElementById("presale-access-code-text").style.display = 'none';
+         }
+        if (document.getElementById("presale-access-code-signin-text") !== null) {
+           document.getElementById("presale-access-code-signin-text").style.display='block';
+        }
     }
 });
 
@@ -79,6 +86,10 @@ universejs.on('error', function (err) {
 
 universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
+    if (data.customer) {
+        let loadComments = require('universe-js/lib/disqus');
+        loadComments('carrieunderwood', universejs);
+    }
 });
 
 let tempUpcomingTourArray = [];
@@ -131,7 +142,7 @@ eventDetailBox = (containerId, type, data, pagination) => {
                        <h6 class="card-subtitle mb-4 event-venue">${item?.venue?.city}, ${item?.venue?.state}</h6>
                        </div>
                       ${item.links.length > 0 ? `
-                       <a href="${item?.links[0]?.url}" class="btn btn-primary">Buy Tickets</a>` : ``
+                       <a href="/events-details/?event=${item?.id}" class="btn btn-primary">Buy Tickets</a>` : ``
                 }
                        <a href="/events-details/?event=${item?.id}" class="btn btn-outline-primary">Meet & Greet</a>
                       </div>
