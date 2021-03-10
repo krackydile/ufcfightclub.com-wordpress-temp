@@ -7873,10 +7873,10 @@ small, .text_small {
       margin: 10px 20px; } }
   @media (min-width: 992px) and (min-width: 992px) and (max-width: 1199.98px) {
     .home .homepage-navbar .nav-item {
-      margin: 10px 30px; } }
+      margin: 10px 20px; } }
   @media (min-width: 992px) and (min-width: 1300px) {
     .home .homepage-navbar .nav-item {
-      margin: 10px 54px; } }
+      margin: 10px 30px; } }
 
 @media (min-width: 992px) {
     .home .homepage-navbar .navbar-nav {

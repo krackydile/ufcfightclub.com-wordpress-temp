@@ -162,12 +162,12 @@ small, .text_small {font-size: 0.8rem;}
         // Large devices (desktops, 992px and up)
         @media (min-width: 992px) and (max-width: 1199.98px) {
             .nav-item{
-               margin: 10px 30px;
+               margin: 10px 20px;
             } 
         }
         @media (min-width: 1300px) { 
           .nav-item{
-             margin: 10px 54px;
+             margin: 10px 30px;
           }
         }
         
