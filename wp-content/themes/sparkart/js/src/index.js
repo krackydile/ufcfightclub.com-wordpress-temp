@@ -9,6 +9,26 @@ import ClipboardJS from 'clipboard';
 import pagination from 'paginationjs';
 
 
+// custom Equal Height
+// 
+function sameheight(div){
+    /* Latest compiled and minified JavaScript included as External Resource */
+
+    var largest = 160;
+    var findHeight = 0;
+
+   //loop through all title elements
+    $(document).find(div).each(function(){
+      findHeight = $(this).height();
+      if(findHeight > largest){
+        largest = findHeight;
+      }  
+});
+
+    $(document).find(div).css({"height":findHeight+"px"});
+};
+// sameheight(".card-title");   
+
 // enable tab view by location
 var url = window.location.href;
 console.log(url);
@@ -152,10 +172,13 @@ jQuery(window).scroll(function ($) {
     if (jQuery(this).scrollTop() >= 61) {
         //actions...
         jQuery('.hnav').removeClass('homepage-navbar');
+        jQuery('.sticky-top').removeClass('site-header-no-shadow');
         // alert('do some action');
     } else {
         //actions...
         jQuery('.hnav').addClass('homepage-navbar');
+        jQuery('.sticky-top').addClass('site-header-no-shadow');
+
 
         // alert('some action in else');
 

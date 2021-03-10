@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Parisienne&display=swap);
 /**
  * Swiper 6.4.10
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -7759,12 +7760,15 @@ p {
 
 h1, h2, h3, h4, h5 {
   /*margin: 3rem 0 1.38rem;*/
-  font-family: 'Lato', sans-serif;
+  /*font-family: 'Lato', sans-serif;*/
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   line-height: 1.65; }
 
 p, span {
-  line-height: 1.65; }
+  line-height: 1.65;
+  color: #49504A;
+  font-weight: 500; }
 
 h1 {
   margin-top: 0;
@@ -7844,6 +7848,8 @@ small, .text_small {
     font-weight: bold; }
   .card.events-card .card-title {
     font-size: 20px; }
+  .card.events-card .card-content {
+    min-height: 106px; }
   .card.events-card .event-venue {
     font-weight: normal;
     font-size: 13px;
@@ -7867,10 +7873,10 @@ small, .text_small {
       margin: 10px 20px; } }
   @media (min-width: 992px) and (min-width: 992px) and (max-width: 1199.98px) {
     .home .homepage-navbar .nav-item {
-      margin: 10px 30px; } }
+      margin: 10px 20px; } }
   @media (min-width: 992px) and (min-width: 1300px) {
     .home .homepage-navbar .nav-item {
-      margin: 10px 54px; } }
+      margin: 10px 30px; } }
 
 @media (min-width: 992px) {
     .home .homepage-navbar .navbar-nav {
@@ -7881,18 +7887,18 @@ small, .text_small {
     margin-top: -62px; } }
 
 .site-footer .site-info p {
-  color: #D4DED4;
+  color: #F0F4F4;
   margin: 6px; }
 
-.site-footer .site-info ul li a {
-  color: #D4DED4; }
+.site-footer .site-info ul li a span {
+  color: #F0F4F4; }
 
 .full-slide {
   width: 100%; }
 
 /*Button*/
 .btn {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   padding: 8px 22px; }
 
@@ -7901,7 +7907,8 @@ small, .text_small {
   border-color: #6E8776; }
 
 .btn-primary:hover {
-  background-color: #49504A; }
+  background-color: #49504A;
+  border-color: #49504A; }
 
 .btn-outline-primary {
   color: #6E8776;
@@ -7909,8 +7916,8 @@ small, .text_small {
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #6E8776;
-  border-color: #6E8776; }
+  background-color: #49504A;
+  border-color: #49504A; }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
@@ -7927,13 +7934,15 @@ small, .text_small {
     background: #B7C8B7;
     border-radius: 25px;
     display: block;
-    padding: 2px 28px;
+    padding: 5px 28px;
     color: #49504A;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    letter-spacing: 0.15em; }
 
 .btn-cta-outline {
   border: 2px solid #49504A;
-  padding: 4px 32px; }
+  letter-spacing: 0.15em;
+  padding: 7px 28px; }
 
 .btn-cta-primary:hover, .btn-cta-outline:hover {
   background: #49504A;
@@ -7944,7 +7953,8 @@ small, .text_small {
   color: #F0F4F4; }
 
 .block-heading {
-  font-family: Aurora;
+  font-family: 'Parisienne', cursive;
+  color: #49504A;
   /*  line-height: 100px;
   position: relative;*/ }
 
@@ -7952,7 +7962,7 @@ small, .text_small {
 .block-heading {
   overflow: hidden;
   text-align: center;
-  font-size: 61px;
+  font-size: 76px;
   padding: 14px; }
 
 .block-heading > span {
@@ -8460,10 +8470,65 @@ i.fa.angle-trigger {
     border-radius: 25px;
     border: 1px solid; }
 
+.text-capitalize {
+  text-transform: uppercase !important; }
+
+.account-header h1 {
+  color: #49504A;
+  font-size: 39px;
+  font-weight: 600; }
+
+.account-content-left {
+  border-top: 2px solid #6E8776;
+  margin: 40px 0px; }
+  .account-content-left h3 {
+    font-size: 18px;
+    margin-top: 52px;
+    font-weight: bold;
+    color: #49504A; }
+
+.account-form label {
+  color: #6E8776;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0px; }
+
+.account-form .form-control {
+  border-radius: 12px;
+  background: #E6EBEB;
+  border: none;
+  font-weight: 600; }
+
+.account-form .form-control:focus {
+  border: 2px solid #6E8776;
+  border-radius: 12px;
+  box-shadow: unset; }
+
+.shipping-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #6E8776; }
+
+.account-subscription-upgrade {
+  background: #6E8776; }
+  .account-subscription-upgrade .contest-header {
+    background: #49504A;
+    color: #F0F4F4; }
+  .account-subscription-upgrade .main-card {
+    background: #F0F4F4;
+    text-align: center;
+    border-radius: 25px;
+    padding: 20px; }
+  .account-subscription-upgrade .additional a {
+    color: #F0F4F4; }
+
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75); }
+
+header.site-header.site-header-no-shadow {
+  box-shadow: none; }
 
 .home header.site-header {
   box-shadow: none; }
@@ -8668,6 +8733,9 @@ header .nav-item {
   border: none;
   font-size: 10px;
   font-weight: 400; }
+
+.nav-link {
+  padding: 0.5rem 25px; }
 
 .banner {
   min-height: 350px; }

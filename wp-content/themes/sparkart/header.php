@@ -37,7 +37,7 @@
 <div id="page" class="hfeed site">
 	
 
-	<header class="site-header sticky-top">
+	<header class="site-header sticky-top site-header-no-shadow">
 		<?php 
 			get_template_part('partials/main', 'navigation');
 			if(!is_front_page()){
