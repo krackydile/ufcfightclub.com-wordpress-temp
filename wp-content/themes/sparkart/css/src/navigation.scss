@@ -1,7 +1,11 @@
+
 header.site-header{
 		-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
 		-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
 		box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+}
+header.site-header.site-header-no-shadow{
+	box-shadow: none;
 }
 .home{
 	
@@ -255,4 +259,7 @@ header .nav-item{
     border: none;
     font-size: 10px;
     font-weight: 400;
+}
+.nav-link{
+	padding: 0.5rem 25px
 }
