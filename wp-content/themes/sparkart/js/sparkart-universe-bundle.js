@@ -232,12 +232,7 @@ function linkify (fanclub, scope, processor) {
     var url = link ? link.getAttribute('href') : null;
     if (!url) return;
 
-    if (url.match('
-                  
-                  
-                  
-                  
-                  ')) {
+    if (url.match('login')) {
       event.preventDefault();
       module.exports.prompt(fanclub, url, processor);
     } else if (url.match('logout')) {
@@ -360,7 +355,6 @@ module.exports = {
     wnd.location.href = url;
   }
 };
-
 },{"dom-delegate":6,"query-string":72}],4:[function(require,module,exports){
 
 /**
@@ -537,7 +531,6 @@ Emitter.prototype.listeners = function(event){
 Emitter.prototype.hasListeners = function(event){
   return !! this.listeners(event).length;
 };
-
 
 },{}],5:[function(require,module,exports){
 /*jshint browser:true, node:true*/
@@ -8539,10 +8532,10 @@ eventDetailBox = (containerId, type, data, pagination) => {
                     <div class="col-lg-4 col-sm-12 col-xs-12">
                      <div class="card events-card">
                       <div class="card-body">
-                      
                       <h6 class="card-subtitle mb-3">${moment.tz(item?.date, item?.timezone?.tz).format('D MMMM')}</h6>
-                      <h5 class="card-title mb-3">${item?.venue?.name}</h5>
+                      <div class="card-content"><h5 class="card-title mb-3">${item?.venue?.name}</h5>
                        <h6 class="card-subtitle mb-4 event-venue">${item?.venue?.city}, ${item?.venue?.state}</h6>
+                       </div>
                       ${item.links.length > 0 ? `
                        <a href="/events-details/?event=${item?.id}" class="btn btn-primary">Buy Tickets</a>` : ``
                 }
