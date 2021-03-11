@@ -84,9 +84,7 @@ small, .text_small {font-size: 0.8rem;}
 
 }
 
-.heading-light{
-  color: $colorLightest;
-}
+
 /*Card section*/
 .card{
     margin-bottom: 20px;
@@ -269,7 +267,9 @@ small, .text_small {font-size: 0.8rem;}
   /*  line-height: 100px;
   position: relative;*/
 }
-
+.block-heading.heading-light > span{
+  color: $colorLightest !important;
+}
 /* headlines with lines */
 .block-heading{
      overflow: hidden;
@@ -346,6 +346,7 @@ small, .text_small {font-size: 0.8rem;}
 .cta-buttons {
   a{
     margin-right: 10px;
+    margin-bottom: 12px;
   }
 }
 .event-information-header{
