@@ -7813,9 +7813,6 @@ small, .text_small {
   text-transform: uppercase;
   border-radius: 25px; }
 
-.heading-light {
-  color: #F0F4F4; }
-
 /*Card section*/
 .card {
   margin-bottom: 20px;
@@ -7958,6 +7955,9 @@ small, .text_small {
   /*  line-height: 100px;
   position: relative;*/ }
 
+.block-heading.heading-light > span {
+  color: #F0F4F4 !important; }
+
 /* headlines with lines */
 .block-heading {
   overflow: hidden;
@@ -8016,7 +8016,8 @@ small, .text_small {
       padding: 0; }
 
 .cta-buttons a {
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-bottom: 12px; }
 
 .event-information-header h3 {
   color: #49504A;
