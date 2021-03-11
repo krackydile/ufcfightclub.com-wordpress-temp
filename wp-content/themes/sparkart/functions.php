@@ -184,9 +184,31 @@ function get_universe_links()
 add_action('wp_enqueue_scripts', 'sparkart__load_profile_scripts', 20, 2);
 function sparkart__load_profile_scripts()
 {
+    $url = home_url($_SERVER['REQUEST_URI']);
+    $url_parts = parse_url($url);
+    $host = $url_parts['port'] ? ($url_parts['host'] . ':' .  $url_parts['port']) : $url_parts['host'];
+
     wp_enqueue_script('underscore');
     wp_enqueue_script('universe', get_template_directory_uri() . '/js/sparkart-universe-bundle.js', [], '1.0', true);
-
+    // Global site tag (gtag.js) - AdWords: 806088113 (The HQ)
+    wp_enqueue_script('gatg-js', 'https://www.googletagmanager.com/gtag/js?id=AW-806088113', [], null);
+    wp_add_inline_script('gatg-js', "
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-806088113');
+  ");
+    wp_add_inline_script('gatg-js', "
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-617374-25']);
+    _gaq.push(['_setDomainName', '.' + '$host'.replace(/^www\./, '')]);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js' ?>';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+ ");
 }
 
 // remove wp version number from scripts and styles
