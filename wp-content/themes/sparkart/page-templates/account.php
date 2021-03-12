@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Template Name: Accounts
  */
@@ -8,7 +8,7 @@ if(have_posts()):
 	while(have_posts()):
 		the_post();
 ?>
-				    	
+
 <section class="page-section">
 	<div class="container">
 		<div class=" mt-4 mb-5"><span>&nbsp; </span></div>
@@ -19,53 +19,53 @@ if(have_posts()):
 				<div class="row">
 					<div class="col">
 						<div class="card event-detail-card">
-							
-							<div class="card-body pl-0 pr-0">
-								<div class="row">
-                                    
-									<div class="col-md-7 col-sm-12">
 
+							<div class="card-body pl-0 pr-0">
+                                <div id="success-message" style="display: none; text-transform: uppercase"></div>
+                                <div id="error-message" style="display: none;text-transform: uppercase"></div>
+								<div class="row">
+									<div class="col-md-7 col-sm-12">
 										<div class="event-information-header account-header">
 											<h1>My Account</h1>
 										</div>
 										<div class="event-detail account-content-left">
 											<h3>Update your account</h3>
 
-											<form class="account-form">
+											<form class="account-form" id="account-form" action="/account">
 											  <div class="form-group">
-											    <label for="current-email " class="text-capitalize">Current Email</label>
-											    <input type="text" class="form-control" id="current-email" >
+											    <label for="current-email" class="text-capitalize">Current Email</label>
+											    <input type="text" class="form-control" name="current_email" id="current-email" disabled="disabled" >
 											  </div>
 											  <div class="form-group">
-											    <label for="new-email " class="text-capitalize">New Email Address</label>
-											    <input type="text" class="form-control" id="new-email" >
+											    <label for="new-email" class="text-capitalize">New Email Address</label>
+											    <input type="text" class="form-control" name="email" id="new-email" autocomplete="off">
 											  </div>
 											  <div class="form-group">
-											    <label for="new-email " class="text-capitalize">First name</label>
-											    <input type="text" class="form-control" id="new-email" >
+											    <label for="first-name" class="text-capitalize">First name</label>
+											    <input type="text" class="form-control" name="first_name" id="first-name" >
 											  </div>
 											  <div class="form-group">
-											    <label for="last-email " class="text-capitalize">Last Name</label>
-											    <input type="text" class="form-control" id="last-email" >
+											    <label for="last-name " class="text-capitalize">Last Name</label>
+											    <input type="text" class="form-control" name="last_name" id="last-name" >
 											  </div>
 											  <div class="form-group">
 											    <label for="phone-number " class="text-capitalize">Phone number</label>
-											    <input type="text" class="form-control" id="phone-number" >
+											    <input type="text" class="form-control" name="phone_number" id="phone-number" >
 											  </div>
 											  <div class="form-group">
 											    <label for="new-password " class="text-capitalize">new password</label>
 											    <input type="password" class="form-control" id="new-password" >
 											  </div>
 											  <div class="form-group">
-											    <label for="repeat-new-email " class="text-capitalize">repeat new password</label>
-											    <input type="password" class="form-control" id="repeat-new-email" >
+											    <label for="repeat-new-password " class="text-capitalize">repeat new password</label>
+											    <input type="password" class="form-control" id="repeat-new-password" >
 											  </div>
 											  <div class="form-group">
 											    <label for="current-password " class="text-capitalize">Current password</label>
 											    <input type="password" class="form-control" id="current-password" >
 											  </div>
-											  
-											  <button type="submit" class="btn btn-primary">Submit</button>
+
+											  <button type="submit" class="btn btn-primary" id="account-submit">Submit</button>
 											</form>
 										</div>
 										<div class="event-detail account-content-left">
@@ -73,53 +73,45 @@ if(have_posts()):
 											<p class="shipping-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-											<form class="account-form">
-											  
+											<form class="account-form" id="shipping-form" action="/account/shipping">
+
 											  <div class="form-group">
-											    <label for="new-email " class="text-capitalize">First name</label>
-											    <input type="text" class="form-control" id="new-email" >
+											    <label for="shipping-first-name " class="text-capitalize">First name</label>
+											    <input type="text" class="form-control" name="first_name" id="shipping-first-name" >
 											  </div>
 											  <div class="form-group">
-											    <label for="last-email " class="text-capitalize">Last Name</label>
-											    <input type="text" class="form-control" id="last-email" >
+											    <label for="shipping-last-name " class="text-capitalize">Last Name</label>
+											    <input type="text" class="form-control" name="last_name" id="shipping-last-name" >
 											  </div>
 											  <div class="form-group">
-											    <label for="street-address " class="text-capitalize">Street Address</label>
-											    <input type="text" class="form-control" id="street-address" >
+											    <label for="shipping-street-address " class="text-capitalize">Street Address</label>
+											    <input type="text" class="form-control" name="address" id="shipping-street-address" >
 											  </div>
 											  <div class="form-group">
-											    <label for="apt-unit" class="text-capitalize">APT./Unit/Suite</label>
-											    <input type="text" class="form-control" id="apt-unit" >
+											    <label for="shipping-apt-unit" class="text-capitalize">APT./Unit/Suite</label>
+											    <input type="text" class="form-control" name="address_2" id="shipping-address-2" >
 											  </div>
 											  <div class="form-group">
-											    <label for="apt-unit" class="text-capitalize">APT./Unit/Suite</label>
-											    <input type="text" class="form-control" id="apt-unit" >
+											    <label for="shipping-city" class="text-capitalize">City</label>
+											    <input type="text" class="form-control" name="city" id="shipping-city" >
 											  </div>
 											  <div class="form-group">
-											    <label for="city" class="text-capitalize">City</label>
-											    <input type="text" class="form-control" id="city" >
-											  </div>
-											  <div class="form-group">
-											    <label for="apt-unit" class="text-capitalize">Country</label>
-											    <select class="form-control">
-											    	<option>United States</option>
+											    <label for="shipping-country" class="text-capitalize">Country</label>
+											    <select class="form-control" name="country" id="shipping-country">
 											    </select>
 
 											  </div>
 											  <div class="form-group">
-											    <label for="state" class="text-capitalize">State</label>
-											    <input type="text" class="form-control" id="state" >
+											    <label for="shipping-state" class="text-capitalize">State</label>
+											    <input type="text" class="form-control" name="state" id="shipping-state" >
 											  </div>
 											  <div class="form-group">
-											    <label for="zip" class="text-capitalize">Zip Code</label>
-											    <input type="text" class="form-control" id="zip" >
+											    <label for="shipping-zip" class="text-capitalize">Zip Code</label>
+											    <input type="text" class="form-control" name="postal_code" id="shipping-zip" >
 											  </div>
-											  <div class="form-group">
-											    <label for="size" class="text-capitalize">T-shirt Size</label>
-											    <input type="text" class="form-control" id="size" >
-											  </div>
-											  
-											  <button type="submit" class="btn btn-primary">Submit</button>
+                                                <div id="preferences"></div>
+
+											  <button type="submit" class="btn btn-primary"  id="shipping-submit">Submit</button>
 											</form>
 										</div>
 									</div>
@@ -130,26 +122,26 @@ if(have_posts()):
 											</div>
 											<div class="contest-body">
 												<div class="account-subscription-head">
-													
+
 													<h4 class="contest-title  text-capitalize">Subscription</h4>
-													<p>Carrie Underwood fan club</p>
+													<p id="plan-name"></p>
 												</div>
 												<div class="account-subscription-head">
-													
+
 													<h4 class="contest-title text-capitalize">Package Status</h4>
-													<p>Shipped on May 22,</p>
+													<p id="shipped-on"></p>
 												</div>
 												<div class="account-subscription-head">
-													
+
 													<h4 class="contest-title text-capitalize">Subscription Starts</h4>
-													<p>12/26/2021</p>
+													<p id="plan-start"></p>
 												</div>
 												<div class="account-subscription-head">
-													
+
 													<h4 class="contest-title text-capitalize">Subscription Expires</h4>
-													<p>12/26/2021</p>
+													<p id="plan-end"></p>
 												</div>
-												
+
 											</div>
 										</div>
 										<div class="panel-contest account-subscription-upgrade">
@@ -158,32 +150,16 @@ if(have_posts()):
 											</div>
 											<div class="contest-body">
 												<div class="row">
-													<div class=" col-sm-12 ">
-														<div class="main-card">
-															<h3 class="utransform column-heading">One Year Membership</h3>
-																<p></p>
-																<h1 class="column-text-price">$24.99</h1>
-																<a title="Join NOw" href="https://url.com" class="utransform btn btn-primary">Join NOw</a>
-														</div>
-														<p class="text-center additional mt-2"><a href=""></a></p>
-													</div>
-													<div class="col-sm-12 ">
-														<div class="main-card">
-															<h3 class="utransform column-heading">One Year Membership</h3>
-																<p>* Donation to C.A.T.S. Foundation</p>
-																<h1 class="column-text-price">$29.99</h1>
-																<a title="JOIN NOW + DONATE" href="javascript:void(0);" class="utransform btn btn-primary">JOIN NOW + DONATE</a>
-														</div>
-														<p class="text-center additional mt-2"><a href="http://catsfoundation.com">Learn more aobut The C.A.T.S Foundation</a></p>
-													</div>
-										
+
+                                                    <div id="subscription-plan"></div>
+
 												</div>
 											</div>
 
-										</div>	
+										</div>
 									</div>
 								</div>
-								
+
 							</div>
 
 						</div>
@@ -195,15 +171,15 @@ if(have_posts()):
 
 </div>
 
-		
+
 	</div>
 </section>
 
 
 
 
-<?php 
+<?php
 		endwhile;
 	endif;
-get_footer() 
+get_footer()
 ?>
