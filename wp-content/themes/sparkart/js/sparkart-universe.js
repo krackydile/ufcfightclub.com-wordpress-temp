@@ -32,7 +32,7 @@ universejs.init(function (err, data) {
                 "    </a>\n" +
                 " </li>" +
                 " <li class=\"nav-item\">\n" +
-                "     <a class=\"nav-link\" style=\"text-transform: none;text-decoration: underline\" href=\'" + data.fanclub.links.logout + "'\">\n" +
+                "     <a class=\"nav-link sign-out\" style=\"text-transform: none;text-decoration: underline\" href=\'" + data.fanclub.links.logout + "'\">\n" +
                 "       <span>(Sign Out)</span>\n" +
                 "     </a>\n" +
                 " </li>" +
