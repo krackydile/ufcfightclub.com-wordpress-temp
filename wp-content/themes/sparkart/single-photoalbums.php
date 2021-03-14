@@ -11,7 +11,7 @@ get_header(); ?>
 </section>
 	<div id="primary" class="content-area single-page-content single-photo-gallery-page">
 		<div class="container">
-			<?php 
+			<?php
 				if(function_exists('fw_ext_get_breadcrumbs')){
 
 					echo fw_ext_get_breadcrumbs( '/' ) ;
@@ -23,9 +23,9 @@ get_header(); ?>
 						<?php
 							// Start the Loop.
 							while ( have_posts() ) : the_post();
-								?>	
+								?>
 									<h1 class="text-center official-photo-title"><?php the_title(); ?></h1>
-								<?php 
+								<?php
 								$active_attachment_id = get_query_var('active');
 								// var_dump($active_attachment_id);
 								if($active_attachment_id == ''){
@@ -42,18 +42,30 @@ get_header(); ?>
 				</div>
 				<div class="row">
 					<div class="col">
-						<?php 
-							if ( comments_open() || get_comments_number() ) {
-									echo '<div class="card card-comment">';
-									comments_template();
-									echo '</div>';
+<!--						--><?php //
+//							if ( comments_open() || get_comments_number() ) {
+//									echo '<div class="card card-comment">';
+//									comments_template();
+//									echo '</div>';
+//
+//								}
+//						?>
+                        <div class="card card-comment">
+                            <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="smugmug-<?php echo get_the_ID(); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
+                                <h3>Comments</h3>
 
-								}
-						?>
+                                <div class="prompt">
+                                    <ul class="prompt__actions actions">
+                                        <li class="prompt__actions-item"><a class="prompt__actions-link action joincomment" href="/join">Join Today to Post Comments</a></li>
+                                        <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
-			
+
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php
