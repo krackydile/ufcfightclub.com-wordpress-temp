@@ -7,6 +7,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area single-page-content">
 		<div class="container">
+			<?php 
+				if(function_exists('fw_ext_get_breadcrumbs') && is_help_category_article(get_post())){
+
+					echo fw_ext_get_breadcrumbs( '/' ) ;
+				}
+			?>
 			<div id="content" class="site-content " role="main">
 				<div class="row">
 					<div class="col">
@@ -31,12 +37,17 @@ get_header(); ?>
 									echo '</div>';
 
 								}
+								
 							endwhile;
 						?>
 					</div>
 				</div>
 			</div>
-			
+			<?php 
+				if(is_help_category_article(get_post())){
+					fw_print_more_help();
+				}
+			?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php

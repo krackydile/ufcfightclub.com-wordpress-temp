@@ -615,8 +615,8 @@ function carrieunderwood_fm_add_custom_urls() {
   // add_rewrite_rule("^music/$dps/$dps/?$", 'index.php?post_type=release&name=$matches[2]'); // single-release.php
 
   // /help => page-help.php (default)
-  // add_rewrite_rule("^help/$dps/?$", 'index.php?category_name=support'); // category-support.php
-  // add_rewrite_rule("^help/$dps/$dps/?$", 'index.php?name=$matches[2]'); // single-category-support.php (see single_template action below)
+  add_rewrite_rule("^help/$dps/?$", 'index.php?category_name=support'); // category-support.php
+  add_rewrite_rule("^help/$dps/$dps/?$", 'index.php?name=$matches[2]'); // single-category-support.php (see single_template action below)
 
   // Uncomment the following line when developing the rewrite rules
   // flush_rewrite_rules(); // DO NOT COMMIT THIS LINE
@@ -626,9 +626,14 @@ function carrieunderwood_fm_add_custom_urls() {
  * url consistancy
  */
 add_filter('post_link' , 'special_default_blog_slug' , 10 , 3);
+
 function special_default_blog_slug($permalink, $post, $leavename){
-	if($post->post_type = 'post'){
+	
+	if($post->post_type == 'post' && !is_help_category_article($post)){
 		return str_replace(get_bloginfo('wpurl').'/', get_bloginfo('wpurl').'/news/', $permalink);
+	}elseif($post->post_type == 'post' && is_help_category_article($post)){
+		return str_replace(get_bloginfo('wpurl').'/', get_bloginfo('wpurl').'/help/', $permalink);
+
 	}
 	return $permalink;
 }
@@ -643,3 +648,27 @@ function _filter_mod_main_query( $query ) {
 
 	}
 }
+
+// Add custom text/textarea attachment field
+function add_custom_text_field_to_attachment_fields_to_edit( $form_fields, $post ) {
+    $text_field = get_post_meta($post->ID, 'smugmug_id', true);
+    $form_fields['smugmug_id'] = array(
+        'label' => 'Smugmug Id',
+        'input' => 'text', // you may alos use 'textarea' field
+        'value' => $text_field,
+        'helps' => 'Enter your smugmug identifier'
+    );
+    return $form_fields;
+}
+add_filter('attachment_fields_to_edit', 'add_custom_text_field_to_attachment_fields_to_edit', null, 2); 
+
+// Save custom checkbox attachment field
+function save_custom_checkbox_attachment_field($post, $attachment) {  
+    if( isset($attachment['smugmug_id']) ){  
+        update_post_meta($post['ID'], 'smugmug_id', sanitize_text_field( $attachment['smugmug_id'] ) );  
+    }else{
+         delete_post_meta($post['ID'], 'smugmug_id' );
+    }
+    return $post;  
+}
+add_filter('attachment_fields_to_save', 'save_custom_checkbox_attachment_field', null, 2);

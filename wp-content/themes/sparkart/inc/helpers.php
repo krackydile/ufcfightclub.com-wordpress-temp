@@ -382,7 +382,7 @@ function fw_get_social_list($args = []){
 	// merge default with the provided attributes
 	$args = array_merge($defaults, $args);
 	// set template for li
-	$list_template = '<li class="'.$args['item_class'].'"><a href="%s" ><i class="%s"></i></a></li>';
+	$list_template = '<li class="'.$args['item_class'].'"><a href="%s" target="_blank"><i class="%s"></i></a></li>';
 	// declare empty html 
 	$list = '';
 	// find the social handles from the general settings
@@ -507,12 +507,12 @@ function fw_print_news_card($post){
 	$template = '<div class="card">
 							    <div class="card-body">
 								    <h6 class="card-subtitle mb-2">%s</h6>
-								    <h5 class="card-title">%s</h5>
+								    <h5 class="card-title"><a href="%s">%s</a></h5>
 								    <p class="card-text">%s</p>
 								    <a href="%s" class="btn btn-primary">Read More</a>
 								</div>
 							</div> ';
-	return sprintf($template, get_the_date('F j,Y', $post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
+	return sprintf($template, get_the_date('F j,Y', $post), get_permalink($post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
 
 }
 function fw_get_latest_posts($limit = 6){
@@ -527,9 +527,11 @@ function fw_get_latest_posts($limit = 6){
 }
 function fw_get_inner_category_tabs($cat_id = null){
 	$selected_categories = fw_get_db_settings_option('archive_active_categories');
-	// var_dump();
+	// var_dump($selected_categories);
 	// die();
-	$categories = get_categories(['term_taxonomy_id' => $selected_categories]);
+	$categories = get_categories(['include' => $selected_categories, 'orderby' => 'include']);
+	// var_dump($selected_categories);
+
 	?>
 	<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 		<li class="nav-item">
@@ -576,16 +578,16 @@ function fw_show_album_buy_links($post_id){
 	if($main_link != ''){
 
 	echo '<p class="mt-2">
-			<a href="'.$main_link.'" class="btn btn-primary">Carrie Underwood Store</a>
+			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Carrie Underwood Store</a>
 			</p>';
 	}
 
 	echo '<p class="mt-2">';
 	if($itunes != ''){
-		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes"><i class="fa fa-apple"></i> iTUNES</a>';
+		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
 	}
 	if($amazon != ''){
-		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
 	}
 	echo '</p>';
 }
@@ -627,9 +629,17 @@ function _filter_my_custom_breadcrumbs_items( $items ) {
 	    		'type' => 'single page'
     		];
     	}
+    }elseif($object->post_type =='post' && is_help_category_article($object)){
+    	$items[0] = [
+    		'name' => 'Help',
+    		'url' => get_bloginfo('wpurl').'/help',
+    		'type' => 'archive_page'
+    	];
+    	$items[1] = $items[2];
+    	unset($items[2]);
     }
-	// var_dump($items);
-    return $items;
+    // var_dump($items);
+	return $items;
 }
 add_filter( 'fw_ext_breadcrumbs_build', '_filter_my_custom_breadcrumbs_items' );
 function fw_embed_shortcode($content){
@@ -797,4 +807,39 @@ function get_media_page(){
 	if($media != ''){
 		return get_permalink($media[0]);
 	}
+}
+function fw_print_more_help(){
+	?>
+	<section class="sparkart-more-notice">
+		<div class="container container-more-notice">
+
+			<div class="row">
+				<div class="col">
+					<h2><?php echo fw_get_db_settings_option('more_notice_heading'); ?></h2>
+					<?php echo fw_get_db_settings_option('more_notice_content'); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+}
+function is_help_category_article($post){
+	$category = get_the_category($post->ID);
+	$help_categories = fw_get_db_settings_option('help_categories_login');
+	$category_ids = array_map(function($cat){
+		return $cat->term_id;
+	}, $category);
+	$helpIntersect = array_intersect($category_ids, $help_categories);
+	if(!empty($helpIntersect)){
+		return true;
+	}
+	return false;
+}
+function tracks_no_lyrics($tracks){
+	// Filter array to find the number of elements
+	return count(array_filter($tracks, function($track){
+		if($track['track_lyrics'] != ''){
+			return true;
+		}
+	}));
 }

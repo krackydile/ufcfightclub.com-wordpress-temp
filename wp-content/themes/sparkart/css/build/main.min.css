@@ -7815,7 +7815,7 @@ small, .text_small {
 
 /*Card section*/
 .card {
-  margin-bottom: 20px;
+  margin-bottom: 31px;
   padding: 0;
   background: #F0F4F4;
   border: none;
@@ -7834,6 +7834,10 @@ small, .text_small {
   font-size: 31px;
   color: #49504A;
   font-weight: bold; }
+  .card-title a {
+    font-size: 31px;
+    color: #49504A;
+    font-weight: bold; }
 
 .card-text {
   font-size: 20px;
@@ -7962,7 +7966,8 @@ small, .text_small {
 .block-heading {
   overflow: hidden;
   text-align: center;
-  font-size: 76px;
+  /*font-size: $fontSize76;*/
+  font-size: 61px;
   padding: 14px; }
 
 .block-heading > span {
@@ -8522,6 +8527,90 @@ i.fa.angle-trigger {
     padding: 20px; }
   .account-subscription-upgrade .additional a {
     color: #F0F4F4; }
+
+.carrie-alert-box {
+  background: #49504A;
+  padding: 31px;
+  color: #E5EBE5;
+  text-align: center; }
+  .carrie-alert-box h4 {
+    font-weight: 600;
+    font-size: 20px; }
+  .carrie-alert-box p {
+    text-align: center;
+    color: #fff; }
+    .carrie-alert-box p a {
+      color: #fff;
+      text-decoration: underline; }
+
+.sparkart-important-nontices {
+  background: #6E8776;
+  text-align: center;
+  color: #fff;
+  padding: 61px 0px; }
+  @media (min-width: 768px) {
+    .sparkart-important-nontices {
+      padding: 61px 165px; } }
+  .sparkart-important-nontices h2 {
+    font-size: 35px;
+    font-weight: 600;
+    color: #E5EBE5;
+    margin-bottom: 20px; }
+  .sparkart-important-nontices h3 {
+    font-size: 16px;
+    text-decoration: underline;
+    color: #E5EBE5; }
+  .sparkart-important-nontices p {
+    text-align: center;
+    font-size: 13px;
+    color: #E5EBE5;
+    margin: 31px;
+    letter-spacing: 0.25px;
+    line-height: 27px; }
+
+.sparkart-more-notice {
+  padding: 4px; }
+  .sparkart-more-notice .container-more-notice {
+    background: #313531;
+    border-radius: 25px;
+    margin-top: 46px;
+    margin-bottom: 46px;
+    color: #E5EBE5;
+    text-align: center;
+    padding: 32px 12px; }
+    @media (min-width: 768px) {
+      .sparkart-more-notice .container-more-notice {
+        padding: 100px; } }
+    .sparkart-more-notice .container-more-notice h2 {
+      font-size: 25px;
+      font-weight: 600;
+      color: #E5EBE5;
+      letter-spacing: 0.15em; }
+      @media (min-width: 768px) {
+        .sparkart-more-notice .container-more-notice h2 {
+          font-size: 39px; } }
+    .sparkart-more-notice .container-more-notice p {
+      color: #E5EBE5;
+      font-size: 16px; }
+      .sparkart-more-notice .container-more-notice p a {
+        color: #E5EBE5;
+        text-decoration: underline; }
+
+.container-help-articles {
+  margin-top: 52px;
+  background: #F0F4F4;
+  border-radius: 25px;
+  padding: 32px 12px; }
+  @media (min-width: 768px) {
+    .container-help-articles {
+      padding: 100px; } }
+  .container-help-articles p a {
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 1px; }
+
+.page-section {
+  margin-bottom: 60px; }
 
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);

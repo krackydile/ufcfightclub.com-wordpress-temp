@@ -93,6 +93,10 @@ get_header(); ?>
 											endif;
 										?>
 									</ul>
+									<?php 
+										if(!empty($tracks) && tracks_no_lyrics($tracks)!== 0):
+											
+									?>
 									<section class="lyrics">
 										
 										<h3 class="lyrics-section-heading">Lyrics</h3>
@@ -127,7 +131,7 @@ get_header(); ?>
 										  
 										</div>
 									</section>
-									
+									<?php endif; ?>
 								</div>
 								
 							</div> 
