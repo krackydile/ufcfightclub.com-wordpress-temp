@@ -32,6 +32,24 @@ $options = array(
 							'unyson' ),
 						'limit' => 1
 					),
+					'help_categories_logout'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Help Categories(Logout)', 'unyson' ),
+						'population' => 'taxonomy',
+						'source'     => 'category',
+						'desc'       => __( 'Help categories for visitors',
+							'unyson' ),
+						// 'limit' => 1
+					),
+					'help_categories_login'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Help Categories(Login)', 'unyson' ),
+						'population' => 'taxonomy',
+						'source'     => 'category',
+						'desc'       => __( 'Help categories for members',
+							'unyson' ),
+						// 'limit' => 1
+					),
 
 				)
 			),
