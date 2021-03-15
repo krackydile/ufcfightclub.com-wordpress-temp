@@ -24,18 +24,18 @@
                             <!--											<a class="btn btn-primary" href="javascript:void(0);">Buy Tickets</a>-->
                             <!--										</div>-->
                             <!--									</div>-->
-                            <!--									<div class="col-md-5 col-sm-12">-->
-                            <!--										<div class="panel-contest">-->
-                            <!--											<div class="contest-header text-center">-->
+                            									<div class="col-md-5 col-sm-12">
+                            										<div class="panel-contest">
+                            											<div class="contest-header text-center">
                             <!--												Contest-->
-                            <!--											</div>-->
-                            <!--											<div class="contest-body">-->
-                            <!--												<h4 class="contest-title">CARRIE UNDERWOOD FAN CLUB MEET & GREET</h4>-->
-                            <!--												<p>Contest Edns 8/13/21 12:00am CDT</p>-->
-                            <!--												<a class="btn btn-outline-secondary">Enter Now</a>-->
-                            <!--											</div>-->
-                            <!--										</div>-->
-                            <!--									</div>-->
+                            											</div>
+                            											<div class="contest-body">
+                            												<h4 class="contest-title">CARRIE UNDERWOOD FAN CLUB MEET & GREET</h4>
+                            												<p>Contest Edns 8/13/21 12:00am CDT</p>
+                            												<a class="btn btn-outline-secondary">Enter Now</a>
+                            											</div>
+                            										</div>
+                            									</div>
                         </div>
                         <div class="card-comment-event">
                             <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="universe-event-<?php echo $_GET['event'] ?>" data-disqus-title="Events · The Official Carrie Underwood Fan Club">

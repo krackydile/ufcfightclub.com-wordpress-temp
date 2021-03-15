@@ -221,13 +221,13 @@ eventDetailBox = (containerId, type, data, pagination) => {
                      <div class="card events-card">
                       <div class="card-body">
                       <h6 class="card-subtitle mb-3">${moment.tz(item?.date, item?.timezone?.tz).format('D MMMM')}</h6>
-                      <div class="card-content"><h5 class="card-title mb-3">${item?.venue?.name}</h5>
+                      <div class="card-content"><h5 class="card-title mb-3"><a href="/events-details/?event=${item?.id}" class="" target="_blank">${item?.venue?.name}</a></h5>
                        <h6 class="card-subtitle mb-4 event-venue">${item?.venue?.city}, ${item?.venue?.state}</h6>
                        </div>
                       ${item.links.length > 0 ? `
-                       <a href="/events-details/?event=${item?.id}" class="btn btn-primary">Buy Tickets</a>` : ``
+                       <a href="/events-details/?event=${item?.id}" class="btn btn-primary" target="_blank">Buy Tickets</a>` : ``
                 }
-                       <a href="/events-details/?event=${item?.id}" class="btn btn-outline-primary">Meet & Greet</a>
+                       <a href="/events-details/?event=${item?.id}" class="btn btn-outline-primary" target="_blank">Meet & Greet</a>
                       </div>
                      </div>
                     </div>`
