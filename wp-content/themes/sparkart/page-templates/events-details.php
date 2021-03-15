@@ -31,6 +31,7 @@ get_header();
 								'post_type' => 'photoalbums',
 								'numberposts' => get_option('posts_per_page')
 							]);
+
 							// $official_photos = WP_Query( $args )
 							// var_dump($official_photos);
 
@@ -63,12 +64,18 @@ get_header();
 							endif
 						?>
 					</div>
+					<?php 
+						if(wp_count_posts('photoalbums') > get_option('posts_per_page')):
+					?>
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">
 								
 								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);" data-load-type="album-photos" data-page="1" data-type="photoalbums" data-target="#albums-row">Load More</a>
 							</div>
 						</div>
+					<?php 
+						endif;
+					?>
 				</div>
 				<div class="tab-pane fade " id="official-videos" role="tabpanel" aria-labelledby="pills-home-tab">
 					<div class="row" id="video-row">
@@ -106,12 +113,18 @@ get_header();
 							endif;
 						?>
 					</div>
+					<?php 
+						if(wp_count_posts('videos') > get_option('posts_per_page')):
+					?>
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">
 								
 								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);"  data-page="1" data-type="videos" data-target="#video-row">Load More</a>
 							</div>
 						</div>
+					<?php 
+						endif;
+					?>
 				</div>
 			</div>
 

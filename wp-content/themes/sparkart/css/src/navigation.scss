@@ -34,7 +34,13 @@ header.site-header.site-header-no-shadow{
 .navbar-brand{
 	margin: 0 auto;
 }
+header #menu-main-navigation .nav-item{
+	
+	padding: 8px 16px;
+
+}
 header .nav-item{
+	
 	margin: 10px 6px;
 }
 .nav-item{
@@ -58,10 +64,14 @@ header .nav-item{
 .nav-item.active .nav-link {
 	border-bottom: 2px solid $colorMild;
 }
-.nav-item:not(.active):hover .nav-link{
+.nav-item:not(.active):hover{
 	background: $hoverBackgroundColor;
 	border-radius: 25px;
 }
+/*.nav-item:not(.active):hover .nav-link{
+	background: $hoverBackgroundColor;
+	border-radius: 25px;
+}*/
 .dropdown:hover>.dropdown-menu {
   	display: block;
     margin-top: 0;
@@ -83,12 +93,17 @@ header .nav-item{
 	}
 }
 
-.site-footer .nav-item:not(.active):hover .nav-link {
-    background: transparent;
-    border-radius: unset;
-    color: $colorDark;
-    
-}
+.site-footer .nav-item:not(.active):hover{
+	background: transparent;
+		
+	.nav-link {
+	    background: transparent;
+	    border-radius: unset;
+	    color: $colorDark;
+	    
+	}
+} 
+
 /* hide close when burger shown */
    .navbar-toggler.collapsed .close-icon {
       display: none;
@@ -225,8 +240,9 @@ header .nav-item{
 @include media-breakpoint-up(md) {  
 
 	.navbar-expand-lg .navbar-nav .nav-link{
-		padding-left: 1.2em;
-		padding-right: 1.3em;
+		/*padding-left: 1.2em;
+		padding-right: 1.3em;*/
+		padding:0;
 	}
 }
 .nav-pills .nav-item:hover .nav-link.active {
@@ -262,4 +278,28 @@ header .nav-item{
 }
 .nav-link{
 	padding: 0.5rem 25px
+}
+
+#secondary-navigation-box{
+	.nav-link{
+		span{
+			color: $colorLightest;
+		}
+
+	}
+	.nav-item:hover{
+		background: unset;
+		span{
+			color: $colorLightest;
+		}
+
+	}
+}
+#secondary-navigation-box {
+	.secondary-emphasis-button a span{
+		color: $colorMild;
+	}	
+	.secondary-emphasis-button.nav-item:hover span{
+		color: $colorMild;
+	}
 }
