@@ -2,9 +2,9 @@
 get_header();
 ?>
 
-<section class="news-tabs py-5">
+<section class="news-tabs">
 	<div class="container">
-		<h3 class="block-heading text-center mt-4 mb-5"><span>News </span></h3>
+		<h3 class="block-heading text-center my-4 "><span>News </span></h3>
 
 		<div class="row">
 			<div class="col">

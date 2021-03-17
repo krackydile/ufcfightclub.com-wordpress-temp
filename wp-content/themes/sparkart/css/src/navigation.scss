@@ -35,8 +35,11 @@ header.site-header.site-header-no-shadow{
 	margin: 0 auto;
 }
 header #menu-main-navigation .nav-item{
-	
-	padding: 8px 16px;
+	padding: 0;
+	@include media-breakpoint-up(md) { 
+
+		padding: 8px 16px;
+	}
 
 }
 header .nav-item{
@@ -52,9 +55,17 @@ header .nav-item{
 		color: $colorDark;
 		letter-spacing: 0.15em;
 		font-size: 16px;
-		font-weight: 600;
+
 		text-transform: uppercase;
 		text-align: center;
+		span{
+		
+				font-weight: 600;
+			@include media-breakpoint-up(md) { 
+				font-weight: 500;
+
+			}
+		}
 	}
 }
 .navbar-light .navbar-nav .nav-link{
@@ -62,11 +73,14 @@ header .nav-item{
 	
 }
 .nav-item.active .nav-link {
-	border-bottom: 2px solid $colorMild;
+	border-bottom: 2px solid $colorLight;
 }
 .nav-item:not(.active):hover{
-	background: $hoverBackgroundColor;
-	border-radius: 25px;
+	background: none;
+	@media (min-width: 768px) { 
+		background: $hoverBackgroundColor;
+		border-radius: 25px;
+	}
 }
 /*.nav-item:not(.active):hover .nav-link{
 	background: $hoverBackgroundColor;
@@ -81,7 +95,9 @@ header .nav-item{
     border: none;
     border-radius: 16px;
 }
-
+.nav-pills .nav-link{
+	font-weight: 600;
+}
 .nav-pills .nav-link.active{
 	background: $colorDarkest;
 	color: $colorLightest;
@@ -148,11 +164,12 @@ header .nav-item{
 		}
 
 		.nav-item{
-			margin: 6px 0px;
+		/*	margin-right: 0;*/
+
+			margin: 6px ;
 			@include media-breakpoint-up(lg) {  
 				margin: 6px ;
 			}
-			margin-right: 0;
 			a{
 				font-size: 12px;
 				color: #fff;
@@ -173,10 +190,15 @@ header .nav-item{
 
 	a{
 		    color: #fff;
-		    padding: 8px 16px;
+		    padding: 2px;
+		    
 		    font-weight: 300;
 		    font-size: 12px;
-		
+		span{
+		    	display:block;
+		        padding: 9px 10px;
+
+		    }
 	}
 }
 .secondary-emphasis-button {
@@ -184,15 +206,17 @@ header .nav-item{
 	border-radius: 25px;
 	a{
 		    color: #fff;
-		    padding: 8px 3px;
+		    padding: 2px;
 
 		    font-weight: 300;
 		    font-size: 12px;
 		    span{
+		    	display:block;
 		        background: #fff;
 			    color: #000;
 			    border-radius: 25px;
-			    padding: 8px 10px;
+			    padding: 9px 10px;
+
 		    }
 	}
 }
@@ -251,15 +275,35 @@ header .nav-item{
     
 }
 .dropdown:hover > .dropdown-menu{
-	padding: 48px 28px ;
-	background: $colorLightest;	
+	padding: 0;
+	@include media-breakpoint-down(sm) { 
+		.nav-item{
+			margin:5px !important;
+			padding: 0 !important;
+			a{
+				background: transparent !important;
+			}
+		}
+		span{
+			font-size: $fontSize13;
+			color: $colorMild;
+			font-weight: bold;
+		}
+	}
+	@include media-breakpoint-up(md) {  
+
+		padding: 30px 17px ;
+		background: $colorLightest;	
+
+	}
 }
 .home .homepage-navbar .dropdown:hover > .dropdown-menu .nav-item{
 	margin: 10px 6px;
 }
 .dropdown-item{
 	
-    padding: 0.5em 1.2em;
+    /*padding: 0.5em 1.2em;*/
+    padding: 0;
 }
 .dropdown-item:hover, .dropdown-item:focus{
 	background: #DFE3E3;
@@ -288,18 +332,22 @@ header .nav-item{
 
 	}
 	.nav-item:hover{
-		background: unset;
 		span{
-			color: $colorLightest;
+			color: $colorMild;
+
 		}
 
 	}
 }
 #secondary-navigation-box {
 	.secondary-emphasis-button a span{
-		color: $colorMild;
+		color: $colorDark;
 	}	
 	.secondary-emphasis-button.nav-item:hover span{
-		color: $colorMild;
+		color: $colorDark;
 	}
+}
+@include media-breakpoint-up(md) {  
+	/* I really dont want to do this, but i have limited choice so i went for it.*/
+	
 }

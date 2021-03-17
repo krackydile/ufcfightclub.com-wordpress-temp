@@ -9,12 +9,16 @@ get_header();
 				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading text-center mt-4 mb-5"><span>Media</span></h3>
+		<h3 class="block-heading text-center my-4"><span>Media</span></h3>
 		
 		<div class="row">
 			<div class="col-12">
 				<nav class="text-center mb-5">
-					<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
+					<select class="form-control select-pills">
+						  <option data-toggle="pill" value="#official-photos" href="#official-photos" role="tab" aria-controls="official-photos" aria-selected="true">Official Photos</option>
+						  <option data-toggle="pill" value="#official-videos" href="#official-videos" role="tab" aria-controls="official-videos" aria-selected="true">Official Videos</option>
+					</select>
+					<ul class="event-pills nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link active" id="pills-home-tab" href="#official-photos" role="tab" aria-controls="pills-home"  data-toggle="pill" aria-selected="true">Official Photos</a>
 						</li>
@@ -65,7 +69,8 @@ get_header();
 						?>
 					</div>
 					<?php 
-						if(wp_count_posts('photoalbums') > get_option('posts_per_page')):
+						// var_dump(wp_count_posts('photoalbums'));
+						if(wp_count_posts('photoalbums')->publish > get_option('posts_per_page')):
 					?>
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">
@@ -114,7 +119,7 @@ get_header();
 						?>
 					</div>
 					<?php 
-						if(wp_count_posts('videos') > get_option('posts_per_page')):
+						if(wp_count_posts('videos')->publish > get_option('posts_per_page')):
 					?>
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">

@@ -11247,7 +11247,18 @@ const universejs = require('universe-js')({environment: 'production', key: '3af6
 
 universejs.init(function (err, data) {
     if (err) throw err;
-
+    if(data.customer){
+        // show protected-help
+        if ( document.getElementById('protected-help') !== null ){
+            document.getElementById('protected-help').classList.remove('hide');
+        }
+    }else{
+        // show unprotected-help
+        if (document.getElementById("unprotected-help") !== null){
+            document.getElementById('unprotected-help').classList.remove('hide');
+        }
+    }
+    
     /* Checks if the page is login protected and redirects to join page */
     if (document.getElementById("loader-wrapper") !== null) {
         if (!data.customer) {
@@ -11263,7 +11274,7 @@ universejs.init(function (err, data) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
                 " <li class=\"nav-item\">\n" +
-                "    <a class=\"nav-link\" href=\"/join\">\n" +
+                "    <a class=\"nav-link\" href=\"/join\" style=\"padding-top: 12px;\">\n" +
                 "       <span>Message Board</span>\n" +
                 "    </a>\n" +
                 " </li>" +
@@ -11273,7 +11284,7 @@ universejs.init(function (err, data) {
                 "    </a>\n" +
                 " </li>" +
                 " <li class=\"nav-item\">\n" +
-                "     <a class=\"nav-link sign-out\" style=\"text-transform: none;text-decoration: underline\" href=\'" + data.fanclub.links.logout + "'\">\n" +
+                "     <a class=\"nav-link sign-out\" style=\"padding: 0.5rem 12px;padding-top: 12px;text-transform: none;text-decoration: underline\" href=\'" + data.fanclub.links.logout + "'\">\n" +
                 "       <span>(Sign Out)</span>\n" +
                 "     </a>\n" +
                 " </li>" +
@@ -11283,7 +11294,7 @@ universejs.init(function (err, data) {
             document.getElementById("protected-box").innerHTML = "" +
                 "<div class=\"accesscode protected block-protected\">" +
                 " <div class=\"input-group my-2\">" +
-                "  <input type=\"text\" class=\"form-control\" placeholder=\"Event Code\" id=\"event-code-field\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\" value=" + data.customer.subscription.affiliates[0].codes[0] + ">"+
+                "  <input readonly=\"readonly\" type=\"text\" class=\"form-control\" placeholder=\"Event Code\" id=\"event-code-field\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\" value=" + data.customer.subscription.affiliates[0].codes[0] + ">"+
                 "  <button class=\"btn btn-outline-secondary clipboard-button\" type=\"button\" id=\"button-addon2\" data-clipboard-target=\"#event-code-field\"><i class=\"fa fa-copy\"></i></button>" +
                 " </div>" +
                 "</div>";

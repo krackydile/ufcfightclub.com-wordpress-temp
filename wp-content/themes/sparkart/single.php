@@ -37,6 +37,8 @@ get_header(); ?>
 //									echo '</div>';
 //
 //								}
+								if ( comments_open() || get_comments_number() ) {
+
                             ?>
                                 <div class="card card-comment">
                                     <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="wordpress-<?php echo get_post_field( 'post_name', get_post() ); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
@@ -51,6 +53,7 @@ get_header(); ?>
                                     </div>
                                 </div>
                             <?php
+                            	}
 
 							endwhile;
 						?>

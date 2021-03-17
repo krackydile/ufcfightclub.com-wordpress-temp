@@ -7,7 +7,7 @@
 ?>
 
 		</div><!-- #main -->
-		<div class="site-footer pt-5 pb-5">
+		<div class="site-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col">
