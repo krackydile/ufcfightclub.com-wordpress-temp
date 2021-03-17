@@ -141,7 +141,7 @@ function event_detail_cards($id)
                         </li>
                 </ul>
                 <?php foreach ($event_details->event->links as $link) {?>
-                <a class="btn btn-primary" href="<?php echo $link->url?>">Buy Tickets</a>
+                <a class="btn btn-primary" href="<?php echo $link->url?>" target="_blank">Buy Tickets</a>
             <?php } ?>
             </div>
         </div>

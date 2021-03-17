@@ -65,6 +65,13 @@ small, .text_small {font-size: 0.8rem;}
 }
 .site-footer{
   background: $colorDarkest;
+  padding: 97px 0px;
+  img{
+    margin-bottom: 48px;
+  }
+  ul {
+    margin-top: 48px;
+  }
   
 }
 .site-header{
@@ -214,15 +221,21 @@ small, .text_small {font-size: 0.8rem;}
 }
 /*Button*/
 .joincomment{
-  letter-spacing: 0.15em;
+    display:block;
+    padding: 0;
+    letter-spacing: 0.15em;
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
-        color: #F0F4F4;
+    color: #F0F4F4;
     border-radius: 25px;
-    padding: 16px 25px;
     margin: 10px;
+    @include media-breakpoint-up(lg) {  
+
+      display:inline;
+      padding: 16px 25px;
+    }
 }
 
 .btn {
@@ -274,14 +287,16 @@ small, .text_small {font-size: 0.8rem;}
       color: $colorDark;
       text-transform: uppercase;
       letter-spacing: 0.15em;
-
+      font-weight: 600;
     } 
 }
 .btn-cta-outline{
     border: 2px solid $colorDark;
     letter-spacing: 0.15em;
       padding: 7px 28px;
-
+      span{
+        font-weight: 600;
+      }
 
 }
 .btn-cta-primary:hover, .btn-cta-outline:hover{
@@ -382,7 +397,10 @@ small, .text_small {font-size: 0.8rem;}
 }
 .cta-buttons {
   a{
-    margin-right: 10px;
+
+    @include media-breakpoint-up(md) {  
+      margin-right: 40px;
+    }
     margin-bottom: 12px;
   }
 }
@@ -1103,6 +1121,7 @@ i.fa.angle-trigger{
 .prompt{
   text-align:center;
   .prompt__actions.actions{
+    padding:0;
     li{
       list-style:none;
     }
@@ -1121,4 +1140,17 @@ i.fa.angle-trigger{
   text-decoration:none;
   font-weight: 600;
   font-size: $fontSize20;
+}
+
+.btn.btn-lyrics:focus, .btn.btn-lyrics.focus{
+  box-shadow: none;
+}
+.accesscode input:focus{
+  box-shadow: none;
+  
+}
+.accesscode input::selection{ color:$colorDark; }
+
+.accesscode input[readonly]{
+  background: #fff;
 }

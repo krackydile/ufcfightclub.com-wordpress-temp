@@ -843,3 +843,34 @@ function tracks_no_lyrics($tracks){
 		}
 	}));
 }
+function fw_display_help_articles($articles, $id, $class){
+		echo '<section id="'.$id.'" class="'.$class.'">';
+		if(!empty($articles)):
+				foreach($articles as $loginCategoryID):
+					$loginCategory = get_category($loginCategoryID);
+		?>
+					<section class="help-category protected">
+						<h3><?php echo $loginCategory->name; ?></h3>
+						<div class="row">
+							<div class="col">
+								<?php 
+									$helpArticles = get_posts([
+										'numberposts' => -1,
+										'category' => $loginCategoryID
+									]);
+									foreach($helpArticles as $help):
+								?>
+									<p>
+										<a href="<?php echo get_permalink($help->ID); ?>"><?php echo $help->post_title; ?></a>
+									</p>
+								<?php 
+									endforeach;
+								?>
+							</div>
+						</div>
+					</section>
+		<?php 	
+				endforeach;
+			endif;
+		echo '</section>';
+}

@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Parisienne&display=swap);
 /**
- * Swiper 6.4.10
+ * Swiper 6.5.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -9,7 +9,7 @@
  *
  * Released under the MIT License
  *
- * Released on: January 29, 2021
+ * Released on: March 5, 2021
  */
 
 @font-face {
@@ -7797,7 +7797,12 @@ small, .text_small {
   background: #49504A; }
 
 .site-footer {
-  background: #313531; }
+  background: #313531;
+  padding: 97px 0px; }
+  .site-footer img {
+    margin-bottom: 48px; }
+  .site-footer ul {
+    margin-top: 48px; }
 
 .site-header {
   background: #F0F4F4; }
@@ -7907,6 +7912,8 @@ small, .text_small {
 
 /*Button*/
 .joincomment {
+  display: block;
+  padding: 0;
   letter-spacing: 0.15em;
   font-size: 16px;
   font-weight: 600;
@@ -7914,8 +7921,11 @@ small, .text_small {
   text-align: center;
   color: #F0F4F4;
   border-radius: 25px;
-  padding: 16px 25px;
   margin: 10px; }
+  @media (min-width: 992px) {
+    .joincomment {
+      display: inline;
+      padding: 16px 25px; } }
 
 .btn {
   font-size: 13px;
@@ -7959,12 +7969,15 @@ small, .text_small {
     padding: 5px 28px;
     color: #49504A;
     text-transform: uppercase;
-    letter-spacing: 0.15em; }
+    letter-spacing: 0.15em;
+    font-weight: 600; }
 
 .btn-cta-outline {
   border: 2px solid #49504A;
   letter-spacing: 0.15em;
   padding: 7px 28px; }
+  .btn-cta-outline span {
+    font-weight: 600; }
 
 .btn-cta-primary:hover, .btn-cta-outline:hover {
   background: #49504A;
@@ -8044,8 +8057,10 @@ small, .text_small {
       padding: 0; }
 
 .cta-buttons a {
-  margin-right: 10px;
   margin-bottom: 12px; }
+  @media (min-width: 768px) {
+    .cta-buttons a {
+      margin-right: 40px; } }
 
 .event-information-header h3 {
   color: #49504A;
@@ -8646,8 +8661,10 @@ i.fa.angle-trigger {
 
 .prompt {
   text-align: center; }
-  .prompt .prompt__actions.actions li {
-    list-style: none; }
+  .prompt .prompt__actions.actions {
+    padding: 0; }
+    .prompt .prompt__actions.actions li {
+      list-style: none; }
 
 .widget-comment h3 {
   display: none; }
@@ -8660,6 +8677,18 @@ i.fa.angle-trigger {
   text-decoration: none;
   font-weight: 600;
   font-size: 20px; }
+
+.btn.btn-lyrics:focus, .btn.btn-lyrics.focus {
+  box-shadow: none; }
+
+.accesscode input:focus {
+  box-shadow: none; }
+
+.accesscode input::selection {
+  color: #49504A; }
+
+.accesscode input[readonly] {
+  background: #fff; }
 
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
@@ -8689,7 +8718,10 @@ header.site-header.site-header-no-shadow {
   margin: 0 auto; }
 
 header #menu-main-navigation .nav-item {
-  padding: 8px 16px; }
+  padding: 0; }
+  @media (min-width: 768px) {
+    header #menu-main-navigation .nav-item {
+      padding: 8px 16px; } }
 
 header .nav-item {
   margin: 10px 6px; }
@@ -8703,19 +8735,26 @@ header .nav-item {
     color: #49504A;
     letter-spacing: 0.15em;
     font-size: 16px;
-    font-weight: 600;
     text-transform: uppercase;
     text-align: center; }
+    .nav-item a span {
+      font-weight: 600; }
+      @media (min-width: 768px) {
+        .nav-item a span {
+          font-weight: 500; } }
 
 .navbar-light .navbar-nav .nav-link {
   color: #49504A; }
 
 .nav-item.active .nav-link {
-  border-bottom: 2px solid #6E8776; }
+  border-bottom: 2px solid #B7C8B7; }
 
 .nav-item:not(.active):hover {
-  background: #DFE3E3;
-  border-radius: 25px; }
+  background: none; }
+  @media (min-width: 768px) {
+    .nav-item:not(.active):hover {
+      background: #DFE3E3;
+      border-radius: 25px; } }
 
 /*.nav-item:not(.active):hover .nav-link{
 	background: $hoverBackgroundColor;
@@ -8729,6 +8768,9 @@ header .nav-item {
   left: auto;
   border: none;
   border-radius: 16px; }
+
+.nav-pills .nav-link {
+  font-weight: 600; }
 
 .nav-pills .nav-link.active {
   background: #313531;
@@ -8779,8 +8821,8 @@ header .nav-item {
           .secondary-navigation .container-fluid.container-second-nav .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-sm .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-md .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-lg .list-social-handles .list-group-item a i, .secondary-navigation .container-second-nav.container-xl .list-social-handles .list-group-item a i {
             font-size: 1.2em; }
     .secondary-navigation .container-fluid.container-second-nav .nav-item, .secondary-navigation .container-second-nav.container-sm .nav-item, .secondary-navigation .container-second-nav.container-md .nav-item, .secondary-navigation .container-second-nav.container-lg .nav-item, .secondary-navigation .container-second-nav.container-xl .nav-item {
-      margin: 6px 0px;
-      margin-right: 0; }
+      /*	margin-right: 0;*/
+      margin: 6px; }
       @media (min-width: 992px) {
         .secondary-navigation .container-fluid.container-second-nav .nav-item, .secondary-navigation .container-second-nav.container-sm .nav-item, .secondary-navigation .container-second-nav.container-md .nav-item, .secondary-navigation .container-second-nav.container-lg .nav-item, .secondary-navigation .container-second-nav.container-xl .nav-item {
           margin: 6px; } }
@@ -8795,23 +8837,27 @@ header .nav-item {
   border-radius: 25px; }
   .secondary-signin-button a {
     color: #fff;
-    padding: 8px 16px;
+    padding: 2px;
     font-weight: 300;
     font-size: 12px; }
+    .secondary-signin-button a span {
+      display: block;
+      padding: 9px 10px; }
 
 .secondary-emphasis-button {
   border: 1px solid #fff;
   border-radius: 25px; }
   .secondary-emphasis-button a {
     color: #fff;
-    padding: 8px 3px;
+    padding: 2px;
     font-weight: 300;
     font-size: 12px; }
     .secondary-emphasis-button a span {
+      display: block;
       background: #fff;
       color: #000;
       border-radius: 25px;
-      padding: 8px 10px; }
+      padding: 9px 10px; }
 
 .nav-social-brand-container {
   display: flex;
@@ -8860,14 +8906,28 @@ header .nav-item {
   color: #F0F4F4; }
 
 .dropdown:hover > .dropdown-menu {
-  padding: 48px 28px;
-  background: #F0F4F4; }
+  padding: 0; }
+  @media (max-width: 767.98px) {
+    .dropdown:hover > .dropdown-menu .nav-item {
+      margin: 5px !important;
+      padding: 0 !important; }
+      .dropdown:hover > .dropdown-menu .nav-item a {
+        background: transparent !important; }
+    .dropdown:hover > .dropdown-menu span {
+      font-size: 13px;
+      color: #6E8776;
+      font-weight: bold; } }
+  @media (min-width: 768px) {
+    .dropdown:hover > .dropdown-menu {
+      padding: 30px 17px;
+      background: #F0F4F4; } }
 
 .home .homepage-navbar .dropdown:hover > .dropdown-menu .nav-item {
   margin: 10px 6px; }
 
 .dropdown-item {
-  padding: 0.5em 1.2em; }
+  /*padding: 0.5em 1.2em;*/
+  padding: 0; }
 
 .dropdown-item:hover, .dropdown-item:focus {
   background: #DFE3E3;
@@ -8889,16 +8949,17 @@ header .nav-item {
 #secondary-navigation-box .nav-link span {
   color: #F0F4F4; }
 
-#secondary-navigation-box .nav-item:hover {
-  background: unset; }
-  #secondary-navigation-box .nav-item:hover span {
-    color: #F0F4F4; }
+#secondary-navigation-box .nav-item:hover span {
+  color: #6E8776; }
 
 #secondary-navigation-box .secondary-emphasis-button a span {
-  color: #6E8776; }
+  color: #49504A; }
 
 #secondary-navigation-box .secondary-emphasis-button.nav-item:hover span {
-  color: #6E8776; }
+  color: #49504A; }
+
+@media (min-width: 768px) {
+  /* I really dont want to do this, but i have limited choice so i went for it.*/ }
 
 .banner {
   min-height: 350px; }
@@ -9113,10 +9174,14 @@ header .nav-item {
   font-size: 15px; }
 
 .select-pills {
-  background: #313531;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #49504a;
   color: #F0F4F4;
   border-radius: 25px;
-  width: 73%;
+  width: 81%;
+  padding: 3px;
   display: block;
   margin: 0 auto; }
   @media (min-width: 992px) {

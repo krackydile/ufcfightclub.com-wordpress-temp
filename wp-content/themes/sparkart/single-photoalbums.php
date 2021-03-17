@@ -6,7 +6,7 @@
 get_header(); ?>
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading text-center mt-4 mb-2"><span>Media</span></h3>
+		<h3 class="block-heading text-center my-4"><span>Media</span></h3>
 	</div>
 </section>
 	<div id="primary" class="content-area single-page-content single-photo-gallery-page">

@@ -8,6 +8,11 @@ import Swiper from 'swiper/bundle';
 import ClipboardJS from 'clipboard';
 import pagination from 'paginationjs';
 
+$('.menu-item-has-children.nav-item').on('click', function(e){
+    // alert(1);
+    e.stopPropagation();
+    e.preventDefault();
+});
 
 // custom Equal Height
 // 
@@ -35,7 +40,7 @@ console.log(url);
 // var url = 'http://dev.carrieunderwood/sample-page/#official-videos';
 
 if (url.match('#')) {
-    $('.nav-item a[href="#' + url.split('#')[1] + '"]').tab('show');
+    $('.nav-pills .nav-item a[href="#' + url.split('#')[1] + '"]').tab('show');
 } 
 
 if(document.getElementById("photos_paginated") != 'undefined' && document.getElementById("photos_paginated") != null){

@@ -110,7 +110,7 @@ get_header(); ?>
 										  <div class="card">
 										    <div class="card-header" id="headingOne">
 										      <h5 class="mb-0">
-										        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse-track-<?php echo $key+1 ?>" aria-expanded="true" aria-controls="collapse-track-<?php echo $key+1 ?>">
+										        <button class="btn btn-link btn-lyrics collapsed" data-toggle="collapse" data-target="#collapse-track-<?php echo $key+1 ?>" aria-expanded="true" aria-controls="collapse-track-<?php echo $key+1 ?>">
 										         	<i class="fa fa-angle-down angle-trigger"></i> <strong><?php echo $track['track_name']; ?></strong>
 										        </button>
 										      </h5>
