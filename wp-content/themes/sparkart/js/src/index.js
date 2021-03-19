@@ -7,12 +7,21 @@ import {Tooltip} from 'bootstrap';
 import Swiper from 'swiper/bundle';
 import ClipboardJS from 'clipboard';
 import pagination from 'paginationjs';
-
-$('.menu-item-has-children.nav-item').on('click', function(e){
-    // alert(1);
-    e.stopPropagation();
+// 768
+$(document).on('keypress','#event-code-field',function(e){
+    alert(1);
     e.preventDefault();
-});
+    return false;
+})
+if ($(window).width() > 992) {
+    // do something for small screens
+
+    $('.menu-item-has-children.nav-item > a').on('click', function(e){
+        // alert(1);
+        e.stopPropagation();
+        e.preventDefault();
+    });
+}
 
 // custom Equal Height
 // 
@@ -199,6 +208,7 @@ jQuery(document).ready(function ($) {
     });
     $(document).on('click', '.ajax-load-more-photo-albums', function(){
         var button = $(this);
+        var limit = button.data('total_page');
         var  data = {
             'action': 'loadmoremedia',
             'query': button.data('type'), // that's how we get params from wp_localize_script() function
@@ -216,10 +226,12 @@ jQuery(document).ready(function ($) {
                     button.text( 'Load More' ); // insert new posts
                     $(button.data('target')).append(data);
                     // button.parent().before(data);
-                    button.data('page', button.data('page') +   1);
- 
-                    // if ( sparkart_loadmore_params.current_page == sparkart_loadmore_params.max_page ) 
-                        // button.remove(); // if last page, remove the button
+                    var next_page = button.data('page') +   1;
+                    button.data('page', next_page);
+                    if ( next_page == limit ){
+
+                        button.remove(); // if last page, remove the button
+                    } 
  
                     // you can also fire the "post-load" event here if you use a plugin that requires it
                     // $( document.body ).trigger( 'post-load' );

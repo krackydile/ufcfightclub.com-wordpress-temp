@@ -77,7 +77,7 @@ header .nav-item{
 }
 .nav-item:not(.active):hover{
 	background: none;
-	@media (min-width: 768px) { 
+	@media (min-width: 992px) { 
 		background: $hoverBackgroundColor;
 		border-radius: 25px;
 	}
@@ -185,24 +185,26 @@ header .nav-item{
 
 }
 .secondary-signin-button {
-	border: 1px solid #fff;
+	border: 3px solid $colorLightest;
 	border-radius: 25px;
 
 	a{
-		    color: #fff;
+		    color: $colorLightest;
 		    padding: 2px;
 		    
 		    font-weight: 300;
 		    font-size: 12px;
 		span{
+		    	color: $colorLightest;
+
 		    	display:block;
-		        padding: 9px 10px;
+		        padding: 10px;
 
 		    }
 	}
 }
 .secondary-emphasis-button {
-	border: 1px solid #fff;
+	border: 3px solid #b7c8B7;
 	border-radius: 25px;
 	a{
 		    color: #fff;
@@ -212,12 +214,25 @@ header .nav-item{
 		    font-size: 12px;
 		    span{
 		    	display:block;
-		        background: #fff;
+		        background: $colorLightest;
 			    color: #000;
 			    border-radius: 25px;
-			    padding: 9px 10px;
+			    padding: 10px;
 
 		    }
+	}
+}
+.secondary-emphasis-button:hover, .secondary-signin-button:hover 
+{
+	border: 3px solid $colorDark;
+	background: $colorDark !important;
+	
+
+	span{
+	background: $colorDark !important;
+
+		color: $colorLightest !important;
+		
 	}
 }
 .nav-social-brand-container{
@@ -276,6 +291,7 @@ header .nav-item{
 }
 .dropdown:hover > .dropdown-menu{
 	padding: 0;
+	display :none;
 	@include media-breakpoint-down(sm) { 
 		.nav-item{
 			margin:5px !important;
@@ -290,7 +306,9 @@ header .nav-item{
 			font-weight: bold;
 		}
 	}
-	@include media-breakpoint-up(md) {  
+	@media (min-width: 992px) { 
+
+		display :block;
 
 		padding: 30px 17px ;
 		background: $colorLightest;	
@@ -310,6 +328,16 @@ header .nav-item{
 	border-radius:25px;
 	
 }
+.nav-item.show .dropdown-toggle::after{
+	font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "\f077";
+    border: none;
+    font-size: 10px;
+    font-weight: 400;
+}
 .dropdown-toggle::after {
 	font-family: 'FontAwesome';
     display: inline-block;
@@ -328,6 +356,8 @@ header .nav-item{
 	.nav-link{
 		span{
 			color: $colorLightest;
+			font-weight: 600;
+			border-radius: 25px;
 		}
 
 	}

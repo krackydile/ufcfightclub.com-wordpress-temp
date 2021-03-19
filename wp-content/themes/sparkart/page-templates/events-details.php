@@ -75,7 +75,7 @@ get_header();
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">
 								
-								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);" data-load-type="album-photos" data-page="1" data-type="photoalbums" data-target="#albums-row">Load More</a>
+								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);" data-load-type="album-photos" data-page="1" data-type="photoalbums" data-target="#albums-row" data-total_page="<?php echo ceil(wp_count_posts('photoalbums')->publish / get_option('posts_per_page')); ?>">Load More</a>
 							</div>
 						</div>
 					<?php 
@@ -124,7 +124,7 @@ get_header();
 					<div class="row mt-4 mb-5">
 							<div class="col text-center">
 								
-								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);"  data-page="1" data-type="videos" data-target="#video-row">Load More</a>
+								<a class="btn btn-outline-primary ajax-load-more-photo-albums" href="javascript:void(0);"  data-page="1" data-type="videos" data-target="#video-row" data-total_page="<?php echo ceil(wp_count_posts('videos')->publish / get_option('posts_per_page')); ?>">Load More</a>
 							</div>
 						</div>
 					<?php 

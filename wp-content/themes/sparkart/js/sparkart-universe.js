@@ -6,6 +6,10 @@ const universejs = require('universe-js')({environment: 'production', key: '3af6
 
 universejs.init(function (err, data) {
     if (err) throw err;
+    // console.log(data);
+    if(data.customer && data.customer.expired == true){
+        document.getElementById('expired-notification').classList.remove('hide');
+    }
     if(data.customer){
         // show protected-help
         if ( document.getElementById('protected-help') !== null ){
@@ -23,8 +27,13 @@ universejs.init(function (err, data) {
         if (!data.customer) {
             window.location= document.getElementById("loader-wrapper").dataset.join;
         }else{
-            document.body.classList.remove("protected");
-            document.body.classList.add("loaded");
+                document.body.classList.add("loaded");
+                document.body.classList.remove("protected");
+            if(data.customer && data.customer.expired == true){
+                document.getElementById('expired-notification').classList.remove('hide');
+                document.getElementById('main').classList.add('hide');
+
+            }
         }
     }
 
@@ -53,7 +62,7 @@ universejs.init(function (err, data) {
             document.getElementById("protected-box").innerHTML = "" +
                 "<div class=\"accesscode protected block-protected\">" +
                 " <div class=\"input-group my-2\">" +
-                "  <input readonly=\"readonly\" type=\"text\" class=\"form-control\" placeholder=\"Event Code\" id=\"event-code-field\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\" value=" + data.customer.subscription.affiliates[0].codes[0] + ">"+
+                "  <input type=\"text\" class=\"form-control\" placeholder=\"Event Code\" id=\"event-code-field\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\" value=" + data.customer.subscription.affiliates[0].codes[0] + ">"+
                 "  <button class=\"btn btn-outline-secondary clipboard-button\" type=\"button\" id=\"button-addon2\" data-clipboard-target=\"#event-code-field\"><i class=\"fa fa-copy\"></i></button>" +
                 " </div>" +
                 "</div>";
@@ -380,6 +389,8 @@ jQuery(() => {
 
 //Account submit
 let accountForm = document.querySelector('#account-form');
+/*accountForm check added as it was giving error*/
+if(accountForm !== null){
 accountForm.addEventListener('submit', (event)=>{
     event.preventDefault();
 
@@ -426,9 +437,12 @@ accountForm.addEventListener('submit', (event)=>{
 
     });
 });
+}
 
 //Shipping submit
 let shippingForm = document.querySelector('#shipping-form');
+if(shippingForm !== null){
+
 shippingForm.addEventListener('submit', (event)=>{
     event.preventDefault();
 
@@ -475,3 +489,4 @@ shippingForm.addEventListener('submit', (event)=>{
 
     });
 });
+}

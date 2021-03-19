@@ -89,7 +89,12 @@
 	font-weight: 600;
     font-size: 15px;
 }
-
+.select{
+    overflow: hidden; 
+    padding: 0px 20px;
+    position: relative;
+    display: block;
+}
 .select-pills{
     font-size: 13px;
     font-weight: 600;
@@ -97,15 +102,28 @@
 	background: #49504a;
     color: #F0F4F4;
     border-radius: 25px;
-    width: 81%;
-    padding: 3px;
+    padding: 0px  20px;
     display:block;
     margin: 0 auto;
-
+    border-color: #49504a;
+    -webkit-appearance: none;
     @include media-breakpoint-up(lg) {
     	display:none;
     }
 }
+.select:after {
+    content:"\f0d7";
+    font-family: 'FontAwesome';
+    color: #fff;
+    position: absolute; right: 16px; top: 0;
+    z-index: 1;
+    text-align: center;
+    width: 10%;
+    height: 100%;      
+    pointer-events: none;
+    box-sizing: border-box;   
+}
+
 .event-pills{
 	display:none;
 	@include media-breakpoint-up(lg) {

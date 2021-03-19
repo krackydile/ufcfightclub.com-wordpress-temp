@@ -36,7 +36,9 @@ wp_enqueue_style(
 );
 wp_enqueue_style(
 	'sparkart-theme-style',
-	get_template_directory_uri().'/css/build/main.min.css',
+	get_template_directory_uri()  .'/css/build/main.min.css',
+
+	// 'http://29e28d0d68ce.ngrok.io/wp-content/themes/sparkart'.'/css/build/main.min.css',
 	array( 'genericons' ),
 	'1.0'
 );
