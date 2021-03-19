@@ -2,12 +2,14 @@
 			<div class="row">
 				<div class="col">
 					<nav class="text-center mb-5">
-						<select class="form-control select-pills">
-						  <option data-toggle="pill" value="#pills-upcoming-tour-dates" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">Upcoming tour dates</option>
-						  <option data-toggle="pill" value="#pills-fan-club-presales" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="true">Fan Club Pre-sales</option>
+						<label class="select">
+							<select class="form-control select-pills">
+							  <option data-toggle="pill" value="#pills-upcoming-tour-dates" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">Upcoming tour dates</option>
+							  <option data-toggle="pill" value="#pills-fan-club-presales" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="true">Fan Club Pre-sales</option>
 
 
-						</select>
+							</select>
+						</label>
 						<ul class="event-pills nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 							<li class="nav-item">
 							    <a class="nav-link active" id="pills-upcoming-tour-dates-tab" data-toggle="pill" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">UPCOMING TOUR DATES</a>

@@ -25,11 +25,15 @@ get_header();
 							
 									endwhile;
 								endif;
+								if(is_paged()):
 							?> 
 							<div class="text-center mt-4 mb-5">
 								<a class="btn btn-outline-primary ajax-load-more" href="javascript:void(0);">Load More</a>
 								
 							</div>
+							<?php 
+								endif;
+							?>
 						</div>
 						
 				</div>			

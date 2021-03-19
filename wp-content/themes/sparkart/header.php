@@ -48,6 +48,21 @@
 			
 		
 	</header>	
-	
+		<?php 
+			if(!is_front_page()):
+		?>
+		<div class="container hide" id="expired-notification">
+			<div class="row">
+				<div class="col">
+					<div class="alert alert-info alert-expired">
+						<h2>YOUR SUBSCRIPTION HAS EXPIRED</h2>
+						<h5>Click <a href="<?php echo get_bloginfo('wpurl') ?>/account" id="#renew-link">here</a> to renew your membership</h5>
+					</div>			
+				</div>
+			</div>
+		</div>
+		<?php 
+			endif;
+		?>
 	<div id="main"  class="site-main">
 		
