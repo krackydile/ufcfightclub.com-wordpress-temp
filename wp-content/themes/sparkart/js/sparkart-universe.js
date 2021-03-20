@@ -6,7 +6,7 @@ const universejs = require('universe-js')({environment: 'production', key: '3af6
 
 universejs.init(function (err, data) {
     if (err) throw err;
-    // console.log(data);
+
     if(data.customer && data.customer.expired == true){
         document.getElementById('expired-notification').classList.remove('hide');
     }
@@ -21,7 +21,7 @@ universejs.init(function (err, data) {
             document.getElementById('unprotected-help').classList.remove('hide');
         }
     }
-    
+
     /* Checks if the page is login protected and redirects to join page */
     if (document.getElementById("loader-wrapper") !== null) {
         if (!data.customer) {
@@ -79,7 +79,7 @@ universejs.init(function (err, data) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
                 " <li class=\"nav-item secondary-signin-button\">\n" +
-                "     <a class=\"nav-link\" href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(window.location.origin) + "'\">\n" +
+                "     <a class=\"nav-link\" href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(currentURL) + "'\">\n" +
                 "          <span>Sign In </span>\n" +
                 "     </a>\n" +
                 " </li>" +
@@ -93,7 +93,7 @@ universejs.init(function (err, data) {
                 "<div class=\"cta-buttons\">" +
                 "<a href=\"/join\" class=\"btn btn-cta-primary\">" +
                 "<span>JOIN THE FAN CLUB </span></a>" +
-                "<a  href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(window.location.origin) + "'\" class=\"btn btn-cta-outline\"> " +
+                "<a  href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(currentURL) + "'\" class=\"btn btn-cta-outline\"> " +
                 "<span>SIGN IN </span></a>" +
                 "</div>";
         }

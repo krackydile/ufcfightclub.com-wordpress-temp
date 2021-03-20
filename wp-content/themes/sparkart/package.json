@@ -37,6 +37,7 @@
     "browserify": "^17.0.0",
     "clipboard": "^2.0.8",
     "disqus": "^0.3.0",
+    "dom-delegate": "^2.2.1",
     "form-serialize": "^0.7.2",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",

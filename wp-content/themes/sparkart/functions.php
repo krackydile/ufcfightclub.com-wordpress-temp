@@ -29,6 +29,15 @@ require_once get_template_directory() . '/inc/init.php';
     add_action('tgmpa_register', '_action_theme_register_required_plugins');
 }
 
+add_action('wp_head', 'sparkart_ajaxurl');
+function sparkart_ajaxurl()
+{
+    ?>
+    <script>
+        let currentURL = '<?php echo home_url($_SERVER['REQUEST_URI']); ?>';
+    </script><?php
+}
+
 function yahoo_maps_url($address) {
     $url = 'http://maps.yahoo.com/maps_result?';
     if ($address->address) $url .= 'addr=' . str_replace(' ', '+', $address->address);
@@ -145,17 +154,33 @@ function event_detail_cards($id)
             <?php } ?>
             </div>
         </div>
-        <?php  if ($event_details->contests) {?>
+        <?php if ($event_details->event->contests) {?>
         <div class="col-md-5 col-sm-12">
             <div class="panel-contest">
                 <div class="contest-header text-center">
                     Contests
                 </div>
-            <?php foreach ($event_details->contests as $contest) {?>
+            <?php
+            $event_contests = Universe\fetch_resource('contests?event_id='.$event_details->event->id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
+            foreach ($event_contests->contests as $contest) {
+                ?>
                 <div class="contest-body">
-                    <h4 class="contest-title"><?php echo $contest->name?></h4>
-                    <p>Contest Ends <?php echo $contest->ends_at?></p>
-                    <a class="btn btn-outline-secondary">Enter Now</a>
+                    <h4 class="contest-title"><?php echo $contest->name ?></h4>
+                    <?php if($contest->ended) { ?>
+                        <strong>Contest is finished</strong>
+                    <?php } else { ?>
+                        <?php
+                        $isUpcoming = strtotime($contest->starts_at) > time();
+                        if($isUpcoming){
+                        ?>
+                            <p>Contest Starts <?php echo format_date($contest->starts_at, 'n/j/y h:ma T', $contest->timezone->tz) ?></p>
+                        <?php } else { ?>
+                            <p>Contest Ends <?php echo format_date($contest->ends_at, 'n/j/y h:ma T', $contest->timezone->tz) ?></p>
+                        <?php } ?>
+                       <?php if($contest->running || $isUpcoming) { ?>
+                        <a href="/contests-details?contest=<?php echo $contest->id ?>&event=<?php echo $event_details->event->id ?>" class="btn btn-outline-secondary">Enter Now</a>
+                       <?php } ?>
+                    <?php } ?>
                 </div>
             <?php } ?>
             </div>
