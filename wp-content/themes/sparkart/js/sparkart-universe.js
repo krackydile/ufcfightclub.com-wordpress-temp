@@ -119,6 +119,9 @@ universejs.on('ready', data => {
         loadComments('carrieunderwood', universejs);
     }
     if( jQuery('body.page-template-account').length ){
+        let shippingStateLabel = 'Province/Region';
+        let shippingZipCodeLabel = 'Postal Code';
+
         async.parallel({
             account: function (cb) { universejs.get('/account', cb) },
             shipping: function (cb) { universejs.get('/account/shipping', cb) },
@@ -148,6 +151,29 @@ universejs.on('ready', data => {
                 document.getElementById("shipping-street-address").value = resources.shipping.address.address;
                 document.getElementById("shipping-address-2").value = resources.shipping.address.address_2;
                 document.getElementById("shipping-city").value = resources.shipping.address.city;
+                // Shipping Country
+                if(resources.countries) {
+                    let countryOptions = "";
+                    for (let option of resources.countries.countries) {
+                        let isSelected = option.selected ? 'selected': '';
+                        countryOptions += "<option value=" + option.id +" "+ isSelected+">" + option.name + "</option>";
+                    }
+                    document.getElementById("shipping-country").innerHTML = countryOptions;
+                }
+
+                document.getElementById("shipping-state").value = resources.shipping.address.state;
+                document.getElementById("shipping-zip-code").value = resources.shipping.address.postal_code;
+
+                // Label Change
+                if(document.getElementById("shipping-country").value ==='US'){
+                    document.getElementById("shipping-state-label").innerHTML = 'State';
+                    document.getElementById("shipping-zip-code-label").innerHTML = 'ZIP Code';
+                } else if(document.getElementById("shipping-country").value ==='CA'){
+                    document.getElementById("shipping-state-label").innerHTML = 'Province';
+                }else{
+                    document.getElementById("shipping-state-label").innerHTML = shippingStateLabel;
+                    document.getElementById("shipping-zip-code-label").innerHTML = shippingZipCodeLabel;
+                }
 
                 let preferences = "";
                 for (let item of resources.shipping.items) {
@@ -165,16 +191,6 @@ universejs.on('ready', data => {
                 }
                 document.getElementById("preferences").innerHTML = preferences;
             }
-            // Country
-            if(resources.countries) {
-                let countryOptions = "";
-                for (let option of resources.countries) {
-                    let isSelected = option.selected ? 'selected': '';
-                    countryOptions += "<option value=" + option.id +" "+ isSelected+">" + option.name + "</option>";
-                }
-                document.getElementById("shipping-country").innerHTML = countryOptions;
-            }
-
             // Subscription Plan
             if(resources.plans) {
                 let planOptions = "";

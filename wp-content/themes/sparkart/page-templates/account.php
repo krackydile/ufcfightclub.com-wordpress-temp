@@ -70,9 +70,8 @@ if(have_posts()):
 										</div>
 										<div class="event-detail account-content-left">
 											<h3>Shipping Information</h3>
-											<p class="shipping-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-											tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-											quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+											<p class="shipping-text">Note, you can only update your shipping information and t-shirt size before for future shipments (renewals).
+                                                <br> If you need to change a recent order, please contact support.</p>
 											<form class="account-form" id="shipping-form" action="/account/shipping">
 
 											  <div class="form-group">
@@ -102,12 +101,12 @@ if(have_posts()):
 
 											  </div>
 											  <div class="form-group">
-											    <label for="shipping-state" class="text-capitalize">State</label>
+											    <label for="shipping-state" id="shipping-state-label" class="text-capitalize">Province/Region</label>
 											    <input type="text" class="form-control" name="state" id="shipping-state" >
 											  </div>
 											  <div class="form-group">
-											    <label for="shipping-zip" class="text-capitalize">Zip Code</label>
-											    <input type="text" class="form-control" name="postal_code" id="shipping-zip" >
+											    <label for="shipping-zip-code" id="shipping-zip-code-label" class="text-capitalize">Postal Code</label>
+											    <input type="text" class="form-control" name="postal_code" id="shipping-zip-code" >
 											  </div>
                                                 <div id="preferences"></div>
 
