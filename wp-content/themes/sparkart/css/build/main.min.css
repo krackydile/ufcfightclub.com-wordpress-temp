@@ -8370,6 +8370,9 @@ small, .text_small {
   border-radius: 4px;
   margin: 0 20px; }
 
+.upcomming-events .block-heading > span:before, .upcomming-events .block-heading > span:after {
+  width: 17vw; }
+
 .block-heading.heading-light > span:before, .block-heading.heading-light > span:after {
   border-color: #fff; }
 

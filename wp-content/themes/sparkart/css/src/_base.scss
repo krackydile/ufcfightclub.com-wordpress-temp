@@ -335,6 +335,7 @@ small, .text_small {font-size: 0.8rem;}
     position: relative;
     display: inline-block;
 }
+
 .block-heading > span:before, .block-heading > span:after{
     content: '';
     position: absolute;
@@ -342,10 +343,15 @@ small, .text_small {font-size: 0.8rem;}
     border-bottom: 4px solid;
     border-color: #49504A;
     width: 32vw;
+    
     border-radius: 4px;
     margin: 0 20px;
 
 }
+
+.upcomming-events .block-heading > span:before,.upcomming-events .block-heading > span:after{
+  width: 17vw;
+} 
 
 .block-heading.heading-light > span:before, .block-heading.heading-light > span:after{
     border-color: #fff;

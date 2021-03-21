@@ -9,7 +9,7 @@ import ClipboardJS from 'clipboard';
 import pagination from 'paginationjs';
 // 768
 $(document).on('keypress','#event-code-field',function(e){
-    alert(1);
+    // alert(1);
     e.preventDefault();
     return false;
 })
