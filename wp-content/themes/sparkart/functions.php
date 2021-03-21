@@ -178,7 +178,7 @@ function event_detail_cards($id)
                             <p>Contest Ends <?php echo format_date($contest->ends_at, 'n/j/y h:ma T', $contest->timezone->tz) ?></p>
                         <?php } ?>
                        <?php if($contest->running || $isUpcoming) { ?>
-                        <a href="/contests-details?contest=<?php echo $contest->id ?>&event=<?php echo $event_details->event->id ?>" class="btn btn-outline-secondary">Enter Now</a>
+                        <a href="/contest-details?contest=<?php echo $contest->id ?>&event=<?php echo $event_details->event->id ?>" class="btn btn-outline-secondary">Enter Now</a>
                        <?php } ?>
                     <?php } ?>
                 </div>

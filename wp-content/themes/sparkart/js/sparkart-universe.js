@@ -75,6 +75,9 @@ universejs.init(function (err, data) {
         if (document.getElementById("presale-access-code-text") !== null) {
             document.getElementById("presale-access-code-text").style.display = 'block';
         }
+        if (document.getElementById("contest-phone-number") !== null) {
+            document.getElementById("contest-phone-number").value = data.customer.phone_number;
+        }
 
     } else {
         if (document.getElementById("secondary-navigation-box") !== null) {
@@ -123,6 +126,9 @@ universejs.on('error', function (err) {
     throw err;
 });
 
+let shippingStateLabel = 'Province/Region';
+let shippingZipCodeLabel = 'Postal Code';
+
 universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
     if (data.customer) {
@@ -130,8 +136,6 @@ universejs.on('ready', data => {
         loadComments('carrieunderwood', universejs);
     }
     if( jQuery('body.page-template-account').length ){
-        let shippingStateLabel = 'Province/Region';
-        let shippingZipCodeLabel = 'Postal Code';
 
         async.parallel({
             account: function (cb) { universejs.get('/account', cb) },
@@ -166,7 +170,7 @@ universejs.on('ready', data => {
                 if(resources.countries) {
                     let countryOptions = "";
                     for (let option of resources.countries.countries) {
-                        let isSelected = option.selected ? 'selected': '';
+                        let isSelected = option.id === resources.shipping.address.country ? 'selected': '';
                         countryOptions += "<option value=" + option.id +" "+ isSelected+">" + option.name + "</option>";
                     }
                     document.getElementById("shipping-country").innerHTML = countryOptions;
@@ -221,6 +225,22 @@ universejs.on('ready', data => {
         });
     }
 });
+
+//Country Change Event
+if (document.querySelector('select[name=country]')) {
+    let countrySelectBox = document.querySelector('select[name=country]');
+    countrySelectBox.addEventListener('change', function (ev) {
+        if (ev.target.value === 'US') {
+            document.getElementById("shipping-state-label").innerHTML = 'State';
+            document.getElementById("shipping-zip-code-label").innerHTML = 'ZIP Code';
+        } else if (ev.target.value === 'CA') {
+            document.getElementById("shipping-state-label").innerHTML = 'Province';
+        } else {
+            document.getElementById("shipping-state-label").innerHTML = shippingStateLabel;
+            document.getElementById("shipping-zip-code-label").innerHTML = shippingZipCodeLabel;
+        }
+    });
+}
 
 let tempUpcomingTourArray = [];
 let tempPreSaleArray = [];
@@ -516,4 +536,60 @@ shippingForm.addEventListener('submit', (event)=>{
 
     });
 });
+}
+
+//Contest submit
+let contestForm = document.querySelector('#contest-form');
+if(contestForm !== null){
+    contestForm.addEventListener('submit', (event)=>{
+        event.preventDefault();
+
+        document.getElementById("contest-success-message").style.display='none';
+        document.getElementById("contest-error-message").style.display='none';
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const contestId = urlParams.get('contest');
+
+        let contestEntry = serialize(contestForm);
+
+        if (!contestEntry.match('rules')) {
+            let rulesEl = document.querySelector('input[name="rules"]').parentNode;
+            let rulesErr = rulesEl.querySelector('strong');
+
+            if (rulesErr) rulesEl.removeChild(rulesErr);
+            rulesEl.innerHTML += '<strong>Please agree to the contest rules to enter this contest</strong>';
+
+            if (rulesEl.classList) {
+                rulesEl.classList.add('error');
+            } else {
+                rulesEl.className += ' error';
+            }
+
+            return;
+        }
+
+        let submitButton = contestForm.querySelector('#contest-submit');
+
+        submitButton.setAttribute('disabled', true);
+        universejs.post('/contests/' + contestId + '/enter', contestEntry, function (err, response) {
+
+            let body = (document.documentElement && document.documentElement.scrollTop)
+                ? document.documentElement
+                : document.body;
+
+            scroll.top(body, 0, function (error, position) {
+                if (position !== 0) return;
+
+                if (response && response.status === 'ok') {
+                    document.getElementById("contest-success-message").style.display='block';
+                    document.getElementById("contest-success-message").innerHTML = '<p>You have been entered into the contest</p>';
+                } else if (response && Array.isArray(response.messages)) {
+                    document.getElementById("contest-error-message").style.display='block';
+                    document.getElementById("contest-error-message").innerHTML = response.messages.join(/\s/);
+                }
+                submitButton.removeAttribute('disabled');
+            });
+
+        });
+    });
 }

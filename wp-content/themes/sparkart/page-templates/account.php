@@ -110,7 +110,7 @@ if(have_posts()):
 											  </div>
                                                 <div id="preferences"></div>
 
-											  <button type="submit" class="btn btn-primary"  id="shipping-submit">Submit</button>
+											  <button type="submit" class="btn btn-primary" id="shipping-submit">Submit</button>
 											</form>
 										</div>
 									</div>
