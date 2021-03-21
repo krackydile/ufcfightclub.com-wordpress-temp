@@ -39,6 +39,7 @@
     "disqus": "^0.3.0",
     "dom-delegate": "^2.2.1",
     "form-serialize": "^0.7.2",
+    "jquery": "^3.6.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "normalize.css": "^8.0.1",

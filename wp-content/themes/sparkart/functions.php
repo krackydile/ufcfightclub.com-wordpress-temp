@@ -206,8 +206,8 @@ function get_universe_links()
 }
 
 
-add_action('wp_enqueue_scripts', 'sparkart__load_profile_scripts', 20, 2);
-function sparkart__load_profile_scripts()
+add_action('wp_enqueue_scripts', 'sparkart_load_profile_scripts', 20, 2);
+function sparkart_load_profile_scripts()
 {
     $url = home_url($_SERVER['REQUEST_URI']);
     $url_parts = parse_url($url);

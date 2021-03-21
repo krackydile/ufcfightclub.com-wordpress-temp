@@ -2,6 +2,8 @@ let moment = require('moment-timezone');
 let async = require('async');
 let serialize = require('form-serialize');
 let scroll = require('scroll');
+let jQuery = require('jquery');
+
 const universejs = require('universe-js')({environment: 'production', key: '3af65919-3f76-46c8-b905-0f952ffcbd47'});
 
 universejs.init(function (err, data) {
@@ -103,6 +105,15 @@ universejs.init(function (err, data) {
          }
         if (document.getElementById("presale-access-code-signin-text") !== null) {
            document.getElementById("presale-access-code-signin-text").style.display='block';
+        }
+    }
+
+    // Logout page
+    if (data.fanclub) {
+        if (document.getElementById('redirect') !== null) {
+            let redirect = document.getElementById('redirect');
+            redirect.href = data.fanclub.links.logout || '/';
+            redirect.click();
         }
     }
 });
