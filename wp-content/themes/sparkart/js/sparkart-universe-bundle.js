@@ -8948,8 +8948,8 @@ if(contestForm !== null){
         let contestEntry = serialize(contestForm);
 
         if (!contestEntry.match('rules')) {
-            var rulesEl = document.querySelector('input[name="rules"]').parentNode;
-            var rulesErr = rulesEl.querySelector('strong');
+            let rulesEl = document.querySelector('input[name="rules"]').parentNode;
+            let rulesErr = rulesEl.querySelector('strong');
 
             if (rulesErr) rulesEl.removeChild(rulesErr);
             rulesEl.innerHTML += '<strong>Please agree to the contest rules to enter this contest</strong>';
@@ -8961,8 +8961,6 @@ if(contestForm !== null){
             }
 
             return;
-        }else{
-            rulesEl.innerHTML = "";
         }
 
         let submitButton = contestForm.querySelector('#contest-submit');
