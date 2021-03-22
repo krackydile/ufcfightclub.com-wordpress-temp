@@ -6,8 +6,8 @@
 							<select class="form-control select-pills">
 							  <option data-toggle="pill" value="#pills-upcoming-tour-dates" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">Upcoming tour dates</option>
 							  <option data-toggle="pill" value="#pills-fan-club-presales" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="true">Fan Club Pre-sales</option>
-
-
+                                <option data-toggle="pill" value="#pills-upcoming-appearances" href="#pills-upcoming-appearances" role="tab" aria-controls="pills-upcoming-appearances" aria-selected="true">Upcoming Appearances</option>
+                                <option data-toggle="pill" value="#pills-past-events" href="#pills-past-events" role="tab" aria-controls="pills-past-events" aria-selected="true">Past Events</option>
 							</select>
 						</label>
 						<ul class="event-pills nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
