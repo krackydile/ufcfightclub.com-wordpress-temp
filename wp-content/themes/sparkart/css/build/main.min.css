@@ -8916,9 +8916,20 @@ i.fa.angle-trigger {
     background: #F0F4F4;
     text-align: center;
     border-radius: 25px;
-    padding: 20px; }
+    padding: 62px 36px; }
+    .account-subscription-upgrade .main-card h1.column-text-price {
+      font-size: 31px;
+      color: #49504A;
+      font-weight: bold; }
+    .account-subscription-upgrade .main-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #49504A; }
+    .account-subscription-upgrade .main-card p {
+      color: #6E8776; }
   .account-subscription-upgrade .additional a {
-    color: #F0F4F4; }
+    color: #F0F4F4;
+    text-decoration: underline; }
 
 .carrie-alert-box {
   background: #49504A;
@@ -9066,6 +9077,13 @@ i.fa.angle-trigger {
     .alert-expired h5 a {
       color: #49504A;
       text-decoration: underline; }
+
+.padded-site-content {
+  padding: 54px; }
+  .padded-site-content a {
+    color: #6E8776; }
+  .padded-site-content ol {
+    padding-left: 16px; }
 
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
