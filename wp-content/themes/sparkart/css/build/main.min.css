@@ -8216,6 +8216,9 @@ small, .text_small {
     font-size: 12px;
     font-weight: 600;
     padding: 8px 16px; }
+    @media (max-width: 320px) {
+      .card.events-card .btn {
+        font-size: 10px; } }
   .card.events-card .btn.btn-primary {
     /*margin-right: 20px;*/ }
 
@@ -8397,8 +8400,14 @@ small, .text_small {
   border: none;
   border-radius: 10px; }
 
+.card-body {
+  padding: 1.10rem; }
+
 .card-comment {
-  padding: 0px 72px; }
+  padding: 0px 40px; }
+  @media (min-width: 768px) {
+    .card-comment {
+      padding: 0px 70px; } }
 
 .page-template-full-width .fw-page-builder-content .fw-container {
   width: 100%;
@@ -8410,11 +8419,17 @@ small, .text_small {
       margin: 0;
       padding: 0; }
 
+.swipe-btn-next {
+  outline: none; }
+
 .cta-buttons a {
+  margin-right: 40px;
+  margin-left: 40px;
   margin-bottom: 12px; }
   @media (min-width: 768px) {
     .cta-buttons a {
-      margin-right: 40px; } }
+      margin-right: 40px;
+      margin-left: 0px; } }
 
 .event-information-header h3 {
   color: #49504A;
@@ -8885,19 +8900,19 @@ i.fa.angle-trigger {
     font-weight: bold;
     color: #49504A; }
 
-.account-form label {
+.contest-form label, .account-form label {
   color: #6E8776;
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 0px; }
 
-.account-form .form-control {
+.contest-form .form-control, .account-form .form-control {
   border-radius: 12px;
   background: #E6EBEB;
   border: none;
   font-weight: 600; }
 
-.account-form .form-control:focus {
+.contest-form .form-control:focus, .account-form .form-control:focus {
   border: 2px solid #6E8776;
   border-radius: 12px;
   box-shadow: unset; }
@@ -9631,6 +9646,8 @@ header .nav-item {
   @media (min-width: 992px) {
     .event-pills {
       display: flex; } }
+  .event-pills .nav-item {
+    margin: 10px 16px; }
 
 .events-load-more-loading {
   width: 162px;

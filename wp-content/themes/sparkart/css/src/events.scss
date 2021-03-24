@@ -129,6 +129,9 @@
 	@include media-breakpoint-up(lg) {
     	display:flex;
     }
+    .nav-item{
+        margin: 10px 16px;
+    }
 }
 
 .events-load-more-loading{

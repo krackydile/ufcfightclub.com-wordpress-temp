@@ -35,6 +35,9 @@ get_header(); ?>
 								}else{
 									$photos = fw_get_db_post_option(get_the_ID(), 'photo_gallery');
 									$main_image= get_post_meta($active_attachment_id, 'smugmug_id', true);
+									if($main_image == ''){
+										$main_image  = $active_attachment_id;
+									}
 									// var_dump($main_image);
 									fw_print_photo_slider($photos, $active_attachment_id);
 								}
