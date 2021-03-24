@@ -5,11 +5,12 @@ if (have_posts()):
         the_post();
         ?>
 
-        <section class="page-section">
+        <section class="page-section content-area single-page-content">
             <div class="container">
                 <div id="contest-success-message" style="display: none; text-transform: uppercase"></div>
                 <div id="contest-error-message" style="display: none;text-transform: uppercase"></div>
                 <h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
+                <div class="site-content padded-site-content">
                 <?php
                 if (preg_match('/^\d+$/', $_GET['event'])) {
                     $event_details = Universe\fetch_resource('events/' . $_GET['event'], '3af65919-3f76-46c8-b905-0f952ffcbd47');
@@ -70,7 +71,7 @@ if (have_posts()):
 
 
                 <?php } ?>
-
+                </div>
             </div>
         </section>
 

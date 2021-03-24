@@ -215,9 +215,9 @@ universejs.on('ready', data => {
                     planOptions += "<h3 class=\"utransform column-heading\">" + plan.name + "</h3>";
                     planOptions += (plan.id ===61)? "<p>* Donation to C.A.T.S. Foundation</p>" : "<p></p>";
                     planOptions += (plan.upgrade)? "<h1 class=\"column-text-price\">" + plan.upgrade_price + " <del>"+plan.display_price+"</del></h1>" : "<h1 class=\"column-text-price\">" + plan.display_price + "</h1>";
-                    planOptions += "<a title=\"Join NOw\" href="+ plan.checkout +" class=\"utransform btn btn-primary\">Renew Now</a>";
+                    planOptions += "<a title=\"Join NOw\" href="+ plan.checkout +" class=\"utransform btn btn-cta-primary \"><span>Renew Now</span></a>";
                     planOptions += "</div>";
-                    planOptions += (plan.id === 61)? "<p class=\"text-center additional mt-2\"><a href=\"http://catsfoundation.com\">Learn more aobut The C.A.T.S Foundation</a></p>": "<p class=\"text-center additional mt-2\"><a href=\"\"></a></p>";
+                    planOptions += (plan.id === 61)? "<p class=\"text-center additional mt-2\"><a href=\"http://catsfoundation.com\">Learn more about The C.A.T.S Foundation</a></p>": "<p class=\"text-center additional mt-2\"><a href=\"\"></a></p>";
                     planOptions += "</div>";
                 }
                 document.getElementById("subscription-plan").innerHTML = planOptions;

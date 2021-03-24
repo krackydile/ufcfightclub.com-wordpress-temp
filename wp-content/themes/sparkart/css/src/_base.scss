@@ -997,10 +997,27 @@ i.fa.angle-trigger{
      background: $colorLightest;
      text-align:center;
      border-radius: 25px;
-     padding: 20px;
+     padding: 62px 36px;
+     h1.column-text-price{
+        font-size: $fontSize31;
+        color: $colorDark;
+        font-weight: bold;
+     }
+     h3{
+      font-size: $fontSize16;
+      font-weight: 600;
+      color: $colorDark;
+     }
+     p{
+      color: $colorMild;
+
+     }
+     
   }
   .additional a{
     color: $colorLightest;
+        text-decoration: underline;
+    
   }
 }
 
@@ -1194,4 +1211,13 @@ i.fa.angle-trigger{
 
     }
   } 
+}
+.padded-site-content{
+  padding: 54px;
+  a{
+    color: $colorMild;
+  }
+  ol{
+    padding-left: 16px;
+  }
 }
