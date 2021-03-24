@@ -148,6 +148,11 @@ small, .text_small {font-size: 0.8rem;}
     }
     .btn{
         font-size: 12px;
+        @media (max-width: 320px) { 
+          font-size: 10px;
+
+        }
+
         font-weight: 600;
         padding: 8px 16px;
     }
@@ -380,8 +385,16 @@ small, .text_small {font-size: 0.8rem;}
     border: none;
     border-radius: 10px;
 }
+.card-body{
+  padding: 1.10rem;
+}
 .card-comment{
-    padding: 0px 72px;
+    padding: 0px 40px;
+
+     @include media-breakpoint-up(md) {  
+
+        padding: 0px 70px;
+    }
 }
 .page-template-full-width {
     .fw-page-builder-content{
@@ -403,11 +416,17 @@ small, .text_small {font-size: 0.8rem;}
         }
     }
 }
+.swipe-btn-next{
+  outline:none;
+}
 .cta-buttons {
   a{
-
+     margin-right: 40px;
+     margin-left: 40px;
     @include media-breakpoint-up(md) {  
       margin-right: 40px;
+     margin-left: 0px;
+
     }
     margin-bottom: 12px;
   }
@@ -962,7 +981,7 @@ i.fa.angle-trigger{
 
   } 
 }
-.account-form{
+.contest-form, .account-form{
   label{
     color: $colorMild;
     font-size: $fontSize16;
