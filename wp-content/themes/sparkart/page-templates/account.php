@@ -15,7 +15,7 @@ if(have_posts()):
 
 		<div id="primary" class="content-area ">
 
-			<div id="content" class="site-content " role="main">
+			<div id="content" class="site-content account-content" role="main">
 				<div class="row">
 					<div class="col">
 						<div class="card event-detail-card">

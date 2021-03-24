@@ -122,11 +122,12 @@ function event_card($event)
                     , <?php echo $event->venue->state ?></h6>
             </div>
             <?php if ($event->links) { ?>
-<!--                <a href="--><?php //echo $event->links[0]->url ?><!--" class="btn btn-primary">Buy Tickets</a>-->
                 <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-primary" target="_blank">Buy Tickets</a>
             <?php } ?>
+        <?php if ($event->contests) { ?>
             <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-outline-primary" target="_blank">Meet & Greet</a>
-        </div>
+    <?php } ?>
+    </div>
     </div>
     <?php
 }
