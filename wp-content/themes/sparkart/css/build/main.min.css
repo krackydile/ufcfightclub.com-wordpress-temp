@@ -8419,7 +8419,7 @@ small, .text_small {
       margin: 0;
       padding: 0; }
 
-.swipe-btn-next {
+.swipe-btn-prev, .swipe-btn-next {
   outline: none; }
 
 .cta-buttons a {
