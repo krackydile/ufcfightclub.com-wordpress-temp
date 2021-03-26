@@ -25,7 +25,7 @@ get_header();
 						?>
 						
 					</div>
-					<div class="album-overlay" style="">
+					<div class="album-overlay" style="" onclick="javascript: window.location='<?php echo get_the_permalink(); ?>'">
 						<div class="album-details">
 							
 							<h4 class="album-title"><?php the_title(); ?></h4>

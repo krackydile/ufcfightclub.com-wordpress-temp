@@ -29,6 +29,7 @@ get_header(); ?>
 								$active_attachment_id = get_query_var('active');
 								// var_dump($active_attachment_id);
 								if($active_attachment_id == ''){
+									$disqus_thread = DISQUS_SLUG.'-album-'.get_the_ID();
 
 									echo '<div class="row " id="photo-data"></div><div id="photos_paginated" data-album="'.get_the_ID().'"></div>';
 									// fw_print_photo_list($photos);
@@ -36,7 +37,10 @@ get_header(); ?>
 									$photos = fw_get_db_post_option(get_the_ID(), 'photo_gallery');
 									$main_image= get_post_meta($active_attachment_id, 'smugmug_id', true);
 									if($main_image == ''){
-										$main_image  = $active_attachment_id;
+										$disqus_thread  = DISQUS_SLUG.'-album-'.get_the_ID().'-'.$active_attachment_id;
+									}else{
+										$disqus_thread = 'smugmug-'.$main_image;
+
 									}
 									// var_dump($main_image);
 									fw_print_photo_slider($photos, $active_attachment_id);
@@ -57,7 +61,7 @@ get_header(); ?>
 //								}
 //						?>
                         <div class="card card-comment">
-                            <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="smugmug-<?php echo $main_image; ?>" data-disqus-title="Photos · The Official Carrie Underwood Fan Club">
+                            <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="<?php echo $disqus_thread; ?>" data-disqus-title="Photos · The Official Carrie Underwood Fan Club">
                                 <h3>Comments</h3>
 
                                 <div class="prompt">

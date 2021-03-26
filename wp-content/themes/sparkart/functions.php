@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) {
     die('Direct access forbidden.');
 }
-
+define('DISQUS_SLUG', 'carrieunderwood');
 /**
  * Theme Includes
  */
@@ -103,6 +103,7 @@ function homepage_event_cards()
 
 function homepage_more_events()
 {
+        // var_dump(fw_get_db_settings_option('universe_key'));
     ?>
     <div class="text-center mt-4 mb-5">
         <a href="<?php echo get_bloginfo('wpurl') ?>/events" class="btn btn-outline-light">See More Dates</a>
