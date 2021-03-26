@@ -71,13 +71,16 @@ universejs.init(function (err, data) {
                 "</ul>";
         }
         if (document.getElementById("protected-box") !== null) {
-            document.getElementById("protected-box").innerHTML = "" +
-                "<div class=\"accesscode protected block-protected\">" +
-                " <div class=\"input-group my-2\">" +
-                "  <input type=\"text\" class=\"form-control\" placeholder=\"Event Code\" id=\"event-code-field\" aria-label=\"Recipient's username\" aria-describedby=\"button-addon2\" value=" + data.customer.subscription.affiliates[0].codes[0] + ">"+
-                "  <button class=\"btn btn-outline-secondary clipboard-button\" type=\"button\" id=\"button-addon2\" data-clipboard-target=\"#event-code-field\"><i class=\"fa fa-copy\"></i></button>" +
-                " </div>" +
-                "</div>";
+            document.getElementById("protected-box").innerHTML = `
+               ${data.customer.subscription ? `
+                <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
+                <div class="accesscode protected block-protected\">
+                 <div class="input-group my-2">
+                  <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[0].codes[0]}">
+                  <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
+                 </div>
+                </div>`:``
+            }`;
         }
         if (document.getElementById("presale-access-code-signin-text") !== null) {
             document.getElementById("presale-access-code-signin-text").style.display = 'none';
