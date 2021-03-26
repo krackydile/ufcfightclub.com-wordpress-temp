@@ -7,7 +7,6 @@
 			</h2>
 			<div class="event-code-holder">
 				<p class="event-code-heading" id="presale-access-code-signin-text"><?php echo $atts['subheading']; ?></p>
-                <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
                 <div id="protected-box">
 <!--					<div class="accesscode protected block-protected">-->
 <!--							<div class="input-group my-2">-->

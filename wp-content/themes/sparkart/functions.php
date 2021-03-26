@@ -77,7 +77,7 @@ function format_date($date, $format, $timezone = '')
 
 function homepage_event_cards()
 {
-    $unique_presales = Universe\fetch_resource('events?scope=upcoming&limit=3', '3af65919-3f76-46c8-b905-0f952ffcbd47');
+    $unique_presales = Universe\fetch_resource('events?scope=upcoming&limit=3', fw_get_db_settings_option('universe_key'));
     if ($unique_presales->events) {
         ?>
         <div class="row">
@@ -134,7 +134,7 @@ function event_card($event)
 
 function event_detail_cards($id)
 {
-    $event_details = Universe\fetch_resource('events/'.$id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
+    $event_details = Universe\fetch_resource('events/'.$id, fw_get_db_settings_option('universe_key'));
     if ($event_details->event) {
         ?>
         <div class="col-md-7 col-sm-12">
@@ -162,7 +162,7 @@ function event_detail_cards($id)
                     Contests
                 </div>
             <?php
-            $event_contests = Universe\fetch_resource('contests?event_id='.$event_details->event->id, '3af65919-3f76-46c8-b905-0f952ffcbd47');
+            $event_contests = Universe\fetch_resource('contests?event_id='.$event_details->event->id, fw_get_db_settings_option('universe_key'));
             foreach ($event_contests->contests as $contest) {
                 ?>
                 <div class="contest-body">
