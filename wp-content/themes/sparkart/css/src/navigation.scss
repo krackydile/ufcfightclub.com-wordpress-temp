@@ -35,10 +35,28 @@ header.site-header.site-header-no-shadow{
 	margin: 0 auto;
 }
 header #menu-main-navigation .nav-item{
+	margin: 0px 6px;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+header #menu-main-navigation .nav-item a{
 	padding: 0;
 	@include media-breakpoint-up(md) { 
 
 		padding: 8px 16px;
+	}
+
+}
+header #menu-main-navigation .nav-item.active{
+	margin-left: 16px;
+	margin-right: 16px;
+
+}
+header #menu-main-navigation .nav-item.active a{
+	padding: 0;
+	@include media-breakpoint-up(md) { 
+
+		padding: 8px 0px;
 	}
 
 }
@@ -70,12 +88,13 @@ header .nav-item{
 }
 .navbar-light .navbar-nav .nav-link{
 		color: $colorDark;
+		display:inline-block;
 	
 }
 .nav-item.active .nav-link {
 	border-bottom: 2px solid $colorLight;
 }
-.nav-item:not(.active):hover{
+.nav-item:not(.active):hover > a{
 	background: none;
 	@media (min-width: 992px) { 
 		background: $hoverBackgroundColor;
@@ -308,11 +327,13 @@ header .nav-item{
 	}
 	@media (min-width: 992px) { 
 
+		margin-top: 12px;
 		display :block;
 
 		padding: 30px 17px ;
 		background: $colorLightest;	
-
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		
 	}
 }
 .home .homepage-navbar .dropdown:hover > .dropdown-menu .nav-item{

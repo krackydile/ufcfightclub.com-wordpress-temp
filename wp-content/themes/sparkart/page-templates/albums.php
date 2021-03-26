@@ -30,7 +30,7 @@ get_header();
 					<div class="album-thumbnail">
 						<img src="<?php echo fw_album_thumbnail($album) ?>" class="img-responsive">
 					</div>
-					<div class="album-overlay" style="">
+					<div class="album-overlay" style="" onclick="javascript: window.location='<?php echo get_term_link($album); ?>'">
 						<div class="album-details">
 							
 							<h4 class="album-title"><?php echo $album->name ?></h4>

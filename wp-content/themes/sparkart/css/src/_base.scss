@@ -120,6 +120,10 @@ small, .text_small {font-size: 0.8rem;}
     color: $colorDark;
     font-weight: bold;
   }
+  a:hover{
+    text-decoration: none;
+    color: rgba(73, 80, 74, 0.85);
+  }
 }
 .card-text{
   font-size: $fontSize20;
@@ -257,6 +261,10 @@ small, .text_small {font-size: 0.8rem;}
   background-color: $colorDark;
     border-color: $colorDark;
   
+}
+a.joincomment:hover{
+  color: $colorLightest;
+  text-decoration:none;
 }
 .btn-outline-primary {
     color: $colorMild;
@@ -416,7 +424,7 @@ small, .text_small {font-size: 0.8rem;}
         }
     }
 }
-.swipe-btn-next{
+.swipe-btn-prev, .swipe-btn-next{
   outline:none;
 }
 .cta-buttons {
@@ -1239,4 +1247,7 @@ i.fa.angle-trigger{
   ol{
     padding-left: 16px;
   }
+}
+.bg-light{
+  background-color: $colorLightest !important;
 }

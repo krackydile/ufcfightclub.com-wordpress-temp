@@ -8193,6 +8193,9 @@ small, .text_small {
     font-size: 31px;
     color: #49504A;
     font-weight: bold; }
+  .card-title a:hover {
+    text-decoration: none;
+    color: rgba(73, 80, 74, 0.85); }
 
 .card-text {
   font-size: 20px;
@@ -8292,6 +8295,10 @@ small, .text_small {
 .btn-primary:hover, .joincomment:hover {
   background-color: #49504A;
   border-color: #49504A; }
+
+a.joincomment:hover {
+  color: #F0F4F4;
+  text-decoration: none; }
 
 .btn-outline-primary {
   color: #6E8776;
@@ -8419,7 +8426,7 @@ small, .text_small {
       margin: 0;
       padding: 0; }
 
-.swipe-btn-next {
+.swipe-btn-prev, .swipe-btn-next {
   outline: none; }
 
 .cta-buttons a {
@@ -9100,6 +9107,9 @@ i.fa.angle-trigger {
   .padded-site-content ol {
     padding-left: 16px; }
 
+.bg-light {
+  background-color: #F0F4F4 !important; }
+
 header.site-header {
   -webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
   -moz-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
@@ -9128,10 +9138,25 @@ header.site-header.site-header-no-shadow {
   margin: 0 auto; }
 
 header #menu-main-navigation .nav-item {
+  margin: 0px 6px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent; }
+
+header #menu-main-navigation .nav-item a {
   padding: 0; }
   @media (min-width: 768px) {
-    header #menu-main-navigation .nav-item {
+    header #menu-main-navigation .nav-item a {
       padding: 8px 16px; } }
+
+header #menu-main-navigation .nav-item.active {
+  margin-left: 16px;
+  margin-right: 16px; }
+
+header #menu-main-navigation .nav-item.active a {
+  padding: 0; }
+  @media (min-width: 768px) {
+    header #menu-main-navigation .nav-item.active a {
+      padding: 8px 0px; } }
 
 header .nav-item {
   margin: 10px 6px; }
@@ -9154,15 +9179,16 @@ header .nav-item {
           font-weight: 500; } }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #49504A; }
+  color: #49504A;
+  display: inline-block; }
 
 .nav-item.active .nav-link {
   border-bottom: 2px solid #B7C8B7; }
 
-.nav-item:not(.active):hover {
+.nav-item:not(.active):hover > a {
   background: none; }
   @media (min-width: 992px) {
-    .nav-item:not(.active):hover {
+    .nav-item:not(.active):hover > a {
       background: #DFE3E3;
       border-radius: 25px; } }
 
@@ -9338,9 +9364,11 @@ header .nav-item {
       font-weight: bold; } }
   @media (min-width: 992px) {
     .dropdown:hover > .dropdown-menu {
+      margin-top: 12px;
       display: block;
       padding: 30px 17px;
-      background: #F0F4F4; } }
+      background: #F0F4F4;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); } }
 
 .home .homepage-navbar .dropdown:hover > .dropdown-menu .nav-item {
   margin: 10px 6px; }
