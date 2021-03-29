@@ -8415,7 +8415,9 @@ universejs.init(function (err, data) {
     });
 
     if(data.customer && data.customer.expired == true){
-        document.getElementById('expired-notification').classList.remove('hide');
+        if(document.getElementById('expired-notification') != null) {
+            document.getElementById('expired-notification').classList.remove('hide');
+        }
     }
     if(data.customer){
         // show protected-help
