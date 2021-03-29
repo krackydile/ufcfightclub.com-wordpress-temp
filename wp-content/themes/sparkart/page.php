@@ -1,44 +1,25 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that
- * other 'pages' on your WordPress site will use a different template.
- */
-
-get_header(); ?>
-
-<div id="main-content" class="main-content">
-
-<?php
-	if ( is_front_page() && fw_theme_has_featured_posts() ) {
-		// Include the featured content template.
-		get_template_part( 'featured-content' );
-	}
+<?php 
+get_header();
+if(have_posts()):
+	while(have_posts()):
+		the_post();
 ?>
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+				    	
+<section class="page-section">
+	<div class="container">
+		<h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
+		
 
-			<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
+		<?php the_content(); ?>
+		
+	</div>
+</section>
 
-					// Include the page content template.
-					get_template_part( 'content', 'page' );
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) {
-						comments_template();
-					}
-				endwhile;
-			?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
-	<?php get_sidebar( 'content' ); ?>
-</div><!-- #main-content -->
 
-<?php
-get_sidebar();
-get_footer();
+<?php 
+		endwhile;
+	endif;
+get_footer() 
+?>

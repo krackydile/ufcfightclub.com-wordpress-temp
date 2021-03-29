@@ -37,7 +37,7 @@
 <div id="page" class="hfeed site">
 	
 
-	<header class="site-header sticky-top">
+	<header class="site-header sticky-top site-header-no-shadow">
 		<?php 
 			get_template_part('partials/main', 'navigation');
 			if(!is_front_page()){
@@ -48,6 +48,21 @@
 			
 		
 	</header>	
-	
+		<?php 
+			if(!is_front_page()):
+		?>
+		<div class="container hide" id="expired-notification">
+			<div class="row">
+				<div class="col">
+					<div class="alert alert-info alert-expired">
+						<h2>YOUR SUBSCRIPTION HAS EXPIRED</h2>
+						<h5>Click <a href="<?php echo get_bloginfo('wpurl') ?>/join" id="#renew-link">here</a> to renew your membership</h5>
+					</div>			
+				</div>
+			</div>
+		</div>
+		<?php 
+			endif;
+		?>
 	<div id="main"  class="site-main">
 		

@@ -1,7 +1,11 @@
+
 header.site-header{
 		-webkit-box-shadow: 0px 2px 13px 0px rgba(50, 50, 50, 0.75);
 		-moz-box-shadow:    0px 2px 13px 0px rgba(50, 50, 50, 0.75);
 		box-shadow:         0px 2px 13px 0px rgba(50, 50, 50, 0.75);
+}
+header.site-header.site-header-no-shadow{
+	box-shadow: none;
 }
 .home{
 	
@@ -30,8 +34,35 @@ header.site-header{
 .navbar-brand{
 	margin: 0 auto;
 }
+header #menu-main-navigation .nav-item{
+	margin: 0px 6px;
+	border-top: 12px solid transparent;
+	border-bottom: 12px solid transparent;
+}
+header #menu-main-navigation .nav-item a{
+	padding: 0;
+	@include media-breakpoint-up(md) { 
+
+		padding: 8px 16px;
+	}
+
+}
+header #menu-main-navigation .nav-item.active{
+	margin-left: 16px;
+	margin-right: 16px;
+
+}
+header #menu-main-navigation .nav-item.active a{
+	padding: 0;
+	@include media-breakpoint-up(md) { 
+
+		padding: 8px 0px;
+	}
+
+}
 header .nav-item{
-	margin: 10px 22px;
+	
+	margin: 10px 6px;
 }
 .nav-item{
 	text-align: center;
@@ -40,19 +71,40 @@ header .nav-item{
 	}
 	a{
 		color: $colorDark;
-		font-size: 14px;
-		font-weight: bold;
+		letter-spacing: 0.15em;
+		font-size: 16px;
+
 		text-transform: uppercase;
 		text-align: center;
+		span{
+		
+				font-weight: 600;
+			@include media-breakpoint-up(md) { 
+				font-weight: 500;
+
+			}
+		}
 	}
 }
-.nav-item.active .nav-link {
-	border-bottom: 2px solid $colorMild;
+.navbar-light .navbar-nav .nav-link{
+		color: $colorDark;
+		display:inline-block;
+	
 }
-.nav-item:not(.active):hover .nav-link{
+.nav-item.active .nav-link {
+	border-bottom: 2px solid $colorLight;
+}
+.nav-item:not(.active):hover > a{
+	background: none;
+	@media (min-width: 992px) { 
+		background: $hoverBackgroundColor;
+		border-radius: 25px;
+	}
+}
+/*.nav-item:not(.active):hover .nav-link{
 	background: $hoverBackgroundColor;
 	border-radius: 25px;
-}
+}*/
 .dropdown:hover>.dropdown-menu {
   	display: block;
     margin-top: 0;
@@ -62,7 +114,9 @@ header .nav-item{
     border: none;
     border-radius: 16px;
 }
-
+.nav-pills .nav-link{
+	font-weight: 600;
+}
 .nav-pills .nav-link.active{
 	background: $colorDarkest;
 	color: $colorLightest;
@@ -73,12 +127,18 @@ header .nav-item{
 		display:none;
 	}
 }
-.site-footer .nav-item:not(.active):hover .nav-link {
-    background: transparent;
-    border-radius: unset;
-    color: $colorDark;
-    
-}
+
+.site-footer .nav-item:not(.active):hover{
+	background: transparent;
+		
+	.nav-link {
+	    background: transparent;
+	    border-radius: unset;
+	    color: $colorDark;
+	    
+	}
+} 
+
 /* hide close when burger shown */
    .navbar-toggler.collapsed .close-icon {
       display: none;
@@ -108,6 +168,8 @@ header .nav-item{
 		    .list-group-item{
 		    	padding-bottom: 0px;
 		    	padding-top: 8px;
+		    	padding-left: 0.65rem;
+		    	padding-right: 0.65rem;
 		    	margin: 3px 0px;
 		    	background: transparent;
 	    		border: none;
@@ -121,11 +183,12 @@ header .nav-item{
 		}
 
 		.nav-item{
-			margin: 6px 0px;
+		/*	margin-right: 0;*/
+
+			margin: 6px ;
 			@include media-breakpoint-up(lg) {  
 				margin: 6px ;
 			}
-			margin-right: 0;
 			a{
 				font-size: 12px;
 				color: #fff;
@@ -141,32 +204,54 @@ header .nav-item{
 
 }
 .secondary-signin-button {
-	border: 1px solid #fff;
+	border: 3px solid $colorLightest;
 	border-radius: 25px;
 
 	a{
-		    color: #fff;
-		    padding: 8px 16px;
+		    color: $colorLightest;
+		    padding: 2px;
+		    
 		    font-weight: 300;
 		    font-size: 12px;
-		
+		span{
+		    	color: $colorLightest;
+
+		    	display:block;
+		        padding: 10px;
+
+		    }
 	}
 }
 .secondary-emphasis-button {
-	border: 1px solid #fff;
+	border: 3px solid #b7c8B7;
 	border-radius: 25px;
 	a{
 		    color: #fff;
-		    padding: 8px 3px;
+		    padding: 2px;
 
 		    font-weight: 300;
 		    font-size: 12px;
 		    span{
-		        background: #fff;
+		    	display:block;
+		        background: $colorLightest;
 			    color: #000;
 			    border-radius: 25px;
-			    padding: 8px 10px;
+			    padding: 10px;
+
 		    }
+	}
+}
+.secondary-emphasis-button:hover, .secondary-signin-button:hover 
+{
+	border: 3px solid $colorDark;
+	background: $colorDark !important;
+	
+
+	span{
+	background: $colorDark !important;
+
+		color: $colorLightest !important;
+		
 	}
 }
 .nav-social-brand-container{
@@ -209,4 +294,111 @@ header .nav-item{
     -webkit-transition: none;
     transition: none;
     display: none;
+}
+@include media-breakpoint-up(md) {  
+
+	.navbar-expand-lg .navbar-nav .nav-link{
+		/*padding-left: 1.2em;
+		padding-right: 1.3em;*/
+		padding:0;
+	}
+}
+.nav-pills .nav-item:hover .nav-link.active {
+	background: $colorDarkest;
+	color: $colorLightest;
+    
+}
+.dropdown:hover > .dropdown-menu{
+	padding: 0;
+	display :none;
+	@include media-breakpoint-down(sm) { 
+		.nav-item{
+			margin:5px !important;
+			padding: 0 !important;
+			a{
+				background: transparent !important;
+			}
+		}
+		span{
+			font-size: $fontSize13;
+			color: $colorMild;
+			font-weight: bold;
+		}
+	}
+	@media (min-width: 992px) { 
+
+		margin-top: 12px;
+		display :block;
+
+		padding: 30px 17px ;
+		background: $colorLightest;	
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+		
+	}
+}
+.home .homepage-navbar .dropdown:hover > .dropdown-menu .nav-item{
+	margin: 10px 6px;
+}
+.dropdown-item{
+	
+    /*padding: 0.5em 1.2em;*/
+    padding: 0;
+}
+.dropdown-item:hover, .dropdown-item:focus{
+	background: #DFE3E3;
+	border-radius:25px;
+	
+}
+.nav-item.show .dropdown-toggle::after{
+	font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "\f077";
+    border: none;
+    font-size: 10px;
+    font-weight: 400;
+}
+.dropdown-toggle::after {
+	font-family: 'FontAwesome';
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "\f078";
+    border: none;
+    font-size: 10px;
+    font-weight: 400;
+}
+.nav-link{
+	padding: 0.5rem 25px
+}
+
+#secondary-navigation-box{
+	.nav-link{
+		span{
+			color: $colorLightest;
+			font-weight: 600;
+			border-radius: 25px;
+		}
+
+	}
+	.nav-item:hover{
+		span{
+			color: $colorMild;
+
+		}
+
+	}
+}
+#secondary-navigation-box {
+	.secondary-emphasis-button a span{
+		color: $colorDark;
+	}	
+	.secondary-emphasis-button.nav-item:hover span{
+		color: $colorDark;
+	}
+}
+@include media-breakpoint-up(md) {  
+	/* I really dont want to do this, but i have limited choice so i went for it.*/
+	
 }

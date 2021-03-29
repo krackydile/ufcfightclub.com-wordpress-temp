@@ -7,6 +7,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area single-page-content">
 		<div class="container">
+			<?php 
+				if(function_exists('fw_ext_get_breadcrumbs') && is_help_category_article(get_post())){
+
+					echo fw_ext_get_breadcrumbs( '/' ) ;
+				}
+			?>
 			<div id="content" class="site-content " role="main">
 				<div class="row">
 					<div class="col">
@@ -25,18 +31,40 @@ get_header(); ?>
 								// fw_theme_post_nav();
 
 								// If comments are open or we have at least one comment, load up the comment template.
+//								if ( comments_open() || get_comments_number() ) {
+//									echo '<div class="card card-comment">';
+//									comments_template();
+//									echo '</div>';
+//
+//								}
 								if ( comments_open() || get_comments_number() ) {
-									echo '<div class="card card-comment">';
-									comments_template();
-									echo '</div>';
 
-								}
+                            ?>
+                                <div class="card card-comment">
+                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="wordpress-<?php echo get_post_field( 'post_name', get_post() ); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
+                                        <h3>Comments</h3>
+
+                                        <div class="prompt">
+                                            <ul class="prompt__actions actions">
+                                                <li class="prompt__actions-item"><a class="prompt__actions-link action joincomment" href="/join">Join Today to Post Comments</a></li>
+                                                <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php
+                            	}
+
 							endwhile;
 						?>
 					</div>
 				</div>
 			</div>
-			
+    <?php 
+				if(is_help_category_article(get_post())){
+					fw_print_more_help();
+				}
+			?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php

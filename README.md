@@ -19,3 +19,13 @@ Custom wordpress theme development for Sparkart **CarrieUnderwood Fanclub**
 - $ cd <project-name>\wp-content\themes\sparkart
 -   npm install
 -   npm run build
+
+# Dev Notes
+
+### Login Protection
+There are two CSS classes which will be appended to any element that is protected by login
+- protected 
+- block-protected
+
+If there is an element that is not protected need un protected login it will have the following class
+- block-unprotected
