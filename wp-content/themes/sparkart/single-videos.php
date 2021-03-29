@@ -28,9 +28,12 @@ get_header(); ?>
 								$active_attachment_id = get_query_var('active');
 								if($active_attachment_id == ''){
 									fw_print_video_list($videos);
+									$disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID();
+
 								}else{
 
 									fw_print_play_video($videos, $active_attachment_id);
+									$disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active_attachment_id;
 								}
 
 
@@ -60,7 +63,7 @@ get_header(); ?>
 
                                 ?>
                                 <div class="px-4">
-                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="vimeo-<?php echo get_the_ID(); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
+                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="<?php echo $disqus_thread; ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
                                         <h3>Comments</h3>
 
                                         <div class="prompt">
