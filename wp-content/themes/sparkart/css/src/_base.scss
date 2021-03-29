@@ -72,11 +72,11 @@ small, .text_small {font-size: 0.8rem;}
   ul {
     margin-top: 48px;
   }
-  
+
 }
 .site-header{
   background: $colorLightest;
-  @include media-breakpoint-up(md) {  
+  @include media-breakpoint-up(md) {
     background: transparent;
   }
 }
@@ -95,7 +95,7 @@ small, .text_small {font-size: 0.8rem;}
 .card{
     margin-bottom: 31px;
     padding: 0;
-    @include media-breakpoint-up(lg) {  
+    @include media-breakpoint-up(lg) {
       padding: 72px;
     }
     background: $colorLightest;
@@ -111,12 +111,12 @@ small, .text_small {font-size: 0.8rem;}
 
 }
 .card-title{
-    font-size: $fontSize31; 
+    font-size: $fontSize31;
     color: $colorDark;
     font-weight: bold;
   a{
 
-    font-size: $fontSize31; 
+    font-size: $fontSize31;
     color: $colorDark;
     font-weight: bold;
   }
@@ -152,7 +152,7 @@ small, .text_small {font-size: 0.8rem;}
     }
     .btn{
         font-size: 12px;
-        @media (max-width: 320px) { 
+        @media (max-width: 320px) {
           font-size: 10px;
 
         }
@@ -167,18 +167,18 @@ small, .text_small {font-size: 0.8rem;}
     }
 }
 .home {
-  @include media-breakpoint-up(lg) {  
+  @include media-breakpoint-up(lg) {
 
     .site-header{
       /*position: absolute;
       width: 100%;*/
-    }  
+    }
     .homepage-navbar{
         background-color: transparent !important;
-        box-shadow: none; 
+        box-shadow: none;
         @media (min-width: 576px) and (max-width: 992px) {
-        
-        
+
+
           .nav-item{
              margin: 10px 20px;
              padding-left: 1.2em;
@@ -191,17 +191,17 @@ small, .text_small {font-size: 0.8rem;}
                margin: 10px 20px;
                padding-left: 1.2em;
               padding-right: 1.3em;
-            } 
+            }
         }
-        @media (min-width: 1300px) { 
+        @media (min-width: 1300px) {
           .nav-item{
              margin: 10px 30px;
               padding-left: 1.2em;
               padding-right: 1.3em;
           }
         }
-        
-        
+
+
 
       .navbar-nav{
         margin: auto !important;
@@ -240,7 +240,7 @@ small, .text_small {font-size: 0.8rem;}
     color: #F0F4F4;
     border-radius: 25px;
     margin: 10px;
-    @include media-breakpoint-up(lg) {  
+    @include media-breakpoint-up(lg) {
 
       display:inline;
       padding: 16px 25px;
@@ -260,7 +260,7 @@ small, .text_small {font-size: 0.8rem;}
 .btn-primary:hover, .joincomment:hover{
   background-color: $colorDark;
     border-color: $colorDark;
-  
+
 }
 a.joincomment:hover{
   color: $colorLightest;
@@ -282,7 +282,7 @@ a.joincomment:hover{
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle{
   background-color: $colorMild;
   border-color: $colorMild;
-  
+
 }
 .btn-primary:focus{
   border-color: $colorGreenishGrey;
@@ -293,7 +293,7 @@ a.joincomment:hover{
 
     span{
 
-      background: $colorLight; 
+      background: $colorLight;
       border-radius: 25px;
       display: block;
       padding: 5px 28px;
@@ -301,7 +301,7 @@ a.joincomment:hover{
       text-transform: uppercase;
       letter-spacing: 0.15em;
       font-weight: 600;
-    } 
+    }
 }
 .btn-cta-outline{
     border: 2px solid $colorDark;
@@ -338,7 +338,7 @@ a.joincomment:hover{
 .block-heading{
      overflow: hidden;
      text-align: center;
-     
+
      /*font-size: $fontSize76;*/
      font-size: $fontSize61;
      padding: 14px
@@ -356,7 +356,7 @@ a.joincomment:hover{
     border-bottom: 4px solid;
     border-color: #49504A;
     width: 32vw;
-    
+
     border-radius: 4px;
     margin: 0 20px;
 
@@ -364,12 +364,12 @@ a.joincomment:hover{
 
 .upcomming-events .block-heading > span:before,.upcomming-events .block-heading > span:after{
   width: 17vw;
-} 
+}
 
 .block-heading.heading-light > span:before, .block-heading.heading-light > span:after{
     border-color: #fff;
 }
-  
+
 
 .block-heading > span:before{
     right: 100%;
@@ -382,7 +382,7 @@ a.joincomment:hover{
 /* Single page start */
 .content-area.single-page-content{
   margin: 20px auto;
-  @include media-breakpoint-up(md) {  
+  @include media-breakpoint-up(md) {
         margin: 100px auto;
       }
 }
@@ -399,7 +399,7 @@ a.joincomment:hover{
 .card-comment{
     padding: 0px 40px;
 
-     @include media-breakpoint-up(md) {  
+     @include media-breakpoint-up(md) {
 
         padding: 0px 70px;
     }
@@ -410,7 +410,7 @@ a.joincomment:hover{
           width: 100%;
           padding: 0;
           .fw-row{
-          
+
             margin: 0;
               padding: 0;
 
@@ -431,7 +431,7 @@ a.joincomment:hover{
   a{
      margin-right: 40px;
      margin-left: 40px;
-    @include media-breakpoint-up(md) {  
+    @include media-breakpoint-up(md) {
       margin-right: 40px;
      margin-left: 0px;
 
@@ -481,7 +481,7 @@ a.joincomment:hover{
   border-radius: 25px;
   background: $colorLighter;
   margin-top: 40px;
-  
+
 
   .btn{
     font-size: 12px;
@@ -494,7 +494,7 @@ a.joincomment:hover{
   border-radius: 25px 25px 0px 0px;
   font-weight: 600;
 }
- 
+
 .contest-body{
   padding:40px;
 }
@@ -517,7 +517,7 @@ a.joincomment:hover{
 }
 .event-detail-card{
   padding:22px;
-  @include media-breakpoint-up(md) {  
+  @include media-breakpoint-up(md) {
       padding:72px;
   }
 }
@@ -543,7 +543,7 @@ a.joincomment:hover{
 .lyrics {
     margin-top: 70px;
   .card{
-    padding:unset;  
+    padding:unset;
     margin:0;
     .card-header{
         margin:0;
@@ -568,7 +568,7 @@ i.fa.angle-trigger{
     font-weight: bold;
 }
 .track-group{
-  
+
   .list-group-item{
     background:transparent;
     border: none;
@@ -606,19 +606,19 @@ i.fa.angle-trigger{
     color: $colorDarkest;
     font-size: $fontSize31;
     font-weight: bold;
-    @include media-breakpoint-up(lg) {  
+    @include media-breakpoint-up(lg) {
         margin-top: unset;
-    }   
+    }
 }
 .track-info-btn-group{
-    float: left !important;  
+    float: left !important;
         display: block;
     width: 100%;
-    @include media-breakpoint-up(md) {  
+    @include media-breakpoint-up(md) {
         float: right !important;
         display: inline-flex;
         width: unset;
-    }   
+    }
 }
 .breadcrumbs{
   a{
@@ -628,7 +628,7 @@ i.fa.angle-trigger{
 .payment-cards{
   background: $colorMild;
       padding: 40px 0px;
-    @include media-breakpoint-up(md) {  
+    @include media-breakpoint-up(md) {
 
       padding: 72px;
     }
@@ -646,7 +646,7 @@ i.fa.angle-trigger{
   }
   .additional{
     a{
-    
+
 
       color: #fff;
       text-decoration:underline;
@@ -656,7 +656,7 @@ i.fa.angle-trigger{
 .imageblocks{
       padding: 40px 0px;
 
-    @include media-breakpoint-up(md) {  
+    @include media-breakpoint-up(md) {
       padding: 50px;
     }
   h2{
@@ -664,12 +664,12 @@ i.fa.angle-trigger{
       font-weight: bold;
       color: $colorDark;
   }
-    @include media-breakpoint-only(xs) { 
+    @include media-breakpoint-only(xs) {
       .order-last, .order-first{
         order:unset;
       }
     }
-  
+
 }
 .image-text{
   h4{
@@ -720,7 +720,7 @@ i.fa.angle-trigger{
 .content-area.single-page-content.video-page {
 
      margin: 20px auto;
-      @include media-breakpoint-up(md) {  
+      @include media-breakpoint-up(md) {
         /*margin: 100px auto;*/
       }
       .site-content{
@@ -729,17 +729,17 @@ i.fa.angle-trigger{
 .video-frame{
   iframe{
     max-height: 205px;
-      @include media-breakpoint-up(md) {  
+      @include media-breakpoint-up(md) {
         max-height: 400px;
 
       }
-      @include media-breakpoint-up(lg) {  
+      @include media-breakpoint-up(lg) {
       max-height: unset;
 
       }
   }
 }
-   
+
 }
 .sparkart-text{
   padding-top: 80px;
@@ -816,7 +816,7 @@ i.fa.angle-trigger{
     }
 
     @-webkit-keyframes spin {
-        0%   { 
+        0%   {
             -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
             -ms-transform: rotate(0deg);  /* IE 9 */
             transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -828,7 +828,7 @@ i.fa.angle-trigger{
         }
     }
     @keyframes spin {
-        0%   { 
+        0%   {
             -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
             -ms-transform: rotate(0deg);  /* IE 9 */
             transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
@@ -884,14 +884,14 @@ i.fa.angle-trigger{
     .loaded #loader-wrapper {
         visibility: hidden;
 
-      
-    
+
+
         -webkit-transition: all 0.3s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
                 transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
     }
 
 .col-official-image{
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
 }
 .official-photo-title{
   font-size: $fontSize31;
@@ -902,7 +902,7 @@ i.fa.angle-trigger{
   margin-bottom: 24px;
 }
 .breadcrumbs {
-  
+
   span{
     font-weight:600;
     margin-right: 5px;
@@ -987,7 +987,7 @@ i.fa.angle-trigger{
     font-weight: bold;
     color: #49504A;
 
-  } 
+  }
 }
 .contest-form, .account-form{
   label{
@@ -1039,12 +1039,12 @@ i.fa.angle-trigger{
       color: $colorMild;
 
      }
-     
+
   }
   .additional a{
     color: $colorLightest;
         text-decoration: underline;
-    
+
   }
 }
 
@@ -1073,14 +1073,14 @@ i.fa.angle-trigger{
   text-align: center;
   color: #fff;
   padding: 61px 0px;
-      @include media-breakpoint-up(md) {  
+      @include media-breakpoint-up(md) {
           padding: 61px 165px;
       }
   h2{
     font-size: 35px;
     font-weight: 600;
     color: $colorLighter;
-    
+
     margin-bottom: 20px;
   }
   h3{
@@ -1093,7 +1093,7 @@ i.fa.angle-trigger{
       text-align: center;
       font-size: $fontSize13;;
       color: $colorLighter;
-      
+
       margin: 31px;
       letter-spacing: 0.25px;
       line-height: 27px;
@@ -1110,14 +1110,14 @@ i.fa.angle-trigger{
       text-align: center;
       padding: 32px 12px;
 
-      @include media-breakpoint-up(md) {  
+      @include media-breakpoint-up(md) {
 
         padding: 100px;
       }
       h2{
           font-size: $fontSize25;
 
-          @include media-breakpoint-up(md) {  
+          @include media-breakpoint-up(md) {
 
               font-size: $fontSize39;
           }
@@ -1144,7 +1144,7 @@ i.fa.angle-trigger{
     border-radius: 25px;
     padding: 32px 12px;
 
-    @include media-breakpoint-up(md) {  
+    @include media-breakpoint-up(md) {
 
         padding: 100px;
     }
@@ -1155,7 +1155,7 @@ i.fa.angle-trigger{
             letter-spacing: 1px;
         }
     }
-    
+
 }
 .page-section{
   margin-bottom: 60px;
@@ -1165,7 +1165,7 @@ i.fa.angle-trigger{
 }
 .secondary-signin-button a:hover span{
   color: $colorMild;
-  
+
 }
 .paginationjs-next.disabled{
     display:none;
@@ -1182,10 +1182,10 @@ i.fa.angle-trigger{
 .widget-comment{
     h3{
       display:none;
-    } 
+    }
 }
 .prompt__actions-item{
-  margin-top: 28px; 
+  margin-top: 28px;
 }
 .prompt__actions-link.action.action--link.signin{
   color: $colorDark;
@@ -1199,7 +1199,7 @@ i.fa.angle-trigger{
 }
 .accesscode input:focus{
   box-shadow: none;
-  
+
 }
 /*.accesscode input::selection{ color:$colorDark; }*/
 
@@ -1237,7 +1237,7 @@ i.fa.angle-trigger{
       text-decoration: underline;
 
     }
-  } 
+  }
 }
 .padded-site-content{
   padding: 54px;
@@ -1250,4 +1250,27 @@ i.fa.angle-trigger{
 }
 .bg-light{
   background-color: $colorLightest !important;
+}
+
+.site-content  {
+  h1,h2,h3,h4,h5,h6,p,dt, strong{    color: $colorDark;
+  }
+}
+
+.site-content  {
+  div,h1,h2,h3,h4,h5,h6,p,dt, strong{    color: $colorDark;
+  }
+}
+
+#contest-success-message, #contest-error-message{
+  text-align: center;
+  margin-top: 72px;
+  background: $colorLightest;
+  border: 2px solid $colorMild;
+  border-radius: 12px;
+  padding: 32px;
+  div{
+    font-size: $fontSize25;
+    color: $colorMild;
+    font-weight: bold;  }
 }
