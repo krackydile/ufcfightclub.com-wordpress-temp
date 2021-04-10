@@ -26,7 +26,9 @@ get_universe_links();
 							</div>
 						<?php 
 							endif;
+							echo '<div id="banner-cta">';
 							fw_print_cta_buttons($atts['cta_options']);
+							echo '</div>';
 						?>
 						
 					</div>

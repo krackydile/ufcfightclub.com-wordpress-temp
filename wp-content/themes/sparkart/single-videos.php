@@ -26,6 +26,7 @@ get_header(); ?>
 
 								$videos = fw_get_db_post_option(get_the_ID(), 'videos');
 								$active_attachment_id = get_query_var('active');
+								// var_dump($videos);
 								if($active_attachment_id == ''){
 									fw_print_video_list($videos);
 									$disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID();
@@ -33,7 +34,9 @@ get_header(); ?>
 								}else{
 
 									fw_print_play_video($videos, $active_attachment_id);
-									$disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active_attachment_id;
+									$disqus_thread = get_active_video_disqus_id($videos, $active_attachment_id);
+									
+									// $disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active_attachment_id;
 								}
 
 

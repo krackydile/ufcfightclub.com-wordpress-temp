@@ -16,7 +16,7 @@ $options = array(
 				),
 				'box-options'  => array(
 					'video_title'     => array(
-						'label' => __( 'Text', 'unyson' ),
+						'label' => __( 'Title', 'unyson' ),
 						'type'  => 'text',
 						'value' => 'Lorem ipsum dolor sit amet',
 						'desc'  => __( 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -27,6 +27,13 @@ $options = array(
 							__( 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
 								'unyson' )
 						),
+					),
+					'disqus_id'     => array(
+						'label' => __( 'Disqus ID', 'unyson' ),
+						'type'  => 'text',
+						'desc'  => __( 'Optional Leave empty if not required',
+							'unyson' ),
+						
 					),
 					'video_thumbnail'             => array(
 						'label' => __( 'Thumbnail', 'unyson' ),

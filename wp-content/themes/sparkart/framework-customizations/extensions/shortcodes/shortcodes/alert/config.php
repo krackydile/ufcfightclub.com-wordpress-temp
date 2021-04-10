@@ -5,5 +5,7 @@ $cfg = array(
 		'title'       => __( 'Help Alert', 'unyson' ),
 		'description' => __( 'Alert box shown in help page', 'unyson' ),
 		'tab'         => __( 'Sparkart Elements', 'fw' ),
+		'disable_correction' => true
+		
 	)
 );
