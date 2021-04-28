@@ -33,9 +33,11 @@ get_universe_links();
 						
 					</div>
 				</div>
-				<div class="banner-panel-right">
+				<div  class="banner-panel-right">
 					<?php 
+							echo '<div id="banner-cta-mobile">';
 						fw_print_cta_buttons($atts['cta_options']);
+							echo '</div>';
 
 						if(is_array($atts['banner_right_image'])):
 					?>

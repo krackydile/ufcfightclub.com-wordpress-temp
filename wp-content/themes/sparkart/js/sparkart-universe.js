@@ -29,6 +29,10 @@ universejs.init(function (err, data) {
            document.getElementById('banner-cta').classList.add('hide'); 
 
         }
+        if(document.getElementById('banner-cta-mobile') !== null){
+           document.getElementById('banner-cta-mobile').classList.add('hide'); 
+
+        }
         if(document.getElementById('carrie-alert-box') !== null){
            document.getElementById('carrie-alert-box').classList.add('hide'); 
         }
@@ -51,7 +55,8 @@ universejs.init(function (err, data) {
         }
         if (document.getElementById("unprotected-swiper") !== null){
             document.getElementById('unprotected-swiper').classList.remove('hide');
-            
+            const event = new Event('swiperManager');
+            document.getElementById('unprotected-swiper').dispatchEvent(event);
         }
         // show unprotected-carousel
     }
@@ -209,12 +214,11 @@ universejs.on('ready', data => {
                     document.getElementById("plan-name").innerHTML = resources.account.customer.subscription.plan.name;
                     document.getElementById("plan-start").innerHTML = moment(resources.account.customer.subscription.start_date).format('MM/DD/YYYY');
                     document.getElementById("plan-end").innerHTML = moment(resources.account.customer.subscription.end_date).format('MM/DD/YYYY');
-
-                    if(resources.orders) {
+                    if(resources.orders && resources.orders.orders.length > 0) {
                         document.getElementById("shipped-on").innerHTML = 'Shipped on ' + resources.orders.orders[0].paid_at;
                     }
                     // Shipping
-                    if(resources.shipping) {
+                    if(resources.shipping && resources.shipping.address != null) {
                         document.getElementById("shipping-first-name").value = resources.shipping.address.first_name;
                         document.getElementById("shipping-last-name").value = resources.shipping.address.last_name;
                         document.getElementById("shipping-street-address").value = resources.shipping.address.address;
