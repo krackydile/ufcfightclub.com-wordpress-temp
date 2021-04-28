@@ -158,7 +158,42 @@ clipboard.on('success', function(e) {
     
     // e.clearSelection();
 });
-var swiper = new Swiper('.swiper-container', {
+if(document.getElementById('protected-swiper') !== null){
+document.getElementById('protected-swiper').addEventListener("swiperManager", function(event) { // (1)
+    // alert("Hello from "); // Hello from H1
+    var swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        autoplay: {
+           delay: 5000,
+         },
+        // If we need pagination
+        pagination: {
+            el: '.list-swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swipe-btn-next',
+            prevEl: '.swipe-btn-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        renderBullet: function (index, className) {
+            return '<li><span class="' + className + '">' + (index + 1) + '</span></li>';
+        }
+    });
+});
+}
+if(document.getElementById('unprotected-swiper') !== null){
+
+document.getElementById('unprotected-swiper').addEventListener("swiperManager", function(event) { // (1)
+    // alert("Hello from "); // Hello from H1
+    var swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
@@ -184,6 +219,34 @@ var swiper = new Swiper('.swiper-container', {
         return '<li><span class="' + className + '">' + (index + 1) + '</span></li>';
     }
 });
+});
+}
+// var swiper = new Swiper('.swiper-container', {
+//     // Optional parameters
+//     direction: 'horizontal',
+//     loop: true,
+//     autoplay: {
+//        delay: 5000,
+//      },
+//     // If we need pagination
+//     pagination: {
+//         el: '.list-swiper-pagination',
+//     },
+
+//     // Navigation arrows
+//     navigation: {
+//         nextEl: '.swipe-btn-next',
+//         prevEl: '.swipe-btn-prev',
+//     },
+
+//     // And if we need scrollbar
+//     scrollbar: {
+//         el: '.swiper-scrollbar',
+//     },
+//     renderBullet: function (index, className) {
+//         return '<li><span class="' + className + '">' + (index + 1) + '</span></li>';
+//     }
+// });
 jQuery(window).scroll(function ($) {
     if (jQuery(this).scrollTop() >= 61) {
         //actions...

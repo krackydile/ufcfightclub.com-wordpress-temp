@@ -25,15 +25,40 @@ universejs.init(function (err, data) {
         }
     }
     if(data.customer){
+        if(document.getElementById('banner-cta') !== null){
+           document.getElementById('banner-cta').classList.add('hide'); 
+
+        }
+        if(document.getElementById('banner-cta-mobile') !== null){
+           document.getElementById('banner-cta-mobile').classList.add('hide'); 
+
+        }
+        if(document.getElementById('carrie-alert-box') !== null){
+           document.getElementById('carrie-alert-box').classList.add('hide'); 
+        }
         // show protected-help
         if ( document.getElementById('protected-help') !== null ){
             document.getElementById('protected-help').classList.remove('hide');
         }
+        // show protected-carousel
+        if ( document.getElementById('protected-swiper') !== null ){
+            document.getElementById('protected-swiper').classList.remove('hide');
+            const event = new Event('swiperManager');
+            document.getElementById('protected-swiper').dispatchEvent(event);
+
+        }
     }else{
         // show unprotected-help
-        if (document.getElementById("unprotected-help") !== null){
+        // show protected-help
+        if ( document.getElementById('unprotected-help') !== null ){
             document.getElementById('unprotected-help').classList.remove('hide');
         }
+        if (document.getElementById("unprotected-swiper") !== null){
+            document.getElementById('unprotected-swiper').classList.remove('hide');
+            const event = new Event('swiperManager');
+            document.getElementById('unprotected-swiper').dispatchEvent(event);
+        }
+        // show unprotected-carousel
     }
 
     /* Checks if the page is login protected and redirects to join page */
@@ -56,7 +81,7 @@ universejs.init(function (err, data) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
                 " <li class=\"nav-item\">\n" +
-                "    <a class=\"nav-link\" href=\"/join\" style=\"padding-top: 12px;\">\n" +
+                "    <a class=\"nav-link\" href=\"" + data.fanclub.links.forum +"\" style=\"padding-top: 12px;\">\n" +
                 "       <span>Message Board</span>\n" +
                 "    </a>\n" +
                 " </li>" +
@@ -189,12 +214,11 @@ universejs.on('ready', data => {
                     document.getElementById("plan-name").innerHTML = resources.account.customer.subscription.plan.name;
                     document.getElementById("plan-start").innerHTML = moment(resources.account.customer.subscription.start_date).format('MM/DD/YYYY');
                     document.getElementById("plan-end").innerHTML = moment(resources.account.customer.subscription.end_date).format('MM/DD/YYYY');
-
-                    if(resources.orders) {
+                    if(resources.orders && resources.orders.orders.length > 0) {
                         document.getElementById("shipped-on").innerHTML = 'Shipped on ' + resources.orders.orders[0].paid_at;
                     }
                     // Shipping
-                    if(resources.shipping) {
+                    if(resources.shipping && resources.shipping.address != null) {
                         document.getElementById("shipping-first-name").value = resources.shipping.address.first_name;
                         document.getElementById("shipping-last-name").value = resources.shipping.address.last_name;
                         document.getElementById("shipping-street-address").value = resources.shipping.address.address;

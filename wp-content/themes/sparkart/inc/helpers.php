@@ -730,7 +730,22 @@ function fw_print_play_video($videos, $active){
 		// var_dump($active_photo);
 	}
 }
+function get_active_video_disqus_id($videos, $active){
+	$active_video = array_filter($videos, function($video) use ($active) {
+			if(sanitize_title_with_dashes($video['video_title']) == $active){
+				return true;
+			}
+		});
 
+		if(!empty($active_video)){
+			if($active_video[0]['disqus_id']){
+				return $active_video[0]['disqus_id'];
+			}
+			
+			
+		}
+		return DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active;
+}
 function fw_print_photo_list($photos, $show = 4){
 	$offset = 12/$show;
 	if(!empty($photos)){

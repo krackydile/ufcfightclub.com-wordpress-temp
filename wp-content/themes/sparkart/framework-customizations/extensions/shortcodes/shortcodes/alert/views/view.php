@@ -1,4 +1,4 @@
-<section class="carrie-alert-box ">
+<section class="carrie-alert-box " id="carrie-alert-box">
 	<div class="row">
 		<div class="col">
 			<h4>Already a member?</h4>
