@@ -23,6 +23,33 @@ $options = array(
 						'value' => 'Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium',
 						'reinit' => true,
 					),
+					'media_page'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Media main page', 'unyson' ),
+						'population' => 'posts',
+						'source'     => 'page',
+						'desc'       => __( 'This is used to manage the breadcrumb.',
+							'unyson' ),
+						'limit' => 1
+					),
+					'help_categories_logout'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Help Categories(Logout)', 'unyson' ),
+						'population' => 'taxonomy',
+						'source'     => 'category',
+						'desc'       => __( 'Help categories for visitors',
+							'unyson' ),
+						// 'limit' => 1
+					),
+					'help_categories_login'      => array(
+						'type'       => 'multi-select',
+						'label'      => __( 'Help Categories(Login)', 'unyson' ),
+						'population' => 'taxonomy',
+						'source'     => 'category',
+						'desc'       => __( 'Help categories for members',
+							'unyson' ),
+						// 'limit' => 1
+					),
 
 				)
 			),

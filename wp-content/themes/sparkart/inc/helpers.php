@@ -382,7 +382,7 @@ function fw_get_social_list($args = []){
 	// merge default with the provided attributes
 	$args = array_merge($defaults, $args);
 	// set template for li
-	$list_template = '<li class="'.$args['item_class'].'"><a href="%s" ><i class="%s"></i></a></li>';
+	$list_template = '<li class="'.$args['item_class'].'"><a href="%s" target="_blank"><i class="%s"></i></a></li>';
 	// declare empty html 
 	$list = '';
 	// find the social handles from the general settings
@@ -507,12 +507,12 @@ function fw_print_news_card($post){
 	$template = '<div class="card">
 							    <div class="card-body">
 								    <h6 class="card-subtitle mb-2">%s</h6>
-								    <h5 class="card-title">%s</h5>
+								    <h5 class="card-title"><a href="%s">%s</a></h5>
 								    <p class="card-text">%s</p>
 								    <a href="%s" class="btn btn-primary">Read More</a>
 								</div>
 							</div> ';
-	return sprintf($template, get_the_date('F j,Y', $post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
+	return sprintf($template, get_the_date('F j,Y', $post), get_permalink($post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
 
 }
 function fw_get_latest_posts($limit = 6){
@@ -526,7 +526,12 @@ function fw_get_latest_posts($limit = 6){
 	}
 }
 function fw_get_inner_category_tabs($cat_id = null){
-	$categories = get_categories();
+	$selected_categories = fw_get_db_settings_option('archive_active_categories');
+	// var_dump($selected_categories);
+	// die();
+	$categories = get_categories(['include' => $selected_categories, 'orderby' => 'include']);
+	// var_dump($selected_categories);
+
 	?>
 	<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 		<li class="nav-item">
@@ -541,9 +546,346 @@ function fw_get_inner_category_tabs($cat_id = null){
 		<?php 
 			endforeach;
 		?>
-		<li class="nav-item">
-			<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Contests</a>
-		</li>
+		
 	</ul>	
 	<?php
+}
+function fw_get_events_detail_page(){
+	$page_id = fw_get_db_settings_option('events_detail_page');
+	if($page_id != ''){
+		return get_the_permalink($page_id[0]);
+	}else{
+		return '#';
+	}
+	// var_dump($page_id);
+}
+function fw_album_thumbnail($album){
+	$image = fw_get_db_term_option($album->term_id, 'albums', 'album_thumbnail');
+	// var_dump($image);
+	if(is_array($image)){
+		$url = $image['url'];
+	}else{
+		$url = get_template_directory_uri().'/images/1.jpg';
+	}
+	return $url;
+}
+
+function fw_show_album_buy_links($post_id){
+	$main_link = fw_get_db_post_option($post_id, 'store_link');
+	$itunes = fw_get_db_post_option($post_id, 'itunes_link');
+	$amazon = fw_get_db_post_option($post_id, 'amazon_music');
+
+	if($main_link != ''){
+
+	echo '<p class="mt-2">
+			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Carrie Underwood Store</a>
+			</p>';
+	}
+
+	echo '<p class="mt-2">';
+	if($itunes != ''){
+		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
+	}
+	if($amazon != ''){
+		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+	}
+	echo '</p>';
+}
+function _filter_my_custom_breadcrumbs_items( $items ) {
+    // do some changes ...
+    $object = get_queried_object();
+    // var_dump($object);
+    if($object->post_type == 'music'){
+    	$items[0] = [
+    		'name' => 'Music',
+    		'url' => get_bloginfo('wpurl').'/music/all',
+    		'type' => 'archive_page'
+    	];
+    }elseif($object->post_type == 'photoalbums'){
+    	$items[0] = [
+    		'name' => 'Official Photos',
+    		'url' => get_media_page(),
+    		'type' => 'archive_page'
+    	];
+    	if(get_query_var('active') != ''){
+    		$items[] = [
+    			'name' => 'Photo',
+	    		'url' => 'javascript:void(0);',
+	    		'type' => 'Single Page'
+    		];
+    	}
+    }elseif($object->post_type == 'videos'){
+    	$items[0] = [
+    		'name' => 'Official Videos',
+    		'url' => get_media_page().'#official-videos',
+    		'type' => 'archive_page'
+    	];
+    	if(get_query_var('active') != ''){
+    		// var_dump(get_query_var('active'));
+    		$string = (string) get_query_var('active');
+    		$items[] = [
+    			'name' => esc_html(ucfirst(str_replace('-', ' ', $string))),
+	    		'url' => 'javascript:void(0);',
+	    		'type' => 'single page'
+    		];
+    	}
+    }elseif($object->post_type =='post' && is_help_category_article($object)){
+    	$items[0] = [
+    		'name' => 'Help',
+    		'url' => get_bloginfo('wpurl').'/help',
+    		'type' => 'archive_page'
+    	];
+    	$items[1] = $items[2];
+    	unset($items[2]);
+    }
+    // var_dump($items);
+	return $items;
+}
+add_filter( 'fw_ext_breadcrumbs_build', '_filter_my_custom_breadcrumbs_items' );
+function fw_embed_shortcode($content){
+	$code =  wp_oembed_get(strip_tags($content), ['width' => 800]); 
+	if($code != ''){
+		echo $code;
+		return ;
+	}
+	global $wp_embed;
+
+	echo $wp_embed->run_shortcode($content);
+
+}
+function fw_count_photo_album($album){
+	return count(fw_get_db_post_option($album->ID, 'photo_gallery'));
+}
+
+
+function fw_print_video_list($videos, $show = 6, $show_title = true){
+	$offset = 12/$show;
+	if(!empty($videos)){
+		if($show_title == true){
+
+			echo '<h1 class="text-center official-photo-title">'.get_the_title().'</h1>';
+		}
+		echo '<div class="row">';
+		foreach($videos as $key => $video){
+			$template = '<div class="col-'.$offset.' col-official-image">
+							<a href="%s">
+								<img src="%s" class="img-responsive" />
+								
+							</a>
+						</div>';
+			if($video['video_thumbnail']['url']){
+				$video_thumbnail = $video['video_thumbnail']['url'];
+			}else{
+				$video_thumbnail = get_template_directory_uri().'/images/carrie-fc.png';
+			}
+			echo sprintf($template, 
+					add_query_arg('active', sanitize_title_with_dashes($video['video_title']), get_permalink( get_the_ID() ) ), 
+					$video_thumbnail,
+					$video['video_title']
+				);
+		}
+		echo '</div>';
+	}
+}
+function fw_print_play_video($videos, $active){
+	if(!empty($videos)){
+		$active_video = array_filter($videos, function($video) use ($active) {
+			if(sanitize_title_with_dashes($video['video_title']) == $active){
+				return true;
+			}
+		});
+
+		if(!empty($active_video)){
+			foreach($active_video as $active_key => $vid){
+				// var_dump($vid);
+				$videoContent = $vid['video_info'];
+				// var_dump($videoContent);
+				echo '<div class="video-frame">';
+								if($videoContent['gadget'] == 'upload'){
+									echo do_shortcode('[video src="'.$videoContent['upload']['video_upload']['url'].'" poster="'.get_the_post_thumbnail_url().'" width="1200"]');
+								}else{
+									// global $wp_embed;
+									echo wp_oembed_get($videoContent['embed']['video_url'], ['width' => 1200]); 
+									// echo $wp_embed->run_shortcode();
+								}
+								echo '</div>';
+				$previous = $active_key-1;
+				$next = $active_key+1;
+			}
+			// echo '<div class="gallery_nav_button">';
+			// if(array_key_exists($previous, $videos)){
+			// 	echo '<a href="'.add_query_arg('active', $videos[$previous]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-outline-primary">Previous</a>';
+			// }
+			// if(array_key_exists($next, $videos)){
+			// 	echo '<a href="'.add_query_arg('active', $videos[$next]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-primary">Next photo</a>';
+			// }
+			// echo '</div>';
+			
+		}
+
+		echo '<div class="videos-thumbnails">';
+		echo '<h3 class="more-photos">Related Videos</h3>';
+		fw_print_video_list($videos, 6, false);
+		echo '</div>';
+		// var_dump($active_photo);
+	}
+}
+function get_active_video_disqus_id($videos, $active){
+	$active_video = array_filter($videos, function($video) use ($active) {
+			if(sanitize_title_with_dashes($video['video_title']) == $active){
+				return true;
+			}
+		});
+
+		if(!empty($active_video)){
+			if($active_video[0]['disqus_id']){
+				return $active_video[0]['disqus_id'];
+			}
+			
+			
+		}
+		return DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active;
+}
+function fw_print_photo_list($photos, $show = 4){
+	$offset = 12/$show;
+	if(!empty($photos)){
+		echo '<div class="row">';
+		foreach($photos as $photo){
+			$template = '<div class="col-'.$offset.' col-official-image">
+							<a href="%s">
+								<img src="%s" class="img-responsive" />
+							</a>
+						</div>';
+			echo sprintf($template, add_query_arg('active', $photo['attachment_id'], get_permalink( get_the_ID() ) ), $photo['url']);
+		}
+		echo '</div>';
+	}
+}
+
+function fw_print_photo_slider($photos, $active){
+	// var_dump($photos);
+	if(!empty($photos)){
+		$active_photo = array_filter($photos, function($photo) use ($active) {
+			if($photo['attachment_id'] == $active){
+				return true;
+			}
+		});
+		if(!empty($active_photo)){
+			foreach($active_photo as $active_key => $active_value){
+
+				echo '<div class="gallery-main-photo">
+						<div class="active-image">
+							<img src="'.$active_value['url'].'" class="img-responsive" />
+							<p><strong>Added:</strong>'.get_the_date().'</p>
+						</div>
+					</div>';
+				$previous = $active_key-1;
+				$next = $active_key+1;
+			}
+			echo '<div class="gallery_nav_button">';
+			if(array_key_exists($previous, $photos)){
+				echo '<a href="'.add_query_arg('active', $photos[$previous]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-outline-primary">Previous</a>';
+			}
+			if(array_key_exists($next, $photos)){
+				echo '<a href="'.add_query_arg('active', $photos[$next]['attachment_id'], get_permalink( get_the_ID() ) ).'" class="btn btn-primary">Next photo</a>';
+			}
+			echo '</div>';
+			
+		}
+		echo '<div class="photo-thumbnails">';
+		echo '<h3 class="more-photos">more photos from this album</h3>';
+		fw_print_photo_list(array_slice($photos, $active_key, 6), 6);
+		echo '</div>';
+		// var_dump($active_photo);
+	}
+}
+function fw_get_registered_post_types(){
+	return array(
+			'photoalbums' => __( 'Photo Albums', 'unyson' ),
+			'videos' => __( 'Video Albums', 'unyson' ),
+		);
+}
+function is_protected_post_type(){
+	// get current content
+
+	$post = get_post();
+	// get all protected post types
+	$protected_post_types = fw_get_db_settings_option('protected_post_types');
+	if(in_array($post->post_type, $protected_post_types)){
+		return true;
+	}
+	return false;
+	
+}
+function get_media_page(){
+	$media = fw_get_db_settings_option('media_page');
+	if($media != ''){
+		return get_permalink($media[0]);
+	}
+}
+function fw_print_more_help(){
+	?>
+	<section class="sparkart-more-notice">
+		<div class="container container-more-notice">
+
+			<div class="row">
+				<div class="col">
+					<h2><?php echo fw_get_db_settings_option('more_notice_heading'); ?></h2>
+					<?php echo fw_get_db_settings_option('more_notice_content'); ?>
+				</div>
+			</div>
+		</div>
+	</section>
+	<?php
+}
+function is_help_category_article($post){
+	$category = get_the_category($post->ID);
+	$help_categories = fw_get_db_settings_option('help_categories_login');
+	$category_ids = array_map(function($cat){
+		return $cat->term_id;
+	}, $category);
+	$helpIntersect = array_intersect($category_ids, $help_categories);
+	if(!empty($helpIntersect)){
+		return true;
+	}
+	return false;
+}
+function tracks_no_lyrics($tracks){
+	// Filter array to find the number of elements
+	return count(array_filter($tracks, function($track){
+		if($track['track_lyrics'] != ''){
+			return true;
+		}
+	}));
+}
+function fw_display_help_articles($articles, $id, $class){
+		echo '<section id="'.$id.'" class="'.$class.'">';
+		if(!empty($articles)):
+				foreach($articles as $loginCategoryID):
+					$loginCategory = get_category($loginCategoryID);
+		?>
+					<section class="help-category protected">
+						<h3><?php echo $loginCategory->name; ?></h3>
+						<div class="row">
+							<div class="col">
+								<?php 
+									$helpArticles = get_posts([
+										'numberposts' => -1,
+										'category' => $loginCategoryID
+									]);
+									foreach($helpArticles as $help):
+								?>
+									<p>
+										<a href="<?php echo get_permalink($help->ID); ?>"><?php echo $help->post_title; ?></a>
+									</p>
+								<?php 
+									endforeach;
+								?>
+							</div>
+						</div>
+					</section>
+		<?php 	
+				endforeach;
+			endif;
+		echo '</section>';
 }
