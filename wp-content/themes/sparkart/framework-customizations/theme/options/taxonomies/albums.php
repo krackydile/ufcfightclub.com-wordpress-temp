@@ -25,11 +25,31 @@ $options = array(
 		'type'  => 'text',
 	),
 	'itunes_link'                    => array(
-		'label' => __( 'iTUNES', 'unyson' ),
+		'label' => __( 'iTunes', 'unyson' ),
 		'type'  => 'text',
 	),
 	'amazon_music'                    => array(
 		'label' => __( 'Amazon Music', 'unyson' ),
+		'type'  => 'text',
+	),
+	'spotify'                    => array(
+		'label' => __( 'Spotify', 'unyson' ),
+		'type'  => 'text',
+	),
+	'pandora'                    => array(
+		'label' => __( 'Pandora', 'unyson' ),
+		'type'  => 'text',
+	),
+	'youtube'                    => array(
+		'label' => __( 'Youtube', 'unyson' ),
+		'type'  => 'text',
+	),
+	'google_play'                    => array(
+		'label' => __( 'Google Play', 'unyson' ),
+		'type'  => 'text',
+	),
+	'tidal'                    => array(
+		'label' => __( 'Tidal', 'unyson' ),
 		'type'  => 'text',
 	),
 );

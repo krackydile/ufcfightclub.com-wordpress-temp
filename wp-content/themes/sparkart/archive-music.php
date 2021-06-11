@@ -6,14 +6,13 @@ get_header();
 		<h3 class="block-heading text-center mt-4 mb-5"><span>Music </span></h3>
 		<div class="row">
 		<?php
-			
-			if(have_posts()):
-				// query_posts([
-				// 	'orderby' => 'menu_order',
-				// 	'order' => 'ASC'
-				// ]);
-				while(have_posts()):
-					the_post()
+        global $query_string;
+        query_posts (array(
+        	'post_type'      => 'music',
+        	'posts_per_page' => -1,
+				 	'order' => 'ASC'
+        ));
+        if (have_posts()) : while (have_posts()) : the_post();
 		?>
 		
 

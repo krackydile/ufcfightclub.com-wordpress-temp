@@ -388,6 +388,14 @@ function sparkart_load_more_scripts() {
  
 	global $wp_query; 
  
+  // Force general news page to filter to only News category
+	$category = get_category( get_query_var( 'cat' ) );
+	$cat_id = $category->cat_ID;
+	$pagename = get_query_var('pagename');
+	if($cat_id == null && $pagename == 'news'){
+	  query_posts( array ( 'category_name' => 'News' ) );	
+	}
+
 	// var_dump('i am here');
 	// die();
 	echo '<script>' .'const sparkart_loadmore_params = ' . json_encode( array(
@@ -662,12 +670,30 @@ function add_custom_text_field_to_attachment_fields_to_edit( $form_fields, $post
 }
 add_filter('attachment_fields_to_edit', 'add_custom_text_field_to_attachment_fields_to_edit', null, 2); 
 
+// Add custom link field for image-carousel
+function add_custom_link_field_to_image_carousel( $form_fields, $post ) {
+    $text_field = get_post_meta($post->ID, 'image_carousel_link', true);
+    $form_fields['image_carousel_link'] = array(
+        'label' => 'Image Carousel Link',
+        'input' => 'text', // you may alos use 'textarea' field
+        'value' => $text_field,
+        'helps' => 'Enter link for banner image'
+    );
+    return $form_fields;
+}
+add_filter('attachment_fields_to_edit', 'add_custom_link_field_to_image_carousel', null, 2); 
+
 // Save custom checkbox attachment field
 function save_custom_checkbox_attachment_field($post, $attachment) {  
     if( isset($attachment['smugmug_id']) ){  
         update_post_meta($post['ID'], 'smugmug_id', sanitize_text_field( $attachment['smugmug_id'] ) );  
     }else{
          delete_post_meta($post['ID'], 'smugmug_id' );
+    }
+    if( isset($attachment['image_carousel_link']) ){  
+        update_post_meta($post['ID'], 'image_carousel_link', sanitize_text_field( $attachment['image_carousel_link'] ) );  
+    }else{
+         delete_post_meta($post['ID'], 'image_carousel_link' );
     }
     return $post;  
 }

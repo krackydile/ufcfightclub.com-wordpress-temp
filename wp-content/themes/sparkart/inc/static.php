@@ -40,7 +40,7 @@ wp_enqueue_style(
 
 	// 'http://29e28d0d68ce.ngrok.io/wp-content/themes/sparkart'.'/css/build/main.min.css',
 	array( 'genericons' ),
-	'1.0'
+	date("ymd-Gis", filemtime(get_template_directory() . '/css/build/main.min.css'))
 );
 
 // Load the Internet Explorer specific stylesheet.

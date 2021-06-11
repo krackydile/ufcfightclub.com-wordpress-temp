@@ -9,11 +9,24 @@
 				  <div class="swiper-wrapper">
 				    <!-- Slides -->
 				    <?php 
-				    	$template = '<div class="swiper-slide">
+				    	$template_image_only = '<div class="swiper-slide">
 								    	<img src="%s" class="full-slide">
 								    </div>';
+				    	$template_image_with_link = '<div class="swiper-slide">
+								    	<a href="%s"><img src="%s" class="full-slide"></a>
+								    </div>';
+				    	$template_image_with_offsite_link = '<div class="swiper-slide">
+								    	<a href="%s" target="_blank"><img src="%s" class="full-slide"></a>
+								    </div>';
 						foreach($atts['carousel_images'] as $image){
-							echo sprintf($template, $image['url']);
+					    $image_link = get_post_meta($image['attachment_id'], 'image_carousel_link', true);
+					    if($image_link == ''){
+					    	echo sprintf($template_image_only, $image['url']);
+					    } elseif(strpos($image_link, 'http') !== false) {
+								echo sprintf($template_image_with_offsite_link, $image_link, $image['url']);
+					    } else {
+								echo sprintf($template_image_with_link, $image_link, $image['url']);
+							}
 						}
 				    ?>
 				    
@@ -64,11 +77,24 @@
 				  <div class="swiper-wrapper">
 				    <!-- Slides -->
 				    <?php 
-				    	$template = '<div class="swiper-slide">
+				    	$template_image_only = '<div class="swiper-slide">
 								    	<img src="%s" class="full-slide">
 								    </div>';
+				    	$template_image_with_link = '<div class="swiper-slide">
+								    	<a href="%s"><img src="%s" class="full-slide"></a>
+								    </div>';
+				    	$template_image_with_offsite_link = '<div class="swiper-slide">
+								    	<a href="%s" target="_blank"><img src="%s" class="full-slide"></a>
+								    </div>';
 						foreach($atts['login_carousel_images'] as $image){
-							echo sprintf($template, $image['url']);
+					    $image_link = get_post_meta($image['attachment_id'], 'image_carousel_link', true);
+					    if($image_link == ''){
+					    	echo sprintf($template_image_only, $image['url']);
+					    } elseif(strpos($image_link, 'http') !== false) {
+								echo sprintf($template_image_with_offsite_link, $image_link, $image['url']);
+					    } else {
+								echo sprintf($template_image_with_link, $image_link, $image['url']);
+							}
 						}
 				    ?>
 				    

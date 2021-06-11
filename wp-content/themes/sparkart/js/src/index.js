@@ -171,6 +171,7 @@ document.getElementById('protected-swiper').addEventListener("swiperManager", fu
         // If we need pagination
         pagination: {
             el: '.list-swiper-pagination',
+            clickable: true,
         },
 
         // Navigation arrows
@@ -203,6 +204,7 @@ document.getElementById('unprotected-swiper').addEventListener("swiperManager", 
     // If we need pagination
     pagination: {
         el: '.list-swiper-pagination',
+        clickable: true,
     },
 
     // Navigation arrows

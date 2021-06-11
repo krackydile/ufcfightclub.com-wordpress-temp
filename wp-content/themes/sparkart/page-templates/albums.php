@@ -20,6 +20,7 @@ get_header();
 			<?php 
 				$albums = get_terms('albums',[
 					'hide_empty' => false,
+					'number' => 100
 					
 				]);
 

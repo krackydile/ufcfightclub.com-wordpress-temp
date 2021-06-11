@@ -26,15 +26,15 @@ universejs.init(function (err, data) {
     }
     if(data.customer){
         if(document.getElementById('banner-cta') !== null){
-           document.getElementById('banner-cta').classList.add('hide'); 
+           document.getElementById('banner-cta').classList.add('hide');
 
         }
         if(document.getElementById('banner-cta-mobile') !== null){
-           document.getElementById('banner-cta-mobile').classList.add('hide'); 
+           document.getElementById('banner-cta-mobile').classList.add('hide');
 
         }
         if(document.getElementById('carrie-alert-box') !== null){
-           document.getElementById('carrie-alert-box').classList.add('hide'); 
+           document.getElementById('carrie-alert-box').classList.add('hide');
         }
         // show protected-help
         if ( document.getElementById('protected-help') !== null ){
@@ -47,6 +47,12 @@ universejs.init(function (err, data) {
             document.getElementById('protected-swiper').dispatchEvent(event);
 
         }
+
+        // Begin Szeto: Needed for Fan Club Party 2021
+        localStorage.setItem('universeCustomerId', data.customer.id);
+        localStorage.setItem('universeCustomerFirstName', data.customer.first_name);
+        localStorage.setItem('universeCustomerLastName', data.customer.last_name);
+        // End Szeto
     }else{
         // show unprotected-help
         // show protected-help
@@ -97,7 +103,7 @@ universejs.init(function (err, data) {
                 " </li>" +
                 "</ul>";
         }
-        if (document.getElementById("protected-box") !== null) {
+        /* if (document.getElementById("protected-box") !== null) {
             document.getElementById("protected-box").innerHTML = `
                ${data.customer.subscription ? `
                 <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
@@ -108,7 +114,7 @@ universejs.init(function (err, data) {
                  </div>
                 </div>`:``
             }`;
-        }
+        } */
         if (document.getElementById("presale-access-code-signin-text") !== null) {
             document.getElementById("presale-access-code-signin-text").style.display = 'none';
         }
@@ -214,6 +220,8 @@ universejs.on('ready', data => {
                     document.getElementById("plan-name").innerHTML = resources.account.customer.subscription.plan.name;
                     document.getElementById("plan-start").innerHTML = moment(resources.account.customer.subscription.start_date).format('MM/DD/YYYY');
                     document.getElementById("plan-end").innerHTML = moment(resources.account.customer.subscription.end_date).format('MM/DD/YYYY');
+                    // console.log('e');
+                    // console.log(resources.orders);
                     if(resources.orders && resources.orders.orders.length > 0) {
                         document.getElementById("shipped-on").innerHTML = 'Shipped on ' + resources.orders.orders[0].paid_at;
                     }
@@ -299,39 +307,45 @@ universejs.on('ready', data => {
                     `<h3>Performance in <a href="/events-details/?event=${eventId}">${resources.event.event.venue.city}, ${resources.event.event.venue.state}</a></h3>`;
             }
             if(resources.contest.contest) {
+                if(resources.event.event && resources.event.event.tags.indexOf('fan party') >= 0){
+                  var contestType = "RSVP";
+                  jQuery('h3:contains("Contest Details")').text('Rsvp Details');
+                } else {
+                  var contestType = "Contest";
+                }
                 document.getElementById("contest-alert-info").innerHTML = `
                     ${resources.contest.contest.entered ? `
-                    <div  style="text-transform: uppercase">You have been entered into the contest</div>` : ``
+                    <div  style="text-transform: uppercase">You have been entered into the ` + contestType + `</div>` : ``
                     }`;
 
                 document.getElementById("contest-detail-info").innerHTML = `
                      <div class="topic">
                      <h3>${resources.contest.contest.name}
                       ${resources.contest.contest.ended ? `
-                        <span>&mdash;</span> <strong>Contest is Finished</strong>` : ``
+                        <span>&mdash;</span> <strong>` + contestType + ` is Finished</strong>` : ``
                       }
                      </h3>
                       ${resources.contest.contest.event ? `
                           <h4><a href="/events-details/?event=${resources.contest.contest.event.id}">${resources.contest.contest.event.title}</a></h4>` : ``
                       }
                         <dl>
-                          <dt>${new Date(resources.contest.contest.details) >  new Date()  ? `Contest Starts`: `Contest Started`}</dt>
+                          <dt>${new Date(resources.contest.contest.details) >  new Date()  ? contestType + ` Starts`: contestType + ` Started`}</dt>
                           <dd>${moment.tz(resources.contest.contest.starts_at, resources.contest.contest.timezone.tz).format('M/DD/YY h:mma z')}</dd>
-                          <dt>${resources.contest.contest.ended ? `Contest Ended`: `Contest Ends`}</dt>
+                          <dt>${resources.contest.contest.ended ? contestType + ` Ended`: contestType + ` Ends`}</dt>
                           <dd>${moment.tz(resources.contest.contest.ends_at, resources.contest.contest.timezone.tz).format('M/DD/YY h:mma z')}</dd>
                          </dl>
                       </div>
                       <div class="details">
                        ${resources.contest.contest.details ? `
-                         <div class="contest"> <h4>Contest Details</h4> <div class="markup">${resources.contest.contest.details}</div></div>` : ``
+                         <div class="contest"> <h4>` + contestType + ` Details</h4> <div class="markup">${resources.contest.contest.details}</div></div>` : ``
                        }
                         ${resources.contest.contest.rules ? `
-                         <div class="contest"> <h4>Contest Rules</h4> <div class="markup">${resources.contest.contest.rules}</div></div>` : ``
+                         <div class="contest"> <h4>` + contestType + ` Rules</h4> <div class="markup">${resources.contest.contest.rules}</div></div>` : ``
                        }
                        </div>`;
 
                 document.getElementById("contest-form-info").innerHTML = `
-                 ${resources.contest.contest.available_to_customer && resources.contest.contest.running ? ` 
+                 ${resources.contest.contest.available_to_customer && resources.contest.contest.running ? `
                    <form class="contest-form" id="contest-form" method="post">
                                 <label>
                                     <em>Phone Number</em>
@@ -340,7 +354,7 @@ universejs.on('ready', data => {
 
                                 <fieldset>
                                     <label>
-                                        <input type="checkbox" class="" name="rules" value="true" /> <em>I agree to the Contest Rules</em>
+                                        <input type="checkbox" class="" name="rules" value="true" /> <em>I agree to the ` + contestType + ` Rules</em>
                                     </label>
                                 </fieldset>
                                 <input type="submit" id="contest-submit" value="Submit" class="btn btn-primary" />
@@ -407,6 +421,46 @@ universejs.on('ready', data => {
         });
 
     }
+
+    // Presale code and exclusive event ticket links
+    if (data.customer && data.customer.subscription && document.getElementById("protected-box")) {
+      const exclusiveEventLinks = document.querySelectorAll('.event-link-exclusive');
+      if (exclusiveEventLinks.length) {
+        const eventId = (new URLSearchParams(window.location.search)).get('event');
+        universejs.get('/events/'+eventId, function (err, data) {
+          const exclusiveUrls = {};
+          let codes = [];
+          data.event.links.forEach(function (link) {
+            if (link.exclusive) exclusiveUrls[data.event.id.toString() + '-' + link.name.replace(/"/g, '')] = link.url;
+            codes = codes.concat(link.codes);
+          });
+          Array.prototype.forEach.call(exclusiveEventLinks, function (link) {
+            var exclusiveUrl = exclusiveUrls[link.getAttribute('data-id')];
+            if (exclusiveUrl) link.setAttribute('href', exclusiveUrl);
+          });
+
+          if (codes.length && document.getElementById("protected-box") !== null) {
+              document.getElementById("protected-box").innerHTML = `
+                <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR PRE-SALE ACCESS CODE:</p>
+                <div class="accesscode protected block-protected\">
+                 <div class="input-group my-2">
+                  <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${codes.join(', ')}">
+                  <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
+                 </div>
+                </div>`;
+          }
+        });
+      } else {
+        document.getElementById("protected-box").innerHTML = `
+          <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
+          <div class="accesscode protected block-protected">
+           <div class="input-group my-2">
+            <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[0].codes[0]}">
+            <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
+           </div>
+          </div>`;
+      }
+    }
 });
 
 //Country Change Event
@@ -429,10 +483,14 @@ let tempUpcomingTourArray = [];
 let tempPreSaleArray = [];
 let tempUpcomingAppearanceArray = [];
 let tempPastEventArray = [];
-let upcomingTourURL = '/events?scope=upcoming&tags=performance&limit=3';
-let preSaleURL = '/events?scope=upcoming&tags=appearance,tv,radio&limit=12';
-let upcomingAppearanceURL = '/events?scope=upcoming&tags=appearance,tv,radio&limit=12';
-let pastEventURL = '/events?scope=past&order=DESC&limit=12';
+// JL: let upcomingTourURL = '/events?scope=upcoming&tags=performance&limit=36';
+// JL: let preSaleURL = '/events?scope=upcoming&tags=unique,generic&limit=36';
+// JL: let upcomingAppearanceURL = '/events?scope=upcoming&tags=appearance,tv,radio&limit=36';
+// JL: let pastEventURL = '/events?scope=past&order=DESC&limit=36';
+let upcomingTourURL = '/universe-events/?tab=upcoming-tour-dates';
+let preSaleURL = '/universe-events/?tab=fan-club-pre-sale';
+let upcomingAppearanceURL = '/universe-events/?tab=upcoming-appearances';
+let pastEventURL = '/universe-events/?tab=past-events';
 let loading = false;
 
 window.loadMorePagination = (e, type, currentPage) => {
@@ -442,13 +500,14 @@ window.loadMorePagination = (e, type, currentPage) => {
     let target = e.target || e.srcElement;
     console.log("ttr", target);
 
-    let tempCurrentPage = '&page=' + currentPage;
+    // JL: let tempCurrentPage = '&page=' + currentPage;
+    let tempCurrentPage = '&pg=' + currentPage;
     if ('UpcomingTour' === type) {
         upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL + tempCurrentPage);
     } else if ('PreSale' === type) {
         preSaleAPI(tempPreSaleArray, preSaleURL + tempCurrentPage);
     } else if ('UpcomingAppearance' === type) {
-        upcomingAppearanceAPI(tempUpcomingTourArray, upcomingAppearanceURL + tempCurrentPage);
+        upcomingAppearanceAPI(tempUpcomingAppearanceArray, upcomingAppearanceURL + tempCurrentPage);
     } else if ('PastEvent' === type) {
         pastEventAPI(tempPastEventArray, pastEventURL + tempCurrentPage);
     }
@@ -456,40 +515,47 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
-    const loadMore = pagination?.current_page < pagination?.total_pages;
+    const loadMore = pagination && pagination.current_page < pagination.total_pages;
     const container = document.getElementById(containerId);
     if (container !== null) {
         loading = false;
         container.innerHTML = `
-                ${data.length > 0 ? `
-                ${data?.map(group => `
+                ${data && data.length > 0 ? `
+                ${data.map(group => `
                  <div class="event-block">
-                 <h3 class="event-heading" style="text-transform: uppercase;">${group?.date}</h3>
+                 <h3 class="event-heading" style="text-transform: uppercase;">${group.date}</h3>
                  <div class="row">
-                 ${group?.events?.map(item => `
+                 ${(group.events || []).map(item => {
+            const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});
+            const availableLinks = item.links.filter(function (link) {return link.tickets_available});
+        item.venue = item.venue || {name: '', city: '', state: ''};
+            return `
                     <div class="col-lg-4 col-sm-12 col-xs-12">
-                     <div class="card events-card">
+                     <div class="card events-card" data-tags="${item.tags}">
                       <div class="card-body">
-                      <h6 class="card-subtitle mb-3">${moment.tz(item?.date, item?.timezone?.tz).format('D MMMM')}</h6>
-                      <div class="card-content"><h5 class="card-title mb-3"><a href="/events-details/?event=${item?.id}" class="" target="_blank">${item?.venue?.name}</a></h5>
-                       <h6 class="card-subtitle mb-4 event-venue">${item?.venue?.city}, ${item?.venue?.state}</h6>
+                      <h6 class="card-subtitle mb-3">${moment.tz(item.date, item.timezone.tz).format('D MMMM')}</h6>
+                      <div class="card-content"><h5 class="card-title mb-3"><a href="/events-details/?event=${item.id}">${item.venue.name}</a></h5>
+                       <h6 class="card-subtitle mb-4 event-venue">${item.venue.city}${item.venue.state ? `, ${item.venue.state}` : ``}</h6>
                        </div>
-                      ${item.links.length > 0 ? `
-                       <a href="/events-details/?event=${item?.id}" class="btn btn-primary" target="_blank">Buy Tickets</a>` : ``
-                       }
-                       ${item.contests.length > 0 ? `
-                       <a href="/events-details/?event=${item?.id}" class="btn btn-outline-primary" target="_blank">Meet & Greet</a>` : ``
-                       }
+                      ${upcomingLinks.map(function (link) {return `
+                          <span class="btn btn-disabled">${link.name} On Sale:<br />${moment.tz(link.publish_start, item.timezone.tz).format('M/D/YY [at] h:mmA z')}</span>
+                      `}).join('')}
+                      ${availableLinks.map(function (link) {return `
+              <a href="/events-details/?event=${item.id}" class="btn btn-primary">Buy ${link.name}</a>
+                      `}).join('')}
+                      ${item.contests.length > 0 ? `
+                       <a href="/events-details/?event=${item.id}" class="btn btn-outline-primary">Meet & Greet</a>` : ``
+                      }
                       </div>
                      </div>
                     </div>`
-            ).join('')}
+            }).join('')}
                  </div>
                  </div>`
         ).join('')}
                     ${loadMore ? `
                         <div class="text-center mt-4 mb-5">
-                        <a id ="load-more" class="btn btn-outline-primary" onclick="loadMorePagination(event,'${type}', '${pagination?.current_page + 1}')">Load More</a>
+                        <a id ="load-more" class="btn btn-outline-primary" onclick="loadMorePagination(event,'${type}', '${pagination.current_page + 1}')">Load More</a>
                         <a id ="load-more-loading" style="display: none;" class="btn btn-outline-primary events-load-more-loading"><i class="fa fa-circle-o-notch fa-spin"></i> Loading</a>` : ``
 
             }
@@ -500,11 +566,12 @@ eventDetailBox = (containerId, type, data, pagination) => {
 };
 
 upcomingTourAPI = (tempUpcomingTourArray, eventScope) => {
-    universejs.get(eventScope, function (err, data) {
-        if (data?.events?.length > 0) {
-            tempUpcomingTourArray.push(...data?.events);
+    // JL: universejs.get(eventScope, function (err, data) {
+    jQuery.getJSON(eventScope, function (data) {
+        if (data && data.events && data.events.length > 0) {
+            tempUpcomingTourArray.push(...data.events);
         }
-        const groups = tempUpcomingTourArray?.reduce((groups, event) => {
+        const groups = (tempUpcomingTourArray || []).reduce((groups, event) => {
             const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
@@ -519,16 +586,17 @@ upcomingTourAPI = (tempUpcomingTourArray, eventScope) => {
                 events: groups[date]
             };
         });
-        eventDetailBox('upcoming-tour-dates-container', 'UpcomingTour', groupArrays, data?.pagination);
+        eventDetailBox('upcoming-tour-dates-container', 'UpcomingTour', groupArrays, data && data.pagination);
     });
 };
 
 preSaleAPI = (tempPreSaleArray, eventScope) => {
-    universejs.get(eventScope, function (err, data) {
-        if (data?.events?.length > 0) {
-            tempPreSaleArray.push(...data?.events).format('MMMM Y');
+    // JL: universejs.get(eventScope, function (err, data) {
+    jQuery.getJSON(eventScope, function (data) {
+        if (data && data.events && data.events.length > 0) {
+            tempPreSaleArray.push(...data.events);
         }
-        const groups = tempPreSaleArray?.reduce((groups, event) => {
+        const groups = (tempPreSaleArray || []).reduce((groups, event) => {
             const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
@@ -543,16 +611,17 @@ preSaleAPI = (tempPreSaleArray, eventScope) => {
                 events: groups[date]
             };
         });
-        eventDetailBox('fan-club-presales-container', 'PreSale', groupArrays, data?.pagination);
+        eventDetailBox('fan-club-presales-container', 'PreSale', groupArrays, data && data.pagination);
     });
 };
 
 upcomingAppearanceAPI = (tempUpcomingAppearanceArray, eventScope) => {
-    universejs.get(eventScope, function (err, data) {
-        if (data?.events?.length > 0) {
-            tempUpcomingAppearanceArray.push(...data?.events);
+    // JL: universejs.get(eventScope, function (err, data) {
+    jQuery.getJSON(eventScope, function (data) {
+        if (data && data.events && data.events.length > 0) {
+            tempUpcomingAppearanceArray.push(...data.events);
         }
-        const groups = tempUpcomingAppearanceArray?.reduce((groups, event) => {
+        const groups = (tempUpcomingAppearanceArray || []).reduce((groups, event) => {
             const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
@@ -567,16 +636,17 @@ upcomingAppearanceAPI = (tempUpcomingAppearanceArray, eventScope) => {
                 events: groups[date]
             };
         });
-        eventDetailBox('upcoming-appearances-container', 'UpcomingAppearance', groupArrays, data?.pagination);
+        eventDetailBox('upcoming-appearances-container', 'UpcomingAppearance', groupArrays, data && data.pagination);
     });
 };
 
 pastEventAPI = (tempPastEventArray, eventScope) => {
-    universejs.get(eventScope, function (err, data) {
-        if (data?.events?.length > 0) {
-            tempPastEventArray.push(...data?.events);
+    // JL: universejs.get(eventScope, function (err, data) {
+    jQuery.getJSON(eventScope, function (data) {
+        if (data && data.events && data.events.length > 0) {
+            tempPastEventArray.push(...data.events);
         }
-        const groups = tempPastEventArray?.reduce((groups, event) => {
+        const groups = (tempPastEventArray || []).reduce((groups, event) => {
             const date = moment(event.date).format('MMMM Y');
             if (!groups[date]) {
                 groups[date] = [];
@@ -592,13 +662,14 @@ pastEventAPI = (tempPastEventArray, eventScope) => {
             };
         });
 
-        eventDetailBox('past-events-container', 'PastEvent', groupArrays, data?.pagination);
+        eventDetailBox('past-events-container', 'PastEvent', groupArrays, data && data.pagination);
     });
 };
 
 jQuery(() => {
 
-    upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
+    // JL: add condition
+    if (jQuery('.event-list').length) upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
 
     jQuery('ul.event-pills li a').on('click', function (e) {
         let eventType = jQuery(this).attr('id');

@@ -1,0 +1,170 @@
+body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.4;
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+p {
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+    line-height: 1.65 !important;
+}
+
+#header {
+     display: none;
+}
+
+#container, html.embed, 
+.wufoo li.focused {
+     background: none !important;
+}
+
+.wufoo input.file {
+    padding: 20px !important;
+    border: 1px solid #aeb7be !important;
+    border-radius: 4px !important;
+    color: #8695a2 !important;
+    max-width: 70% !important;
+    font-size: 12px !important;
+}
+
+input.btTxt {
+     -webkit-appearance: none !important;
+     background: #6e8776 !important;
+     color: #fff !important;
+     border-radius: 25px;
+     border: 0 !important;
+     padding: 8px 22px;
+     font-size: 13px !important;
+     line-height: 1.5 !important;
+     font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+     cursor: pointer !important;
+     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+     text-transform: uppercase;
+}
+
+input.btTxt:hover {
+    background: #49504a !important;
+}
+
+input.btTxt:disabled {
+     background: #e4e8e9 !important;
+     color: #bac0c3;
+}
+
+form label span.req {
+    display: none !important;
+}
+
+.wufoo label.desc, .wufoo legend.desc, .likert caption {
+     color: #000 !important;
+     display: none !important;
+}
+
+.wufoo input.text, .wufoo input.search, .wufoo textarea.textarea {
+     background: none;
+     border: 2px solid #000;
+     padding: 10px;
+     color: #000 !important;
+     text-align: center;
+}
+
+textarea.textarea {
+     min-width: 90%;
+}
+
+::placeholder {
+     color: #000;
+     text-align: center;
+}
+
+form label span.req {
+     color: #000 !important;
+}
+
+.embed .confirm .create-message,
+.embed .confirm a.start-cta,
+.embed .confirm .logo-container {
+     display: none;
+}
+
+.embed .confirm h2.freeHeading {
+     color: #000;
+     font-size: 21px;
+}
+
+form ul {
+     text-align: center;
+}
+
+:focus {
+    /* outline-color: #000; */
+}
+
+#fo30li17 h4 {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    color: #49504a;
+    font-size: 20px;
+}
+
+#fo25li17 h4 {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    color: #000;
+    font-size: 16px;
+}
+
+#fo25li17 p {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #49504a !important;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#fo25li15 p,
+#instruct15 {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #49504a !important;
+    padding: 0 2rem;
+    max-width: 730px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fo25li15 p a,
+#instruct15 a {
+    color: #49504a;
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.success {
+    text-align: center !important;
+}
+
+.success h4 {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    text-transform: uppercase;
+    color: #000 !important;
+    margin-top: 0;
+}
+
+.success p {
+    font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 300 !important;
+    font-size: 21px !important;
+    color: #7b134d !important;
+}
+
+.success p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.success br {
+    display: none;
+}

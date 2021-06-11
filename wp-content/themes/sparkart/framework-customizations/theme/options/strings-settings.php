@@ -23,6 +23,16 @@ $options = array(
 				)
 				
 			),
+			'disclaimer-box' => array(
+				'title'   => __( 'Event Disclaimer', 'unyson' ),
+				'type'    => 'box',
+				'options' => array(					
+					'event_disclaimer_content'                      => array(
+						'label' => __( 'Content', 'unyson' ),
+						'type'  => 'wp-editor',
+					),
+				)		
+			),
 			
 		)
 	)

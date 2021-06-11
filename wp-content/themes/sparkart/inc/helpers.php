@@ -517,6 +517,7 @@ function fw_print_news_card($post){
 }
 function fw_get_latest_posts($limit = 6){
 	$posts = get_posts([
+		'category_name' => 'News',
 		'numberposts' => $limit,
 		'orderby' => 'date',
 		'order' => 'desc'
@@ -574,6 +575,11 @@ function fw_show_album_buy_links($post_id){
 	$main_link = fw_get_db_post_option($post_id, 'store_link');
 	$itunes = fw_get_db_post_option($post_id, 'itunes_link');
 	$amazon = fw_get_db_post_option($post_id, 'amazon_music');
+	$spotify = fw_get_db_post_option($post_id, 'spotify');
+	$pandora = fw_get_db_post_option($post_id, 'pandora');
+	$youtube = fw_get_db_post_option($post_id, 'youtube');
+	$google = fw_get_db_post_option($post_id, 'google_play');
+	$tidal = fw_get_db_post_option($post_id, 'tidal');
 
 	if($main_link != ''){
 
@@ -588,6 +594,21 @@ function fw_show_album_buy_links($post_id){
 	}
 	if($amazon != ''){
 		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+	}
+	if($spotify != ''){
+		echo '<a href="'.$spotify.'" class="btn btn-primary btn-spotify" target="_blank"><i class="fa fa-spotify"></i> SPOTIFY</a>';
+	}
+	if($pandora != ''){
+		echo '<a href="'.$pandora.'" class="btn btn-primary btn-pandora" target="_blank"><i class="fa fa-pandora"></i> PANDORA</a>';
+	}
+	if($youtube != ''){
+		echo '<a href="'.$youtube.'" class="btn btn-primary btn-youtube" target="_blank"><i class="fa fa-youtube"></i> YOUTUBE</a>';
+	}
+	if($google != ''){
+		echo '<a href="'.$google.'" class="btn btn-primary btn-google-play" target="_blank"><i class="fa fa-google-play"></i> GOOGLE PLAY</a>';
+	}
+	if($tidal != ''){
+		echo '<a href="'.$tidal.'" class="btn btn-primary btn-tidal" target="_blank"><i class="fa fa-tidal"></i> TIDAL</a>';
 	}
 	echo '</p>';
 }
