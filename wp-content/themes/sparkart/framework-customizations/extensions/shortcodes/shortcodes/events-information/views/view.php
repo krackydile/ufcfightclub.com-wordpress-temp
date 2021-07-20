@@ -11,6 +11,16 @@
                         <div class="row">
                             <?php
                             event_detail_cards($_GET['event']);
+
+                            // The universe-js/lib/disqus.js library that includes the Disqus comments used to set the Disqus thread URL as the current page
+                            // without the query string ("/events-details/" instead of "/events-details/?event=1234"). This made Disqus associate all the
+                            // following events to the same thread (/events-details/?event=6277, Disqus thread id 8514896231), effectively displaying event 6277's
+                            // comments in all these pages. The universe-js code is now fixed, but I can't find a way to dissociate the extra events from thread
+                            // 8514896231, so use a new identifier format (to create new threads). The events below were found using the following API query:
+                            // https://disqus.com/api/3.0/threads/details.json?thread=8514896231
+                            $disqus_thread = in_array($_GET['event'], array("6233", "6234", "6235", "6285", "6287", "6286", "6284", "6288", "6289", "6295", "6296"))
+                                ? 'universe-event-' . $_GET['event'] . '-new'
+                                : 'universe-event-' . $_GET['event'];
                             ?>
                             <!--									<div class="col-md-7 col-sm-12">-->
                             <!--										<h2 class="large-event-date">November 17, 2021</h2>-->
@@ -38,7 +48,7 @@
                             									</div> -->
                         </div>
                         <div class="card-comment-event">
-                            <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="universe-event-<?php echo $_GET['event'] ?>" data-disqus-title="Events · The Official Carrie Underwood Fan Club">
+                            <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="<?php echo $disqus_thread ?>" data-disqus-title="Events · The Official Carrie Underwood Fan Club">
                                 <h3>Comments</h3>
 
                                 <div class="prompt">
