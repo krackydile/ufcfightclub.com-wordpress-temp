@@ -54,15 +54,15 @@ if(have_posts()):
 											  </div>
 											  <div class="form-group">
 											    <label for="new-password " class="text-capitalize">new password</label>
-											    <input type="password" class="form-control" id="new-password" >
+											    <input type="password" class="form-control" name="password" id="new-password" >
 											  </div>
 											  <div class="form-group">
 											    <label for="repeat-new-password " class="text-capitalize">repeat new password</label>
-											    <input type="password" class="form-control" id="repeat-new-password" >
+											    <input type="password" class="form-control" name="password_confirmation" id="repeat-new-password" >
 											  </div>
 											  <div class="form-group">
 											    <label for="current-password " class="text-capitalize">Current password</label>
-											    <input type="password" class="form-control" id="current-password" >
+											    <input type="password" class="form-control" name="current_password" id="current-password" >
 											  </div>
 
 											  <button type="submit" class="btn btn-primary" id="account-submit">Submit</button>
