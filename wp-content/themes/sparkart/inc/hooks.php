@@ -414,6 +414,21 @@ function sparkart_load_more_scripts() {
  	// wp_enqueue_script( 'sparkart-main-js' );
 }
 
+// Save custom checkbox attachment field
+function save_custom_checkbox_attachment_field($post, $attachment) {  
+    if( isset($attachment['smugmug_id']) ){  
+        update_post_meta($post['ID'], 'smugmug_id', sanitize_text_field( $attachment['smugmug_id'] ) );  
+    }else{
+         delete_post_meta($post['ID'], 'smugmug_id' );
+    }
+    if( isset($attachment['image_carousel_link']) ){  
+        update_post_meta($post['ID'], 'image_carousel_link', sanitize_text_field( $attachment['image_carousel_link'] ) );  
+    }else{
+         delete_post_meta($post['ID'], 'image_carousel_link' );
+    }
+    return $post;  
+}
+add_filter('attachment_fields_to_save', 'save_custom_checkbox_attachment_field', null, 2);
  
 add_action( 'wp_head', 'sparkart_load_more_scripts' );
 
