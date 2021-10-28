@@ -11243,7 +11243,7 @@ let moment = require('moment-timezone');
 let async = require('async');
 let serialize = require('form-serialize');
 let scroll = require('scroll');
-const universejs = require('universe-js')({environment: 'production', key: '3af65919-3f76-46c8-b905-0f952ffcbd47'});
+const universejs = require('universe-js')({environment: 'production', key: '2366edcf-805b-43bf-b043-9c2f527967d9'});
 
 universejs.init(function (err, data) {
     if (err) throw err;

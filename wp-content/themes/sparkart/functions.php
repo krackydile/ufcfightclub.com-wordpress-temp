@@ -353,7 +353,7 @@ function remove_css_js_version($src)
 function checkPHPLogin(){
     // This is where you run the code and display the output
           $curl = curl_init();
-          $url = "https://services.sparkart.net/api/v1/account?key=3af65919-3f76-46c8-b905-0f952ffcbd47";
+          $url = "https://services.sparkart.net/api/v1/account?key=2366edcf-805b-43bf-b043-9c2f527967d9";
           curl_setopt_array($curl, array(
             CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
