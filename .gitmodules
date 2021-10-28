@@ -1,0 +1,3 @@
+[submodule "wp-content/plugins/universe-js"]
+	path = wp-content/plugins/universe-js
+	url = https://github.com/sparkartgroup/universe-js.git
