@@ -1,3 +1,21 @@
+wp-config.php
+
+# ignore everything in the "wp-content" directory, except:
+# mu-plugins, plugins, and themes directories
+wp-content/*
+!wp-content/mu-plugins/
+!wp-content/plugins/
+!wp-content/themes/
+
+# ignore node dependency directories
+node_modules/
+
+# ignore log files and databases
+*.log
+*.sql
+*.sqlite
+
+# Sparkart
 .idea/
 .idea/workspace.xml
 wp-content/plugins/universe-js/
