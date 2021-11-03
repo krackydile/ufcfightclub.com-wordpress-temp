@@ -8,12 +8,13 @@ jobs:
     name: Deploy to Pagely
     runs-on: ubuntu-20.04
     env:
-      THEME_DIRECTORY_PATH: /wp-content/themes/sparkart
+      THEME_DIRECTORY_PATH: ././wp-content/themes/sparkart/
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
       - name: Run deploy
         uses: pagely/action-deploy@v1
+        run: echo
         with:
           PAGELY_DEPLOY_DEST: "/httpdocs/wp-content/themes/sparkart"
           PAGELY_INTEGRATION_SECRET: ${{secrets.PAGELY_INTEGRATION_SECRET}}
