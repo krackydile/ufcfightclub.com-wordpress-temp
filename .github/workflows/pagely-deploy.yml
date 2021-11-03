@@ -17,3 +17,4 @@ jobs:
           PAGELY_INTEGRATION_SECRET: ${{secrets.PAGELY_INTEGRATION_SECRET}}
           PAGELY_INTEGRATION_ID: "xRV4pUrKqdSrpyq9e4ToNN"
           PAGELY_APP_ID: "39499"
+          PAGELY_WORKING_DIR: "/wp-content/themes/sparkart"
