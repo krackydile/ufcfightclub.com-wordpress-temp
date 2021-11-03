@@ -86,6 +86,7 @@ wp-content/themes/sparkart/node_modules/
 # track these files, if they exist
 !.gitignore
 !.gitmodules
+!.github/
 !.editorconfig
 !.phpcs.xml.dist
 !README.md
