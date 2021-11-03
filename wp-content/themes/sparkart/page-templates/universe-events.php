@@ -4,7 +4,7 @@
  */
 
 if ($_GET['tab'] === 'upcoming-tour-dates') {
-  $endpoint = 'events?scope=upcoming&tags=performance&limit=36';
+  $endpoint = 'events?scope=upcoming&tags=tour&limit=36';
 } elseif ($_GET['tab'] === 'fan-club-pre-sale') {
   $endpoint = 'events?scope=upcoming&tags=unique,generic&limit=36';
 } elseif ($_GET['tab'] === 'upcoming-appearances') {
