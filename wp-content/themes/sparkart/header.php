@@ -21,6 +21,7 @@
 	<base href="<?php echo get_template_directory_uri() ?>/">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="stylesheet" href="https://use.typekit.net/trf2irw.css">
 	<?php
 	$favicon = ( function_exists( 'fw_get_db_settings_option' ) ) ? fw_get_db_settings_option('favicon') : '';
 	if( !empty( $favicon ) ) :
