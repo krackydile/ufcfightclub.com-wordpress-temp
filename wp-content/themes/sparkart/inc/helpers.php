@@ -504,15 +504,15 @@ function fw_get_selected_category_news($categories, $limit = 6){
 	}
 }
 function fw_print_news_card($post){
-	$template = '<div class="card">
+	$template = '<div class="card" style="background-image: url(\'%s\')">
 							    <div class="card-body">
 								    <h6 class="card-subtitle mb-2">%s</h6>
 								    <h5 class="card-title"><a href="%s">%s</a></h5>
-								    <p class="card-text">%s</p>
-								    <a href="%s" class="btn btn-primary">Read More</a>
+								    <!--<p class="card-text">%s</p>
+								    <a href="%s" class="btn btn-primary">Read More</a> -->
 								</div>
 							</div> ';
-	return sprintf($template, get_the_date('F j,Y', $post), get_permalink($post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
+	return sprintf($template, get_the_post_thumbnail_url($post),get_the_date('F j,Y', $post), get_permalink($post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
 
 }
 function fw_get_latest_posts($limit = 6){
@@ -534,7 +534,7 @@ function fw_get_inner_category_tabs($cat_id = null){
 	// var_dump($selected_categories);
 
 	?>
-	<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
+	<!-- <ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 		<li class="nav-item">
 			<a class="nav-link <?php if($cat_id == null){ echo 'active'; } ?>" id="pills-home-tab" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" role="tab" aria-controls="pills-home" aria-selected="true">All</a>
 		</li>
@@ -548,7 +548,7 @@ function fw_get_inner_category_tabs($cat_id = null){
 			endforeach;
 		?>
 		
-	</ul>	
+	</ul>	 -->
 	<?php
 }
 function fw_get_events_detail_page(){

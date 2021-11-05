@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="col">
 				<nav class="text-center mb-5">
-					<ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
+					<!-- <ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 
 						<li class="nav-item">
 						    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">All</a>
@@ -13,7 +13,7 @@
 							fw_get_selected_categories_pills($atts['displayed_categories']);
 						?>
 						
-					</ul>	
+					</ul>	 -->
 				</nav>
 				
 				<div class="tab-content" id="pills-tabContent">
