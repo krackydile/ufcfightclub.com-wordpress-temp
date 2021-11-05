@@ -13,7 +13,7 @@ get_header();
 				while(have_posts()):
 					the_post()
 		?>
-		<h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
+		<h3 class="block-heading mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
 		
 		<div class="row">
 

@@ -1,5 +1,7 @@
 <section class="news-tabs py-5">
-		<h3 class="block-heading text-center mt-4 mb-5"><span><?php echo $atts['heading'] ?></span></h3>
+	<div class="container">
+		<h3 class="block-heading mt-4 mb-5"><span><?php echo $atts['heading'] ?></span></h3>
+</div>
 
 				<!-- <nav class="text-center mb-5">
 					 <ul class="nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">

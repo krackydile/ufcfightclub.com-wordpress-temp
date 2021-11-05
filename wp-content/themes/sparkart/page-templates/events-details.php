@@ -9,7 +9,7 @@ get_header();
 				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading text-center my-4"><span>Media</span></h3>
+		<h3 class="block-heading my-4"><span>Media</span></h3>
 		
 		<div class="row">
 			<div class="col-12">

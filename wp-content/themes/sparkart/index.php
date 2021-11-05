@@ -3,7 +3,9 @@ get_header();
 ?>
 
 <section class="news-tabs">
-		<h3 class="block-heading text-center my-4 "><span>News </span></h3>
+		<div class="container">
+			<h3 class="block-heading my-4 "><span>News </span></h3>
+		</div>
 
 				<nav class="text-center mb-5">
 					<?php fw_get_inner_category_tabs(); ?>
