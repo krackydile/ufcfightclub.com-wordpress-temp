@@ -504,15 +504,17 @@ function fw_get_selected_category_news($categories, $limit = 6){
 	}
 }
 function fw_print_news_card($post){
-	$template = '<div class="card" style="background-image: url(\'%s\')">
-							    <div class="card-body">
-								    <h6 class="card-subtitle mb-2">%s</h6>
-								    <h5 class="card-title"><a href="%s">%s</a></h5>
-								    <!--<p class="card-text">%s</p>
-								    <a href="%s" class="btn btn-primary">Read More</a> -->
+	$template = '<div class="news-card col-12 col-md-6 col-lg-4">
+								<div class="news-card__content" style="background-image: url(\'%s\')">
+									<a href="%s">
+										<div class="card-body">
+											<h6 class="card-subtitle mb-2">%s</h6>
+											<h5 class="card-title">%s</h5>
+										</div>
+									</a>
 								</div>
 							</div> ';
-	return sprintf($template, get_the_post_thumbnail_url($post),get_the_date('F j,Y', $post), get_permalink($post), get_the_title($post), get_the_excerpt($post), get_permalink($post));
+	return sprintf($template, get_the_post_thumbnail_url($post), get_permalink($post), get_the_date('F j,Y', $post), get_the_title($post), get_the_excerpt($post));
 
 }
 function fw_get_latest_posts($limit = 6){
