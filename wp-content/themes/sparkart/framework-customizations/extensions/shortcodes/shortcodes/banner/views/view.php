@@ -1,11 +1,34 @@
 <?php 
 get_universe_links();
 ?>
-<section class="banner" style="background-color: #1C0D0B;">
+<section class="banner banner--full" style="background-color: #1C0D0B;">
 	
+	<div class="banner__video banner__video--rounded">
+		<video playsInline autoPlay loop muted="muted" poster="<?php echo get_template_directory_uri(); ?>/static/videos/ja-sizzlereel-optimized-poster.jpg">
+			<source src="<?php echo get_template_directory_uri(); ?>/static/videos/ja-sizzlereel-optimized.mp4" type="video/mp4"></source>
+		</video>
+	</div>
+
+	<div class="floating-cta floating-cta--video">
+		<?php 
+			if($atts['social_switch'] == 'yes'):
+		?>
+			<div class="social-holder">
+				<?php echo fw_get_social_list(); ?>
+			</div>
+		<?php 
+			endif;
+			echo '<div id="banner-cta">';
+			fw_print_cta_buttons($atts['cta_options']);
+			echo '</div>';
+		?>
+		
+	</div>
+
 	<div class="container-fluid" >
 		<div class="row">
 			<div class="col-12">
+
 				
 				<div class="banner-panel-left text-center">
 					<div class="left-featured">
@@ -16,21 +39,6 @@ get_universe_links();
 						<?php 
 							endif;
 						?>
-					</div>
-					<div class="floating-cta">
-						<?php 
-							if($atts['social_switch'] == 'yes'):
-						?>
-							<div class="social-holder">
-								<?php echo fw_get_social_list(); ?>
-							</div>
-						<?php 
-							endif;
-							echo '<div id="banner-cta">';
-							fw_print_cta_buttons($atts['cta_options']);
-							echo '</div>';
-						?>
-						
 					</div>
 				</div>
 				<div  class="banner-panel-right">
