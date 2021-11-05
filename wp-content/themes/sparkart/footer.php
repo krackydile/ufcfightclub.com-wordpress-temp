@@ -58,5 +58,24 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+
+	<script>
+		gsap.utils.toArray(".news-card").forEach((element, i) => {
+			gsap.set(element, {opacity:0})
+			gsap.from(element, {
+				y: 100,
+				scrollTrigger: {
+					trigger: element,
+					start: "top 100%"
+				}
+			});
+
+		});
+
+		ScrollTrigger.batch(".news-card", {
+			onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 0.75, ease: Power3.easeOut, stagger: {each: 0.15, grid: [1, 3]}, overwrite: true}),
+			onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
+		});
+	</script>
 </body>
 </html>
