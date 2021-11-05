@@ -1,4 +1,4 @@
-<nav class="<?php if(is_front_page()){ echo 'hnav homepage-navbar'; } ?>  navbar navbar-expand-lg navbar-light bg-light">
+<nav class="<?php if(is_front_page()){ echo 'hnav homepage-navbar'; } ?>  navbar navbar-expand-lg navbar-light">
 	
 			  	<a class="navbar-brand" href="<?php echo get_bloginfo('wpurl') ?>">
 

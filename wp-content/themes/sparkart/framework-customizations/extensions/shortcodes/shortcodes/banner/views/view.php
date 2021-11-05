@@ -1,7 +1,7 @@
 <?php 
 get_universe_links();
 ?>
-<section class="banner" style="background-color: #E6E8E5;">
+<section class="banner" style="background-color: #1C0D0B;">
 	
 	<div class="container-fluid" >
 		<div class="row">
