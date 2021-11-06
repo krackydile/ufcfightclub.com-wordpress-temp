@@ -47,7 +47,8 @@
     "paginationjs": "^2.1.5",
     "scroll": "^3.0.1",
     "solidus-client": "^1.4.1",
-    "swiper": "^6.5.0"
+    "swiper": "^6.5.0",
+    "watchify": "^4.0.0"
   },
   "engines": {
     "node": "15.14.0",
