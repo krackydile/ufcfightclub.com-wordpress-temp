@@ -34,5 +34,19 @@ $options = array(
 			'unyson' ),
 	),
 	'cta_options' => fw()->theme->get_options( 'cta-options' ),
+	'carousel_images' => array(
+		'label' => __( 'Multi Upload (images only)', 'unyson' ),
+		'desc'  => __( 'Upload the carousel images (2550 X 1275 px).',
+							'unyson' ),
+		'type'  => 'multi-upload',
+		
+	),
+	'login_carousel_images' => array(
+		'label' => __( 'Loggedin images', 'unyson' ),
+		'desc'  => __( 'Upload the carousel images (2550 x 1275 px).',
+							'unyson' ),
+		'type'  => 'multi-upload',
+		
+	)
 
 );

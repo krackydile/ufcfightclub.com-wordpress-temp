@@ -405,8 +405,11 @@ header .nav-item{
 }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-	cursor: default;
 	color: $ja-white;
+}
+
+.navbar-light .navbar-nav .dropdown-toggle:hover, .navbar-light .navbar-nav .dropdown-toggle:focus {
+	cursor: default;
 }
 
 .navbar {

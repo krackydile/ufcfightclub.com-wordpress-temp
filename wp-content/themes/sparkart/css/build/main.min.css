@@ -9426,8 +9426,10 @@ header .nav-item {
   /* I really dont want to do this, but i have limited choice so i went for it.*/ }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-  cursor: default;
   color: #FDF6EE; }
+
+.navbar-light .navbar-nav .dropdown-toggle:hover, .navbar-light .navbar-nav .dropdown-toggle:focus {
+  cursor: default; }
 
 .navbar {
   background-color: #1C0D0B; }
@@ -9547,6 +9549,10 @@ header .nav-item {
   border-top-right-radius: 500px;
   border-bottom-right-radius: 500px;
   overflow: hidden; }
+  @media (max-width: 960px) {
+    .slider--right-rounded {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0; } }
 
 .album-display {
   margin-bottom: 20px;
@@ -9752,11 +9758,10 @@ html {
 
 /* Hero Banner */
 .banner--full {
-  min-height: 100vh;
   position: relative;
   max-width: 2560px;
   max-height: 1268px;
-  margin-bottom: 1000px;
+  min-height: unset !important;
   padding: 0;
   margin-top: 62px; }
   @media (min-width: 2560px) {
@@ -9767,6 +9772,8 @@ html {
     left: 100px;
     margin-top: 85px;
     width: 35%; }
+  .banner--full .banner-panel-right {
+    height: unset !important; }
 
 .banner__video {
   width: 105vw;
@@ -9816,7 +9823,8 @@ html {
   @media (max-width: 960px) {
     .floating-cta--video {
       width: 100vw;
-      height: 56vw; } }
+      height: 56vw;
+      display: none; } }
   .floating-cta--video .social-holder {
     margin: 0;
     position: absolute;
@@ -9905,7 +9913,7 @@ html {
           transform: rotate(0deg);
           top: auto;
           left: auto;
-          margin: 10px 5px; }
+          margin: 20px 5px; }
           .floating-cta--video .social-holder .list-social-handles .list-group-item a {
             transform: rotate(0deg);
             position: static; }
@@ -9927,6 +9935,22 @@ html {
               transform: rotate(0deg); }
           .floating-cta--video .social-holder .list-social-handles .list-group-item a {
             transform: none !important; } }
+
+@media (max-width: 768px) {
+  .banner-panel-right {
+    height: unset; } }
+
+.hp-video-slider {
+  margin-top: 50vw;
+  width: 100%; }
+  @media (min-width: 960px) {
+    .hp-video-slider {
+      width: 70%;
+      margin-top: 45%; } }
+  @media (min-width: 1080px) {
+    .hp-video-slider {
+      width: 70%;
+      margin-top: 35%; } }
 
 /* Homepage Navigation */
 @media (min-width: 1280px) {
