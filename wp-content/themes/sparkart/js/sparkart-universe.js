@@ -83,7 +83,7 @@ universejs.init(function (err, data) {
     }
 
     if (data.customer) {
-        if (document.getElementById("secondary-navigation-box") !== null) {
+       /* if (document.getElementById("secondary-navigation-box") !== null) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
                 " <li class=\"nav-item\">\n" +
@@ -102,7 +102,7 @@ universejs.init(function (err, data) {
                 "     </a>\n" +
                 " </li>" +
                 "</ul>";
-        }
+        }*/
         /* if (document.getElementById("protected-box") !== null) {
             document.getElementById("protected-box").innerHTML = `
                ${data.customer.subscription ? `
@@ -131,7 +131,7 @@ universejs.init(function (err, data) {
         });
 
     } else {
-        if (document.getElementById("secondary-navigation-box") !== null) {
+       /* if (document.getElementById("secondary-navigation-box") !== null) {
             document.getElementById("secondary-navigation-box").innerHTML = "" +
                 "<ul class=\"nav float-right\">" +
                 " <li class=\"nav-item secondary-signin-button\">\n" +
@@ -143,7 +143,7 @@ universejs.init(function (err, data) {
                 "       <a class=\"nav-link\" href=\"/join\"><span>Join The Fan Club</span></a>\n" +
                 " </li>" +
                 "</ul>"
-        }
+        } */
         if (document.getElementById("unprotected-box") !== null) {
             document.getElementById("unprotected-box").innerHTML = "" +
                 "<div class=\"cta-buttons\">" +
@@ -515,15 +515,21 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
+        // Transform data to remove month groups
+        let dataCombined = []
+        let eventsList = []
+        data.forEach((month) => {
+          month.events.forEach(event => eventsList.push(event))
+        })
+        dataCombined[0] = {events: eventsList}
     const loadMore = pagination && pagination.current_page < pagination.total_pages;
     const container = document.getElementById(containerId);
     if (container !== null) {
         loading = false;
         container.innerHTML = `
-                ${data && data.length > 0 ? `
-                ${data.map(group => `
-                 <div class="event-block">
-                 <h3 class="event-heading" style="text-transform: uppercase;">${group.date}</h3>
+                ${dataCombined && dataCombined.length > 0 ? `
+                ${dataCombined.map(group => `
+                 <div class="event-block upcomming-events">
                  <div class="row">
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});

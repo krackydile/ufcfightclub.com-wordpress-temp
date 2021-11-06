@@ -8488,6 +8488,26 @@ universejs.init(function (err, data) {
     }
 
     if (data.customer) {
+       /* if (document.getElementById("secondary-navigation-box") !== null) {
+            document.getElementById("secondary-navigation-box").innerHTML = "" +
+                "<ul class=\"nav float-right\">" +
+                " <li class=\"nav-item\">\n" +
+                "    <a class=\"nav-link\" href=\"" + data.fanclub.links.forum +"\" style=\"padding-top: 12px;\">\n" +
+                "       <span>Message Board</span>\n" +
+                "    </a>\n" +
+                " </li>" +
+                " <li class=\"nav-item secondary-emphasis-button\">\n" +
+                "    <a class=\"nav-link\" href=\"/account\">\n" +
+                "       <span>My Account</span>\n" +
+                "    </a>\n" +
+                " </li>" +
+                " <li class=\"nav-item\">\n" +
+                "     <a class=\"nav-link sign-out\" style=\"padding: 0.5rem 12px;padding-top: 12px;text-transform: none;text-decoration: underline\" href=\'" + data.fanclub.links.logout + "'\">\n" +
+                "       <span>(Sign Out)</span>\n" +
+                "     </a>\n" +
+                " </li>" +
+                "</ul>";
+        }*/
         /* if (document.getElementById("protected-box") !== null) {
             document.getElementById("protected-box").innerHTML = `
                ${data.customer.subscription ? `
@@ -8516,6 +8536,19 @@ universejs.init(function (err, data) {
         });
 
     } else {
+       /* if (document.getElementById("secondary-navigation-box") !== null) {
+            document.getElementById("secondary-navigation-box").innerHTML = "" +
+                "<ul class=\"nav float-right\">" +
+                " <li class=\"nav-item secondary-signin-button\">\n" +
+                "     <a class=\"nav-link\" href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(currentURL) + "'\">\n" +
+                "          <span>Sign In </span>\n" +
+                "     </a>\n" +
+                " </li>" +
+                "  <li class=\"nav-item secondary-emphasis-button\">\n" +
+                "       <a class=\"nav-link\" href=\"/join\"><span>Join The Fan Club</span></a>\n" +
+                " </li>" +
+                "</ul>"
+        } */
         if (document.getElementById("unprotected-box") !== null) {
             document.getElementById("unprotected-box").innerHTML = "" +
                 "<div class=\"cta-buttons\">" +
@@ -8887,16 +8920,13 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
-
-    // Transform data to remove month groups
-    let dataCombined = []
-    let eventsList = []
-    data.forEach((month) => {
-      month.events.forEach(event => eventsList.push(event))
-    })
-    dataCombined[0] = {events: eventsList}
-
-
+        // Transform data to remove month groups
+        let dataCombined = []
+        let eventsList = []
+        data.forEach((month) => {
+          month.events.forEach(event => eventsList.push(event))
+        })
+        dataCombined[0] = {events: eventsList}
     const loadMore = pagination && pagination.current_page < pagination.total_pages;
     const container = document.getElementById(containerId);
     if (container !== null) {
