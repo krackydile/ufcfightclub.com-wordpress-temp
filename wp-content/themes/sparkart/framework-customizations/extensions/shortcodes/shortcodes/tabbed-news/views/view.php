@@ -1,6 +1,11 @@
 <section class="news-tabs py-5">
 	<div class="container">
+	<div class="cta-heading">
 		<h3 class="block-heading mt-4 mb-5"><span><?php echo $atts['heading'] ?></span></h3>
+		<div class="heading-cta">
+			<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="arrow-cta arrow-cta--light">SEE ALL NEWS</a>
+		</div>
+	</div>
 </div>
 
 				<!-- <nav class="text-center mb-5">
@@ -22,9 +27,6 @@
 								fw_get_latest_posts( $atts['news_limit'] );
 
 							?>
-							<div class="text-center mt-4 mb-5" style="width: 100%">
-								<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="btn btn-outline-primary">VIEW ALL POSTS</a>
-							</div>	
 						</div>
 						<?php 
 							fw_get_selected_category_news($atts['displayed_categories'], $atts['news_limit']);

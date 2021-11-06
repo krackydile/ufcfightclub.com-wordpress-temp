@@ -10006,8 +10006,17 @@ html {
   .arrow-cta:hover, .arrow-cta:focus {
     color: #302520;
     text-decoration: none; }
+    @media (min-width: 992px) {
+      .arrow-cta:hover, .arrow-cta:focus {
+        padding-left: 20px; } }
     .arrow-cta:hover:after, .arrow-cta:focus:after {
-      margin-left: 20px; }
+      margin-left: 20px;
+      margin-right: -10px; }
+
+.arrow-cta--light {
+  color: #B7ACA4; }
+  .arrow-cta--light:hover, .arrow-cta--light:focus {
+    color: #F2EBE3; }
 
 /**/
 /* Upcoming Events */
@@ -10015,7 +10024,9 @@ html {
 @media (min-width: 992px) {
   .upcomming-events {
     border-radius: 95px;
-    margin: 0 40px; } }
+    margin: 0 40px;
+    padding-right: 40px;
+    padding-left: 40px; } }
 
 .upcomming-events .heading-red span {
   color: #E23C33; }
