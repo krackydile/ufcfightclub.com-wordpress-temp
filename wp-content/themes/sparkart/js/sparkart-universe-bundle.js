@@ -8887,15 +8887,24 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
+
+    // Transform data to remove month groups
+    let dataCombined = []
+    let eventsList = []
+    data.forEach((month) => {
+      month.events.forEach(event => eventsList.push(event))
+    })
+    dataCombined[0] = {events: eventsList}
+
+
     const loadMore = pagination && pagination.current_page < pagination.total_pages;
     const container = document.getElementById(containerId);
     if (container !== null) {
         loading = false;
         container.innerHTML = `
-                ${data && data.length > 0 ? `
-                ${data.map(group => `
-                 <div class="event-block">
-                 <h3 class="event-heading" style="text-transform: uppercase;">${group.date}</h3>
+                ${dataCombined && dataCombined.length > 0 ? `
+                ${dataCombined.map(group => `
+                 <div class="event-block upcomming-events">
                  <div class="row">
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});
