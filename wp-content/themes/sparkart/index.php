@@ -16,7 +16,7 @@ get_header();
 						<div class="tab-pane news-cards row fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 							<?php 
 								if($cat_id == null){ 
-									query_posts( array ( 'category_name' => 'News', 'posts_per_page' => 6 ) );
+									query_posts( array ( 'category_name' => 'News', 'posts_per_page' => 12 ) );
 								}
 								if(have_posts()):
 									while(have_posts()):
