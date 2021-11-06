@@ -29,6 +29,7 @@
     "style-loader": "^2.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "universe-js": "file:../../plugins/universe-js",
+    "url-loader": "^4.1.1",
     "webpack": "^5.25.1",
     "webpack-cli": "^4.5.0"
   },
