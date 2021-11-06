@@ -8934,19 +8934,22 @@ eventDetailBox = (containerId, type, data, pagination) => {
         container.innerHTML = `
                 ${dataCombined && dataCombined.length > 0 ? `
                 ${dataCombined.map(group => `
-                 <div class="event-block upcomming-events">
+                 <div class="event-block upcomming-events upcomming-events--page">
+                 <div class="container">
                  <div class="row">
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});
             const availableLinks = item.links.filter(function (link) {return link.tickets_available});
         item.venue = item.venue || {name: '', city: '', state: ''};
             return `
-                    <div class="col-lg-4 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-sm-12 col-xs-12 events-card__container">
                      <div class="card events-card" data-tags="${item.tags}">
                       <div class="card-body">
-                      <h6 class="card-subtitle mb-3">${moment.tz(item.date, item.timezone.tz).format('D MMMM')}</h6>
-                      <div class="card-content"><h5 class="card-title mb-3"><a href="/events-details/?event=${item.id}">${item.venue.name}</a></h5>
-                       <h6 class="card-subtitle mb-4 event-venue">${item.venue.city}${item.venue.state ? `, ${item.venue.state}` : ``}</h6>
+                      <h6 class="card__date">${moment.tz(item.date, item.timezone.tz).format('DD')}<span>${moment.tz(item.date, item.timezone.tz).format('MMM YYYY')}</span></h6>
+                      <div class="card-content">
+                      <div class="card-info">
+                        <h5 class="card-title"><a href="/events-details/?event=${item.id}">${item.venue.name}</a></h5>
+                       <h6 class="card-subtitle event-venue">${item.venue.city}${item.venue.state ? `, ${item.venue.state}` : ``}</h6>
                        </div>
                       ${upcomingLinks.map(function (link) {return `
                           <span class="btn btn-disabled">${link.name} On Sale:<br />${moment.tz(link.publish_start, item.timezone.tz).format('M/D/YY [at] h:mmA z')}</span>
@@ -8958,9 +8961,11 @@ eventDetailBox = (containerId, type, data, pagination) => {
                        <a href="/events-details/?event=${item.id}" class="btn btn-outline-primary">Meet & Greet</a>` : ``
                       }
                       </div>
+                      </div>
                      </div>
                     </div>`
             }).join('')}
+                 </div>
                  </div>
                  </div>`
         ).join('')}
