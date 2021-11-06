@@ -341,7 +341,12 @@ html {
     display: none;
   }
 }
-
+.home-only {
+  display: none;
+}
+.home .home-only {
+  display: inline-block;
+}
 
 /**/
 /* Headings */

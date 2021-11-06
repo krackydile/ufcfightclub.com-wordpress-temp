@@ -30,7 +30,7 @@
 		            // 'item_class' => 'nav-item'
 		          ]);
 		        ?>
-						<div class="navbar-cta">
+						<div class="navbar-cta home-only">
 							<a href="#" class="btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</a>
 						</div>
 				</div>
