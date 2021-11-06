@@ -2,7 +2,9 @@ html {
   overflow-x: hidden;
 }
 
+/**/
 /* News Cards */
+/**/
 .news-cards {
   display: flex;
   // flex-wrap: wrap;
@@ -57,7 +59,9 @@ html {
   }
 }
 
+/**/
 /* Hero Banner */
+/**/
 .banner--full {
   // min-height: 100vh;
   position: relative;
@@ -66,6 +70,7 @@ html {
   min-height: unset !important;
   padding: 0;
   margin-top: 62px;
+  height: 52vw;
   @media (min-width: 2560px) {
     left: 50%;
     transform: translateX(-50%);
@@ -278,26 +283,17 @@ html {
 }
 
 .hp-video-slider {
-  margin-top: 50vw;
+  // margin-top: 50vw;
   width: 100%;
   @media (min-width: 960px) {
     width: 70%;
-    margin-top: 45%;
-  }
-  @media (min-width: 1080px) {
-    width: 70%;
-    margin-top: 35%;
-  }
-  .custom-swiper-controls {
-    @media (max-width: 768px) {
-      .list-group-item {
-        
-      }
-    }
+    margin-top: -13%;
   }
 }
 
+/**/
 /* Homepage Navigation */
+/**/
 @media (min-width: 1280px) {
   .home .homepage-navbar {
     .nav-item {
@@ -316,5 +312,16 @@ html {
   }
 }
 
-
+/**/
 /* General Navigation */
+/**/
+
+
+/**/
+/* Upcoming Events */
+/**/
+.upcomming-events {
+  .block-heading {
+    color: $ja-red;
+  }
+}

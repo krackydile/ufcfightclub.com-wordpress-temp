@@ -69,14 +69,10 @@
 	}
 }
 
-
-.custom-swiper-controls{
-
-}
 .custom-swiper-controls{
 	display: block;
 	position: unset;
-	background: $colorLight;
+	background: $ja-gray4;
 	padding: 10px;
 	@include media-breakpoint-up(md) { 
 	background: transparent; 

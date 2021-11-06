@@ -8137,7 +8137,7 @@ small, .text_small {
   justify-content: center; }
 
 .upcomming-events {
-  background: #49504A; }
+  background: #FDF6EE; }
 
 .site-footer {
   background: #1C0D0B;
@@ -9491,7 +9491,7 @@ header .nav-item {
 .custom-swiper-controls {
   display: block;
   position: unset;
-  background: #B7C8B7;
+  background: #302520;
   padding: 10px; }
   @media (min-width: 768px) {
     .custom-swiper-controls {
@@ -9709,7 +9709,9 @@ header .nav-item {
 html {
   overflow-x: hidden; }
 
+/**/
 /* News Cards */
+/**/
 .news-cards {
   display: flex; }
   .news-cards.show {
@@ -9756,14 +9758,17 @@ html {
     margin-bottom: 0;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
 
+/**/
 /* Hero Banner */
+/**/
 .banner--full {
   position: relative;
   max-width: 2560px;
   max-height: 1268px;
   min-height: unset !important;
   padding: 0;
-  margin-top: 62px; }
+  margin-top: 62px;
+  height: 52vw; }
   @media (min-width: 2560px) {
     .banner--full {
       left: 50%;
@@ -9941,18 +9946,15 @@ html {
     height: unset; } }
 
 .hp-video-slider {
-  margin-top: 50vw;
   width: 100%; }
   @media (min-width: 960px) {
     .hp-video-slider {
       width: 70%;
-      margin-top: 45%; } }
-  @media (min-width: 1080px) {
-    .hp-video-slider {
-      width: 70%;
-      margin-top: 35%; } }
+      margin-top: -13%; } }
 
+/**/
 /* Homepage Navigation */
+/**/
 @media (min-width: 1280px) {
   .home .homepage-navbar .nav-item {
     padding: 0;
@@ -9965,5 +9967,12 @@ html {
     margin: 0 !important;
     height: 100px; } }
 
+/**/
 /* General Navigation */
+/**/
+/**/
+/* Upcoming Events */
+/**/
+.upcomming-events .block-heading {
+  color: #E23C33; }
 
