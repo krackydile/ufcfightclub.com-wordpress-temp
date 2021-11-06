@@ -78,7 +78,7 @@ small, .text_small {font-size: 0.8rem;}
 }
 .btn{
     text-transform: uppercase;
-    border-radius: 25px;
+    border-radius: 500px;
 
 }
 
@@ -245,13 +245,13 @@ small, .text_small {font-size: 0.8rem;}
     padding: 8px 22px;
 }
 .btn-primary, .joincomment{
-  background-color: $colorMild;
-  border-color: $colorMild;
+  background-color: $ja-red;
+  border-color: $ja-red;
 
 }
 .btn-primary:hover, .joincomment:hover{
-  background-color: $colorDark;
-    border-color: $colorDark;
+  background-color: $ja-redHover;
+    border-color: $ja-redHover;
 
 }
 a.joincomment:hover{
@@ -320,7 +320,6 @@ a.joincomment:hover{
 
     font-family: trade-gothic-next, sans-serif;
     color: $colorDark;
-    font-weight: 700;
   /*  line-height: 100px;
   position: relative;*/
 }
@@ -333,12 +332,16 @@ a.joincomment:hover{
      text-align: left;
      text-transform: uppercase;
     font-size: $fontSize76;
-     padding: 14px;
-    font-weight: 700;
+    padding: 0 25px;
+    line-height: 1;
+    span {
+      font-weight: 700;
+    }
  }
 .block-heading > span{
     position: relative;
     display: inline-block;
+    line-height: 1;
 }
 
 .upcomming-events .block-heading > span:before,.upcomming-events .block-heading > span:after{

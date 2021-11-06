@@ -88,7 +88,7 @@ function homepage_event_cards()
         <div class="row">
             <?php
             foreach ($unique_presales->events as $event):
-                echo '<div class="col-lg-4 col-sm-12 col-xs-12">';
+                echo '<div class="col-lg-12 col-sm-12 col-xs-12 events-card__container">';
                 event_card($event);
                 echo '</div>';
             endforeach;
@@ -110,8 +110,8 @@ function homepage_more_events()
 {
         // var_dump(fw_get_db_settings_option('universe_key'));
     ?>
-    <div class="text-center mt-4 mb-5">
-        <a href="<?php echo get_bloginfo('wpurl') ?>/events" class="btn btn-outline-light">See More Dates</a>
+    <div class="heading__cta">
+        <a href="<?php echo get_bloginfo('wpurl') ?>/tour" class="arrow-cta">See All Dates</a>
     </div>
     <?php
 }
@@ -121,15 +121,17 @@ function event_card($event)
     ?>
     <div class="card events-card">
         <div class="card-body">
-            <h6 class="card-subtitle mb-3"><?php echo format_date($event->date, 'd F', $event->timezone->tz) ?></h6>
+            <h6 class="card__date"><?php echo format_date($event->date, 'd', $event->timezone->tz) ?><span><?php echo format_date($event->date, 'M Y', $event->timezone->tz) ?></span></h6>
             <div class="card-content">
-                <h5 class="card-title mb-3"><a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>"><?php echo $event->venue->name ?></a></h5>
-                <h6 class="card-subtitle mb-4 event-venue"><?php echo $event->venue->city ?>
+            <div class="card-info">
+                <h5 class="card-title"><a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>"><?php echo $event->venue->name ?></a></h5>
+                <h6 class="card-subtitle event-venue"><?php echo $event->venue->city ?>
                     , <?php echo $event->venue->state ?></h6>
             </div>
             <?php if ($event->links) { ?>
                 <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-primary">Buy Tickets</a>
             <?php } ?>
+            </div>
         <?php if ($event->contests) { ?>
             <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-outline-primary">Meet & Greet</a>
     <?php } ?>
