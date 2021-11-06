@@ -650,3 +650,28 @@ html {
       display: none;
   }
 }
+
+/* */
+/* Single Post Styling*/
+/* */
+.single-post {
+  .card-body {
+    padding: 2rem;
+    p {
+      line-height: 1.75;
+      font-size: 18px;
+    }
+    .card-title {
+      margin-bottom: 30px;
+    }
+    .card-subtitle {
+      color: $ja-red;
+    }
+  }
+  @media (min-width: 960px) {
+    .site-content {
+      border-radius: 95px !important;
+      overflow: hidden;
+    }
+  }
+}

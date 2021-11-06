@@ -8106,7 +8106,8 @@ h1, h2, h3, h4, h5 {
   /*font-family: 'Lato', sans-serif;*/
   font-family: trade-gothic-next, sans-serif;
   font-weight: 700;
-  line-height: 1.65; }
+  line-height: 1.25;
+  letter-spacing: 1.25; }
 
 p, span {
   line-height: 1.65;
@@ -10231,4 +10232,22 @@ html {
     flex-basis: auto; }
   .navbar-expand-custom .navbar-toggler {
     display: none; } }
+
+/* */
+/* Single Post Styling*/
+/* */
+.single-post .card-body {
+  padding: 2rem; }
+  .single-post .card-body p {
+    line-height: 1.75;
+    font-size: 18px; }
+  .single-post .card-body .card-title {
+    margin-bottom: 30px; }
+  .single-post .card-body .card-subtitle {
+    color: #E23C33; }
+
+@media (min-width: 960px) {
+  .single-post .site-content {
+    border-radius: 95px !important;
+    overflow: hidden; } }
 
