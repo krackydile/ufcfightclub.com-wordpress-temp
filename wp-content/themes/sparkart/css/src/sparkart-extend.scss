@@ -75,10 +75,16 @@ html {
     left: 50%;
     transform: translateX(-50%);
   }
+  @media (max-width: 1300px) {
+    margin-top: 0;
+  }
   .banner-panel-left {
     left: 100px;
     margin-top: 85px;
     width: 35%;
+    @media (max-width: 1300px) {
+      display: none;
+    }
   }
   .banner-panel-right {
     height: unset !important;
@@ -170,29 +176,44 @@ html {
         transform: rotate(10deg);
         a {
           transform: rotate(-10deg);
+          &:hover, &:focus {
+            transform: scale(1.15) rotate(-10deg);
+          }
         }
         &:nth-child(2) {
           transform:rotate(20deg);
           a {
             transform: rotate(-20deg);
+            &:hover, &:focus {
+              transform: scale(1.15) rotate(-20deg);
+            }
           }
         }
         &:nth-child(3) {
           transform:rotate(30deg);
           a {
             transform: rotate(-30deg);
+            &:hover, &:focus {
+              transform: scale(1.15) rotate(-30deg);
+            }
           }
         }
         &:nth-child(4) {
           transform:rotate(40deg);
           a {
             transform: rotate(-40deg);
+            &:hover, &:focus {
+              transform: scale(1.15) rotate(-40deg);
+            }
           }
         }
         &:nth-child(5) {
           transform:rotate(50deg);
           a {
             transform: rotate(-50deg);
+            &:hover, &:focus {
+              transform: scale(1.15) rotate(-50deg);
+            }
           }
         }
         a {
@@ -208,6 +229,7 @@ html {
           align-items: center;
           height: 60px;
           width: 60px;
+          transition: transform 0.15s ease-in;
           @media (max-width: 1300px) {
             height: 45px;
             width: 45px;
@@ -311,6 +333,15 @@ html {
     }
   }
 }
+.home header.site-header nav {
+  box-shadow: 0px 2px 13px 0px rgba(0, 0, 0, 0.75);
+}
+@media (min-width: 1300px) {
+  .home header .navbar-brand {
+    display: none;
+  }
+}
+
 
 /**/
 /* Headings */
@@ -483,4 +514,134 @@ html {
 .upcomming-events--page {
   padding: 50px 40px;
   border-radius: 95px;
+}
+
+
+/* */
+/* Mobile navigation overrides*/
+/* */
+.navbar {
+  border-bottom: 1px solid $ja-gray3;
+  @media (min-width: 992px) {
+    border-bottom: none;
+  }
+}
+.home .navbar {
+  border-bottom: none;
+}
+@media (max-width: 1300px) {
+  .dropdown-menu {
+    border-radius: 16px;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    // background-color: $ja-gray2;
+  }
+  .navbar {
+    padding: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .navbar-brand {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .nav-item.active .nav-link {
+    border-bottom: 0;
+    span {
+      display: inline-block;
+      border-bottom: 2px solid $ja-red;
+    }
+  }
+  .nav-link {
+    display: inline-block;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-item a.nav-link span, a.dropdown-item span {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.navbar-cta {
+  flex: 1;
+  text-align: right;
+  @media (max-width: 1300px) {
+    text-align: center;
+    padding: 32px 0;
+  }
+}
+.btn-mailing {
+  font-family: trade-gothic-next-condensed, sans-serif;
+  font-size: 16px;
+  i {
+    margin-right: 5px;
+    padding-bottom: 5px
+  }
+}
+
+.secondary-navigation {
+  .row {
+    align-items: center;
+  }
+  .list-social-handles {
+    padding-top: 0;
+    .list-group-item {
+      padding-top: 0 !important;
+    }
+  }
+}
+
+#secondary-navigation-box {
+  .navbar-cta {
+    flex: 1;
+    text-align: right;
+    padding: 2px 0;
+  }
+  .btn-mailing {
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-size: 16px;
+    padding: 6px 22px;
+    i {
+      margin-right: 5px;
+      padding-bottom: 5px
+    }
+  }
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+  }
+}
+
+
+/* Custom menu breakpoint */
+@media (min-width: 1300px){
+  .navbar-expand-custom {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+  }
+  .navbar-expand-custom .navbar-nav {
+      flex-direction: row;
+  }
+  .navbar-expand-custom .dropdown-menu {
+      position: absolute;
+  }
+  .navbar-expand-custom .nav-link {
+      padding-right: .5rem;
+      padding-left: .5rem;
+  }
+  .navbar-expand-custom > .container {
+      flex-wrap: nowrap;
+  }
+  .navbar-expand-custom .navbar-collapse {
+      display: flex!important;
+      flex-basis: auto;
+  }
+  .navbar-expand-custom .navbar-toggler {
+      display: none;
+  }
 }

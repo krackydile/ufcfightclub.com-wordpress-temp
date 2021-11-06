@@ -22,7 +22,11 @@
                 //            'walker'          => new WP_Bootstrap_Navwalker(),
                 //          ) );
                 //        ?>
-                <div id="secondary-navigation-box"></div>
+                <div id="secondary-navigation-box">
+                    <div class="navbar-cta">
+					    <a href="#" class="btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</a>
+					</div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,4 +1,4 @@
-<nav class="<?php if(is_front_page()){ echo 'hnav homepage-navbar'; } ?>  navbar navbar-expand-lg navbar-light">
+<nav class="<?php if(is_front_page()){ echo 'hnav homepage-navbar'; } ?>  navbar navbar-expand-custom navbar-dark">
 	
 			  	<a class="navbar-brand" href="<?php echo get_bloginfo('wpurl') ?>">
 
@@ -30,6 +30,9 @@
 		            // 'item_class' => 'nav-item'
 		          ]);
 		        ?>
+						<div class="navbar-cta">
+							<a href="#" class="btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</a>
+						</div>
 				</div>
 			  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav ml-auto">
