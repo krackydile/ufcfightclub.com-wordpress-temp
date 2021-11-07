@@ -699,7 +699,7 @@ function fw_print_video_list($videos, $show = 6, $show_title = true){
 			if($video['video_thumbnail']['url']){
 				$video_thumbnail = $video['video_thumbnail']['url'];
 			}else{
-				$video_thumbnail = get_template_directory_uri().'/images/carrie-fc.png';
+				$video_thumbnail = get_template_directory_uri().'/images/1.jpg';
 			}
 			echo sprintf($template, 
 					add_query_arg('active', sanitize_title_with_dashes($video['video_title']), get_permalink( get_the_ID() ) ), 

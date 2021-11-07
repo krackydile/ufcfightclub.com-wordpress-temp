@@ -8438,8 +8438,8 @@ universejs.init(function (err, data) {
            document.getElementById('banner-cta-mobile').classList.add('hide');
 
         }
-        if(document.getElementById('carrie-alert-box') !== null){
-           document.getElementById('carrie-alert-box').classList.add('hide');
+        if(document.getElementById('spark-alert-box') !== null){
+           document.getElementById('spark-alert-box').classList.add('hide');
         }
         // show protected-help
         if ( document.getElementById('protected-help') !== null ){
@@ -8597,7 +8597,7 @@ universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
     if (data.customer) {
         let loadComments = require('universe-js/lib/disqus');
-        loadComments('carrieunderwood', universejs);
+        loadComments('', universejs);
     }
 
     // Account Page
@@ -8934,7 +8934,7 @@ eventDetailBox = (containerId, type, data, pagination) => {
         container.innerHTML = `
                 ${dataCombined && dataCombined.length > 0 ? `
                 ${dataCombined.map(group => `
-                 <div class="event-block upcomming-events upcomming-events--page">
+                 <div class="event-block upcoming-events upcoming-events--page">
                  <div class="row">
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});

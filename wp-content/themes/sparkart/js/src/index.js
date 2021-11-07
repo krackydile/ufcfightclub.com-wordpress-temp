@@ -45,8 +45,6 @@ function sameheight(div){
 
 // enable tab view by location
 var url = window.location.href;
-console.log(url);
-// var url = 'http://dev.carrieunderwood/sample-page/#official-videos';
 
 if (url.match('#')) {
     $('.nav-pills .nav-item a[href="#' + url.split('#')[1] + '"]').tab('show');

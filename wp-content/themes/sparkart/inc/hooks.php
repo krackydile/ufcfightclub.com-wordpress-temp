@@ -623,8 +623,8 @@ function special_nav_class ($classes, $item) {
  * Part of the original migration added by the previous dev
  * nochanges required
  */
-add_action('init', 'carrieunderwood_fm_add_custom_urls');
-function carrieunderwood_fm_add_custom_urls() {
+add_action('init', 'sparkart_add_custom_urls');
+function sparkart_add_custom_urls() {
   $dps = '([^/]+)'; // Dynamic path segment ({tag}, {topic})
 
   // /news => page-news.php (default)

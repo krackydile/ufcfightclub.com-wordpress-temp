@@ -18,7 +18,7 @@ if(have_posts()):
 </section>
 
 
-<section class="upcomming-events py-5 ">
+<section class="upcoming-events py-5 ">
     <div class="container">
         <h3 class="block-heading heading-light text-center mt-4 mb-5"><span>Upcoming Events</span></h3>
         <?php 

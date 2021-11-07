@@ -4,7 +4,7 @@
  */
 
 if ($_GET['smugmug'] === 'albums') {
-  $url = 'https://api.smugmug.com/api/v2/folder/user/carrieunderwood/Meet-Greet-Photos!albums';
+  $url = '';
   $query = array(
     '_expandmethod' => 'inline',
     '_config' => '{"expand":{"HighlightImage":{"expand":{"LargestImage":{}}}}}',

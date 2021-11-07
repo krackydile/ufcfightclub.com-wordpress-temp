@@ -419,7 +419,7 @@ html {
 /**/
 /* Upcoming Events */
 /**/
-.upcomming-events {
+.upcoming-events {
   @media (min-width: 992px) {
     border-radius: 95px;
     margin: 0 40px;
@@ -518,7 +518,7 @@ html {
     }
   }
 }
-.upcomming-events--page {
+.upcoming-events--page {
   padding: 50px 40px;
   border-radius: 95px;
   margin: 0;
@@ -549,7 +549,7 @@ html {
 
 @media (max-width: 500px) {
   .page-template-events-landing {
-    .upcomming-events--page {
+    .upcoming-events--page {
       padding: 50px 20px;
       border-radius: 0;
       margin: 0 -30px;

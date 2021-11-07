@@ -1,4 +1,4 @@
-<section class="upcomming-events py-5 ">
+<section class="upcoming-events py-5 ">
 	<div class="container">
 		<div class="cta-heading">
 			<h3 class="block-heading heading-red"><span><?php echo $atts['heading'] ?></span></h3>

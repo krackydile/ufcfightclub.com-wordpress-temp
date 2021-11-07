@@ -17,7 +17,7 @@ if(have_posts()):
           <div class="card-body">
             <div class="intro">
 
-              <h1 class="card-title">Download Your Meet & Greet Photo with Carrie</h1>
+              <h1 class="card-title">Download Your Meet & Greet Photo</h1>
               <div class="card-text">
                 <p>To access your photo, enter the password on your photo card and the image number assigned to you. Once downloaded, share your photo with family & friends and on social media!</p>
               </div>
@@ -33,7 +33,7 @@ if(have_posts()):
               </div>
               </form>
 
-              <p><em>Please note it can take 24-72 hours for your photo to become available on this site.</em> Having trouble? E-mail <a href="mailto:carrieunderwoodsupport@sparkart.com">carrieunderwoodsupport@sparkart.com</a>.</p>
+              <p><em>Please note it can take 24-72 hours for your photo to become available on this site.</em> Having trouble? E-mail <a href="mailto:"></a>.</p>
 
             </div>
 
@@ -42,9 +42,9 @@ if(have_posts()):
                 <ul class="images">
                 </ul>
 
-                <div id="banner">
-                    <a href="http://store.carrieunderwood.fm"><img src="/wp-content/uploads/2021/05/banner-shop-now.jpg" alt="Start Shopping" /></a>
-                </div>
+                <!-- <div id="banner">
+                    <a href=""><img src="/wp-content/uploads/2021/05/banner-shop-now.jpg" alt="Start Shopping" /></a>
+                </div> -->
 
                 <p>All rights reserved. Please read our <a href="/privacy" title="Privacy Policy">Privacy Policy</a> & <a href="/terms" title="Terms of Service">Terms of Service</a>.</p>
 

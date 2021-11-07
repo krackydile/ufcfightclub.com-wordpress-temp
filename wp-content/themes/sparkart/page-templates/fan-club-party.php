@@ -312,7 +312,7 @@ get_header();
         <div class="row">
           <div class="col-12">
             <div class="banner-panel text-center">
-              <img src="https://www.carrieunderwood.fm/wp-content/uploads/2021/06/FCP2021_thankyou.jpg">
+              <img src="">
              </div>
           </div>
         </div>

@@ -328,7 +328,7 @@ get_header();
 										<a href="#" class="btn btn-cta-primary"><span>Refresh Page</span></a>
 									</div>
 							</div>
-							<img src="https://www.carrieunderwood.fm/wp-content/uploads/2021/04/carrie-main-image-1.jpg" class="fc-">
+							<img src="" class="fc-">
 						 </div>
 					</div>
 				</div>
@@ -342,7 +342,7 @@ get_header();
 				<div class="row">
 					<div class="col-12">
 						<div class="banner-panel text-center">
-							<img src="https://www.carrieunderwood.fm/wp-content/uploads/2021/06/FCP2021_thankyou.jpg">
+							<img src="">
 						 </div>
 					</div>
 				</div>
@@ -364,7 +364,7 @@ get_header();
 		    <section class="stream__vimeo">
 
 		      <div class="vimeo__main">
-		        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://vimeo.com/event/1057345/embed/7ca5deb3df" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
+		        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://vimeo.com/event/" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>
 		      </div>
 		      <div class="vimeo__sidebar">
 		        <iframe src="https://vimeo.com/event/1057345/chat/7ca5deb3df" width="400" height="600" frameborder="0"></iframe>
@@ -374,7 +374,7 @@ get_header();
 
 		    <section class="stream__footer">
 
-		      <p>If you are experiencing technical difficulty, please contact support at <a href="mailto:carrieunderwoodsupport@sparkart.com" target="_blank">carrieunderwoodsupport@sparkart.com</a>.</p>
+		      <p>If you are experiencing technical difficulty, please contact support at <a href="mailto:" target="_blank"></a>.</p>
 
 		    </section>
 		  </div>
@@ -410,7 +410,7 @@ get_header();
 
 		    <section class="raffle__slideshow">
 
-		      <img src="https://www.carrieunderwood.fm/wp-content/uploads/2021/06/FCP2021_raffle_2.jpg" alt="Thanks for Joining the Party!" />
+		      <img src="" alt="Thanks for Joining the Party!" />
 
 		    </section>
 

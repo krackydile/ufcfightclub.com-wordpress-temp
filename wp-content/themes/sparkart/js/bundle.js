@@ -11337,7 +11337,7 @@ universejs.on('ready', data => {
     require('universe-js/login').linkify(data.fanclub);
     if (data.customer) {
         let loadComments = require('universe-js/lib/disqus');
-        loadComments('carrieunderwood', universejs);
+        loadComments('', universejs);
     }
     if( jQuery('body.page-template-account').length ){
         async.parallel({

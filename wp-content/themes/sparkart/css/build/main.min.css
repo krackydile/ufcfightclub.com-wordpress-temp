@@ -8137,7 +8137,7 @@ small, .text_small {
   display: flex;
   justify-content: center; }
 
-.upcomming-events {
+.upcoming-events {
   background: #FDF6EE; }
 
 .site-footer {
@@ -8363,7 +8363,7 @@ a.joincomment:hover {
   display: inline-block;
   line-height: 1; }
 
-.upcomming-events .block-heading > span:before, .upcomming-events .block-heading > span:after {
+.upcoming-events .block-heading > span:before, .upcoming-events .block-heading > span:after {
   width: 17vw; }
 
 .block-heading.heading-light > span:before, .block-heading.heading-light > span:after {
@@ -8936,18 +8936,18 @@ i.fa.angle-trigger {
     color: #FDF6EE;
     text-decoration: underline; }
 
-.carrie-alert-box {
+.spark-alert-box {
   background: #302520;
   padding: 31px;
   color: #F2EBE3;
   text-align: center; }
-  .carrie-alert-box h4 {
+  .spark-alert-box h4 {
     font-weight: 600;
     font-size: 20px; }
-  .carrie-alert-box p {
+  .spark-alert-box p {
     text-align: center;
     color: #fff; }
-    .carrie-alert-box p a {
+    .spark-alert-box p a {
       color: #fff;
       text-decoration: underline; }
 
@@ -10048,49 +10048,49 @@ html {
 /* Upcoming Events */
 /**/
 @media (min-width: 992px) {
-  .upcomming-events {
+  .upcoming-events {
     border-radius: 95px;
     margin: 0 40px;
     padding-right: 40px;
     padding-left: 40px; } }
 
-.upcomming-events .heading-red span {
+.upcoming-events .heading-red span {
   color: #E23C33; }
 
-.upcomming-events .events-card__container .events-card {
+.upcoming-events .events-card__container .events-card {
   background-color: transparent;
   border-radius: 500px; }
-  .upcomming-events .events-card__container .events-card .card-body {
+  .upcoming-events .events-card__container .events-card .card-body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; }
-    .upcomming-events .events-card__container .events-card .card-body .btn {
+    .upcoming-events .events-card__container .events-card .card-body .btn {
       width: 100%; }
-    .upcomming-events .events-card__container .events-card .card-body .card-title {
+    .upcoming-events .events-card__container .events-card .card-body .card-title {
       text-transform: uppercase;
       line-height: 1;
       margin-bottom: 15px; }
-      .upcomming-events .events-card__container .events-card .card-body .card-title a {
+      .upcoming-events .events-card__container .events-card .card-body .card-title a {
         color: #1C0D0B;
         font-weight: 800; }
         @media (min-width: 960px) {
-          .upcomming-events .events-card__container .events-card .card-body .card-title a {
+          .upcoming-events .events-card__container .events-card .card-body .card-title a {
             font-size: 35px; } }
     @media (min-width: 992px) {
-      .upcomming-events .events-card__container .events-card .card-body .card-info {
+      .upcoming-events .events-card__container .events-card .card-body .card-info {
         padding: 0 30px; } }
-    .upcomming-events .events-card__container .events-card .card-body .card-subtitle {
+    .upcoming-events .events-card__container .events-card .card-body .card-subtitle {
       color: #665954;
       text-transform: uppercase;
       margin-bottom: 15px;
       font-family: trade-gothic-next-condensed, sans-serif;
       letter-spacing: 0; }
       @media (min-width: 960px) {
-        .upcomming-events .events-card__container .events-card .card-body .card-subtitle {
+        .upcoming-events .events-card__container .events-card .card-body .card-subtitle {
           margin-bottom: 0;
           font-size: 18px; } }
-  .upcomming-events .events-card__container .events-card .card__date {
+  .upcoming-events .events-card__container .events-card .card__date {
     background-color: #1C0D0B;
     color: #ffffff;
     height: 100px;
@@ -10105,31 +10105,31 @@ html {
     font-size: 35px;
     line-height: 1;
     margin-bottom: 0; }
-    .upcomming-events .events-card__container .events-card .card__date span {
+    .upcoming-events .events-card__container .events-card .card__date span {
       color: #E23C33;
       font-weight: 800;
       font-size: 14px; }
-  .upcomming-events .events-card__container .events-card .card-content {
+  .upcoming-events .events-card__container .events-card .card-content {
     flex: 1;
     padding-left: 20px;
     padding-right: 20px;
     min-height: unset; }
     @media (min-width: 960px) {
-      .upcomming-events .events-card__container .events-card .card-content {
+      .upcoming-events .events-card__container .events-card .card-content {
         display: flex;
         align-items: center;
         justify-content: space-between; }
-        .upcomming-events .events-card__container .events-card .card-content .btn-primary {
+        .upcoming-events .events-card__container .events-card .card-content .btn-primary {
           height: 56px;
           width: 140px;
           display: flex;
           justify-content: center;
           align-items: center; } }
 
-.upcomming-events .events-card__container:nth-child(2n+1) .events-card {
+.upcoming-events .events-card__container:nth-child(2n+1) .events-card {
   background-color: #F2EBE3; }
 
-.upcomming-events--page {
+.upcoming-events--page {
   padding: 50px 40px;
   border-radius: 95px;
   margin: 0; }
@@ -10155,7 +10155,7 @@ html {
   padding: 5px 20px; }
 
 @media (max-width: 500px) {
-  .page-template-events-landing .upcomming-events--page {
+  .page-template-events-landing .upcoming-events--page {
     padding: 50px 20px;
     border-radius: 0;
     margin: 0 -30px; } }
