@@ -8490,8 +8490,7 @@ a.joincomment:hover {
 
 .btn-itunes {
   background: #000;
-  color: #fff;
-  margin-right: 10px; }
+  color: #fff; }
 
 .btn-amazon {
   background: #4400FF;
@@ -8547,13 +8546,13 @@ i.fa.angle-trigger {
   font-size: 31px;
   color: #665954; }
 
-.album-title-inner {
+h1.album-title-inner {
   margin-top: 30px;
-  color: #1C0D0B;
+  color: #FDF6EE;
   font-size: 31px;
   font-weight: bold; }
   @media (min-width: 992px) {
-    .album-title-inner {
+    h1.album-title-inner {
       margin-top: unset; } }
 
 .track-info-btn-group {
@@ -10286,6 +10285,50 @@ html {
   .single-post .site-content {
     border-radius: 95px !important;
     overflow: hidden; } }
+
+/* */
+/* Single Music */
+/* */
+.single-music .album-title-inner {
+  color: #FDF6EE;
+  font-size: 50px; }
+
+.single-music .event-detail ul li {
+  color: #FDF6EE; }
+  .single-music .event-detail ul li strong {
+    color: #B7ACA4; }
+
+.single-music .album-store-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px; }
+  .single-music .album-store-list a {
+    margin: 5px; }
+  .single-music .album-store-list .btn-primary {
+    transition: opacity 0.15 -ease-in; }
+    .single-music .album-store-list .btn-primary:focus, .single-music .album-store-list .btn-primary:hover {
+      opacity: 0.65; }
+  .single-music .album-store-list .btn-itunes {
+    background-color: #000000;
+    border: 1px solid #ffffff; }
+  .single-music .album-store-list .btn-amazon {
+    background-color: #4400ff;
+    border: 1px solid #4400ff; }
+  .single-music .album-store-list .btn-spotify {
+    background-color: #1bb351;
+    border: 1px solid #1bb351; }
+  .single-music .album-store-list .btn-tidal {
+    background-color: #000000;
+    border: 1px solid #ffffff; }
+  .single-music .album-store-list .btn-pandora {
+    background-color: #009be6;
+    border: 1px solid #009be6; }
+  .single-music .album-store-list .btn-youtube {
+    background-color: #f80000;
+    border: 1px solid #f80000; }
+  .single-music .album-store-list .btn-google-play {
+    background-color: #000000;
+    border: 1px solid #ffffff; }
 
 /* */
 /* Footer */

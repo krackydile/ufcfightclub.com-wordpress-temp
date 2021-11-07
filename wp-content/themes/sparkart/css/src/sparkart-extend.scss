@@ -729,6 +729,67 @@ html {
 
 
 /* */
+/* Single Music */
+/* */
+.single-music {
+  .album-title-inner {
+    color: $ja-white;
+    font-size: 50px;
+  }
+  .event-detail {
+    ul li {
+      color: $ja-white;
+      strong {
+        color: $ja-gray2;
+      }
+    }
+  }
+  .album-store-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+    a {
+      margin: 5px;
+    }
+    .btn-primary {
+      transition: opacity 0.15 -ease-in;
+      &:focus, &:hover {
+        opacity: 0.65;
+      }
+    }
+    .btn-itunes {
+      background-color: #000000;
+      border: 1px solid #ffffff;
+    }
+    .btn-amazon {
+      background-color: #4400ff;
+      border: 1px solid #4400ff;
+    }
+    .btn-spotify {
+      background-color: #1bb351;
+      border: 1px solid #1bb351;
+    }
+    .btn-tidal {
+      background-color: #000000;
+      border: 1px solid #ffffff;
+    }
+    .btn-pandora {
+      background-color: #009be6;
+      border: 1px solid #009be6;
+    }
+    .btn-youtube {
+      background-color: #f80000;
+      border: 1px solid #f80000;
+    }
+    .btn-google-play {
+      background-color: #000000;
+      border: 1px solid #ffffff;
+    }
+  }
+}
+
+
+/* */
 /* Footer */
 /* */
 .footer-image {

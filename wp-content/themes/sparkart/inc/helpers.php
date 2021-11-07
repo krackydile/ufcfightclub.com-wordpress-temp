@@ -585,12 +585,12 @@ function fw_show_album_buy_links($post_id){
 
 	if($main_link != ''){
 
-	echo '<p class="mt-2">
+	echo '<p class="mt-3">
 			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>
 			</p>';
 	}
 
-	echo '<p class="mt-2">';
+	echo '<p class="mt-4 album-store-list">';
 	if($itunes != ''){
 		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
 	}
