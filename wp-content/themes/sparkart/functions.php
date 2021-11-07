@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) {
     die('Direct access forbidden.');
 }
-define('DISQUS_SLUG', 'carrieunderwood');
+define('DISQUS_SLUG', 'BLANK');
 /**
  * Theme Includes
  */
@@ -282,16 +282,16 @@ function sparkart_load_profile_scripts()
     wp_enqueue_script('underscore');
     wp_enqueue_script('universe', get_template_directory_uri() . '/js/sparkart-universe-bundle.js', [], date("ymd-Gis", filemtime(get_template_directory() . '/js/sparkart-universe-bundle.js')), true);
     // Global site tag (gtag.js) - AdWords: 806088113 (The HQ)
-    wp_enqueue_script('gatg-js', 'https://www.googletagmanager.com/gtag/js?id=AW-806088113', [], null);
+    wp_enqueue_script('gatg-js', 'https://www.googletagmanager.com/gtag/js?id=AW-', [], null);
     wp_add_inline_script('gatg-js', "
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-806088113');
+    gtag('config', 'AW-');
   ");
     wp_add_inline_script('gatg-js', "
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-617374-25']);
+    _gaq.push(['_setAccount', '']);
     _gaq.push(['_setDomainName', '.' + '$host'.replace(/^www\./, '')]);
     _gaq.push(['_trackPageview']);
     (function() {
@@ -301,6 +301,7 @@ function sparkart_load_profile_scripts()
     })();
  ");
  ?>
+ 
     <!-- Facebook Pixel Code (Sparkart) -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -311,13 +312,14 @@ function sparkart_load_profile_scripts()
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '242074133083433');
+      fbq('init', '#');
       fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=242074133083433&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
     /></noscript>
-    <!-- Carrie Underwood (The HQ) Facebook Pixel Code -->
+
+    <!-- Client Facebook Pixel -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -327,20 +329,21 @@ function sparkart_load_profile_scripts()
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '1822424467809687');
+      fbq('init', '');
       fbq('track', 'PageView');
       fbq('track', 'ViewContent');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=1822424467809687&ev=PageView&noscript=1"
+      src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
     /></noscript>
+
     <!-- Twitter Audience Pixel -->
-    <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+    <!-- <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
     <script type="text/javascript">twttr.conversion.trackPid('ntfiz', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
     <noscript>
     <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=ntfiz&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
     <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=ntfiz&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    </noscript>
+    </noscript> -->
  <?php
 }
 
