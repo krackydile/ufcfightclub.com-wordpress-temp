@@ -29,12 +29,12 @@ get_header(); ?>
 								// var_dump($videos);
 								if($active_attachment_id == ''){
 									fw_print_video_list($videos);
-									$disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID();
+									// $disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID();
 
 								}else{
 
 									fw_print_play_video($videos, $active_attachment_id);
-									$disqus_thread = get_active_video_disqus_id($videos, $active_attachment_id);
+									// $disqus_thread = get_active_video_disqus_id($videos, $active_attachment_id);
 									
 									// $disqus_thread  = DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active_attachment_id;
 								}
@@ -65,18 +65,18 @@ get_header(); ?>
 //								}
 
                                 ?>
-                                <div class="px-4">
-                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="<?php echo $disqus_thread; ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
+                                <!-- <div class="px-4">
+                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="BLANK" data-disqus-identifier="<?php // echo $disqus_thread; ?>" data-disqus-title="<?php  //echo the_title() ?> BLANK">
                                         <h3>Comments</h3>
 
                                         <div class="prompt">
                                             <ul class="prompt__actions actions">
                                                 <li class="prompt__actions-item"><a class="prompt__actions-link action joincomment" href="/join">Join Today to Post Comments</a></li>
-                                                <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
+                                                <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php // echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             <?php
 							endwhile;
 						?>

@@ -40,18 +40,18 @@ get_header(); ?>
 								if ( comments_open() || get_comments_number() ) {
 
                             ?>
-                                <div class="card card-comment">
-                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="https://www.carrieunderwood.fm" data-disqus-identifier="wordpress-<?php echo get_post_field( 'post_name', get_post() ); ?>" data-disqus-title="<?php echo the_title() ?> · The Official Carrie Underwood Fan Club">
+                                <!-- <div class="card card-comment">
+                                    <div class="widget-comment" id="disqus_thread" data-disqus-domain="BLANK" data-disqus-identifier="wordpress-<?php // echo get_post_field( 'post_name', get_post() ); ?>" data-disqus-title="<?php // echo the_title() ?>">
                                         <h3>Comments</h3>
 
                                         <div class="prompt">
                                             <ul class="prompt__actions actions">
                                                 <li class="prompt__actions-item"><a class="prompt__actions-link action joincomment" href="/join">Join Today to Post Comments</a></li>
-                                                <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
+                                                <li class="prompt__actions-item"><a class="prompt__actions-link action action--link signin" href="/login?redirect=<?php // echo rawurlencode( home_url($_SERVER['REQUEST_URI']))?>">Already a Member? Please Sign In</a></li>
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             <?php
                             	}
 
