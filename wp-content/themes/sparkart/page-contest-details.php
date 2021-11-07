@@ -7,7 +7,7 @@ if (have_posts()):
 
         <section class="page-section  content-area single-page-content contest-details">
             <div class="container">
-                <h3 class="block-heading text-center mt-4 mb-5"><span><?php the_title(); ?> </span></h3>
+                <h3 class="block-heading text-center my-5"><span><?php the_title(); ?> </span></h3>
                 <div class="site-content padded-site-content">
                 <div id="contest-success-message" style="display: none; text-transform: uppercase"></div>
                 <div id="contest-error-message" style="display: none;text-transform: uppercase"></div>

@@ -9,7 +9,7 @@ get_header();
 				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading my-4"><span>Media</span></h3>
+		<h3 class="block-heading my-5"><span>Media</span></h3>
 		
 		<div class="row">
 			<div class="col-12">
@@ -43,7 +43,7 @@ get_header();
 								foreach($official_photos as $photo):
 
 						?>
-						<div class="col-md-3 col-xs-12 col-sm-12">
+						<div class="col-lg-4 col-md-6 col-sm-12">
 							<div class="media-display">
 								<div class="media-thumbnail">
 									<a href="<?php echo get_the_permalink($photo) ?>">
@@ -51,7 +51,7 @@ get_header();
 										<img src="<?php echo get_the_post_thumbnail_url($photo, 'spartkartSquare') ?>" class="img-responsive">
 									</a>
 								</div>
-								<div class="media-simple mt-3" style="">
+								<div class="media-simple mt-4" style="">
 									<div class="album-details text-center">
 										<h6>
 
@@ -94,7 +94,7 @@ get_header();
 								foreach($official_videos as $video):
 							
 						?>
-						<div class="col-md-3 col-xs-12 col-sm-12">
+						<div class="col-lg-4 col-md-6 col-sm-12">
 							<div class="media-display">
 								<div class="media-thumbnail">
 									<a href="<?php echo get_the_permalink($video) ?>">
@@ -102,7 +102,7 @@ get_header();
 										<img src="<?php echo get_the_post_thumbnail_url($video, 'spartkartSquare') ?>" class="img-responsive">
 									</a>
 								</div>
-								<div class="media-simple mt-3" style="">
+								<div class="media-simple mt-4" style="">
 									<div class="album-details text-center">
 										<h6>
 

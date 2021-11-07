@@ -87,7 +87,7 @@ function template(data, type){
     var html = '';
     if(type == 'photoalbums'){
         $.each(data, function(index, item){
-            html += `<div class="col-3 col-official-image">
+            html += `<div class="col-sm-12 col-md-6 col-lg-4 col-official-image">
                             <a href="${sparkart_loadmore_params.current_url}?active=${item.attachment_id}">
                                 <img src="${item.url}" class="img-responsive" />
                             </a>

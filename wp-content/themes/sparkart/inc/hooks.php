@@ -473,7 +473,7 @@ function _action_load_more_items(){
  * @return [type] [description]
  */
 function template_albums(){
-	$template =  '<div class="col-md-3 col-xs-12 col-sm-12">
+	$template =  '<div class="col-lg-4 col-md-6 col-sm-12">
 							<div class="media-display">
 								<div class="media-thumbnail">
 									<a href="'.get_the_permalink().'">
@@ -481,7 +481,7 @@ function template_albums(){
 										<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'spartkartSquare').'" class="img-responsive">
 									</a>
 								</div>
-								<div class="media-simple mt-3" style="">
+								<div class="media-simple mt-4" style="">
 									<div class="album-details text-center">
 										<h6>
 
@@ -500,7 +500,7 @@ function template_albums(){
  * @return [type] [description]
  */
 function template_videos(){
-	$template = '<div class="col-md-3 col-xs-12 col-sm-12">
+	$template = '<div class="col-lg-4 col-md-6 col-sm-12">
 								<div class="media-display">
 									<div class="media-thumbnail">
 										<a href="'.get_the_permalink().'">
@@ -508,7 +508,7 @@ function template_videos(){
 											<img src="'.get_the_post_thumbnail_url(get_the_ID(), 'spartkartSquare').'" class="img-responsive">
 										</a>
 									</div>
-									<div class="media-simple mt-3" style="">
+									<div class="media-simple mt-4" style="">
 										<div class="album-details text-center">
 											<h6>
 	

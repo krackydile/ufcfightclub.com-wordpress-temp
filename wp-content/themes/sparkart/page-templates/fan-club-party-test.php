@@ -356,7 +356,7 @@ get_header();
 			<div class="container">
 		    <section class="stream__header">
 
-		      <h3 class="block-heading text-center mt-4 mb-5"><span>Virtual Fan Club Party</span></h3>
+		      <h3 class="block-heading text-center my-5"><span>Virtual Fan Club Party</span></h3>
 		      <h4>Join Your Fellow Care Bears and Tune-In Below:</h4>
 
 		    </section>

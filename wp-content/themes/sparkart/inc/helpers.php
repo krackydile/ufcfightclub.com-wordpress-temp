@@ -681,7 +681,7 @@ function fw_count_photo_album($album){
 }
 
 
-function fw_print_video_list($videos, $show = 6, $show_title = true){
+function fw_print_video_list($videos, $show = 2, $show_title = true){
 	$offset = 12/$show;
 	if(!empty($videos)){
 		if($show_title == true){
@@ -690,12 +690,17 @@ function fw_print_video_list($videos, $show = 6, $show_title = true){
 		}
 		echo '<div class="row">';
 		foreach($videos as $key => $video){
-			$template = '<div class="col-'.$offset.' col-official-image">
+			$template = '<div class="col-sm-12 col-md-6 col-lg-6 col-official-image col-official-iamge--w-title">
 							<a href="%s">
 								<img src="%s" class="img-responsive" />
-								
 							</a>
-						</div>';
+							<div class="media-simple" style="">
+							<div class="album-details text-center">
+								<h6>%s</h6>
+							</div>
+						</div>
+						</div>
+	';
 			if($video['video_thumbnail']){
 				$video_thumbnail = $video['video_thumbnail']['url'];
 			}else{
@@ -769,12 +774,12 @@ function get_active_video_disqus_id($videos, $active){
 		}
 		return DISQUS_SLUG.'-video-'.get_the_ID().'-'.$active;
 }
-function fw_print_photo_list($photos, $show = 4){
+function fw_print_photo_list($photos, $show = 3){
 	$offset = 12/$show;
 	if(!empty($photos)){
 		echo '<div class="row">';
 		foreach($photos as $photo){
-			$template = '<div class="col-'.$offset.' col-official-image">
+			$template = '<div class="col-sm-12 col-md-6 col-lg-'.$offset.' col-official-image">
 							<a href="%s">
 								<img src="%s" class="img-responsive" />
 							</a>

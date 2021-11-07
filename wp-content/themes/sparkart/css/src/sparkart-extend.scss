@@ -353,6 +353,10 @@ html {
 /**/
 /* Headings */
 /**/
+
+.home .block-heading {
+  text-align: left;
+}
 .cta-heading {
   @media (min-width: 992px) {
     display: flex;
@@ -368,9 +372,6 @@ html {
         margin: 0
       }
     }
-  }
-  .block-heading {
-    // text-align: center;
   }
 }
 .arrow-cta {
@@ -556,7 +557,9 @@ html {
     }
   }
 }
-.page-template-events-landing {
+
+
+.page-template-events-landing, .page-template-events-details {
   .event-pills {
     .nav-link {
       color: $ja-gray2;
@@ -564,9 +567,13 @@ html {
         background-color: $ja-gray4;
         color: $ja-white;
       }
-       &.active {
+      &.active {
         background-color: $ja-white;
         color: $ja-red;
+        &:hover, &:focus {
+          background-color: $ja-white;
+          color: $ja-red;
+        }
       }
     }
   }
@@ -794,4 +801,44 @@ html {
 /* */
 .footer-image {
   width: 150px;
+}
+
+
+/* */
+/* Media Pages */
+/* */
+.site-content {
+  .official-photo-title {
+    color: $ja-white;
+  }
+}
+
+.media-thumbnail, .col-official-image img {
+  border-radius: 30px;
+  overflow: hidden;
+  transition: opacity 0.15s ease-in;
+  margin-bottom: 30px;
+  &:hover, &:focus {
+    opacity: 0.75;
+  }
+}
+.media-simple .album-details {
+  h6 {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  p {
+    color: $ja-gray2;
+  }
+}
+.col-official-iamge--w-title {
+  img {
+    margin-bottom: 10px;
+  }
+  .media-simple {
+    h6 {
+      color: $ja-white;
+      margin-bottom: 30px;
+    }
+  }
 }
