@@ -214,7 +214,7 @@ get_header();
   }
 
   .widget-alert {
-    background: #e6e8e5;
+    background: #FDF6EE;
     border-radius: 20px;
     box-shadow: -2px 4px 12px -6px rgb(0 0 0 / 75%);
     -webkit-box-shadow: -2px 4px 12px -6px rgb(0 0 0 / 75%);
@@ -307,7 +307,7 @@ get_header();
 <section class="page-section">
 
   <div class="stream-prompt after">
-    <section class="banner" style="background-color: #E6E8E5; padding-bottom: 42px;">
+    <section class="banner" style="background-color: #FDF6EE; padding-bottom: 42px;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">

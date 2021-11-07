@@ -1,4 +1,4 @@
-<section class="events-hero" style="background-color: #E6E8E5;">
+<section class="events-hero" style="background-color: #FDF6EE;">
 
 	<div class="event-hero-left">
 		<div class="left-featured">

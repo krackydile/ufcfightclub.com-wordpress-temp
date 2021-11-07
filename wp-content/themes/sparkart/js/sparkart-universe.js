@@ -530,7 +530,6 @@ eventDetailBox = (containerId, type, data, pagination) => {
                 ${dataCombined && dataCombined.length > 0 ? `
                 ${dataCombined.map(group => `
                  <div class="event-block upcomming-events upcomming-events--page">
-                 <div class="container">
                  <div class="row">
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});
@@ -560,7 +559,6 @@ eventDetailBox = (containerId, type, data, pagination) => {
                      </div>
                     </div>`
             }).join('')}
-                 </div>
                  </div>
                  </div>`
         ).join('')}

@@ -586,7 +586,7 @@ function fw_show_album_buy_links($post_id){
 	if($main_link != ''){
 
 	echo '<p class="mt-2">
-			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Carrie Underwood Store</a>
+			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>
 			</p>';
 	}
 
