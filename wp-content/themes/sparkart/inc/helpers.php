@@ -696,7 +696,7 @@ function fw_print_video_list($videos, $show = 6, $show_title = true){
 								
 							</a>
 						</div>';
-			if($video['video_thumbnail']['url']){
+			if($video['video_thumbnail']){
 				$video_thumbnail = $video['video_thumbnail']['url'];
 			}else{
 				$video_thumbnail = get_template_directory_uri().'/images/1.jpg';
