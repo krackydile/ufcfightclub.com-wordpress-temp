@@ -971,3 +971,62 @@ html {
   margin-top: 60px;
   padding: 0 20px;
 }
+
+
+/* */
+/* Join Page */
+/* */
+.club-card {
+  background-color: $ja-white;
+  color: $ja-black;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    padding: 60px;
+  }
+  @media (min-width: 992px) {
+    padding: 20px;
+  }
+}
+.club-card__headline {
+  line-height: 1;
+  font-size: 35px;
+  font-weight: 800;
+}
+.club-card__price {
+  color: $ja-red;
+  font-size: 20px;
+  font-weight: 700;
+  span {
+    color: $ja-gray3;
+    margin-left: 10px;
+    font-weight: 400;
+  }
+}
+.club-card__button {
+  margin-bottom: 20px;
+}
+.club-card__image {
+  margin-bottom: 20px;
+  img {
+    border-radius: 20px;
+  }
+}
+.club-card__list-heading {
+  font-size: 20px;
+}
+.club-card__list-items {
+  li {
+    color: $ja-gray3;
+  }
+}
+.btn-outline {
+  border: 2px solid $ja-gray4;
+  color: $ja-gray4;
+  &:hover, &:focus {
+    background-color: $ja-gray4;
+    border-color: $ja-gray4;
+    color: $ja-white;
+  }
+}
