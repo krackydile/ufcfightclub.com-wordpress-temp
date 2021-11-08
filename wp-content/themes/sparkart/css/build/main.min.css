@@ -8834,7 +8834,8 @@ h1.album-title-inner {
 .gallery-main-photo {
   text-align: center;
   background: #FDF6EE;
-  border-radius: 0 0 25px 25px; }
+  border-radius: 30px;
+  overflow: hidden; }
   .gallery-main-photo img {
     width: 100%; }
   .gallery-main-photo p {

@@ -907,7 +907,8 @@ h1.album-title-inner {
 .gallery-main-photo{
   text-align: center;
   background: $colorLightest;
-  border-radius: 0 0 25px 25px;
+  border-radius: 30px;
+  overflow: hidden;
   img{
     width: 100%;
   }

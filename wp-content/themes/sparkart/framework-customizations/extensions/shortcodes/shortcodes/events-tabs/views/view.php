@@ -4,24 +4,24 @@
 					<nav class="text-center mb-5">
 						<label class="select">
 							<select class="form-control select-pills">
-							  <option data-toggle="pill" value="#pills-upcoming-tour-dates" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">Upcoming tour dates</option>
-							  <option data-toggle="pill" value="#pills-fan-club-presales" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="true">Fan Club Pre-sales</option>
-                                <option data-toggle="pill" value="#pills-upcoming-appearances" href="#pills-upcoming-appearances" role="tab" aria-controls="pills-upcoming-appearances" aria-selected="true">Upcoming Appearances</option>
-                                <option data-toggle="pill" value="#pills-past-events" href="#pills-past-events" role="tab" aria-controls="pills-past-events" aria-selected="true">Past Events</option>
+							  <option data-toggle="pill" value="#pills-upcoming-tour-dates" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">Upcoming</option>
+							  <option data-toggle="pill" value="#pills-fan-club-presales" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="true">Presales</option>
+                                <option data-toggle="pill" value="#pills-upcoming-appearances" href="#pills-upcoming-appearances" role="tab" aria-controls="pills-upcoming-appearances" aria-selected="true">Appearances</option>
+                                <option data-toggle="pill" value="#pills-past-events" href="#pills-past-events" role="tab" aria-controls="pills-past-events" aria-selected="true">Past</option>
 							</select>
 						</label>
 						<ul class="event-pills nav nav-pills mb-3 center-pills" id="pills-tab" role="tablist">
 							<li class="nav-item">
-							    <a class="nav-link active" id="pills-upcoming-tour-dates-tab" data-toggle="pill" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">UPCOMING TOUR DATES</a>
+							    <a class="nav-link active" id="pills-upcoming-tour-dates-tab" data-toggle="pill" href="#pills-upcoming-tour-dates" role="tab" aria-controls="pills-upcoming-tour-dates" aria-selected="true">UPCOMING</a>
 							</li>
 							<li class="nav-item">
-							    <a class="nav-link" id="pills-fan-club-presales-tab" data-toggle="pill" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="false">FAN CLUB PRE-SALES</a>
+							    <a class="nav-link" id="pills-fan-club-presales-tab" data-toggle="pill" href="#pills-fan-club-presales" role="tab" aria-controls="pills-fan-club-presales" aria-selected="false">PRESALES</a>
 							</li>
 							<li class="nav-item">
-							    <a class="nav-link" id="pills-upcoming-appearances-tab" data-toggle="pill" href="#pills-upcoming-appearances" role="tab" aria-controls="pills-upcoming-appearances" aria-selected="false">UPCOMING APPEARANCES</a>
+							    <a class="nav-link" id="pills-upcoming-appearances-tab" data-toggle="pill" href="#pills-upcoming-appearances" role="tab" aria-controls="pills-upcoming-appearances" aria-selected="false">APPEARANCES</a>
 							</li>
 							<li class="nav-item">
-							    <a class="nav-link" id="pills-past-events-tab" data-toggle="pill" href="#pills-past-events" role="tab" aria-controls="pills-past-events" aria-selected="false">PAST EVENTS</a>
+							    <a class="nav-link" id="pills-past-events-tab" data-toggle="pill" href="#pills-past-events" role="tab" aria-controls="pills-past-events" aria-selected="false">PAST</a>
 							</li>
 						</ul>
 					</nav>
