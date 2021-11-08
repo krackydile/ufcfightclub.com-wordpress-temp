@@ -760,6 +760,16 @@ html {
   }
 }
 
+@media (max-width: 767.98px) {
+  .dropdown:hover > .dropdown-menu .nav-item {
+    margin: 0 6px !important;
+  }
+  .dropdown:hover > .dropdown-menu span {
+    color: $ja-white;
+    font-size: 16px;
+  }
+}
+
 /* */
 /* Single Post Styling*/
 /* */
