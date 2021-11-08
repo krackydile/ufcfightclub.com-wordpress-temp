@@ -474,8 +474,8 @@ a.joincomment:hover{
   }
 }
 .contest-header{
-  background: $colorMild;
-  color: #fff;
+  background: $ja-gray4;
+  color: #fff !important;
   border-radius: 25px 25px 0px 0px;
   font-weight: 600;
 }
@@ -972,8 +972,8 @@ h1.album-title-inner {
   }
 }
 .account-content-left{
-  border-top: 2px solid $colorMild;
-  margin: 40px 0px;
+  // border-top: 2px solid $colorMild;
+  margin: 0 0 40px 0;
   h3{
     font-size: 18px;
     margin-top: 52px;

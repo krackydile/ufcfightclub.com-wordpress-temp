@@ -8462,8 +8462,8 @@ a.joincomment:hover {
     font-weight: 600; }
 
 .contest-header {
-  background: #665954;
-  color: #fff;
+  background: #302520;
+  color: #fff !important;
   border-radius: 25px 25px 0px 0px;
   font-weight: 600; }
 
@@ -8889,8 +8889,7 @@ h1.album-title-inner {
   font-weight: 600; }
 
 .account-content-left {
-  border-top: 2px solid #665954;
-  margin: 40px 0px; }
+  margin: 0 0 40px 0; }
   .account-content-left h3 {
     font-size: 18px;
     margin-top: 52px;
