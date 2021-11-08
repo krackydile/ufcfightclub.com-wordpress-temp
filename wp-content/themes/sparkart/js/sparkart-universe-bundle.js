@@ -8552,10 +8552,8 @@ universejs.init(function (err, data) {
         if (document.getElementById("unprotected-box") !== null) {
             document.getElementById("unprotected-box").innerHTML = "" +
                 "<div class=\"cta-buttons\">" +
-                "<a href=\"/join\" class=\"btn btn-cta-primary\">" +
-                "<span>JOIN THE FAN CLUB </span></a>" +
                 "<a  href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(currentURL) + "'\" class=\"btn btn-cta-outline\"> " +
-                "<span>SIGN IN </span></a>" +
+                "<span>LOGIN NOW </span></a>" +
                 "</div>";
         }
 

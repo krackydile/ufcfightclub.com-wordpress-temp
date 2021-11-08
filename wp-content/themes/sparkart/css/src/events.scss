@@ -6,10 +6,10 @@
 	-moz-box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
     margin-bottom: 54px;
     position: relative;
-    @include media-breakpoint-up(lg) {
+    // @include media-breakpoint-up(lg) {
 
-    	height: 392px;
-    }
+    // 	height: 392px;
+    // }
     overflow: hidden;
     padding: 18px;
 }
@@ -29,9 +29,9 @@
 }
 .event-hero-left{
     @include media-breakpoint-up(lg) {
-		position: absolute;
-	    width: 70%;
-	    padding: 50px 10px;
+		// position: absolute;
+	    // width: 70%;
+	    padding: 20px 10px;
 	    left: 55px;
 	    color: $colorDark;
 	}
@@ -41,6 +41,7 @@
     	color: $colorDark;
     	font-weight: bold;
 	    font-size: 25px;
+			text-transform: uppercase;
 
     	@include media-breakpoint-up(lg) {
 

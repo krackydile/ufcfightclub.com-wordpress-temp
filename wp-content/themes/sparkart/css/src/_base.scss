@@ -299,13 +299,13 @@ a.joincomment:hover{
     }
 }
 .btn-cta-outline{
-    border: 2px solid $colorDark;
-    letter-spacing: 0.15em;
-      padding: 7px 28px;
-      span{
-        font-weight: 600;
-      }
-
+  border: 2px solid $ja-black;
+  letter-spacing: 0.15em;
+    padding: 7px 28px;
+    span{
+      font-weight: 600;
+      color: $ja-black;
+    }
 }
 .btn-cta-primary:hover, .btn-cta-outline:hover{
   background: $colorDark;

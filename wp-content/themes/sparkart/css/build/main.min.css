@@ -8322,11 +8322,12 @@ a.joincomment:hover {
     font-weight: 600; }
 
 .btn-cta-outline {
-  border: 2px solid #302520;
+  border: 2px solid #1C0D0B;
   letter-spacing: 0.15em;
   padding: 7px 28px; }
   .btn-cta-outline span {
-    font-weight: 600; }
+    font-weight: 600;
+    color: #1C0D0B; }
 
 .btn-cta-primary:hover, .btn-cta-outline:hover {
   background: #302520;
@@ -9602,9 +9603,6 @@ header .nav-item {
   position: relative;
   overflow: hidden;
   padding: 18px; }
-  @media (min-width: 992px) {
-    .events-hero {
-      height: 392px; } }
 
 .event-heading {
   color: #665954;
@@ -9618,16 +9616,15 @@ header .nav-item {
 
 @media (min-width: 992px) {
   .event-hero-left {
-    position: absolute;
-    width: 70%;
-    padding: 50px 10px;
+    padding: 20px 10px;
     left: 55px;
     color: #302520; } }
 
 .event-hero-left h2 {
   color: #302520;
   font-weight: bold;
-  font-size: 25px; }
+  font-size: 25px;
+  text-transform: uppercase; }
   @media (min-width: 992px) {
     .event-hero-left h2 {
       font-size: 31px; } }
@@ -10056,6 +10053,38 @@ html {
   .arrow-cta--light:hover, .arrow-cta--light:focus {
     color: #F2EBE3; }
 
+/* Video Header */
+.video-header {
+  width: 100%;
+  height: auto;
+  display: none;
+  border-bottom-right-radius: 50%;
+  overflow: hidden;
+  position: relative; }
+  .video-header:after {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0; }
+  .video-header video {
+    width: 100%; }
+  @media (min-width: 500px) {
+    .video-header {
+      display: block;
+      margin-bottom: -50px; } }
+  @media (min-width: 800px) {
+    .video-header {
+      margin-bottom: -100px; } }
+  @media (min-width: 1000px) {
+    .video-header {
+      margin-bottom: -200px; } }
+
+.container--video-header {
+  margin-top: 40px; }
+
 /**/
 /* Upcoming Events */
 /**/
@@ -10379,4 +10408,36 @@ html {
 .col-official-iamge--w-title .media-simple h6 {
   color: #FDF6EE;
   margin-bottom: 30px; }
+
+/* */
+/* Tour Page */
+/* */
+.tour-box {
+  color: #1C0D0B; }
+  .tour-box p {
+    color: #1C0D0B; }
+    .tour-box p.tour-box--important {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #E23C33; }
+  .tour-box .tour-box__headline {
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+    text-transform: uppercase; }
+  .tour-box .tour-box__image {
+    width: 150px;
+    height: auto;
+    margin: auto; }
+  @media (min-width: 992px) {
+    .tour-box {
+      padding: 38px 28px; }
+      .tour-box .tour-box__headline {
+        font-size: 35px; }
+      .tour-box.tour-box--join {
+        display: flex; }
+        .tour-box.tour-box--join .tour-box__image {
+          width: 250px;
+          margin-right: 40px; } }
 

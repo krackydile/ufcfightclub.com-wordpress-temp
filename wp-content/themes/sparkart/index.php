@@ -4,7 +4,7 @@ get_header();
 
 <section class="news-tabs">
 		<div class="container">
-			<h3 class="block-heading my-4 "><span>News </span></h3>
+			<h3 class="block-heading my-5"><span>News </span></h3>
 		</div>
 
 				<nav class="text-center mb-5">

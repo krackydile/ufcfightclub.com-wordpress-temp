@@ -417,6 +417,42 @@ html {
 }
 
 
+/* Video Header */
+.video-header {
+  width: 100%;
+  height: auto;
+  display: none;
+  border-bottom-right-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: ' ';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+  }
+  video {
+    width: 100%;
+  }
+  @media (min-width: 500px) {
+    display: block;
+    margin-bottom: -50px;
+  }
+  @media (min-width: 800px) {
+    margin-bottom: -100px;
+  }
+  @media (min-width: 1000px) {
+    margin-bottom: -200px;
+  }
+}
+.container--video-header {
+  margin-top: 40px;
+}
+
+
 /**/
 /* Upcoming Events */
 /**/
@@ -839,6 +875,46 @@ html {
     h6 {
       color: $ja-white;
       margin-bottom: 30px;
+    }
+  }
+}
+
+/* */
+/* Tour Page */
+/* */
+.tour-box {
+  color: $ja-black;
+  p {
+    color: $ja-black;
+    &.tour-box--important {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: $ja-red;
+    }
+  }
+  .tour-box__headline {
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+  .tour-box__image {
+    width: 150px;
+    height: auto;
+    margin: auto;
+  }
+  @media (min-width: 992px) {
+    padding: 38px 28px;
+    .tour-box__headline { 
+      font-size: 35px;
+    }
+    &.tour-box--join {
+      display: flex;
+      .tour-box__image {
+        width: 250px;
+        margin-right: 40px;
+      }
     }
   }
 }
