@@ -39,9 +39,7 @@ get_header(); ?>
 												<ul>
 
 													<li><strong class="pr-3">Release Date:</strong><?php echo fw_get_db_post_option(get_the_ID(), 'release_date'); ?></li>
-													<li><strong class="pr-3">Format:</strong><?php echo fw_get_db_post_option(get_the_ID(), 'format'); ?></li>
 													<li>
-														<strong>Where to Buy:</strong>
 														<?php
 															fw_show_album_buy_links(get_the_ID());
 														?>

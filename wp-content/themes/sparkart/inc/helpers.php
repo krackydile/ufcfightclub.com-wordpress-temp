@@ -583,34 +583,30 @@ function fw_show_album_buy_links($post_id){
 	$google = fw_get_db_post_option($post_id, 'google_play');
 	$tidal = fw_get_db_post_option($post_id, 'tidal');
 
-	if($main_link != ''){
-
-	echo '<p class="mt-3">
-			<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>
-			</p>';
-	}
-
 	echo '<p class="mt-4 album-store-list">';
+	if($main_link != ''){
+	echo '<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>';
+	}
 	if($itunes != ''){
-		echo '<a href="'.$itunes.'" class="btn btn-primary btn-itunes" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
+		echo '<a href="'.$itunes.'" class="btn btn-primary" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
 	}
 	if($amazon != ''){
-		echo '<a href="'.$amazon.'" class="btn btn-primary btn-amazon" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+		echo '<a href="'.$amazon.'" class="btn btn-primary" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
 	}
 	if($spotify != ''){
-		echo '<a href="'.$spotify.'" class="btn btn-primary btn-spotify" target="_blank"><i class="fa fa-spotify"></i> SPOTIFY</a>';
+		echo '<a href="'.$spotify.'" class="btn btn-primary" target="_blank"><i class="fa fa-spotify"></i> SPOTIFY</a>';
 	}
 	if($pandora != ''){
-		echo '<a href="'.$pandora.'" class="btn btn-primary btn-pandora" target="_blank"><i class="fa fa-pandora"></i> PANDORA</a>';
+		echo '<a href="'.$pandora.'" class="btn btn-primary" target="_blank"><i class="fa fa-pandora"></i> PANDORA</a>';
 	}
 	if($youtube != ''){
-		echo '<a href="'.$youtube.'" class="btn btn-primary btn-youtube" target="_blank"><i class="fa fa-youtube"></i> YOUTUBE</a>';
+		echo '<a href="'.$youtube.'" class="btn btn-primary" target="_blank"><i class="fa fa-youtube"></i> YOUTUBE</a>';
 	}
 	if($google != ''){
-		echo '<a href="'.$google.'" class="btn btn-primary btn-google-play" target="_blank"><i class="fa fa-google-play"></i> GOOGLE PLAY</a>';
+		echo '<a href="'.$google.'" class="btn btn-primary" target="_blank"><i class="fa fa-google-play"></i> GOOGLE PLAY</a>';
 	}
 	if($tidal != ''){
-		echo '<a href="'.$tidal.'" class="btn btn-primary btn-tidal" target="_blank"><i class="fa fa-tidal"></i> TIDAL</a>';
+		echo '<a href="'.$tidal.'" class="btn btn-primary" target="_blank"><i class="fa fa-tidal"></i> TIDAL</a>';
 	}
 	echo '</p>';
 }
