@@ -10214,6 +10214,17 @@ html {
       color: #E23C33; }
 
 /* */
+/* Event Details */
+/* */
+.event-information-header {
+  display: none; }
+  .event-information-header h3 {
+    border-bottom: 0; }
+
+.page-template-no-heading .card.event-detail-card, .page-template-no-heading .site-content {
+  border-radius: 20px; }
+
+/* */
 /* Mobile navigation overrides*/
 /* */
 .navbar {

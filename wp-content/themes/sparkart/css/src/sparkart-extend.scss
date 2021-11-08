@@ -615,6 +615,21 @@ html {
   }
 }
 
+/* */
+/* Event Details */
+/* */
+.event-information-header {
+  display: none;
+  h3 {
+    border-bottom: 0;
+  }
+}
+.page-template-no-heading {
+  .card.event-detail-card, .site-content {
+    border-radius: 20px;
+  }
+}
+
 
 /* */
 /* Mobile navigation overrides*/
