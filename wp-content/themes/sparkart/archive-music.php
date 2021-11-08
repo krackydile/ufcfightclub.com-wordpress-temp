@@ -16,7 +16,7 @@ get_header();
 		?>
 		
 
-			<div class="col-md-4 col-xs-12 col-sm-12">
+			<div class="col-lg-4 col-md-6 col-xs-12 col-sm-12">
 				<div class="album-display">
 					<div class="album-thumbnail">
 						<?php 
@@ -33,7 +33,7 @@ get_header();
 									echo fw_get_db_post_option(get_the_ID(), 'release_date');
 								?>	
 							</h6>
-							<a href="<?php echo get_the_permalink(); ?>" class="btn btn-outline-light">VIEW ALBUM</a>
+							<a href="<?php echo get_the_permalink(); ?>" class="btn btn-primary">VIEW ALBUM</a>
 						</div>
 					</div>
 				</div>

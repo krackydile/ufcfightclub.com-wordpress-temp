@@ -21,7 +21,7 @@ get_header(); ?>
 							while ( have_posts() ) : the_post();
 
 								?>
-							<div class="row mb-4">
+							<div class="row mb-4 album-row">
 								<div class="col-md-6 col-sm-12">
 									<div class="album-thumbnail-inner">
 
@@ -31,23 +31,25 @@ get_header(); ?>
 											?>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12">
-									<h1 class="album-title-inner"><?php the_title(); ?></h1>
-									<div class="event-detail">
+								<div class="col-md-6 col-sm-12 ">
+									<div class="album-card">
+										<div class="album-card__content">
+											<h1 class="album-title-inner"><?php the_title(); ?></h1>
+											<div class="event-detail">
 												<ul>
-
 
 													<li><strong class="pr-3">Release Date:</strong><?php echo fw_get_db_post_option(get_the_ID(), 'release_date'); ?></li>
 													<li><strong class="pr-3">Format:</strong><?php echo fw_get_db_post_option(get_the_ID(), 'format'); ?></li>
 													<li>
-														<strong class="text-uppercase">WHERE TO BUY <?php the_title() ?>:</strong>
+														<strong>Where to Buy:</strong>
 														<?php
 															fw_show_album_buy_links(get_the_ID());
 														?>
 													</li>
 
 												</ul>
-
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>

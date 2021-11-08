@@ -10344,6 +10344,13 @@ html {
 /* */
 /* Single Music */
 /* */
+.single-music .card-body, .single-music .card {
+  border-radius: 40px; }
+
+.single-music .card-body {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
 .single-music .album-title-inner {
   color: #FDF6EE;
   font-size: 50px; }
@@ -10351,7 +10358,7 @@ html {
 .single-music .event-detail ul li {
   color: #FDF6EE; }
   .single-music .event-detail ul li strong {
-    color: #B7ACA4; }
+    color: #A79D96; }
 
 .single-music .album-store-list {
   display: flex;
@@ -10384,6 +10391,55 @@ html {
   .single-music .album-store-list .btn-google-play {
     background-color: #000000;
     border: 1px solid #ffffff; }
+
+.track-group .list-group-item:nth-child(odd) {
+  border-radius: 20px; }
+
+.post-type-archive-music .album-title {
+  font-weight: 800;
+  font-size: 30px !important;
+  text-transform: uppercase; }
+
+.post-type-archive-music .album-display {
+  margin-bottom: 30px;
+  transition: transform 0.15s ease-in; }
+  .post-type-archive-music .album-display .album-overlay {
+    transition: opacity 0.15s ease-in;
+    display: table;
+    opacity: 0; }
+  .post-type-archive-music .album-display:hover, .post-type-archive-music .album-display:focus {
+    transform: scale(1.05); }
+    .post-type-archive-music .album-display:hover .album-overlay, .post-type-archive-music .album-display:focus .album-overlay {
+      opacity: 1; }
+
+.post-type-archive-music .album-thumbnail img {
+  width: 100%; }
+
+.album-row {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  padding: 20px 5px;
+  margin-left: 0;
+  margin-right: 0; }
+  @media (min-width: 768px) {
+    .album-row {
+      align-items: center; } }
+  @media (min-width: 992px) {
+    .album-row {
+      padding: 50px 25px; } }
+
+.album-card {
+  border-radius: 40px;
+  padding: 10px;
+  padding-top: 0; }
+  @media (min-width: 768px) {
+    .album-card {
+      margin-top: 0;
+      padding-bottom: 0;
+      height: 100%; } }
+  @media (min-width: 992px) {
+    .album-card {
+      padding: 40px 30px; } }
 
 /* */
 /* Footer */

@@ -790,6 +790,13 @@ html {
 /* Single Music */
 /* */
 .single-music {
+  .card-body, .card {
+    border-radius: 40px;
+  }
+  .card-body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
   .album-title-inner {
     color: $ja-white;
     font-size: 50px;
@@ -798,7 +805,7 @@ html {
     ul li {
       color: $ja-white;
       strong {
-        color: $ja-gray2;
+        color: $ja-gray2-5;
       }
     }
   }
@@ -845,6 +852,61 @@ html {
     }
   }
 }
+.track-group .list-group-item:nth-child(odd) {
+  border-radius: 20px;
+}
+.post-type-archive-music {
+  .album-title {
+    font-weight: 800;
+    font-size: 30px !important;
+    text-transform: uppercase;
+  }
+  .album-display {
+    margin-bottom: 30px;
+    transition: transform 0.15s ease-in;
+    .album-overlay {
+      transition: opacity 0.15s ease-in;
+      display: table;
+      opacity: 0;
+    }
+    &:hover, &:focus {
+      transform: scale(1.05);
+      .album-overlay {
+        opacity: 1;
+      }
+    }
+  }
+  .album-thumbnail img {
+    width: 100%;
+  }
+}
+.album-row {
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 40px;
+  padding: 20px 5px;
+  margin-left: 0;
+  margin-right: 0;
+  @media (min-width: 768px) {
+    align-items: center;
+  }
+  @media (min-width: 992px) {
+    padding: 50px 25px;
+  }
+}
+.album-card {
+  border-radius: 40px; 
+  padding: 10px;
+  padding-top: 0;
+  @media (min-width: 768px) {
+    margin-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
+  @media (min-width: 992px) {
+    padding: 40px 30px;
+  }
+}
+
 
 
 /* */
