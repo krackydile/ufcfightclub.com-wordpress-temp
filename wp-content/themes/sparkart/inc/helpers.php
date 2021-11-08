@@ -804,7 +804,6 @@ function fw_print_photo_slider($photos, $active){
 				echo '<div class="gallery-main-photo">
 						<div class="active-image">
 							<img src="'.$active_value['url'].'" class="img-responsive" />
-							<p><strong>Added:</strong>'.get_the_date().'</p>
 						</div>
 					</div>';
 				$previous = $active_key-1;
