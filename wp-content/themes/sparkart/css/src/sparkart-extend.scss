@@ -1030,3 +1030,46 @@ html {
     color: $ja-white;
   }
 }
+
+/* */
+/* Help Page */
+/* */
+.sparkart-help-articles {
+  padding: 0 15px;
+}
+.container-help-articles {
+  padding: 40px 20px;
+  @media (min-width: 500px) {
+    padding: 60px 40px;
+  }
+  @media (min-width: 992px) {
+    padding: 80px 80px;
+  }
+  .help-category {
+    h3 {
+      color: $ja-black;
+    }
+    p.help-link a {
+      color: $ja-gray4;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: 0;
+      font-weight: 600;
+      font-size: 16px;
+      @media (min-width: 500px) {
+        font-size: 20px;
+      }
+      transition: color 0.15s ease-in;
+      &:hover, &:focus {
+        color: $ja-gray2-5;
+      }
+    }
+  }
+  .block-heading {
+    text-align: left;
+    padding: 0;
+    span {
+      color: $ja-red;
+    }
+  }
+}

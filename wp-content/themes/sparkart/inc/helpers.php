@@ -658,8 +658,10 @@ function _filter_my_custom_breadcrumbs_items( $items ) {
     		'url' => get_bloginfo('wpurl').'/help',
     		'type' => 'archive_page'
     	];
-    	$items[1] = $items[2];
+    	$items[1] = $items[3];
+			// unset($items[1]);
     	unset($items[2]);
+			unset($items[3]);
     }
     // var_dump($items);
 	return $items;
@@ -892,7 +894,7 @@ function fw_display_help_articles($articles, $id, $class){
 					$loginCategory = get_category($loginCategoryID);
 		?>
 					<section class="help-category protected">
-						<h3><?php echo $loginCategory->name; ?></h3>
+						<!-- <h3><?php //echo $loginCategory->name; ?></h3> -->
 						<div class="row">
 							<div class="col">
 								<?php 
@@ -902,7 +904,7 @@ function fw_display_help_articles($articles, $id, $class){
 									]);
 									foreach($helpArticles as $help):
 								?>
-									<p>
+									<p class="help-link">
 										<a href="<?php echo get_permalink($help->ID); ?>"><?php echo $help->post_title; ?></a>
 									</p>
 								<?php 

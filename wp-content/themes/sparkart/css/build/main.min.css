@@ -8246,7 +8246,7 @@ small, .text_small {
     margin-top: -62px; } }
 
 .site-footer .site-info p {
-  color: #FDF6EE;
+  color: #B7ACA4;
   margin: 6px; }
 
 .site-footer .site-info ul li a span {
@@ -10534,4 +10534,39 @@ html {
     background-color: #302520;
     border-color: #302520;
     color: #FDF6EE; }
+
+/* */
+/* Help Page */
+/* */
+.sparkart-help-articles {
+  padding: 0 15px; }
+
+.container-help-articles {
+  padding: 40px 20px; }
+  @media (min-width: 500px) {
+    .container-help-articles {
+      padding: 60px 40px; } }
+  @media (min-width: 992px) {
+    .container-help-articles {
+      padding: 80px 80px; } }
+  .container-help-articles .help-category h3 {
+    color: #1C0D0B; }
+  .container-help-articles .help-category p.help-link a {
+    color: #302520;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.15s ease-in; }
+    @media (min-width: 500px) {
+      .container-help-articles .help-category p.help-link a {
+        font-size: 20px; } }
+    .container-help-articles .help-category p.help-link a:hover, .container-help-articles .help-category p.help-link a:focus {
+      color: #A79D96; }
+  .container-help-articles .block-heading {
+    text-align: left;
+    padding: 0; }
+    .container-help-articles .block-heading span {
+      color: #E23C33; }
 

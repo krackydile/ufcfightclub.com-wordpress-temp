@@ -1,5 +1,7 @@
 <section class="sparkart-help-articles">
 	<div class="container container-help-articles">
+
+		<h3 class="block-heading mb-5"><span>Help</span></h3>
 		
 		<?php 
 			echo $atts['help_introducation'];
