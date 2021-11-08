@@ -8866,6 +8866,13 @@ universejs.on('ready', data => {
           </div>`;
       }
     }
+
+    if (data.customer && data.customer.subscription && document.getElementById("protectedTourContent")) {
+        document.getElementById("protectedTourContent").style.display = "block";
+        if (document.getElementById("unprotectedTourContent")) {
+            document.getElementById("unprotectedTourContent").style.display = "none";
+        }
+    }
 });
 
 //Country Change Event
