@@ -878,6 +878,9 @@ html {
       transition: opacity 0.15s ease-in;
       display: table;
       opacity: 0;
+      &:hover, &:focus {
+        text-decoration: none;
+      }
     }
     &:hover, &:focus {
       transform: scale(1.05);

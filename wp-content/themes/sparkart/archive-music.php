@@ -24,7 +24,7 @@ get_header();
 						?>
 						
 					</div>
-					<div class="album-overlay" style="" onclick="javascript: window.location='<?php echo get_the_permalink(); ?>'">
+					<a href="<?php echo get_the_permalink(); ?>" class="album-overlay">
 						<div class="album-details">
 							
 							<h4 class="album-title"><?php the_title(); ?></h4>
@@ -33,9 +33,8 @@ get_header();
 									echo fw_get_db_post_option(get_the_ID(), 'release_date');
 								?>	
 							</h6>
-							<a href="<?php echo get_the_permalink(); ?>" class="btn btn-primary">VIEW ALBUM</a>
 						</div>
-					</div>
+					</a>
 				</div>
 			</div>
 			

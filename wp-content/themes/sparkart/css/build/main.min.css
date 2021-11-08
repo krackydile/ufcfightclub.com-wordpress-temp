@@ -10393,6 +10393,8 @@ html {
     transition: opacity 0.15s ease-in;
     display: table;
     opacity: 0; }
+    .post-type-archive-music .album-display .album-overlay:hover, .post-type-archive-music .album-display .album-overlay:focus {
+      text-decoration: none; }
   .post-type-archive-music .album-display:hover, .post-type-archive-music .album-display:focus {
     transform: scale(1.05); }
     .post-type-archive-music .album-display:hover .album-overlay, .post-type-archive-music .album-display:focus .album-overlay {
