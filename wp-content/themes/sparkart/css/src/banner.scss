@@ -71,18 +71,15 @@
 
 .custom-swiper-controls{
 	display: block;
-	position: unset;
-	background: $ja-gray4;
-	padding: 10px;
-	@include media-breakpoint-up(md) { 
 	background: transparent; 
 		position: absolute;
 		z-index: 1111;
 		bottom: 0;
 		width: 100%;
 		text-align: center;
-
-	}
+		@media (max-width: 768px) {
+			bottom: -20px;
+		}
 }
 .swipe-btn-prev, .swipe-btn-next{
 	background: transparent;

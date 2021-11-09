@@ -19,8 +19,4 @@
 	border-top-right-radius: 500px;
 	border-bottom-right-radius: 500px;
 	overflow: hidden;
-	@media (max-width: 960px) {
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
 }

@@ -9497,17 +9497,15 @@ header .nav-item {
 
 .custom-swiper-controls {
   display: block;
-  position: unset;
-  background: #302520;
-  padding: 10px; }
-  @media (min-width: 768px) {
+  background: transparent;
+  position: absolute;
+  z-index: 1111;
+  bottom: 0;
+  width: 100%;
+  text-align: center; }
+  @media (max-width: 768px) {
     .custom-swiper-controls {
-      background: transparent;
-      position: absolute;
-      z-index: 1111;
-      bottom: 0;
-      width: 100%;
-      text-align: center; } }
+      bottom: -20px; } }
 
 .swipe-btn-prev, .swipe-btn-next {
   background: transparent;
@@ -9556,10 +9554,6 @@ header .nav-item {
   border-top-right-radius: 500px;
   border-bottom-right-radius: 500px;
   overflow: hidden; }
-  @media (max-width: 960px) {
-    .slider--right-rounded {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0; } }
 
 .album-display {
   margin-bottom: 20px;
@@ -9816,9 +9810,6 @@ html {
   border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
   overflow: hidden; }
-  @media (max-width: 960px) {
-    .banner__video--rounded {
-      border-radius: 0; } }
 
 .floating-cta--video {
   position: absolute;
@@ -9966,7 +9957,8 @@ html {
     height: unset; } }
 
 .hp-video-slider {
-  width: 100%; }
+  width: 95%;
+  right: 5vw; }
   @media (min-width: 960px) {
     .hp-video-slider {
       width: 70%;

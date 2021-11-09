@@ -118,9 +118,6 @@ html {
   border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
   overflow: hidden;
-  @media (max-width: 960px) {
-    border-radius: 0;
-  }
 }
 .floating-cta--video {
   position: absolute;
@@ -306,7 +303,8 @@ html {
 
 .hp-video-slider {
   // margin-top: 50vw;
-  width: 100%;
+  width: 95%;
+  right: 5vw;
   @media (min-width: 960px) {
     width: 70%;
     margin-top: -13%;
