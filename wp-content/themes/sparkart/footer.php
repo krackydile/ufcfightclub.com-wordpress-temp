@@ -101,8 +101,8 @@
       chimpPopup.appendChild(document.createTextNode('require(["mojo/signup-forms/Loader"], function (L) { L.start({"baseUrl": "' +  mailchimpConfig.baseUrl + '", "uuid": "' + mailchimpConfig.uuid + '", "lid": "' + mailchimpConfig.lid + '"})});'));
 
       document.cookie = "MCPopupClosed=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-
-      jQuery("#open-popup").click(function(e) {
+      jQuery(".mailing-list-popup").click(function(e) {
+				console.log('working now')
         document.cookie.split("; ").forEach(function(c) { if (c.toLowerCase() == "mcpopupclosed=yes") { 
           jQuery('.chimpPopupLoader').remove();
           jQuery('.chimpPopup').remove();

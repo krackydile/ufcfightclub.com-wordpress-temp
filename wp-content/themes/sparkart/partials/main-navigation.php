@@ -31,7 +31,7 @@
 		          ]);
 		        ?>
 						<div class="navbar-cta home-only">
-							<button id="open-popup" class="btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</button>
+							<button class="mailing-list-popup btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</button>
 						</div>
 				</div>
 			  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">

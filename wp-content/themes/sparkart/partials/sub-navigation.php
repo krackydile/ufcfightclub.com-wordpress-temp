@@ -24,7 +24,7 @@
                 //        ?>
                 <div id="secondary-navigation-box">
                     <div class="navbar-cta">
-					    <a href="#" class="btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</a>
+					    <button class="mailing-list-popup btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</button>
 					</div>
                 </div>
             </div>
