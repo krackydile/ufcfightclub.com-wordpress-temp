@@ -11,7 +11,7 @@ if(have_posts()):
 
 <section class="page-section">
 	<div class="container">
-		<div class=" mt-4 mb-5"><span>&nbsp; </span></div>
+		<div class=" mt-1 mb-1"><span>&nbsp; </span></div>
 
 		<div id="primary" class="content-area ">
 

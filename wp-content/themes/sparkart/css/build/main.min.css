@@ -8892,7 +8892,7 @@ h1.album-title-inner {
   margin: 0 0 40px 0; }
   .account-content-left h3 {
     font-size: 18px;
-    margin-top: 52px;
+    margin-top: 30px;
     font-weight: bold;
     color: #665954; }
 
@@ -9598,7 +9598,7 @@ header .nav-item {
   box-shadow: -2px 4px 12px -6px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: -2px 4px 12px -6px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -2px 4px 12px -6px rgba(0, 0, 0, 0.75);
-  margin-bottom: 54px;
+  margin-bottom: 24px;
   position: relative;
   overflow: hidden;
   padding: 18px; }
@@ -10215,10 +10215,8 @@ html {
 /* */
 /* Event Details */
 /* */
-.event-information-header {
-  display: none; }
-  .event-information-header h3 {
-    border-bottom: 0; }
+.event-information-header h3 {
+  border-bottom: 0; }
 
 .page-template-no-heading .card.event-detail-card, .page-template-no-heading .site-content {
   border-radius: 20px; }
@@ -10524,7 +10522,7 @@ html {
     left: 0; }
 
 .container--image-header {
-  margin-top: 60px;
+  margin-top: 10px;
   padding: 0 20px; }
 
 /* */
