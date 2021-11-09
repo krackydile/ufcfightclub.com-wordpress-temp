@@ -10625,3 +10625,23 @@ html {
     .container-help-articles .block-heading span {
       color: #E23C33; }
 
+/* */
+/* Related News*/
+/* */
+.yarpp h3.related-news__header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-top: 80px; }
+
+.news-cards--related {
+  flex-wrap: wrap; }
+  .news-cards--related .card-body {
+    padding: 1.5rem; }
+  .news-cards--related .card-subtitle {
+    color: #FDF6EE !important;
+    font-size: 16px !important; }
+  .news-cards--related .card-title {
+    margin-bottom: 0 !important;
+    font-size: 20px !important; }
+
