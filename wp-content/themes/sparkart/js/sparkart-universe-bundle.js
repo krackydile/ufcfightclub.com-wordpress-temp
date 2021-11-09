@@ -8550,12 +8550,16 @@ universejs.init(function (err, data) {
                 "</ul>"
         } */
         if (document.getElementById("unprotected-box") !== null) {
-            document.getElementById("unprotected-box").innerHTML = "" +
-                "<div class=\"cta-buttons\">" +
-                "<a  href=\'" + data.fanclub.links.login + "?redirect=" + encodeURIComponent(currentURL) + "'\" class=\"btn btn-cta-outline\"> " +
-                "<span>LOGIN NOW </span></a>" +
-                "</div>";
+            document.getElementById("unprotected-box").innerHTML = `
+              <div class="tour-box__image"><img src="/wp-content/uploads/2021/11/logo-y12.png" alt="Aldean Army"></div>
+              <div>
+                <h2 class="tour-box__headline">Not an Aldean Army Member?</h2>
+                <p>Join the Official Fan Club of Jason Aldean and enjoy exclusive members-only benefits including presale tickets, exclusive content, message board access and much more.</p>
+                <p><a href="/join" class="btn btn-primary">Join Now</a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;">Login Now</a></p>
+              </div>
+            `;
         }
+
 
         if (document.getElementById("presale-access-code-text") !== null) {
            document.getElementById("presale-access-code-text").style.display = 'none';
@@ -8855,6 +8859,12 @@ universejs.on('ready', data => {
         });
       } else {
         document.getElementById("protected-box").innerHTML = `
+        <h2 class="tour-box__headline">Upcoming Aldean Army Presales</h2>
+        <p>Jason Aldean Fan Club members have the opportunity to purchase up to four (4) presale tickets to each event, with a total of twenty (2) presale tickets across the tour.</p>
+        
+        <p class="tour-box--important">Once the presale is announced, your fan club presale password will be shown.</p>
+        
+        <p>Presale tickets are not guarranteed and are subject to availability on a first come, first serve basis.</p>
           <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
           <div class="accesscode protected block-protected">
            <div class="input-group my-2">
