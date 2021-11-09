@@ -9556,7 +9556,11 @@ header .nav-item {
 .slider--right-rounded {
   border-top-right-radius: 500px;
   border-bottom-right-radius: 500px;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0); }
 
 .album-display {
   margin-bottom: 20px;
@@ -9812,7 +9816,11 @@ html {
 .banner__video--rounded {
   border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0); }
 
 .floating-cta--video {
   position: absolute;
