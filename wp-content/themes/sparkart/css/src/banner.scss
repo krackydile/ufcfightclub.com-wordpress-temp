@@ -79,6 +79,10 @@
 		text-align: center;
 		@media (max-width: 768px) {
 			bottom: -20px;
+			transform: scale(0.75);
+			.swipe-btn-prev, .swipe-btn-next {
+				display: none;
+			}
 		}
 }
 .swipe-btn-prev, .swipe-btn-next{
