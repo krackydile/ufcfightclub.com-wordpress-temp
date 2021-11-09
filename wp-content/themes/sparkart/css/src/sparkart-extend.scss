@@ -91,7 +91,7 @@ html {
   }
 }
 .banner__video {
-  width: 105vw;
+  width: 98vw;
   max-width: 2560px;
   max-height:1268px;
   position: absolute;
@@ -125,7 +125,7 @@ html {
   flex-direction: column;
   justify-content: flex-end;
   left: 0;
-  width: 105vw;
+  width: 98vw;
   height: 45vw;
   max-width: 2560px;
   max-height:1268px;
@@ -170,37 +170,37 @@ html {
           height: 42%;
         }
         transform-origin: top left;
-        transform: rotate(10deg);
+        transform: rotate(0);
         a {
-          transform: rotate(-10deg);
+          transform: rotate(0);
           &:hover, &:focus {
-            transform: scale(1.15) rotate(-10deg);
+            transform: scale(1.15) rotate(0);
           }
         }
         &:nth-child(2) {
-          transform:rotate(20deg);
+          transform:rotate(12.5deg);
           a {
-            transform: rotate(-20deg);
+            transform: rotate(-12.5deg);
             &:hover, &:focus {
-              transform: scale(1.15) rotate(-20deg);
+              transform: scale(1.15) rotate(-12.5deg);
             }
           }
         }
         &:nth-child(3) {
-          transform:rotate(30deg);
+          transform:rotate(25deg);
           a {
-            transform: rotate(-30deg);
+            transform: rotate(-25deg);
             &:hover, &:focus {
-              transform: scale(1.15) rotate(-30deg);
+              transform: scale(1.15) rotate(-25deg);
             }
           }
         }
         &:nth-child(4) {
-          transform:rotate(40deg);
+          transform:rotate(37.5deg);
           a {
-            transform: rotate(-40deg);
+            transform: rotate(-37.5deg);
             &:hover, &:focus {
-              transform: scale(1.15) rotate(-40deg);
+              transform: scale(1.15) rotate(-37.5deg);
             }
           }
         }
