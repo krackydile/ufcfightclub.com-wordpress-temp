@@ -9,7 +9,7 @@ get_header();
 				    	
 <section class="page-section">
 	<div class="container">
-		<h3 class="block-heading my-5"><span>Media</span></h3>
+		<h3 class="block-heading my-5"><span>Videos</span></h3>
 		
 		<div class="row">
 			<div class="col-12">
@@ -82,7 +82,7 @@ get_header();
 						endif;
 					?>
 				</div>
-				<div class="tab-pane fade " id="official-videos" role="tabpanel" aria-labelledby="pills-home-tab">
+				<div id="official-videos">
 					<div class="row" id="video-row">
 						<?php 
 							$official_videos = get_posts([
@@ -98,7 +98,6 @@ get_header();
 							<div class="media-display">
 								<div class="media-thumbnail">
 									<a href="<?php echo get_the_permalink($video) ?>">
-										
 										<img src="<?php echo get_the_post_thumbnail_url($video, 'spartkartSquare') ?>" class="img-responsive">
 									</a>
 								</div>
