@@ -10645,3 +10645,20 @@ html {
     margin-bottom: 0 !important;
     font-size: 20px !important; }
 
+/* */
+/* Media Pages */
+/* */
+.media__heading {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 30px 10px 0 10px;
+  font-size: 30px;
+  margin: 0; }
+  @media (min-width: 600px) {
+    .media__heading {
+      font-size: 40px; } }
+  .media__heading--light {
+    background-color: #302520; }
+
