@@ -10683,6 +10683,7 @@ html {
   font-size: 76px; }
 
 .media__header-video .n2_ss_video_player {
+.media__header-video .n2-ss-layer {
   border-radius: 20px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
