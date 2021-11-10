@@ -939,6 +939,13 @@ html {
 .footer-image {
   width: 150px;
 }
+.site-footer {
+  @media (max-width: 768px) {
+    p, ul li a {
+      font-size: 12px;
+    }
+  }
+}
 
 
 /* */

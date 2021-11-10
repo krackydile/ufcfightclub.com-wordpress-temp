@@ -10446,6 +10446,10 @@ html {
 .footer-image {
   width: 150px; }
 
+@media (max-width: 768px) {
+  .site-footer p, .site-footer ul li a {
+    font-size: 12px; } }
+
 /* */
 /* Media Pages */
 /* */
