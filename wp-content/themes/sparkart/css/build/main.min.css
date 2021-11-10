@@ -10668,6 +10668,8 @@ html {
       font-size: 40px; } }
   .media__heading--light {
     background-color: #302520; }
+  .media__heading--dark {
+    color: #1C0D0B; }
 
 .wp-block-embed-youtube {
   width: 1100px; }

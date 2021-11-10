@@ -1210,6 +1210,9 @@ html {
   &--light {
     background-color: $ja-gray4;
   }
+  &--dark {
+    color: $ja-black;
+  }
 }
 .wp-block-embed-youtube {
 width: 1100px;
