@@ -1084,7 +1084,14 @@ html {
 .ss-image-header .n2-ss-item-image {
   border-bottom-right-radius: 50%;
 }
-
+.image-header__link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: block;
+  top: 0;
+}
 
 /* */
 /* Join Page */
