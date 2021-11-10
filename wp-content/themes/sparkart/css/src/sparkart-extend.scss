@@ -887,7 +887,9 @@ html {
     transition: transform 0.15s ease-in;
     .album-overlay {
       transition: opacity 0.15s ease-in;
-      display: table;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       opacity: 0;
       &:hover, &:focus {
         text-decoration: none;
