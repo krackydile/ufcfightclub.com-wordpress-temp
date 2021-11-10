@@ -10522,7 +10522,13 @@ html {
   height: auto;
   border-bottom-right-radius: 50%;
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0); }
+  .image-header--light {
+    background-color: #302520; }
   .image-header img {
     width: 100%; }
   .image-header:after {

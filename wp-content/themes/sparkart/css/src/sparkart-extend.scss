@@ -1040,6 +1040,13 @@ html {
   border-bottom-right-radius: 50%;
   overflow: hidden;
   position: relative;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  &--light {
+    background-color: $ja-gray4;
+  }
   img {
     width: 100%;
   }
