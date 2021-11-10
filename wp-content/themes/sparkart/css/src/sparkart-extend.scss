@@ -5,6 +5,9 @@ html {
 /**/
 /* News Cards */
 /**/
+.category .news-tabs {
+  margin-bottom: 80px;
+}
 .news-cards {
   display: flex;
   // flex-wrap: wrap;
@@ -467,6 +470,9 @@ html {
 /**/
 /* Upcoming Events */
 /**/
+.home .upcoming-events {
+  margin-bottom: 80px;
+}
 .upcoming-events {
   @media (min-width: 992px) {
     border-radius: 95px;
@@ -942,6 +948,7 @@ html {
   width: 150px;
 }
 .site-footer {
+  background-color: $ja-footer-black;
   @media (max-width: 768px) {
     p, ul li a {
       font-size: 12px;
@@ -1039,6 +1046,7 @@ html {
   .page-section {
     background-color: $ja-gray4;
     padding: 0 0 80px 0;
+    margin-bottom: 0;
   }
 }
 
@@ -1234,7 +1242,6 @@ width: 1100px;
   font-size: 76px;
 }
 .media__header-video {
-  .n2_ss_video_player {
   .n2-ss-layer {
     border-radius: 20px;
     -webkit-backface-visibility: hidden;
