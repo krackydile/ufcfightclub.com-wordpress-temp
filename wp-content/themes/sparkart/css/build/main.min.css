@@ -9809,7 +9809,8 @@ html {
     height: auto;
     object-fit: cover;
     position: absolute;
-    top: 0; }
+    top: 50%;
+    transform: translateY(-50%); }
   @media (min-width: 2560px) {
     .banner__video {
       left: 50%;
