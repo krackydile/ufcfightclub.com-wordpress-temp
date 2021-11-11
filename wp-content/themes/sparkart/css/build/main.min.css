@@ -10420,12 +10420,19 @@ h2.releases__heading {
     text-decoration: none; }
     .releases__release a:hover .release__img, .releases__release a:focus .release__img {
       transform: scale(1.05); }
+  @media (max-width: 992px) {
+    .releases__release {
+      padding-left: 5px;
+      padding-right: 5px; } }
 
 h3.release__title {
   color: #FDF6EE;
   font-size: 14px;
   text-align: center;
   margin-bottom: 2px; }
+  @media (max-width: 992px) {
+    h3.release__title {
+      display: none; } }
 
 .release__img {
   border-radius: 10px;
@@ -10440,6 +10447,9 @@ p.release__date {
   text-align: center;
   margin: 0;
   margin-bottom: 5px; }
+  @media (max-width: 992px) {
+    p.release__date {
+      display: none; } }
 
 .releases__list::-webkit-scrollbar {
   background-color: #302520;

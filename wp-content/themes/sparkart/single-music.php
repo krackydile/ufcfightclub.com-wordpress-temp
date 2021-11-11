@@ -63,7 +63,7 @@ get_header(); ?>
 										<?php if ( $the_query->have_posts() ) : ?>
 
 												<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-														<li class="releases__release col-6 col-sm-4 col-md-3 col-lg-6">
+														<li class="releases__release col-3 col-sm-3 col-md-2 col-lg-6">
 															<a href="<?php the_permalink(); ?>">
 																<img class="release__img" src="<?php echo get_the_post_thumbnail_url($post_id, 'medium') ?>">
 																<h3 class="release__title"><?php the_title();  ?></h3>
