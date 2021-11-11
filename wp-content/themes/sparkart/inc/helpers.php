@@ -588,7 +588,7 @@ function fw_show_album_buy_links($post_id){
 	echo '<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>';
 	}
 	if($itunes != ''){
-		echo '<a href="'.$itunes.'" class="btn btn-primary" target="_blank"><i class="fa fa-apple"></i> iTUNES</a>';
+		echo '<a href="'.$itunes.'" class="btn btn-primary" target="_blank"><i class="fa fa-apple"></i> Apple Music</a>';
 	}
 	if($amazon != ''){
 		echo '<a href="'.$amazon.'" class="btn btn-primary" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';

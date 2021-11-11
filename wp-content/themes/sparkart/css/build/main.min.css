@@ -9644,7 +9644,6 @@ header .nav-item {
 
 .accesscode {
   background: #fff;
-  padding: 2px;
   border-radius: 20px; }
   @media (min-width: 992px) {
     .accesscode {
@@ -10211,7 +10210,7 @@ html {
     color: #FDF6EE; }
 
 .event-code-holder .input-group {
-  padding: 5px 20px; }
+  padding: 0 20px; }
 
 @media (max-width: 500px) {
   .page-template-events-landing .upcoming-events--page {
@@ -10391,7 +10390,10 @@ html {
   .single-music .album-store-list a {
     margin: 5px; }
   .single-music .album-store-list .btn-primary {
-    transition: opacity 0.15 -ease-in; }
+    transition: opacity 0.15 -ease-in;
+    font-size: 12px;
+    line-height: 1;
+    padding: 7px; }
     .single-music .album-store-list .btn-primary:focus, .single-music .album-store-list .btn-primary:hover {
       opacity: 0.65; }
 
@@ -10500,6 +10502,9 @@ html {
       text-transform: uppercase;
       font-weight: 800;
       color: #E23C33; }
+    .tour-box p.tour-box__details {
+      font-size: 12px;
+      margin-top: 12px; }
   .tour-box .tour-box__headline {
     font-size: 25px;
     line-height: 1.25;
@@ -10514,9 +10519,9 @@ html {
       padding: 38px 28px; }
       .tour-box .tour-box__headline {
         font-size: 35px; }
-      .tour-box.tour-box--join #unprotected-box {
+      .tour-box.tour-box--join #unprotected-box, .tour-box.tour-box--join #protected-box {
         display: flex; }
-        .tour-box.tour-box--join #unprotected-box .tour-box__image {
+        .tour-box.tour-box--join #unprotected-box .tour-box__image, .tour-box.tour-box--join #protected-box .tour-box__image {
           width: 250px;
           margin-right: 40px; } }
 

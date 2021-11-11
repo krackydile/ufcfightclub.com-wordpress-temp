@@ -597,7 +597,7 @@ html {
     }
   }
   .input-group {
-    padding: 5px 20px;
+    padding: 0 20px;
   }
 }
 
@@ -845,6 +845,9 @@ html {
     }
     .btn-primary {
       transition: opacity 0.15 -ease-in;
+      font-size: 12px;
+      line-height: 1;
+      padding: 7px;
       &:focus, &:hover {
         opacity: 0.65;
       }
@@ -1009,6 +1012,10 @@ html {
       font-weight: 800;
       color: $ja-red;
     }
+    &.tour-box__details {
+      font-size: 12px;
+      margin-top: 12px;
+    }
   }
   .tour-box__headline {
     font-size: 25px;
@@ -1026,7 +1033,7 @@ html {
     .tour-box__headline { 
       font-size: 35px;
     }
-    &.tour-box--join #unprotected-box {
+    &.tour-box--join #unprotected-box, &.tour-box--join #protected-box {
       display: flex;
       .tour-box__image {
         width: 250px;
