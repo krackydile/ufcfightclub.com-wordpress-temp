@@ -1410,3 +1410,15 @@ width: 1100px;
 .floating-cta--video .fa.fa-music:before {
   background-image: url('../../static/icons/tiktok-icon-light.svg');
 }
+
+/* */
+/* Mailchimp */
+/* */
+
+.mc-banner {
+  display: none !important;
+
+  & + .mc-modal {
+    visibility: visible !important;
+  }
+}
