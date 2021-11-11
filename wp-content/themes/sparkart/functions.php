@@ -442,7 +442,6 @@ function mailchimp() {
             });
             // End MailChimp popup settings.
 
-            console.log('k')
       }
     </script>
     <?php

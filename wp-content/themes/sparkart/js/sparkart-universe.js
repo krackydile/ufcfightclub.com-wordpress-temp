@@ -533,19 +533,20 @@ window.loadMorePagination = (e, type, currentPage) => {
 };
 
 eventDetailBox = (containerId, type, data, pagination) => {
-        // Transform data to remove month groups
-        let dataCombined = []
-        let eventsList = []
-        data.forEach((month) => {
-          month.events.forEach(event => eventsList.push(event))
-        })
-        dataCombined[0] = {events: eventsList}
+    // Transform data to remove month groups
+    // TODO: dataCombined is a quick fix to flatten data. This could be cleaned up.
+    let dataCombined = []
+    let eventsList = []
+    data.forEach((month) => {
+        month.events.forEach(event => eventsList.push(event))
+    })
+    dataCombined[0] = {events: eventsList}
     const loadMore = pagination && pagination.current_page < pagination.total_pages;
     const container = document.getElementById(containerId);
     if (container !== null) {
         loading = false;
         container.innerHTML = `
-                ${dataCombined && dataCombined.length > 0 ? `
+                ${dataCombined && dataCombined[0].events.length > 0 ? `
                 ${dataCombined.map(group => `
                  <div class="event-block upcoming-events upcoming-events--page">
                  <div class="row">
@@ -586,7 +587,7 @@ eventDetailBox = (containerId, type, data, pagination) => {
                         <a id ="load-more-loading" style="display: none;" class="btn btn-outline-primary events-load-more-loading"><i class="fa fa-circle-o-notch fa-spin"></i> Loading</a>` : ``
 
             }
-                </div>` : `<div class="text-center"><p style="color:#6E8776;">No events have been scheduled at this time.</p></div>`}
+                </div>` : `<div class="event-block upcoming-events upcoming-events--page text-center"><p style="color:#1C0D0B;">No events have been scheduled at this time.</p></div>`}
                 `;
     }
 
