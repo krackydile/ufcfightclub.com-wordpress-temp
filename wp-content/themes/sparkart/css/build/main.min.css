@@ -10370,12 +10370,31 @@ html {
 /* Single Music */
 /* */
 /* Sidebar album grid*/
+.releases {
+  position: relative; }
+  .releases:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 80px;
+    background: linear-gradient(rgba(19, 9, 7, 0), #130907); }
+  @media (max-width: 992px) {
+    .releases:after {
+      background: linear-gradient(90deg, rgba(19, 9, 7, 0), #130907);
+      right: 0;
+      height: 100%;
+      width: 80px; } }
+
 h2.releases__heading {
-  font-size: 30px;
+  font-size: 25px;
   text-transform: uppercase;
   color: #FDF6EE;
   margin: 15px;
   margin-bottom: 15px; }
+  @media (min-width: 1200px) {
+    h2.releases__heading {
+      font-size: 30px; } }
 
 .releases__list {
   list-style-type: none;
@@ -10409,18 +10428,29 @@ p.release__date {
   margin: 0;
   margin-bottom: 5px; }
 
+.releases__list::-webkit-scrollbar {
+  background-color: #302520;
+  height: 8px;
+  width: 5px;
+  border-radius: 100px; }
+
+.releases__list::-webkit-scrollbar-thumb {
+  background: #E23C33;
+  border-radius: 100px; }
+
 @media (max-width: 992px) {
   .releases__list {
     flex-wrap: nowrap;
-    overflow-x: scroll; }
-    .releases__list::-webkit-scrollbar {
-      background-color: #302520;
-      height: 8px;
-      width: 5px;
-      border-radius: 100px; }
-    .releases__list::-webkit-scrollbar-thumb {
-      background: #E23C33;
-      border-radius: 100px; } }
+    overflow-x: scroll; } }
+
+@media (min-width: 992px) {
+  .releases__list {
+    max-height: 780px;
+    overflow-y: scroll; } }
+
+@media (min-width: 1200px) {
+  .releases__list {
+    max-height: 850px; } }
 
 .album-thumbnail-inner {
   width: 100%; }
@@ -10486,7 +10516,7 @@ p.release__date {
   width: 100%; }
 
 .album-row {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: #130907;
   border-radius: 40px;
   padding: 20px 5px;
   margin-left: 0;
