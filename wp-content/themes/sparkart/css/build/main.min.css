@@ -9797,7 +9797,7 @@ html {
   max-width: 2560px;
   max-height: 1268px;
   position: absolute;
-  height: 45vw;
+  height: 40vw;
   background-color: black;
   left: 0; }
   @media (max-width: 960px) {
@@ -9831,7 +9831,7 @@ html {
   justify-content: flex-end;
   left: 0;
   width: 98vw;
-  height: 45vw;
+  height: 40vw;
   max-width: 2560px;
   max-height: 1268px; }
   @media (min-width: 2560px) {
@@ -9847,8 +9847,8 @@ html {
     margin: 0;
     position: absolute;
     right: 0;
-    width: 45vw;
-    height: 45vw;
+    width: 40vw;
+    height: 40vw;
     max-width: 1268px;
     max-height: 1268px; }
     .floating-cta--video .social-holder .list-social-handles {
@@ -9863,18 +9863,18 @@ html {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 45%;
-        height: 45%;
+        width: 46%;
+        height: 46%;
         transform-origin: top left;
         transform: rotate(0); }
         @media (min-width: 1500px) {
           .floating-cta--video .social-holder .list-social-handles .list-group-item {
-            width: 44%;
-            height: 44%; } }
+            width: 45%;
+            height: 45%; } }
         @media (min-width: 2000px) {
           .floating-cta--video .social-holder .list-social-handles .list-group-item {
-            width: 42%;
-            height: 42%; } }
+            width: 43%;
+            height: 43%; } }
         .floating-cta--video .social-holder .list-social-handles .list-group-item a {
           transform: rotate(0); }
           .floating-cta--video .social-holder .list-social-handles .list-group-item a:hover, .floating-cta--video .social-holder .list-social-handles .list-group-item a:focus {
