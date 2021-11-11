@@ -820,6 +820,11 @@ html {
 /* Single Music */
 /* */
 /* Sidebar album grid*/
+.album-row {
+  @media (max-width: 992px) {
+    flex-direction: column-reverse;
+  }
+}
 .releases {
   position: relative;
   &:after {
@@ -831,6 +836,7 @@ html {
     background: linear-gradient(rgba(19,9,7,0), rgba(19,9,7,1));
   }
   @media (max-width: 992px) {
+    margin-bottom: 40px;
     &:after {
       background: linear-gradient(90deg,rgba(19,9,7,0), rgba(19,9,7,1));
       right: 0;

@@ -8382,7 +8382,7 @@ a.joincomment:hover {
   margin: 20px auto; }
   @media (min-width: 768px) {
     .content-area.single-page-content {
-      margin: 100px auto; } }
+      margin: 50px auto; } }
 
 .site-content {
   margin-bottom: 20px;
@@ -10377,6 +10377,10 @@ html {
 /* Single Music */
 /* */
 /* Sidebar album grid*/
+@media (max-width: 992px) {
+  .album-row {
+    flex-direction: column-reverse; } }
+
 .releases {
   position: relative; }
   .releases:after {
@@ -10387,11 +10391,13 @@ html {
     height: 80px;
     background: linear-gradient(rgba(19, 9, 7, 0), #130907); }
   @media (max-width: 992px) {
-    .releases:after {
-      background: linear-gradient(90deg, rgba(19, 9, 7, 0), #130907);
-      right: 0;
-      height: 100%;
-      width: 80px; } }
+    .releases {
+      margin-bottom: 40px; }
+      .releases:after {
+        background: linear-gradient(90deg, rgba(19, 9, 7, 0), #130907);
+        right: 0;
+        height: 100%;
+        width: 80px; } }
 
 h2.releases__heading {
   font-size: 25px;
