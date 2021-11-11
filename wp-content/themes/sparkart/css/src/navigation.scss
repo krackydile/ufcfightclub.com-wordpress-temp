@@ -419,3 +419,12 @@ header .nav-item{
 .dropdown-menu {
 	background-color: $ja-gray4;
 }
+.list-social-handles {
+	a {
+		transition: 0.15s opacity ease-in;
+		&:hover, &:focus {
+			text-decoration: none;
+			opacity: 0.8;
+		}
+	}
+}

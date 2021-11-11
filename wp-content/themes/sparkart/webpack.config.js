@@ -36,7 +36,7 @@ module.exports = {
 		    }]
 		},
 		{
-			test: /\.(png|jpg)$/,
+			test: /\.(png|jpg|svg)$/,
 			loader: 'url-loader'
 		},
         // Our new rules
@@ -52,7 +52,7 @@ module.exports = {
 		    }
 	  	},
 	  	{
-        test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
