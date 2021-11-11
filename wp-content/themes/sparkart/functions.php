@@ -281,28 +281,70 @@ function sparkart_load_profile_scripts()
 
     wp_enqueue_script('underscore');
     wp_enqueue_script('universe', get_template_directory_uri() . '/js/sparkart-universe-bundle.js', [], date("ymd-Gis", filemtime(get_template_directory() . '/js/sparkart-universe-bundle.js')), true);
-    // Global site tag (gtag.js) - AdWords: 806088113 (The HQ)
-    wp_enqueue_script('gatg-js', 'https://www.googletagmanager.com/gtag/js?id=AW-', [], null);
-    wp_add_inline_script('gatg-js', "
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-');
-  ");
-    wp_add_inline_script('gatg-js', "
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '']);
-    _gaq.push(['_setDomainName', '.' + '$host'.replace(/^www\./, '')]);
-    _gaq.push(['_trackPageview']);
-    (function() {
+ ?>
+
+
+
+<!-- ARE SCRIPTS GONNA LOAD HERE? -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PZFCJD8');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta -->
+    <meta name="p:domain_verify" content="097eb67576eac02db958be062527e252"/>
+    <meta name="google-site-verification" content="j9sk3TfHrlgopkszUOhkNMdXe1iPm0rkmvcVC2PMIFk" />
+
+    <!-- Add This -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5400dbb13d6ab0aa" async></script>
+
+    <!-- DataXu Tag -->
+    <img src="//tags.w55c.net/rs?id=943f7f0bb8ab4092ae0f90f1af4e54ad&t=marketing"  style="margin: 0; height: 1px; display: block;" />
+
+    <!-- Facebook Custom Audience Pixel -->
+    <script>(function(){
+    window._fbds = window._fbds || {};
+    _fbds.pixelId = 336617377178130;
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(["track", "PixelInitialized", {}]);
+    </script>
+    <noscript><img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=336617377178130&amp;ev=NoScript" /></noscript>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-5298832-26']);
+      _gaq.push(['_setDomainName', '.jasonaldean.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
         var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
- ");
- ?>
- 
-    <!-- Facebook Pixel Code (Sparkart) -->
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- Facebook Pixel Code - Sparkart -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1507544712876683');
+    fbq('track', "PageView");</script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1507544712876683&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code - Sparkart -->
+
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -312,38 +354,16 @@ function sparkart_load_profile_scripts()
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '#');
+      fbq('init', '475627792642717');
       fbq('track', 'PageView');
     </script>
+
     <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
+
+    src="https://www.facebook.com/tr?id=475627792642717&ev=PageView&noscript=1"
+
     /></noscript>
 
-    <!-- Client Facebook Pixel -->
-    <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '');
-      fbq('track', 'PageView');
-      fbq('track', 'ViewContent');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
-    /></noscript>
-
-    <!-- Twitter Audience Pixel -->
-    <!-- <script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
-    <script type="text/javascript">twttr.conversion.trackPid('ntfiz', { tw_sale_amount: 0, tw_order_quantity: 0 });</script>
-    <noscript>
-    <img height="1" width="1" style="display:none;" alt="" src="https://analytics.twitter.com/i/adsct?txn_id=ntfiz&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=ntfiz&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
-    </noscript> -->
  <?php
 }
 
