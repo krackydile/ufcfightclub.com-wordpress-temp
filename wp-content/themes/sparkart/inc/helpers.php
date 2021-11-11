@@ -583,32 +583,32 @@ function fw_show_album_buy_links($post_id){
 	$google = fw_get_db_post_option($post_id, 'google_play');
 	$tidal = fw_get_db_post_option($post_id, 'tidal');
 
-	echo '<p class="mt-4 album-store-list">';
+	echo '<div class="mt-4 album-store-list">';
 	if($main_link != ''){
-	echo '<a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a>';
+		echo '<div class="album-store"><a href="'.$main_link.'" class="btn btn-primary" target="_blank">Jason Aldean Store</a></div>';
 	}
 	if($itunes != ''){
-		echo '<a href="'.$itunes.'" class="btn btn-primary" target="_blank"><i class="fa fa-apple"></i> Apple Music</a>';
+		echo '<div class="album-store"><a href="'.$itunes.'" class="btn btn-primary" target="_blank"><i class="fa fa-apple"></i> Apple Music</a></div>';
 	}
 	if($amazon != ''){
-		echo '<a href="'.$amazon.'" class="btn btn-primary" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a>';
+		echo '<div class="album-store"><a href="'.$amazon.'" class="btn btn-primary" target="_blank"><i class="fa fa-amazon"></i> AMAZON MUSIC</a></div>';
 	}
 	if($spotify != ''){
-		echo '<a href="'.$spotify.'" class="btn btn-primary" target="_blank"><i class="fa fa-spotify"></i> SPOTIFY</a>';
+		echo '<div class="album-store"><a href="'.$spotify.'" class="btn btn-primary" target="_blank"><i class="fa fa-spotify"></i> SPOTIFY</a></div>';
 	}
 	if($pandora != ''){
-		echo '<a href="'.$pandora.'" class="btn btn-primary" target="_blank"><i class="fa fa-pandora"></i> PANDORA</a>';
+		echo '<div class="album-store"><a href="'.$pandora.'" class="btn btn-primary" target="_blank"><i class="fa fa-pandora"></i> PANDORA</a></div>';
 	}
 	if($youtube != ''){
-		echo '<a href="'.$youtube.'" class="btn btn-primary" target="_blank"><i class="fa fa-youtube"></i> YOUTUBE</a>';
+		echo '<div class="album-store"><a href="'.$youtube.'" class="btn btn-primary" target="_blank"><i class="fa fa-youtube"></i> YOUTUBE</a></div>';
 	}
 	if($google != ''){
-		echo '<a href="'.$google.'" class="btn btn-primary" target="_blank"><i class="fa fa-google-play"></i> GOOGLE PLAY</a>';
+		echo '<div class="album-store"><a href="'.$google.'" class="btn btn-primary" target="_blank"><i class="fa fa-google-play"></i> GOOGLE PLAY</a></div>';
 	}
 	if($tidal != ''){
-		echo '<a href="'.$tidal.'" class="btn btn-primary" target="_blank"><i class="fa fa-tidal"></i> TIDAL</a>';
+		echo '<div class="album-store"><a href="'.$tidal.'" class="btn btn-primary" target="_blank"><i class="fa fa-tidal"></i> TIDAL</a></div>';
 	}
-	echo '</p>';
+	echo '</div>';
 }
 function _filter_my_custom_breadcrumbs_items( $items ) {
     // do some changes ...

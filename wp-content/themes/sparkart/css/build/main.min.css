@@ -10501,13 +10501,24 @@ p.release__date {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -5px; }
-  .single-music .album-store-list a {
-    margin: 5px; }
+  .single-music .album-store-list .album-store {
+    width: 50%;
+    padding: 5px;
+    flex: 0 0 50%; }
+    @media (min-width: 992px) {
+      .single-music .album-store-list .album-store {
+        width: 33.33%;
+        flex: 0 0 33.33%; } }
   .single-music .album-store-list .btn-primary {
     transition: opacity 0.15 -ease-in;
-    font-size: 12px;
+    font-size: 10px;
     line-height: 1;
-    padding: 7px; }
+    letter-spacing: 0;
+    padding: 12px 3px;
+    width: 100%; }
+    @media (min-width: 600px) {
+      .single-music .album-store-list .btn-primary {
+        font-size: 12px; } }
     .single-music .album-store-list .btn-primary:focus, .single-music .album-store-list .btn-primary:hover {
       opacity: 0.65; }
 
