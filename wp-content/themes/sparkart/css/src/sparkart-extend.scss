@@ -96,7 +96,7 @@ html {
 .banner__video {
   width: 98vw;
   max-width: 2560px;
-  max-height:1268px;
+  max-height:1024px;
   position: absolute;
   height: 40vw;
   background-color: black;
@@ -136,7 +136,7 @@ html {
   width: 98vw;
   height: 40vw;
   max-width: 2560px;
-  max-height:1268px;
+  max-height:1024px;
   @media (min-width: 2560px) {
     left: 50%;
     transform: translateX(-50%);
@@ -153,8 +153,8 @@ html {
     right: 0;
     width: 40vw;
     height: 40vw;
-    max-width: 1268px;
-    max-height:1268px;
+    max-width: 1024px;
+    max-height:1024px;
     .list-social-handles {
       display: block;
       padding: 0;
@@ -316,6 +316,7 @@ html {
   margin-top: -15%;
   @media (min-width: 960px) {
     width: 55%;
+    max-width: 1408px;
     margin-top: -30%;
   }
 }
@@ -817,6 +818,74 @@ html {
 /* */
 /* Single Music */
 /* */
+/* Sidebar album grid*/
+h2.releases__heading {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: $ja-white;
+  margin: 15px;
+  margin-bottom: 15px;
+}
+.releases__list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.releases__release {
+  margin-bottom: 20px;
+  a:hover, a:focus {
+    text-decoration: none;
+    .release__img {
+      transform: scale(1.05); 
+    }
+  }
+}
+h3.release__title {
+  color: $ja-white;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 2px;
+}
+.release__img {
+  border-radius: 10px;
+  margin-bottom: 4px;
+  box-shadow: 0 16px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.15);
+  transition: transform 0.1s ease-out;
+  width: 100%;
+}
+p.release__date {
+  font-size: 12px;
+  color: $ja-gray3;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.releases__list {
+  @media (max-width: 992px) {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      background-color: $ja-gray4;
+      height: 8px;
+      width: 5px;
+      border-radius: 100px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $ja-red;
+      border-radius: 100px;
+    }
+  }
+}
+
+
+
+.album-thumbnail-inner {
+  width: 100%;
+  img {
+    width: 100%;
+    box-shadow: 0 16px 16px rgba(0,0,0,0.25), 0 8px 8px rgba(0,0,0,0.15);
+  }
+}
 .single-music {
   .card-body, .card {
     border-radius: 40px;
@@ -923,7 +992,7 @@ html {
   margin-left: 0;
   margin-right: 0;
   @media (min-width: 768px) {
-    align-items: center;
+    align-items: flex-start;
   }
   @media (min-width: 992px) {
     padding: 50px 25px;

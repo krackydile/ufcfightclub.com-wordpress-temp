@@ -22,17 +22,14 @@ get_header(); ?>
 
 								?>
 							<div class="row mb-4 album-row">
-								<div class="col-md-6 col-sm-12">
+								<div class="col-lg-8 col-sm-12">
 									<div class="album-thumbnail-inner">
 
 											<?php 
 												the_post_thumbnail('spartkartSquare');
 
 											?>
-									</div>
-								</div>
-								<div class="col-md-6 col-sm-12 ">
-									<div class="album-card">
+										<div class="album-card">
 										<div class="album-card__content">
 											<h1 class="album-title-inner"><?php the_title(); ?></h1>
 											<div class="event-detail">
@@ -48,6 +45,38 @@ get_header(); ?>
 												</ul>
 											</div>
 										</div>
+									</div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-sm-12">
+									<div class="releases">
+										<h2 class="releases__heading">Other Releases</h2>
+										<ul class="releases__list row">
+
+										<?php
+										$args = array(
+												'post_type' => 'music',
+												'order' => 'ASC',
+										);
+										$the_query = new WP_Query( $args ); ?>
+
+										<?php if ( $the_query->have_posts() ) : ?>
+
+												<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+														<li class="releases__release col-6 col-sm-4 col-md-3 col-lg-6">
+															<a href="<?php the_permalink(); ?>">
+																<img class="release__img" src="<?php echo get_the_post_thumbnail_url($post_id, 'medium') ?>">
+																<h3 class="release__title"><?php the_title();  ?></h3>
+																<p class="release__date"><?php echo fw_get_db_post_option(get_the_ID(), 'release_date'); ?></p>
+															</a>
+														</li>
+												<?php endwhile; ?>
+
+												<?php wp_reset_postdata(); ?>
+
+										<?php endif; ?>
+
+										</ul>
 									</div>
 								</div>
 							</div>
