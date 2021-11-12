@@ -320,6 +320,9 @@ html {
     max-width: 1408px;
     margin-top: -30%;
   }
+  @media (min-width: 2560px) {
+    margin-top: -700px;
+  }
 }
 
 /**/

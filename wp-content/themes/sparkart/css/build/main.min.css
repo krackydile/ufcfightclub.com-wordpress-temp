@@ -9986,6 +9986,9 @@ html {
       width: 55%;
       max-width: 1408px;
       margin-top: -30%; } }
+  @media (min-width: 2560px) {
+    .hp-video-slider {
+      margin-top: -700px; } }
 
 /**/
 /* Homepage Navigation */
