@@ -301,9 +301,6 @@ function sparkart_load_profile_scripts()
     <!-- Add This -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5400dbb13d6ab0aa" async></script>
 
-    <!-- DataXu Tag -->
-    <img src="//tags.w55c.net/rs?id=943f7f0bb8ab4092ae0f90f1af4e54ad&t=marketing"  style="margin: 0; height: 1px; display: block;" />
-
     <!-- Facebook Custom Audience Pixel -->
     <script>(function(){
     window._fbds = window._fbds || {};
