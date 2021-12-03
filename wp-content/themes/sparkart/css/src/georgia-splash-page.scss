@@ -18,6 +18,9 @@ a.section-link:hover, a.section-link:focus {
 }
 
 .page-template-album-splash {
+  span {
+    color: inherit;
+  }
   background-color: $splash-white;
   .btn {
     font-family: trade-gothic-next-condensed, sans-serif;

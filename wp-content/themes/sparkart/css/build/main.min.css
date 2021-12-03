@@ -10887,6 +10887,8 @@ a.section-link:hover, a.section-link:focus {
 
 .page-template-album-splash {
   background-color: #FDFFF3; }
+  .page-template-album-splash span {
+    color: inherit; }
   .page-template-album-splash .btn {
     font-family: trade-gothic-next-condensed, sans-serif;
     font-size: 16px;
