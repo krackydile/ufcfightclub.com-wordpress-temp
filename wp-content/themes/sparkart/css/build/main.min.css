@@ -10889,8 +10889,16 @@ a.section-link:hover, a.section-link:focus {
   background-color: #FDFFF3; }
   .page-template-album-splash .btn {
     font-family: trade-gothic-next-condensed, sans-serif;
-    font-size: 18px;
-    padding: 6px 24px; }
+    font-size: 16px;
+    padding: 6px 24px;
+    margin-bottom: 10px;
+    margin-left: 2.5px;
+    margin-right: 2.5px; }
+    @media (min-width: 1024px) {
+      .page-template-album-splash .btn {
+        margin-left: 5px;
+        margin-right: 5px;
+        font-size: 18px; } }
   .page-template-album-splash .site-header {
     display: none; }
   .page-template-album-splash .splash-page {
@@ -10957,13 +10965,17 @@ a.section-link:hover, a.section-link:focus {
         .page-template-album-splash .splash-page .splash-page__hero {
           height: 0;
           background-position: center;
-          padding-top: 55%; } }
+          padding-top: 60%; } }
       @media (min-width: 1024px) {
         .page-template-album-splash .splash-page .splash-page__hero {
           padding-top: 50%; } }
       @media (min-width: 1280px) {
         .page-template-album-splash .splash-page .splash-page__hero {
           padding-top: 41.5%; } }
+      @media (max-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content-container {
+          margin-left: 0;
+          margin-right: 0; } }
       @media (min-width: 768px) {
         .page-template-album-splash .splash-page .splash-page__hero .hero__content-container {
           position: absolute;
@@ -10990,9 +11002,11 @@ a.section-link:hover, a.section-link:focus {
         .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__headline {
           font-size: 40px;
           text-transform: uppercase;
+          font-weight: 800;
           color: #FDFFF3; }
         .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__subhead {
           font-size: 25px;
+          font-weight: 600;
           font-family: trade-gothic-next-condensed, sans-serif;
           text-transform: uppercase;
           color: #1A1E4B; }
@@ -11008,7 +11022,7 @@ a.section-link:hover, a.section-link:focus {
             border-color: #1A1E4B;
             color: #FDF6EE; }
     .page-template-album-splash .splash-page .splash-page__products {
-      padding: 20px; }
+      padding: 40px 20px; }
       @media (min-width: 1280px) {
         .page-template-album-splash .splash-page .splash-page__products {
           padding: 60px; } }
@@ -11017,11 +11031,16 @@ a.section-link:hover, a.section-link:focus {
         text-transform: uppercase;
         font-size: 30px;
         font-weight: 800; }
+        @media (max-width: 768px) {
+          .page-template-album-splash .splash-page .splash-page__products .products__headline {
+            font-size: 25px; } }
       .page-template-album-splash .splash-page .splash-page__products .products__subhead {
         text-align: center;
         font-size: 18px;
         font-weight: 600;
-        color: #379F9F; }
+        color: #379F9F;
+        line-height: 1.5;
+        margin-bottom: 32px; }
       .page-template-album-splash .splash-page .splash-page__products .product__list {
         justify-content: center; }
         .page-template-album-splash .splash-page .splash-page__products .product__list .product__card {
@@ -11037,14 +11056,15 @@ a.section-link:hover, a.section-link:focus {
             align-items: space-between; }
           .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__image {
             border-radius: 40px;
-            padding: 5px; }
+            padding: 5px;
+            margin-bottom: 20px; }
           .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__head {
             font-size: 16px;
             color: #FDFFF3;
             text-transform: uppercase;
             font-weight: 600;
             text-align: center;
-            line-height: 1;
+            line-height: 1.25;
             margin-bottom: 0; }
           .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__price {
             font-size: 25px;
@@ -11054,7 +11074,7 @@ a.section-link:hover, a.section-link:focus {
             display: block;
             line-height: 1;
             flex: 1 1 auto;
-            margin: 20px 0; }
+            margin: 30px 0 25px 0; }
           .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta {
             text-align: center; }
             .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta .btn {
@@ -11078,40 +11098,43 @@ a.section-link:hover, a.section-link:focus {
         text-align: center;
         text-transform: uppercase;
         font-size: 30px;
-        font-weight: 800; }
-      .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__input {
-        width: 100%;
-        max-width: 550px;
-        text-align: center;
-        margin: auto;
-        margin-bottom: 10px;
-        font-family: trade-gothic-next-condensed, sans-serif;
-        border-radius: 200px;
-        border: 0;
-        outline: 0;
-        text-transform: uppercase;
-        padding: 16px 10px;
-        background-color: #EBEDDF;
-        line-height: 1;
-        display: block; }
-      .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button {
-        width: 100%;
-        max-width: 550px;
-        font-size: 18px;
-        padding: 16px 10px;
-        font-family: trade-gothic-next-condensed, sans-serif;
-        line-height: 1;
-        text-transform: uppercase;
-        border-radius: 200px;
-        border: 0;
-        outline: 0;
-        background-color: #1A1E4B;
-        color: #FDF6EE;
-        transition: 0.15s background-color ease-out;
-        display: block;
-        margin: auto; }
-        .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:hover, .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:focus {
-          background-color: #262942; }
+        font-weight: 800;
+        margin-bottom: 25px; }
+      .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form {
+        margin-bottom: 20px; }
+        .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__input {
+          width: 100%;
+          max-width: 550px;
+          text-align: center;
+          margin: auto;
+          margin-bottom: 10px;
+          font-family: trade-gothic-next-condensed, sans-serif;
+          border-radius: 200px;
+          border: 0;
+          outline: 0;
+          text-transform: uppercase;
+          padding: 16px 10px;
+          background-color: #EBEDDF;
+          line-height: 1;
+          display: block; }
+        .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button {
+          width: 100%;
+          max-width: 550px;
+          font-size: 18px;
+          padding: 16px 10px;
+          font-family: trade-gothic-next-condensed, sans-serif;
+          line-height: 1;
+          text-transform: uppercase;
+          border-radius: 200px;
+          border: 0;
+          outline: 0;
+          background-color: #1A1E4B;
+          color: #FDF6EE;
+          transition: 0.15s background-color ease-out;
+          display: block;
+          margin: auto; }
+          .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:hover, .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:focus {
+            background-color: #262942; }
       .page-template-album-splash .splash-page .splash-page__mailing .mailing__disclaimer {
         text-align: center;
         font-size: 12px;
@@ -11125,20 +11148,36 @@ a.section-link:hover, a.section-link:focus {
             opacity: 0.8; }
     .page-template-album-splash .splash-page .splash-page__hero--secondary {
       box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.1); }
+      @media (min-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__hero--secondary .hero__content-container {
+          left: 15px; } }
+      @media (min-width: 1280px) {
+        .page-template-album-splash .splash-page .splash-page__hero--secondary .hero__content {
+          padding-left: 60px;
+          padding-right: 60px; } }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__headline {
         font-size: 100px;
         font-weight: 800;
         color: #FDF6EE; }
+        @media (max-width: 1024px) {
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__headline {
+            font-size: 60px;
+            margin-bottom: 0; } }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__subhead {
         font-size: 35px;
         font-family: trade-gothic-next-condensed, sans-serif;
         color: #FED673;
         font-weight: 600;
         line-height: 1.1; }
+        @media (max-width: 1024px) {
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__subhead {
+            font-size: 25px;
+            margin-bottom: 30px; } }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__body {
         font-size: 18px;
         color: #FDF6EE;
-        font-weight: 400; }
+        font-weight: 400;
+        margin-bottom: 35px; }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn {
         background-color: #320A00;
         color: #FDF6EE;
@@ -11146,14 +11185,31 @@ a.section-link:hover, a.section-link:focus {
         .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn:hover, .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn:focus {
           background-color: #FDFFF3;
           color: #320A00; }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon {
+          background-position: 25%; } }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__subhead {
-        font-size: 50px;
+        font-size: 60px;
         color: #59FF8B;
-        line-height: 1.1; }
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: 2px; }
+        @media (max-width: 1600px) {
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__subhead {
+            font-size: 50px; } }
+        @media (max-width: 1280px) {
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__subhead {
+            font-size: 40px; } }
+        @media (max-width: 1024px) {
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__subhead {
+            font-size: 30px; } }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__body {
         font-size: 18px;
         color: #FDF6EE;
-        font-weight: 400; }
+        font-weight: 400;
+        margin-bottom: 25px; }
+        .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__body.hero__body--strong {
+          margin-bottom: 35px; }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__buttons .btn {
         background-color: #59FF8B;
         color: #262942;
@@ -11163,6 +11219,9 @@ a.section-link:hover, a.section-link:focus {
           color: #262942; }
       .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__body--strong {
         font-weight: 800; }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp {
+          background-position: 70%; } }
       @media (max-width: 768px) {
         .page-template-album-splash .splash-page .splash-page__hero--secondary {
           box-shadow: none;

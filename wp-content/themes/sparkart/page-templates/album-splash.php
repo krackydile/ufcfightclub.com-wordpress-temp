@@ -20,7 +20,7 @@ get_header(); ?>
 
   <section class="splash-page__hero" style="background-image: url('<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/georgia-header.jpg')">
     <div class="hero__content-container row">
-      <div class="hero__image col-0 col-md-5"></div>
+      <div class="hero__image col-0 d-none d-md-block col-md-5"></div>
       <div class="hero__content col-12 col-md-7">
         <img class="hero__album" src="<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/georgia-album-cover.jpg" alt="Georgia Album Cover">
         <h1 class="hero__headline">New Album</h1>
@@ -42,37 +42,37 @@ get_header(); ?>
     <div class="product__list grid row">
       <div class="product__card col-12 col-sm-6 col-md-4 col-xl-1-2">
         <div class="product-card__content">
-          <a href="https://store.jasonaldean.com/products/georgia-cd">
+          <a href="https://store.jasonaldean.com/products/georgia-cd" target="_blank">
             <img class="product__image" src="<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/georgia-cd.png" alt="Georgia CD">
           </a>
           <h3 class="product__head">Georgia CD</h3>
           <span class="product__price">$15.99</span>
           <div class="product__cta">
-            <a href="https://store.jasonaldean.com/products/georgia-cd" class="btn">Preorder</a>
+            <a href="https://store.jasonaldean.com/products/georgia-cd" target="_blank" class="btn">Preorder</a>
           </div>
         </div>
       </div>
       <div class="product__card col-12 col-sm-6 col-md-4 col-xl-1-2">
         <div class="product-card__content">
-          <a href="https://store.jasonaldean.com/products/macon-georgia-hoodie">
+          <a href="https://store.jasonaldean.com/products/macon-georgia-hoodie" target="_blank">
             <img class="product__image" src="<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/Macon_Georgia_Hoodie.jpg" alt="Macon, Georgia Hoodie">
           </a>
           <h3 class="product__head">Macon, Georgia Hoodie</h3>
           <span class="product__price">$60.00</span>
           <div class="product__cta">
-            <a href="https://store.jasonaldean.com/products/macon-georgia-hoodie" class="btn">Preorder</a>
+            <a href="https://store.jasonaldean.com/products/macon-georgia-hoodie" target="_blank" class="btn">Preorder</a>
           </div>
         </div>
       </div>
       <div class="product__card col-12 col-sm-6 col-md-4 col-xl-1-2">
         <div class="product-card__content">
-          <a href="https://store.jasonaldean.com/products/macon-georgia-long-sleeve">
+          <a href="https://store.jasonaldean.com/products/macon-georgia-long-sleeve" target="_blank">
             <img class="product__image" src="<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/Macon_Georgia_Long_Sleeve_Front.jpg" alt="Macon, Georgia Long Sleeve">
           </a>
           <h3 class="product__head">Macon, Georgia Long Sleeve</h3>
           <span class="product__price">$40.00</span>
           <div class="product__cta">
-            <a href="https://store.jasonaldean.com/products/macon-georgia-long-sleeve" class="btn">Preorder</a>
+            <a href="https://store.jasonaldean.com/products/macon-georgia-long-sleeve" target="_blank" class="btn">Preorder</a>
           </div>
         </div>
       </div>
@@ -91,14 +91,14 @@ get_header(); ?>
             <span class="btn btn-outline">Preorder</span>
           </div>
         </div>
-        <div class="hero__image col-0 col-lg-6"></div>
+        <div class="hero__image col-0 d-none d-lg-block col-lg-6"></div>
       </div>
     </section>
   </a>
 
     <section class="splash-page__hero splash-page__hero--secondary splash-page__hero--macon" style="background-image: url('<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/macon-banner.jpg')">
       <div class="hero__content-container row">
-        <div class="hero__image col-0 col-md-6"></div>
+        <div class="hero__image col-0 d-none d-md-block col-md-6"></div>
         <div class="hero__content col-12 col-md-5">
           <h1 class="hero__headline">Macon</h1>
           <h2 class="hero__subhead">Available Now</h2>
@@ -108,7 +108,7 @@ get_header(); ?>
             <a href="https://9jldq8wnzq7hbwyi-5950573.shopifypreview.com/collections/macon" target="_blank" class="btn btn-outline">Shop Exclusive Merch</a>
           </div>
         </div>
-        <div class="hero__image col-0 col-md-1"></div>
+        <div class="hero__image col-0 d-none d-md-block col-md-1"></div>
       </div>
     </section>
 

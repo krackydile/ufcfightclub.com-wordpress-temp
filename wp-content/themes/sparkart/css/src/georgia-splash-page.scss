@@ -21,8 +21,16 @@ a.section-link:hover, a.section-link:focus {
   background-color: $splash-white;
   .btn {
     font-family: trade-gothic-next-condensed, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     padding: 6px 24px;
+    margin-bottom: 10px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    @media (min-width: 1024px) {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-size: 18px
+    }
   }
   .site-header {
     display: none;
@@ -101,7 +109,7 @@ a.section-link:hover, a.section-link:focus {
       @media (min-width: 768px) {
         height: 0;
         background-position: center;
-        padding-top: 55%;
+        padding-top: 60%;
       }
       @media (min-width: 1024px) {
         padding-top: 50%;
@@ -110,6 +118,10 @@ a.section-link:hover, a.section-link:focus {
         padding-top: 41.5%;
       }
       .hero__content-container {
+        @media (max-width: 768px) {
+          margin-left: 0;
+          margin-right: 0;
+        }
         @media (min-width: 768px) {
           position: absolute;
           top: 50%;
@@ -138,10 +150,12 @@ a.section-link:hover, a.section-link:focus {
         .hero__headline {
           font-size: 40px;
           text-transform: uppercase;
+          font-weight: 800;
           color: $splash-white;
         }
         .hero__subhead {
           font-size: 25px;
+          font-weight: 600;
           font-family: trade-gothic-next-condensed, sans-serif;
           text-transform: uppercase;
           color: $splash-blue;
@@ -166,7 +180,7 @@ a.section-link:hover, a.section-link:focus {
     }
 
     .splash-page__products {
-      padding: 20px;
+      padding: 40px 20px;
       @media (min-width: 1280px) {
         padding: 60px;
       }
@@ -175,12 +189,17 @@ a.section-link:hover, a.section-link:focus {
         text-transform: uppercase;
         font-size: 30px;
         font-weight: 800;
+        @media (max-width: 768px) {
+          font-size: 25px;
+        }
       }
       .products__subhead {
         text-align: center;
         font-size: 18px;
         font-weight: 600;
         color: $splash-teal;
+        line-height: 1.5;
+        margin-bottom: 32px;
       }
       .product__list {
         justify-content: center;
@@ -199,6 +218,7 @@ a.section-link:hover, a.section-link:focus {
           .product__image {
             border-radius: 40px;
             padding: 5px;
+            margin-bottom: 20px;
           }
           .product__head {
             font-size: 16px;
@@ -206,7 +226,7 @@ a.section-link:hover, a.section-link:focus {
             text-transform: uppercase;
             font-weight: 600;
             text-align: center;
-            line-height: 1;
+            line-height: 1.25;
             margin-bottom: 0;
           }
           .product__price {
@@ -217,7 +237,7 @@ a.section-link:hover, a.section-link:focus {
             display: block;
             line-height: 1;
             flex: 1 1 auto;
-            margin: 20px 0;
+            margin: 30px 0 25px 0;
           }
           .product__cta {
             text-align: center;
@@ -253,9 +273,11 @@ a.section-link:hover, a.section-link:focus {
         text-transform: uppercase;
         font-size: 30px;
         font-weight: 800;
+        margin-bottom: 25px;
       }
       .subscribe-email {
         form {
+          margin-bottom: 20px;
           .subscribe-email__input {
             width: 100%;
             max-width: 550px;
@@ -312,11 +334,26 @@ a.section-link:hover, a.section-link:focus {
 
   .splash-page__hero--secondary {
     box-shadow: $splash-card-inset;
+    .hero__content-container {
+      @media (min-width: 768px) {
+        left: 15px;
+      }
+    }
+    .hero__content {
+      @media (min-width: 1280px) {
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+    }
     &.splash-page__hero--macon {
       .hero__headline {
         font-size: 100px;
         font-weight: 800;
         color: #FDF6EE;
+        @media (max-width: 1024px) {
+          font-size: 60px;
+          margin-bottom:0;
+        }
       }
       .hero__subhead {
         font-size: 35px;
@@ -324,11 +361,16 @@ a.section-link:hover, a.section-link:focus {
         color: #FED673;
         font-weight: 600;
         line-height: 1.1;
+        @media (max-width: 1024px) {
+          font-size: 25px;
+          margin-bottom:30px;
+        }
       }
       .hero__body {
         font-size: 18px;
         color: #FDF6EE;
         font-weight: 400;
+        margin-bottom:35px;
       }
       .hero__buttons {
         .btn {
@@ -341,17 +383,35 @@ a.section-link:hover, a.section-link:focus {
           }
         }
       }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        background-position: 25%;
+      }
     }
     &.splash-page__hero--lp {
       .hero__subhead {
-        font-size: 50px;
+        font-size: 60px;
         color: #59FF8B;
         line-height: 1.1;
+        margin-bottom:20px;
+        letter-spacing: 2px;
+        @media (max-width: 1600px) {
+          font-size: 50px;
+        }
+        @media (max-width: 1280px) {
+          font-size: 40px;
+        }
+        @media (max-width: 1024px) {
+          font-size: 30px;
+        }
       }
       .hero__body {
         font-size: 18px;
         color: #FDF6EE;
         font-weight: 400;
+        margin-bottom: 25px;
+        &.hero__body--strong {
+          margin-bottom: 35px;
+        }
       }
       .hero__buttons {
         .btn {
@@ -367,6 +427,10 @@ a.section-link:hover, a.section-link:focus {
       .hero__body--strong {
         font-weight: 800;
       }
+      @media (min-width: 768px) and (max-width: 1024px) {
+        background-position: 70%;
+      }
+
     }
     @media (max-width: 768px) {
       box-shadow: none;
