@@ -10878,3 +10878,314 @@ p.release__date {
   .mc-banner + .mc-modal {
     visibility: visible !important; }
 
+a.section-link:hover, a.section-link:focus {
+  text-decoration: none; }
+
+@media (min-width: 1300px) {
+  .home.page-template-album-splash .site-main {
+    margin-top: 0px; } }
+
+.page-template-album-splash {
+  background-color: #FDFFF3; }
+  .page-template-album-splash .btn {
+    font-family: trade-gothic-next-condensed, sans-serif;
+    font-size: 18px;
+    padding: 6px 24px; }
+  .page-template-album-splash .site-header {
+    display: none; }
+  .page-template-album-splash .splash-page {
+    background-color: #FDFFF3;
+    color: #1A1E4B;
+    max-width: 1920px;
+    margin: auto; }
+    .page-template-album-splash .splash-page .splash-page__bar {
+      padding: 5px 10px 10px 10px; }
+      @media (min-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__bar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 5px 20px; } }
+      @media (min-width: 1280px) {
+        .page-template-album-splash .splash-page .splash-page__bar {
+          padding: 5px 60px; } }
+      .page-template-album-splash .splash-page .splash-page__bar .bar__continue {
+        width: 100%; }
+        .page-template-album-splash .splash-page .splash-page__bar .bar__continue a {
+          transition: padding 0.15s ease-out, color 0.15s ease-out;
+          color: #1A1E4B;
+          font-size: 20px;
+          margin: 0;
+          margin-bottom: 5px; }
+          .page-template-album-splash .splash-page .splash-page__bar .bar__continue a:after {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAAAyCAYAAADREbxyAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHESURBVHgB7dtNSsNAFMDxN9ID1BvEIwgKrqR6Ao9gjuAJ9AbiCeJJ/Ni5cOEN0iPUjcvG90LoF02aTN509f9BKSQDhX/CEGYaEQBwEwRbropitlwuZxJCeRLC51eez8URwTdo7MdK5Gnj0FwD3XhGJ3hDY2cau9xzyjX6iaCmIaYtp+xCvNsFEZ/fgfnTO1nDLlpOu0UneOMnzxca46FjiEt05vAdGvRewxYdQ0bN6QTfI2V0grdIFZ3gHVJEJ/gB3tEJ3oNndIL35BWd4AN4RCf4QGOjEzzCmOgEjxQbneAjxEQn+EhDo4fLonjWVbI7QTQNPg3t6+lmFX0SqupU9+8yQbQe00S9tKvfZ6yHH092oRvUBD8ygh9P+Z3nHxOp5/z6g3iHpvFSB9z2GYgO+oRnX+ca8a3jKaWOvXosFESJiW0IHiE2tiH4QGNiG4IPMDa2IXhPHrENwXvwim0IfoBnbEPwDt6xDcFbpIhtCL5HqtiG4DtSxjYE35A6tmF5dlvS2IY7vKGbwdK8VJW1DBkd23CHr80kcWxD8LV5y3G32IbgDQuqU8qrbO9+ucY2zOE7mj/2XEtV/YYQXrxf/QYAR/+yJgo/LvQYEAAAAABJRU5ErkJggg==); }
+          .page-template-album-splash .splash-page .splash-page__bar .bar__continue a:hover, .page-template-album-splash .splash-page .splash-page__bar .bar__continue a:focus {
+            color: #379F9F; }
+          @media (max-width: 768px) {
+            .page-template-album-splash .splash-page .splash-page__bar .bar__continue a {
+              justify-content: center; } }
+          @media (min-width: 768px) {
+            .page-template-album-splash .splash-page .splash-page__bar .bar__continue a {
+              margin-bottom: 0; } }
+      .page-template-album-splash .splash-page .splash-page__bar .bar__social {
+        display: flex;
+        width: 100%; }
+        .page-template-album-splash .splash-page .splash-page__bar .bar__social span {
+          font-size: 20px;
+          color: #868786;
+          font-family: trade-gothic-next-condensed, sans-serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          margin-right: 5px; }
+        .page-template-album-splash .splash-page .splash-page__bar .bar__social .at-icon-wrapper {
+          background-color: transparent !important; }
+          .page-template-album-splash .splash-page .splash-page__bar .bar__social .at-icon-wrapper svg.at-icon {
+            fill: #1A1E4B !important; }
+        @media (max-width: 768px) {
+          .page-template-album-splash .splash-page .splash-page__bar .bar__social {
+            justify-content: center; } }
+        @media (min-width: 768px) {
+          .page-template-album-splash .splash-page .splash-page__bar .bar__social {
+            justify-content: flex-end; } }
+    .page-template-album-splash .splash-page .splash-page__hero {
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: cover;
+      position: relative;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05); }
+      @media (min-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__hero {
+          height: 0;
+          background-position: center;
+          padding-top: 55%; } }
+      @media (min-width: 1024px) {
+        .page-template-album-splash .splash-page .splash-page__hero {
+          padding-top: 50%; } }
+      @media (min-width: 1280px) {
+        .page-template-album-splash .splash-page .splash-page__hero {
+          padding-top: 41.5%; } }
+      @media (min-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content-container {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          transform: translateY(-50%); } }
+      .page-template-album-splash .splash-page .splash-page__hero .hero__content {
+        text-align: center;
+        padding: 50px 30px; }
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__album {
+          width: 100%;
+          max-width: 300px;
+          box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+          margin-bottom: 10px; }
+          @media (min-width: 768px) {
+            .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__album {
+              max-width: 200px; } }
+          @media (min-width: 1440px) {
+            .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__album {
+              max-width: 300px; } }
+          @media (min-width: 1920px) {
+            .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__album {
+              max-width: 350px; } }
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__headline {
+          font-size: 40px;
+          text-transform: uppercase;
+          color: #FDFFF3; }
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__subhead {
+          font-size: 25px;
+          font-family: trade-gothic-next-condensed, sans-serif;
+          text-transform: uppercase;
+          color: #1A1E4B; }
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__body {
+          font-size: 18px;
+          text-transform: none;
+          color: #FDFFF3; }
+        .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__buttons a {
+          border-color: #FDFFF3;
+          color: #FDFFF3; }
+          .page-template-album-splash .splash-page .splash-page__hero .hero__content .hero__buttons a:hover {
+            background-color: #1A1E4B;
+            border-color: #1A1E4B;
+            color: #FDF6EE; }
+    .page-template-album-splash .splash-page .splash-page__products {
+      padding: 20px; }
+      @media (min-width: 1280px) {
+        .page-template-album-splash .splash-page .splash-page__products {
+          padding: 60px; } }
+      .page-template-album-splash .splash-page .splash-page__products .products__headline {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 800; }
+      .page-template-album-splash .splash-page .splash-page__products .products__subhead {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        color: #379F9F; }
+      .page-template-album-splash .splash-page .splash-page__products .product__list {
+        justify-content: center; }
+        .page-template-album-splash .splash-page .splash-page__products .product__list .product__card {
+          margin-bottom: 30px; }
+          .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product-card__content {
+            border-radius: 40px;
+            background-color: #1A1E4B;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: space-between; }
+          .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__image {
+            border-radius: 40px;
+            padding: 5px; }
+          .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__head {
+            font-size: 16px;
+            color: #FDFFF3;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 0; }
+          .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__price {
+            font-size: 25px;
+            color: #FDFFF3;
+            font-weight: 800;
+            text-align: center;
+            display: block;
+            line-height: 1;
+            flex: 1 1 auto;
+            margin: 20px 0; }
+          .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta {
+            text-align: center; }
+            .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta .btn {
+              background-color: #379F9F;
+              color: #FDFFF3; }
+              .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta .btn:hover, .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__cta .btn:focus {
+                background-color: #FDFFF3;
+                color: #1A1E4B; }
+      .page-template-album-splash .splash-page .splash-page__products .products__disclaimer {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #1A1E4B; }
+    .page-template-album-splash .splash-page .splash-page__mailing {
+      text-align: center;
+      padding: 20px; }
+      @media (min-width: 1280px) {
+        .page-template-album-splash .splash-page .splash-page__mailing {
+          padding: 60px; } }
+      .page-template-album-splash .splash-page .splash-page__mailing .mailing__head {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 800; }
+      .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__input {
+        width: 100%;
+        max-width: 550px;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 10px;
+        font-family: trade-gothic-next-condensed, sans-serif;
+        border-radius: 200px;
+        border: 0;
+        outline: 0;
+        text-transform: uppercase;
+        padding: 16px 10px;
+        background-color: #EBEDDF;
+        line-height: 1;
+        display: block; }
+      .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button {
+        width: 100%;
+        max-width: 550px;
+        font-size: 18px;
+        padding: 16px 10px;
+        font-family: trade-gothic-next-condensed, sans-serif;
+        line-height: 1;
+        text-transform: uppercase;
+        border-radius: 200px;
+        border: 0;
+        outline: 0;
+        background-color: #1A1E4B;
+        color: #FDF6EE;
+        transition: 0.15s background-color ease-out;
+        display: block;
+        margin: auto; }
+        .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:hover, .page-template-album-splash .splash-page .splash-page__mailing .subscribe-email form .subscribe-email__button:focus {
+          background-color: #262942; }
+      .page-template-album-splash .splash-page .splash-page__mailing .mailing__disclaimer {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #1A1E4B; }
+        .page-template-album-splash .splash-page .splash-page__mailing .mailing__disclaimer a {
+          color: #1A1E4B;
+          text-decoration: underline;
+          transition: 0.15s opacity ease-out; }
+          .page-template-album-splash .splash-page .splash-page__mailing .mailing__disclaimer a:hover, .page-template-album-splash .splash-page .splash-page__mailing .mailing__disclaimer a:focus {
+            opacity: 0.8; }
+    .page-template-album-splash .splash-page .splash-page__hero--secondary {
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(0, 0, 0, 0.1); }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__headline {
+        font-size: 100px;
+        font-weight: 800;
+        color: #FDF6EE; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__subhead {
+        font-size: 35px;
+        font-family: trade-gothic-next-condensed, sans-serif;
+        color: #FED673;
+        font-weight: 600;
+        line-height: 1.1; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__body {
+        font-size: 18px;
+        color: #FDF6EE;
+        font-weight: 400; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn {
+        background-color: #320A00;
+        color: #FDF6EE;
+        border: none; }
+        .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn:hover, .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon .hero__buttons .btn:focus {
+          background-color: #FDFFF3;
+          color: #320A00; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__subhead {
+        font-size: 50px;
+        color: #59FF8B;
+        line-height: 1.1; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__body {
+        font-size: 18px;
+        color: #FDF6EE;
+        font-weight: 400; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__buttons .btn {
+        background-color: #59FF8B;
+        color: #262942;
+        border: none; }
+        .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__buttons .btn:hover, .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__buttons .btn:focus {
+          background-color: #FDFFF3;
+          color: #262942; }
+      .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp .hero__body--strong {
+        font-weight: 800; }
+      @media (max-width: 768px) {
+        .page-template-album-splash .splash-page .splash-page__hero--secondary {
+          box-shadow: none;
+          background-size: 185%;
+          padding-top: 15%; }
+          .page-template-album-splash .splash-page .splash-page__hero--secondary .hero__content-container {
+            margin-top: 61%;
+            margin-bottom: 24px; }
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--macon {
+            background-position: top left;
+            background-color: #451312; }
+          .page-template-album-splash .splash-page .splash-page__hero--secondary.splash-page__hero--lp {
+            background-position: top right;
+            background-color: #191B2C; } }
+  .page-template-album-splash .site-footer {
+    background-color: #262942; }
+    .page-template-album-splash .site-footer img {
+      filter: gray;
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      -ms-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+      opacity: 80%; }
+    .page-template-album-splash .site-footer p, .page-template-album-splash .site-footer ul li a span {
+      color: #FDFFF3; }
+

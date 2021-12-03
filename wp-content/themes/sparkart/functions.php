@@ -284,8 +284,6 @@ function sparkart_load_profile_scripts()
  ?>
 
 
-
-<!-- ARE SCRIPTS GONNA LOAD HERE? -->
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
