@@ -11065,7 +11065,8 @@ a.section-link:hover, a.section-link:focus {
             font-weight: 600;
             text-align: center;
             line-height: 1.25;
-            margin-bottom: 0; }
+            margin-bottom: 0;
+            padding: 0 10px; }
           .page-template-album-splash .splash-page .splash-page__products .product__list .product__card .product__price {
             font-size: 25px;
             color: #FDFFF3;
