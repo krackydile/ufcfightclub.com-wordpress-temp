@@ -9,7 +9,7 @@ get_header(); ?>
 
   <div class="splash-page__bar">
     <div class="bar__continue">
-      <a href="/home" class="arrow-cta">Continue to Jasonaldean.com</a>
+      <a href="/homepage" class="arrow-cta">Continue to Jasonaldean.com</a>
     </div>
     <div class="bar__social">
       <span class="">Spread the Word:</span>

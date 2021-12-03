@@ -1,6 +1,7 @@
 <nav class="<?php if(is_front_page()){ echo 'hnav homepage-navbar'; } ?>  navbar navbar-expand-custom navbar-dark">
 	
-			  	<a class="navbar-brand" href="<?php echo get_bloginfo('wpurl') ?>">
+			  	<!-- <a class="navbar-brand" href="<?php echo get_bloginfo('wpurl') ?>"> -->
+					<a class="navbar-brand" href="/homepage">
 
 			  		<?php 
 			  			fw_print_custom_logo();
