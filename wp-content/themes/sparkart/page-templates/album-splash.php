@@ -24,8 +24,8 @@ get_header(); ?>
       <div class="hero__content col-12 col-md-7">
         <img class="hero__album" src="<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/georgia-album-cover.jpg" alt="Georgia Album Cover">
         <h1 class="hero__headline">New Album</h1>
-        <h2 class="hero__subhead">Releases April 22nd</h2>
-        <p class="hero__body">Georgia is available for preorder now!</p>
+        <h2 class="hero__subhead">Releases <span style="white-space: nowrap;">April 22nd</span></h2>
+        <p class="hero__body">Georgia is available for <span style="white-space: nowrap;">preorder now!</span></p>
         <div class="hero__buttons">
           <a href="https://store.jasonaldean.com/collections/georgia" target="_blank" class="btn btn-outline">Preorder</a>
           <a href="https://jasonaldean.lnk.to/georgiaWE" target="_blank" class="btn btn-outline">Presave</a>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 
   <section class="splash-page__products">
-    <h2 class="products__headline">Preorder New Album and Exclusive Merchandise</h2>
+    <h2 class="products__headline">Preorder New Album and <span style="white-space: nowrap;">Exclusive Merchandise</span></h2>
     <div class="products__subhead">Part two of Jason's 10th album. Available on April 22*</div>
     <div class="product__list grid row">
       <div class="product__card col-12 col-sm-6 col-md-4 col-xl-1-2">
@@ -84,8 +84,8 @@ get_header(); ?>
     <section class="splash-page__hero splash-page__hero--secondary splash-page__hero--lp" style="background-image: url('<?php echo get_template_directory_uri(); ?>/static/splash-pages/georgia-album/vinyl-banner.jpg')">
       <div class="hero__content-container row">
         <div class="hero__content col-12 col-md-6">
-          <h2 class="hero__subhead">Preorder The Complete Macon, Georgia Album Collection On Vinyl.</h2>
-          <p class="hero__body">Limited Edition, Green, 3-Disc LPs. Only 200 Autographed Copies Available For Purchase.</p>
+          <h2 class="hero__subhead">Preorder The Complete Macon, Georgia Album Collection <span style="white-space: nowrap;">On Vinyl.</span></h2>
+          <p class="hero__body">Limited Edition, Green, 3-Disc LPs. Only 200 Autographed Copies Available <span style="white-space: nowrap;">For Purchase.</span></p>
           <p class="hero__body hero__body--strong">Releases on April 22nd.</p>
           <div class="hero__buttons">
             <span class="btn btn-outline">Preorder</span>
@@ -102,7 +102,7 @@ get_header(); ?>
         <div class="hero__content col-12 col-md-5">
           <h1 class="hero__headline">Macon</h1>
           <h2 class="hero__subhead">Available Now</h2>
-          <p class="hero__body">Features the hit single ‘If I Didn’t Love You’ with Carrie Underwood + 14 more songs!</p>
+          <p class="hero__body">Features the hit single ‘If I Didn’t Love You’ with Carrie Underwood + 14 <span style="white-space: nowrap;">more songs!</span></p>
           <div class="hero__buttons">
             <a href="https://jasonaldean.lnk.to/macon" target="_blank" class="btn btn-outline">Stream Now</a>
             <a href="https://9jldq8wnzq7hbwyi-5950573.shopifypreview.com/collections/macon" target="_blank" class="btn btn-outline">Shop Exclusive Merch</a>
