@@ -20,6 +20,8 @@ a.section-link:hover, a.section-link:focus {
 .page-template-album-splash {
   span {
     color: inherit;
+    line-height: inherit;
+    font-weight: inherit;
   }
   background-color: $splash-white;
   .btn {
