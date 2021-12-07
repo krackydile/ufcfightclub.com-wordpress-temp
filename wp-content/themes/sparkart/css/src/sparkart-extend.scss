@@ -48,13 +48,13 @@ html {
     }
   }
   .card-subtitle {
-    color: $ja-white;
+    color: $ufc-white;
     font-size: 16px;
     line-height: 1;
     text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   }
   .card-title {
-    color: $ja-white;
+    color: $ufc-white;
     font-size: 25px;
     line-height: 1.1;
     margin-bottom: 0;
@@ -228,7 +228,7 @@ html {
           right: 0;
           display: inline-block;
           line-height: 0;
-          border: 2px solid $ja-white;
+          border: 2px solid $ufc-white;
           border-radius: 100px;
           display: flex;
           justify-content: center;
@@ -396,7 +396,7 @@ html {
   font-family: trade-gothic-next-condensed, sans-serif;
   font-weight: 700;
   text-decoration: none;
-  color: $ja-gray3;
+  color: $ufc-gray3;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -418,7 +418,7 @@ html {
     transition: 0.15s margin ease-out;
   }
   &:hover, &:focus {
-    color: $ja-gray4;
+    color: $ufc-gray4;
     text-decoration: none;
     @media (min-width: 992px) {
       padding-left: 20px;
@@ -430,9 +430,9 @@ html {
   }
 }
 .arrow-cta--light {
-  color: $ja-gray2;
+  color: $ufc-gray2;
   &:hover, &:focus {
-    color: $ja-gray1;
+    color: $ufc-gray1;
   }
 }
 
@@ -481,13 +481,12 @@ html {
 }
 .upcoming-events {
   @media (min-width: 992px) {
-    border-radius: 95px;
     margin: 0 40px;
     padding-right: 40px;
     padding-left: 40px;
   }
   .heading-red span {
-    color: $ja-red;
+    color: $ufc-red;
   }
   .events-card__container {
     .events-card {
@@ -503,7 +502,7 @@ html {
         }
         .card-title {
           a {
-            color: $ja-black;
+            color: $ufc-black;
             font-weight: 800;
             @media (min-width: 960px) {
               font-size: 35px;
@@ -519,7 +518,7 @@ html {
           }
         }
         .card-subtitle {
-          color: $ja-gray3;
+          color: $ufc-gray3;
           text-transform: uppercase;
           margin-bottom: 15px;
           font-family: trade-gothic-next-condensed, sans-serif;
@@ -531,7 +530,7 @@ html {
         }
       }
       .card__date {
-        background-color: $ja-black;
+        background-color: $ufc-black;
         color: #ffffff;
         height: 100px;
         width: 100px;
@@ -546,7 +545,7 @@ html {
         line-height: 1;
         margin-bottom: 0;
         span {
-          color: $ja-red;
+          color: $ufc-red;
           font-weight: 800;
           font-size: 14px;
         }
@@ -573,33 +572,32 @@ html {
     }
     &:nth-child(2n+1) {
       .events-card {
-        background-color: $ja-gray1;
+        background-color: $ufc-gray1;
       }
     }
   }
 }
 .upcoming-events--page {
   padding: 50px 40px;
-  border-radius: 95px;
   margin: 0;
 }
 .event-code-holder {
   .event-code-heading {
-    color: $ja-gray4;
+    color: $ufc-gray4;
     font-weight: 600;
     margin-left: 5px;
   }
   .form-control {
-    color: $ja-red;
+    color: $ufc-red;
     letter-spacing: 1px;
   }
   .btn-outline-secondary {
-    border: 1px solid $ja-gray4;
-    color: $ja-gray4;
+    border: 1px solid $ufc-gray4;
+    color: $ufc-gray4;
     &:hover, &:focus {
-      background-color: $ja-gray4;
-      border-color: $ja-gray4;
-      color: $ja-white;
+      background-color: $ufc-gray4;
+      border-color: $ufc-gray4;
+      color: $ufc-white;
     }
   }
   .input-group {
@@ -611,7 +609,6 @@ html {
   .page-template-events-landing {
     .upcoming-events--page {
       padding: 50px 20px;
-      border-radius: 0;
       margin: 0 -30px;
     }
   }
@@ -621,17 +618,17 @@ html {
 .page-template-events-landing, .page-template-events-details {
   .event-pills {
     .nav-link {
-      color: $ja-gray2;
+      color: $ufc-gray2;
       &:hover, &:focus {
-        background-color: $ja-gray4;
-        color: $ja-white;
+        background-color: $ufc-gray4;
+        color: $ufc-white;
       }
       &.active {
-        background-color: $ja-white;
-        color: $ja-red;
+        background-color: $ufc-white;
+        color: $ufc-red;
         &:hover, &:focus {
-          background-color: $ja-white;
-          color: $ja-red;
+          background-color: $ufc-white;
+          color: $ufc-red;
         }
       }
     }
@@ -658,7 +655,7 @@ html {
 /* Mobile navigation overrides*/
 /* */
 .navbar {
-  border-bottom: 1px solid $ja-gray3;
+  border-bottom: 1px solid $ufc-gray3;
   @media (min-width: 992px) {
     border-bottom: none;
   }
@@ -672,7 +669,7 @@ html {
     padding: 0;
     border: 0;
     margin: 0;
-    // background-color: $ja-gray2;
+    // background-color: $ufc-gray2;
   }
   .navbar {
     padding: 1rem;
@@ -689,7 +686,7 @@ html {
     border-bottom: 0;
     span {
       display: inline-block;
-      border-bottom: 2px solid $ja-red;
+      border-bottom: 2px solid $ufc-red;
     }
   }
   .nav-link {
@@ -788,7 +785,7 @@ html {
     margin: 0 6px !important;
   }
   .dropdown:hover > .dropdown-menu span {
-    color: $ja-white;
+    color: $ufc-white;
     font-size: 16px;
   }
 }
@@ -807,7 +804,7 @@ html {
       margin-bottom: 30px;
     }
     .card-subtitle {
-      color: $ja-red;
+      color: $ufc-red;
     }
   }
   @media (min-width: 960px) {
@@ -851,7 +848,7 @@ html {
 h2.releases__heading {
   font-size: 25px;
   text-transform: uppercase;
-  color: $ja-white;
+  color: $ufc-white;
   margin: 15px;
   margin-bottom: 15px;
   @media (min-width: 1200px) {
@@ -877,7 +874,7 @@ h2.releases__heading {
   }
 }
 h3.release__title {
-  color: $ja-white;
+  color: $ufc-white;
   font-size: 14px;
   text-align: center;
   margin-bottom: 2px;
@@ -894,7 +891,7 @@ h3.release__title {
 }
 p.release__date {
   font-size: 12px;
-  color: $ja-gray3;
+  color: $ufc-gray3;
   text-align: center;
   margin: 0;
   margin-bottom: 5px;
@@ -904,13 +901,13 @@ p.release__date {
 }
 .releases__list {
   &::-webkit-scrollbar {
-    background-color: $ja-gray4;
+    background-color: $ufc-gray4;
     height: 8px;
     width: 5px;
     border-radius: 100px;
   }
   &::-webkit-scrollbar-thumb {
-    background: $ja-red;
+    background: $ufc-red;
     border-radius: 100px;
   }
   @media (max-width: 992px) {
@@ -944,14 +941,14 @@ p.release__date {
     padding-bottom: 40px;
   }
   .album-title-inner {
-    color: $ja-white;
+    color: $ufc-white;
     font-size: 50px;
   }
   .event-detail {
     ul li {
-      color: $ja-white;
+      color: $ufc-white;
       strong {
-        color: $ja-gray2-5;
+        color: $ufc-gray2-5;
       }
     }
   }
@@ -1046,7 +1043,7 @@ p.release__date {
   }
 }
 .album-row {
-  background-color: $ja-footer-black;
+  background-color: $ufc-footer-black;
   border-radius: 40px;
   padding: 20px 5px;
   margin-left: 0;
@@ -1081,7 +1078,7 @@ p.release__date {
   width: 150px;
 }
 .site-footer {
-  background-color: $ja-footer-black;
+  background-color: $ufc-footer-black;
   @media (max-width: 768px) {
     p, ul li a {
       font-size: 12px;
@@ -1095,7 +1092,7 @@ p.release__date {
 /* */
 .site-content {
   .official-photo-title {
-    color: $ja-white;
+    color: $ufc-white;
   }
 }
 
@@ -1114,7 +1111,7 @@ p.release__date {
     font-size: 1.2rem;
   }
   p {
-    color: $ja-gray2;
+    color: $ufc-gray2;
   }
 }
 .col-official-iamge--w-title {
@@ -1123,7 +1120,7 @@ p.release__date {
   }
   .media-simple {
     h6 {
-      color: $ja-white;
+      color: $ufc-white;
       margin-bottom: 30px;
     }
   }
@@ -1133,14 +1130,14 @@ p.release__date {
 /* Tour Page */
 /* */
 .tour-box {
-  color: $ja-black;
+  color: $ufc-black;
   p {
-    color: $ja-black;
+    color: $ufc-black;
     &.tour-box--important {
       font-weight: bold;
       text-transform: uppercase;
       font-weight: 800;
-      color: $ja-red;
+      color: $ufc-red;
     }
     &.tour-box__details {
       font-size: 12px;
@@ -1181,7 +1178,7 @@ p.release__date {
     margin-top: 0 !important;
   }
   .page-section {
-    background-color: $ja-gray4;
+    background-color: $ufc-gray4;
     padding: 0 0 80px 0;
     margin-bottom: 0;
   }
@@ -1199,7 +1196,7 @@ p.release__date {
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   &--light {
-    background-color: $ja-gray4;
+    background-color: $ufc-gray4;
   }
   img {
     width: 100%;
@@ -1234,8 +1231,8 @@ p.release__date {
 /* Join Page */
 /* */
 .club-card {
-  background-color: $ja-white;
-  color: $ja-black;
+  background-color: $ufc-white;
+  color: $ufc-black;
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 20px;
@@ -1252,11 +1249,11 @@ p.release__date {
   font-weight: 800;
 }
 .club-card__price {
-  color: $ja-red;
+  color: $ufc-red;
   font-size: 20px;
   font-weight: 700;
   span {
-    color: $ja-gray3;
+    color: $ufc-gray3;
     margin-left: 10px;
     font-weight: 400;
   }
@@ -1275,16 +1272,16 @@ p.release__date {
 }
 .club-card__list-items {
   li {
-    color: $ja-gray3;
+    color: $ufc-gray3;
   }
 }
 .btn-outline {
-  border: 2px solid $ja-gray4;
-  color: $ja-gray4;
+  border: 2px solid $ufc-gray4;
+  color: $ufc-gray4;
   &:hover, &:focus {
-    background-color: $ja-gray4;
-    border-color: $ja-gray4;
-    color: $ja-white;
+    background-color: $ufc-gray4;
+    border-color: $ufc-gray4;
+    color: $ufc-white;
   }
 }
 
@@ -1304,10 +1301,10 @@ p.release__date {
   }
   .help-category {
     h3 {
-      color: $ja-black;
+      color: $ufc-black;
     }
     p.help-link a {
-      color: $ja-gray4;
+      color: $ufc-gray4;
       text-decoration: none;
       text-transform: none;
       letter-spacing: 0;
@@ -1318,7 +1315,7 @@ p.release__date {
       }
       transition: color 0.15s ease-in;
       &:hover, &:focus {
-        color: $ja-gray2-5;
+        color: $ufc-gray2-5;
       }
     }
   }
@@ -1326,7 +1323,7 @@ p.release__date {
     text-align: left;
     padding: 0;
     span {
-      color: $ja-red;
+      color: $ufc-red;
     }
   }
 }
@@ -1346,7 +1343,7 @@ p.release__date {
     padding: 1.5rem;
   }
   .card-subtitle {
-    color: $ja-white !important;
+    color: $ufc-white !important;
     font-size: 16px !important;
   }
   .card-title {
@@ -1372,10 +1369,10 @@ p.release__date {
     font-size: 40px;
   }
   &--light {
-    background-color: $ja-gray4;
+    background-color: $ufc-gray4;
   }
   &--dark {
-    background-color: $ja-black;
+    background-color: $ufc-black;
   }
 }
 .wp-block-embed-youtube {
@@ -1396,7 +1393,7 @@ width: 1100px;
   }
 }
 .full-width--light {
-  background-color: $ja-gray4;
+  background-color: $ufc-gray4;
 }
 
 

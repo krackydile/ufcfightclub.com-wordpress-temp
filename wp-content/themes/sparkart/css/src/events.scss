@@ -1,5 +1,5 @@
 .events-hero{
-	background: $ja-white;
+	background: $ufc-white;
     border-radius: 20px;
     box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
 	-webkit-box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
@@ -100,13 +100,13 @@
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-	background: $ja-gray3;
+	background: $ufc-gray3;
     color: #F0F4F4;
     border-radius: 25px;
     padding: 0px  20px;
     display:block;
     margin: 0 auto;
-    border-color: $ja-gray3;
+    border-color: $ufc-gray3;
     -webkit-appearance: none;
     @include media-breakpoint-up(lg) {
     	display:none;

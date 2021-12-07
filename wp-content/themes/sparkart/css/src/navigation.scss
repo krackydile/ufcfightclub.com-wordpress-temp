@@ -87,7 +87,7 @@ header .nav-item{
 	}
 }
 .navbar-light .navbar-nav .nav-link{
-		color: $ja-white;
+		color: $ufc-white;
 		display:inline-block;
 	
 }
@@ -97,7 +97,7 @@ header .nav-item{
 .nav-item:not(.active):hover > a{
 	background: none;
 	@media (min-width: 992px) { 
-		background: $ja-gray4;
+		background: $ufc-gray4;
 		border-radius: 25px;
 	}
 }
@@ -142,7 +142,7 @@ header .nav-item{
 /* hide close when burger shown */
    .navbar-toggler.collapsed .close-icon {
       display: none;
-			color: $ja-white;
+			color: $ufc-white;
    }
 
    .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
@@ -158,7 +158,7 @@ header .nav-item{
 	}
 }
 .secondary-navigation{
-	background: $ja-white;
+	background: $ufc-white;
 	.secondary-navigation-container{
 		padding: 0px;
 	}
@@ -175,7 +175,7 @@ header .nav-item{
 		    	background: transparent;
 	    		border: none;
 	    		a {
-	    			color: $ja-black;
+	    			color: $ufc-black;
 	    			i {
 	    				font-size: 1.2em;
 	    			}
@@ -267,7 +267,7 @@ header .nav-item{
 
 		a{
 
-			color: $ja-white;
+			color: $ufc-white;
 			i{
 				font-size: 1.4rem;
 			}
@@ -277,7 +277,7 @@ header .nav-item{
 .navbar-collapse.collapse.show{
 	    position: fixed;
     top: 3px;
-    background: $ja-gray3;
+    background: $ufc-gray3;
     z-index: 1111;
     right: 1px;
     width: 94%;
@@ -332,7 +332,7 @@ header .nav-item{
 		display :block;
 
 		padding: 30px 17px ;
-		background: $ja-gray2-5;	
+		background: $ufc-gray2-5;	
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 		
 	}
@@ -346,7 +346,7 @@ header .nav-item{
     padding: 0;
 }
 .dropdown-item:hover, .dropdown-item:focus{
-	background: $ja-gray1;
+	background: $ufc-gray1;
 	border-radius:25px;
 	
 }
@@ -405,7 +405,7 @@ header .nav-item{
 }
 
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-	color: $ja-white;
+	color: $ufc-white;
 }
 
 .navbar-light .navbar-nav .dropdown-toggle:hover, .navbar-light .navbar-nav .dropdown-toggle:focus {
@@ -413,11 +413,11 @@ header .nav-item{
 }
 
 .navbar {
-	background-color: $ja-black;
+	background-color: $ufc-black;
 }
 
 .dropdown-menu {
-	background-color: $ja-gray4;
+	background-color: $ufc-gray4;
 }
 .list-social-handles {
 	a {

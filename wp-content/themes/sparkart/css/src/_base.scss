@@ -17,17 +17,17 @@
 html {font-size: 100%;} /*16px*/
 
 body {
-  background: $ja-black;
-  font-family: din-2014, sans-serif;
+  background: $ufc-white;
+  font-family: 'din-2014', sans-serif;
   font-weight: 400;
   line-height: 1.85;
-  color: $ja-white;
+  color: $ufc-white;
 }
 
 p {
 margin-bottom: 1rem;
   a{
-    color: $ja-red;
+    color: $ufc-red;
   }
   a:hover{
     color: $colorDark;
@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5 {
 }
 p, span{
   line-height: 1.65;
-  color: $ja-white;
+  color: $ufc-white;
   font-weight: 500;
 }
 
@@ -70,10 +70,10 @@ small, .text_small {font-size: 0.8rem;}
 }
 
 .upcoming-events{
-  background: $ja-white;
+  background: $ufc-white;
 }
 .site-footer{
-  background: $ja-black;
+  background: $ufc-black;
   padding: 97px 0px;
   img{
     margin-bottom: 48px;
@@ -95,8 +95,6 @@ small, .text_small {font-size: 0.8rem;}
 }
 .btn{
     text-transform: uppercase;
-    border-radius: 500px;
-
 }
 
 
@@ -109,8 +107,6 @@ small, .text_small {font-size: 0.8rem;}
     }
     background: $colorLightest;
     border:none;
-    border-radius: 10px;
-
 }
 .card-subtitle{
   font-size: $fontSize16;
@@ -228,11 +224,11 @@ small, .text_small {font-size: 0.8rem;}
 }
 .site-footer .site-info {
   p{
-    color: $ja-gray2;
+    color: $ufc-gray3;
     margin: 6px;
   }
   ul li a span{
-    color: $colorLightest;
+    color: $ufc-red;
   }
 }
 
@@ -249,7 +245,6 @@ small, .text_small {font-size: 0.8rem;}
     text-transform: uppercase;
     text-align: center;
     color: #F0F4F4;
-    border-radius: 25px;
     margin: 10px;
     @include media-breakpoint-up(lg) {
 
@@ -264,13 +259,13 @@ small, .text_small {font-size: 0.8rem;}
     padding: 8px 22px;
 }
 .btn-primary, .joincomment{
-  background-color: $ja-red;
-  border-color: $ja-red;
+  background-color: $ufc-red;
+  border-color: $ufc-red;
 
 }
 .btn-primary:hover, .joincomment:hover{
-  background-color: $ja-redHover;
-    border-color: $ja-redHover;
+  background-color: $ufc-redHover;
+    border-color: $ufc-redHover;
 
 }
 a.joincomment:hover{
@@ -305,7 +300,6 @@ a.joincomment:hover{
     span{
 
       background: $colorLight;
-      border-radius: 25px;
       display: block;
       padding: 5px 28px;
       color: $colorDark;
@@ -315,12 +309,12 @@ a.joincomment:hover{
     }
 }
 .btn-cta-outline{
-  border: 2px solid $ja-black;
+  border: 2px solid $ufc-black;
   letter-spacing: 0.15em;
     padding: 7px 28px;
     span{
       font-weight: 600;
-      color: $ja-black;
+      color: $ufc-black;
     }
 }
 .btn-cta-primary:hover, .btn-cta-outline:hover{
@@ -337,7 +331,7 @@ a.joincomment:hover{
 }
 .block-heading{
 
-    font-family: trade-gothic-next, sans-serif;
+    font-family: 'Klavika Condensed', sans-serif;
     color: $colorDark;
   /*  line-height: 100px;
   position: relative;*/
@@ -390,9 +384,8 @@ a.joincomment:hover{
 .site-content{
   margin-bottom: 20px;
     padding: 0;
-    background: $ja-white;
+    background: $ufc-white;
     border: none;
-    border-radius: 10px;
 }
 .card-body{
   padding: 1.10rem;
@@ -479,7 +472,6 @@ a.joincomment:hover{
 
 }
 .panel-contest{
-  border-radius: 25px;
   background: $colorLighter;
   margin-top: 40px;
 
@@ -490,9 +482,8 @@ a.joincomment:hover{
   }
 }
 .contest-header{
-  background: $ja-gray4;
+  background: $ufc-gray4;
   color: #fff !important;
-  border-radius: 25px 25px 0px 0px;
   font-weight: 600;
 }
 
@@ -538,7 +529,7 @@ a.joincomment:hover{
 }
 .album-thumbnail-inner {
   img{
-    border-radius: 25px;
+
   }
 }
 .lyrics {
@@ -604,7 +595,7 @@ i.fa.angle-trigger{
 
 h1.album-title-inner {
     margin-top: 30px;
-    color: $ja-white;
+    color: $ufc-white;
     font-size: $fontSize31;
     font-weight: bold;
     @include media-breakpoint-up(lg) {
@@ -623,7 +614,7 @@ h1.album-title-inner {
 }
 .breadcrumbs{
   a{
-    color: $ja-gray2;
+    color: $ufc-gray2;
   }
 }
 .payment-cards{
@@ -639,7 +630,6 @@ h1.album-title-inner {
   }
   .main-card{
     background: $colorLightest;
-    border-radius: 25px;
     text-align: center;
     padding: 40px;
     min-height:360px;
@@ -910,7 +900,7 @@ h1.album-title-inner {
   }
   span.last-item{
     font-weight: 500;
-    color: $ja-gray3;
+    color: $ufc-gray3;
   }
 }
 .content-area.single-page-content.single-photo-gallery-page{
@@ -947,7 +937,7 @@ h1.album-title-inner {
       margin-top: 60px;
       margin-bottom: 30px;
       font-weight: 600;
-      color: $ja-white !important;
+      color: $ufc-white !important;
       text-transform: uppercase;
   }
 .photo-thumbnails{
@@ -960,8 +950,8 @@ h1.album-title-inner {
     list-style:none;
   }
   .paginationjs-next a{
-    color: $ja-gray3;
-    border-color: $ja-gray3;
+    color: $ufc-gray3;
+    border-color: $ufc-gray3;
     font-size: 12px;
     font-weight: 600;
     padding: 8px 22px;
@@ -971,8 +961,8 @@ h1.album-title-inner {
     transition: color 0.15s ease-in, background-color 0.15s ease-in;
     &:hover, &:focus {
       text-decoration: none;
-      background-color: $ja-gray3;
-      color: $ja-white;
+      background-color: $ufc-gray3;
+      color: $ufc-white;
     }
   }
 
@@ -994,7 +984,7 @@ h1.album-title-inner {
     font-size: 18px;
     margin-top: 30px;
     font-weight: bold;
-    color: $ja-gray3;
+    color: $ufc-gray3;
 
   }
 }
@@ -1007,7 +997,7 @@ h1.album-title-inner {
   }
   .form-control{
     border-radius: 12px;
-    background: $ja-gray1;
+    background: $ufc-gray1;
     border:none;
     font-weight:600;
   }
@@ -1032,7 +1022,6 @@ h1.album-title-inner {
   .main-card{
      background: $colorLightest;
      text-align:center;
-     border-radius: 25px;
      padding: 62px 36px;
      h1.column-text-price{
         font-size: $fontSize31;
@@ -1112,7 +1101,6 @@ h1.album-title-inner {
     padding: 4px;
   .container-more-notice{
       background: $colorDarkest;
-      border-radius: 25px;
       margin-top: 46px;
       margin-bottom: 46px;
       color: $colorLighter;
@@ -1150,7 +1138,6 @@ h1.album-title-inner {
 .container-help-articles{
     margin-top: 52px;
     background: $colorLightest;
-    border-radius: 25px;
     padding: 32px 12px;
 
     @include media-breakpoint-up(md) {
@@ -1229,7 +1216,6 @@ h1.album-title-inner {
   margin-top: 72px;
   background: $colorLightest;
   border: 2px solid $colorMild;
-  border-radius: 12px;
   padding: 32px;
   h2{
     font-size: $fontSize25;
@@ -1276,7 +1262,6 @@ h1.album-title-inner {
   margin-top: 72px;
   background: $colorLightest;
   border: 2px solid $colorMild;
-  border-radius: 12px;
   padding: 32px;
   div{
     font-size: $fontSize25;
