@@ -21,7 +21,7 @@
 	<base href="<?php echo get_template_directory_uri() ?>/">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	<link rel="stylesheet" href="https://use.typekit.net/trf2irw.css">
+	<link rel="stylesheet" href="https://use.typekit.net/zdp3bfg.css">
 
 	<!--GSAP-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
