@@ -8119,6 +8119,7 @@ h1, h2, h3, h4, h5 {
   /*margin: 3rem 0 1.38rem;*/
   /*font-family: 'Lato', sans-serif;*/
   font-family: 'Klavika Condensed', sans-serif;
+  text-transform: uppercase;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 1.25; }
