@@ -6,6 +6,8 @@
  */
 ?>
 
+<h1>Hello World</h1>
+
 		</div><!-- #main -->
 		<div class="site-footer">
 			<div class="container">

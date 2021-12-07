@@ -1,8 +1,24 @@
+@font-face {
+    font-family: 'Klavika Condensed';
+    src: url('fonts/Klavika-Condensed.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Klavika Condensed';
+    src: url('fonts/Klavika-BoldCondensed.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: block;
+}
+
 html {font-size: 100%;} /*16px*/
 
 body {
   background: $ja-black;
-  font-family: trade-gothic-next, sans-serif;
+  font-family: din-2014, sans-serif;
   font-weight: 400;
   line-height: 1.85;
   color: $ja-white;
@@ -21,8 +37,7 @@ margin-bottom: 1rem;
 h1, h2, h3, h4, h5 {
   /*margin: 3rem 0 1.38rem;*/
   /*font-family: 'Lato', sans-serif;*/
-  font-family: trade-gothic-next, sans-serif;
-
+  font-family: 'Klavika Condensed', sans-serif;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 1.25;
