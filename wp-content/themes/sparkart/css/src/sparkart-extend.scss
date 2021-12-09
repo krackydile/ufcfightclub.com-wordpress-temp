@@ -421,7 +421,6 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   .nav-item.active {
     margin: 0 9px;
     border-top-width: 16px !important;
-
     a {
       color: $ufc-white;
       line-height: 16px;
@@ -429,35 +428,28 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
       padding-bottom: 0;
     }
   }
-
   .dropdown-item:focus,
   .dropdown-item:hover {
     background: transparent;
     border-radius: 0;
   }
-
   .active .dropdown-item span {
     color: $ufc-white;
   }
-
   .active .dropdown-item:hover span {
     color: $ufc-red;
   }
-
   .nav-item[style*="block"] {
     display: inline-block !important;
   }
-
   .nav-item {
     margin: 0;
     padding: 0;
   }
-
   .nav-item:last-child,
   .nav-item:nth-child(2) {
     padding-left: 9px;
     position: relative;
-
     &:before {
       content: "";
       position: absolute;
@@ -473,24 +465,19 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 
 .home .navbar {
   transition: 0.15s background ease-out;
-
   &:hover {
     background: $colorDarkest;
   }
 }
-
 .home .navbar-expand-custom .navbar-nav {
-
     .dropdown:hover {
       position: static;
     }
-
     .dropdown:hover > .dropdown-menu {
       width: 100%;
       text-align: center;
       bottom: 0;
     }
-
     .dropdown:hover:after {
         content: "";
         width: 100%;
@@ -500,10 +487,8 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
         right: 0;
         background: $ufc-black;
     }
-
 }
-
-.nav-item .dropdown-toggle::after{
+.nav-item .dropdown-toggle::after {
   display: none;
 }
 
@@ -615,7 +600,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     }
   }
 }
-.arrow-cta {
+/* .arrow-cta {
   font-family: trade-gothic-next-condensed, sans-serif;
   font-weight: 700;
   text-decoration: none;
@@ -657,11 +642,11 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   &:hover, &:focus {
     color: $ufc-gray1;
   }
-}
+}*/
 
 
 /* Video Header */
-.video-header {
+/* .video-header {
   width: 100%;
   height: auto;
   display: none;
@@ -693,7 +678,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 }
 .container--video-header {
   margin-top: 40px;
-}
+} */
 
 /**/
 /* Homepage */
@@ -1032,8 +1017,23 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 }
 
 .page-template-events-landing, .page-template-events-details {
+  .event-list .select {
+    padding: 0;
+
+    &:after {
+      color: $ufc-black;
+      right: 0;
+    }
+  }
   .select-pills {
-    option[value="#pills-past"] {
+    border-radius: 4px;
+    border: 1px solid rgb(136,136,145);
+    background: #f6f7f7;
+    font-weight: normal;
+    color: $ufc-black;
+    text-transform: none;
+
+    option[value="#pills-past-events"] {
       display: none;
     }
     option[value="#pills-upcoming-appearances"] {
@@ -1154,33 +1154,30 @@ body:not(.page-template-account) .event-detail-card {
   .nav-item.show > a span {
     color: $ufc-red;
   }
-
   .nav-item > a {
     padding-bottom: 0 !important;
   }
-
   .dropdown-toggle::after {
     display: none !important;
   }
-
+  .nav-item.active .nav-link span {
+    color: $ufc-white !important;
+    border: 0;
+  }
   .nav-item:before {
     display: none;
   }
-
   #menu-main-navigation .dropdown:hover > .dropdown-menu li.nav-item[style*="block"] { 
     display: block !important;
     width: 100%;
     margin: 0 !important;
   }
-
   .dropdown:hover > .dropdown-menu span {
     color: $ufc-gray2;    
   }
-
   .dropdown:hover:after {
     display: none;
   }
-
   .nav-social-brand-container {
     position: absolute;
     bottom: 30px;
@@ -1748,6 +1745,7 @@ p.release__date {
 }
 .tour-box--join {
   text-align: left;
+  margin-top: 30px;
 }
 
 /* */
