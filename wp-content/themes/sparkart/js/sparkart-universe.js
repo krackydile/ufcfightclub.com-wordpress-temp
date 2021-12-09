@@ -460,15 +460,15 @@ universejs.on('ready', data => {
         <div>
         <h2 class="tour-box__headline">Upcoming UFC Fight Club Presales</h2>
         
-        <p class="tour-box--important">Once the presale is announced, your fan club presale password will be shown.</p>
-        
-          <!--<p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
+        <!--p class="tour-box--important">Once the presale is announced, your fan club presale password will be shown.</p-->
+         
+          <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
           <div class="accesscode protected block-protected">
            <div class="input-group">
             <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[0].codes[0]}">
             <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
            </div>
-          </div>-->
+          </div>
           <p class="tour-box__details">Pre-sale tickets are not guaranteed, ticket purchases are subject to availability on a first come, first serve basis for select US, Canadian, Australian, and European performances only. All shows are subject to cancellation or postponement without notice. Please consult with the relevant venue for seating information prior to purchase and any changes to the show schedule.</p>
           </div>`
           ;
