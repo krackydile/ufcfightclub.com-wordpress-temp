@@ -458,11 +458,11 @@ universejs.on('ready', data => {
         document.getElementById("protected-box").innerHTML = `
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
-        <h2 class="tour-box__headline">Upcoming UFC Fight Club Presales</h2>
+        <h2 class="tour-box__headline">Your Unique Pre-sale Access Code</h2>
         
         <!--p class="tour-box--important">Once the presale is announced, your fan club presale password will be shown.</p-->
          
-          <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
+          <!--p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p-->
           <div class="accesscode protected block-protected">
            <div class="input-group">
             <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[0].codes[0]}">

@@ -1014,8 +1014,14 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   }
 }*/
 
-.page-template-events-landing .ufc-upcoming-events {
-  display: none;
+.page-template-events-landing {
+  .ufc-upcoming-events {
+    display: none;
+  }
+}
+.accesscode {
+  border-radius: 2px;
+  max-width: 400px;
 }
 
 .page-template-events-landing, .page-template-events-details {
