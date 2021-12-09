@@ -8085,29 +8085,15 @@ a.text-dark:hover, a.text-dark:focus {
 
 @font-face {
   font-family: 'Klavika Bold Condensed';
-  src: url(./wp-content/themes/sparkart/fonts/Klavika-BoldCondensed.ttf) format("truetype");
+  src: url(./wp-content/themes/sparkart/fonts/Klavika-BoldCondensed.woff2) format("woff2"), url(./wp-content/themes/sparkart/fonts/Klavika-BoldCondensed.woff) format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: block; }
 
 @font-face {
   font-family: 'Klavika Condensed';
-  src: url(./wp-content/themes/sparkart/fonts/Klavika-Condensed.ttf) format("truetype");
+  src: url(./wp-content/themes/sparkart/fonts/Klavika-Condensed.woff2) format("woff2"), url(./wp-content/themes/sparkart/fonts/Klavika-Condensed.woff) format("woff");
   font-weight: normal;
-  font-style: normal;
-  font-display: block; }
-
-@font-face {
-  font-family: 'Klavika Light Condensed';
-  src: url(./wp-content/themes/sparkart/fonts/Klavika-LightCondensed.ttf) format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: block; }
-
-@font-face {
-  font-family: 'Klavika Medium Condensed';
-  src: url(./wp-content/themes/sparkart/fonts/Klavika-MediumCondensed.ttf) format("truetype");
-  font-weight: 500;
   font-style: normal;
   font-display: block; }
 
