@@ -11521,6 +11521,33 @@ width: 1100px;
 /**/
 /* Account Page */
 /**/
+#success-message {
+  background: #D20A0A;
+  color: #FAFBFD;
+  padding: 30px; }
+  #success-message p {
+    text-transform: uppercase;
+    font-family: 'Klavika Bold Condensed';
+    font-size: 27px;
+    line-height: 1;
+    color: #FAFBFD;
+    margin: 0; }
+
+#error-message {
+  background: #000000;
+  color: #FAFBFD;
+  padding: 30px; }
+  #error-message p {
+    color: #FAFBFD;
+    text-transform: none; }
+  #error-message p:first-child {
+    text-transform: uppercase;
+    font-family: 'Klavika Bold Condensed';
+    font-size: 27px;
+    line-height: 1; }
+  #error-message ul {
+    margin-bottom: 0; }
+
 .account-header {
   display: none; }
 

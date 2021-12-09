@@ -2007,6 +2007,41 @@ width: 1100px;
 /**/
 /* Account Page */
 /**/
+#success-message {
+  background: $ufc-red;
+  color: $ufc-white;
+  padding: 30px;
+
+  p {
+    text-transform: uppercase;
+    font-family: 'Klavika Bold Condensed';
+    font-size: 27px;
+    line-height: 1;
+    color: $ufc-white;
+    margin: 0;
+  }
+}
+#error-message {
+  background: $colorDarkest;
+  color: $ufc-white;
+  padding: 30px;
+
+  p {
+    color: $ufc-white;
+    text-transform: none;
+  }
+
+  p:first-child {
+    text-transform: uppercase;
+    font-family: 'Klavika Bold Condensed';
+    font-size: 27px;
+    line-height: 1;
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
 .account-header {
   display: none;
 }
