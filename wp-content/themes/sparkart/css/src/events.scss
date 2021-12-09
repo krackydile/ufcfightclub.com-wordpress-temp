@@ -1,9 +1,7 @@
 .events-hero{
 	background: $ufc-white;
-    border-radius: 20px;
-    box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
-	-webkit-box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
-	-moz-box-shadow: -2px 4px 12px -6px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 2px 8px rgba(99,91,99,0.10);
+    box-shadow: 0 2px 8px rgba(99,91,99,0.10);
     margin-bottom: 24px;
     position: relative;
     // @include media-breakpoint-up(lg) {

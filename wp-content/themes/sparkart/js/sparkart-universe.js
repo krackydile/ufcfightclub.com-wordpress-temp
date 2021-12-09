@@ -45,8 +45,10 @@ universejs.init(function (err, data) {
             document.getElementById('protected-swiper').classList.remove('hide');
             const event = new Event('swiperManager');
             document.getElementById('protected-swiper').dispatchEvent(event);
-
         }
+
+        // Begin UFC
+        document.body.classList.add("loggedin");
 
         // Begin Szeto: Needed for Fan Club Party 2021
         localStorage.setItem('universeCustomerId', data.customer.id);
@@ -150,7 +152,7 @@ universejs.init(function (err, data) {
               <div>
                 <h2 class="tour-box__headline">Not a UFC Fight Club Member?</h2>
                 <p>Join UFC Fight Club and enjoy exclusive members-only benefits including presale tickets, exclusive content, message board access and much more.</p>
-                <p><a href="/join" class="btn btn-primary">Join Now</a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;">Login Now</a></p>
+                <p><a href="/join" class="btn btn-primary"><span>Join Now</span></a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;"><span>Login Now</span></a></p>
               </div>
             `;
         }
@@ -467,7 +469,7 @@ universejs.on('ready', data => {
             <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
            </div>
           </div>-->
-          <p class="tour-box__details">UFC Fight Club members have the opportunity to purchase up to four (4) presale tickets to each event, with a total of twenty (20) presale tickets across the tour. Presale tickets are not guarranteed and are subject to availability on a first come, first serve basis.</p>
+          <p class="tour-box__details">Pre-sale tickets are not guaranteed, ticket purchases are subject to availability on a first come, first serve basis for select US, Canadian, Australian, and European performances only. All shows are subject to cancellation or postponement without notice. Please consult with the relevant venue for seating information prior to purchase and any changes to the show schedule.</p>
           </div>`
           ;
       }
@@ -697,13 +699,16 @@ pastEventAPI = (tempPastEventArray, eventScope) => {
 jQuery(() => {
 
     // JL: add condition
-    if (jQuery('.event-list').length) upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
+    if (jQuery('.event-list').length) {
+        // upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
+        jQuery('#upcoming-tour-dates-container').html(jQuery('body.page-template-events-landing .ufc-events-cards'));
+    }
 
     jQuery('ul.event-pills li a').on('click', function (e) {
         let eventType = jQuery(this).attr('id');
         if (eventType === 'pills-upcoming-tour-dates-tab') {
             tempUpcomingTourArray = [];
-            upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
+            // upcomingTourAPI(tempUpcomingTourArray, upcomingTourURL);
         } else if (eventType === 'pills-fan-club-presales-tab') {
             tempPreSaleArray = [];
             preSaleAPI(tempPreSaleArray, preSaleURL);
