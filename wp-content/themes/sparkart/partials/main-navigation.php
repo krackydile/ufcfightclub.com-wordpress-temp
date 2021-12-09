@@ -31,9 +31,6 @@
 		            // 'item_class' => 'nav-item'
 		          ]);
 		        ?>
-						<div class="navbar-cta home-only">
-							<button class="mailing-list-popup btn btn-primary btn-mailing"><i class="fa fa-envelope"></i> Mailing List</button>
-						</div>
 				</div>
 			  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			    <ul class="navbar-nav ml-auto">
