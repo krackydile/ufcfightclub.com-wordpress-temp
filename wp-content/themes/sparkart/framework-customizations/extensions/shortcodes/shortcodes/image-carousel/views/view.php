@@ -1,7 +1,7 @@
 <?php 
 	if(!empty($atts['carousel_images'])):
 ?>
-<section id="unprotected-swiper" class="slider slider--right-rounded hide">
+<section id="unprotected-swiper" class="slider hide">
 	<div class="container-fluid">
 		
 		<div class="swiper-container">
@@ -69,7 +69,7 @@
 // var_dump($atts);
 	if(!empty($atts['login_carousel_images'])):
 ?>
-<section id="protected-swiper" class="slider slider--right-rounded hide">
+<section id="protected-swiper" class="slider hide">
 	<div class="container-fluid">
 		
 		<div class="swiper-container">
