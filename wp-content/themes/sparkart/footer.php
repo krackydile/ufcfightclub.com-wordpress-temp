@@ -59,6 +59,70 @@
 
 	<?php wp_footer(); ?>
 
+  <!-- OneTrust Do Not Sell start -->
+  <style>
+		  .ot {
+		  	background: #000;
+		  	text-align: center;
+		  	padding: 0 0 97px 0;
+		  }
+      .ot-btn-anchor {
+          text-decoration: none;
+      }
+      .ot-dont-sell-button-light {
+          background: #000;
+          border: 1px solid #aaa;
+      }
+      .ot-dont-sell-button-light {
+          margin-left: 44px;
+      }
+      .ot-dont-sell-button {
+          margin-top: 10px;
+          padding: 4px 10px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      .ot-dont-sell-button img {
+          margin-right: 0px;
+          vertical-align: middle;
+      }
+      .ot-dont-sell-button .ot-text-container {
+          vertical-align: top;
+          display: inline-block;
+          margin-top: 4px;
+          margin-left: 2px;
+          color: d20a0a;
+          font-size:13px;
+          font-weight: bold;
+      }
+      .ot-dont-sell-button .ot-subtext {
+          float: right;
+          margin-top: 0px;
+          color: #fibbed;
+          font-weight: normal
+      }
+      .ot-dont-sell-button .ot-powered-by-text {
+          color: #fibbed;
+          font-size: 7px;
+          font-family: 'Open Sans';
+          vertical-align: middle;
+      }
+  </style>
+  <div class="ot">
+  <a class="ot-btn-anchor" href="https://privacyportal-cdn.onetrust.com/dsarwebform/889c435d-64b4-46d8-ad05-06332fe1d097/838124dd-3118-48eb-94cf-d64c5f977730.html">
+      <button type="button" class="ot-dont-sell-button ot-dont-sell-button-light">
+        
+          <span class="ot-text-container">Do Not Sell My Personal Information</br>
+              <span class="ot-subtext">
+                  <span class="ot-powered-by-text">Powered by</span>
+                  <span class="onetrust-text">OneTrust</span>
+              </span>
+          </span>
+      </button>
+  </a>
+	</div>
+  <!-- OneTrust Do Not Sell end -->
+
 
 	<!-- GSAP Animations -->
 	<script>
