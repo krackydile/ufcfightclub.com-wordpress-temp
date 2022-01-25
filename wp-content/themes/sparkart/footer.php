@@ -123,7 +123,6 @@
 	</div>
   <!-- OneTrust Do Not Sell end -->
 
-
 	<!-- GSAP Animations -->
 	<script>
 		gsap.utils.toArray(".ufc-card").forEach((element, i) => {
@@ -143,6 +142,11 @@
 			onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
 		});
 	</script>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8XCZFL"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
 </body>
 </html>
