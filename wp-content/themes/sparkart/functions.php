@@ -122,7 +122,7 @@ function event_card($event)
     ?>
     <div class="card events-card">
         <div class="card-body">
-            <h6 class="card__date"><?php echo format_date($event->date, 'd', $event->timezone->tz) ?><span><?php echo format_date($event->date, 'M Y', $event->timezone->tz) ?></span></h6>
+            <h6 class="card__date"><span><?php echo format_date($event->date, 'D, M d', $event->timezone->tz) ?></span></h6>
             <div class="card-content">
             <div class="card-info">
                 <h5 class="card-title"><a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>"><?php echo $event->venue->name ?></a></h5>
@@ -356,3 +356,60 @@ function checkPHPLogin(){
         wp_enqueue_script( 'jquery' );
     }
     add_action( 'wp_footer' , 'mc_jquery' );
+
+// ufc events
+function ufc_event_card($event)
+{
+    ?>
+    <div class="ufc-card ufc-events-card">
+        <div class="ufc-card-thumbnail">
+            <img src="<?php echo $event->resizedFeatureImage ?>" />
+        </div>
+        <div class="ufc-card-content">
+            <div class="ufc-card-info">
+                    <div class="ufc-card-title" data-event="<?php echo $event->title ?>">
+                        <?php if (strpos($event->title, 'UFC 2') !== false || strpos($event->title, 'UFC 3') !== false) { ?>
+                            <span><?php echo str_replace("UFC ", "", $event->title) ?></span>
+                        <?php } else { ?>
+                            <span><?php echo $event->title ?></span>
+                        <?php } ?>
+                    </div>
+                    <h5 class="ufc-card-subtitle"><?php echo $event->subtitle ?></h5>
+                    <h6 class="ufc-card-date"><span><?php echo date_format(date_create($event->eventDate), 'D, M d') ?></span> at <?php echo $event->eventTimeText ?> <?php echo $event->eventTimeZoneText ?></h6>
+                    <h6 class="ufc-card-event-venue"><?php echo $event->location->city ?><br><?php echo $event->location->venue ?></h6>
+            </div>
+            <div class="ufc-card-actions">
+                <p class="ufc-upsell">UFC Fight Club Ultimate members get first access to pre-sale tickets.<a class="btn btn-primary ufc-upsell-join" href="/join">Join Fight Club</a><a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a></p>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
+function ufc_events(){
+
+    $uri = 'https://www.ufc.com/event/ufcFightClubFeed';
+    $response = file_get_contents($uri); 
+    $ufcFeed = new SimpleXMLElement($response);
+     
+    ?>
+        <section class="ufc-upcoming-events py-5">
+            <div class="container">
+            <div class="cta-heading">
+                <h3 class="block-heading">Upcoming Events</h3>
+            </div>
+            <div class="ufc-events-cards">
+                <?php
+                foreach ($ufcFeed->upcomingEvents->event as $event):
+                    ufc_event_card($event);
+                endforeach;
+                ?>
+            </div>
+            </div>
+        </section>
+        <?php
+    ?>
+    <?php
+
+
+}

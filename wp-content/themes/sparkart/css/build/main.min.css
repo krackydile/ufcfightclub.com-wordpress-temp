@@ -10134,12 +10134,21 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   /* .upcoming-events {
     display: none;
   } */ }
+  .home .banner .banner-panel-left {
+    height: 95vh !important;
+    margin-top: -120px; }
+  .home .banner .social-holder {
+    margin-bottom: 0; }
   .home .slider {
     width: 100%;
     height: 95vh !important;
     overflow: hidden;
     background: #000000;
     margin-top: -12px; }
+    .home .slider .full-slide {
+      height: 100%; }
+    .home .slider .swiper-wrapper {
+      height: 95vh; }
     .home .slider img {
       opacity: 0.6;
       object-fit: cover; }
@@ -10163,6 +10172,18 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
       padding: 30px 0;
       margin: 0;
       box-shadow: none; } }
+  .ufc-events-card .ufc-presale--past {
+    font-weight: normal;
+    text-align: center;
+    display: block; }
+  .ufc-events-card .ufc-presale--upcoming {
+    font-weight: normal;
+    text-align: center;
+    display: block; }
+  .ufc-events-card .ufc-presale + .ufc-upsell {
+    display: none; }
+  .ufc-events-card .ufc-card-date span {
+    color: initial; }
   @media (min-width: 768px) {
     .ufc-events-card .ufc-card-thumbnail {
       flex: 0 0 50%;
@@ -10262,21 +10283,30 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     .ufc-events-card .ufc-card-actions p {
       color: #19191E;
       text-align: center; }
+    .ufc-events-card .ufc-card-actions .button--wide {
+      width: 100%; }
     .ufc-events-card .ufc-card-actions p + p {
       margin: 0; }
     .ufc-events-card .ufc-card-actions a {
       width: 50%;
       display: inline-block; }
-      body.loggedin .ufc-events-card .ufc-card-actions a {
-        display: none; }
+    body.loggedin .ufc-events-card .ufc-card-actions .ufc-upsell a {
+      display: none; }
     .ufc-events-card .ufc-card-actions br + a {
       margin-left: -5px; }
     .ufc-events-card .ufc-card-actions br {
       display: none; }
 
+.upcoming-events {
+  display: none; }
+
 /**/
 /* Hero Banner */
 /**/
+.home .fw-container {
+  width: 100%;
+  padding: 0; }
+
 .home .banner {
   width: 100%;
   position: absolute;
@@ -10721,8 +10751,10 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     }
   }
 }*/
-.page-template-events-landing .ufc-upcoming-events {
-  display: none; }
+.page-template-events-landing .block-heading {
+  width: 100%;
+  text-align: center;
+  font-family: 'Klavika Bold Condensed'; }
 
 .event-detail .btn:focus,
 .card.events-card .btn:focus {
@@ -10781,7 +10813,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     .page-template-events-landing .event-pills .nav-link.active:hover, .page-template-events-landing .event-pills .nav-link.active:focus, .page-template-events-details .event-pills .nav-link.active:hover, .page-template-events-details .event-pills .nav-link.active:focus {
       background-color: transparent;
       color: #19191E; }
-  .page-template-events-landing .event-pills .nav-link#pills-upcoming-appearances-tab, .page-template-events-landing .event-pills .nav-link#pills-past-events-tab, .page-template-events-details .event-pills .nav-link#pills-upcoming-appearances-tab, .page-template-events-details .event-pills .nav-link#pills-past-events-tab {
+  .page-template-events-landing .event-pills .nav-link#pills-fan-club-presales-tab, .page-template-events-landing .event-pills .nav-link#pills-upcoming-appearances-tab, .page-template-events-landing .event-pills .nav-link#pills-past-events-tab, .page-template-events-details .event-pills .nav-link#pills-fan-club-presales-tab, .page-template-events-details .event-pills .nav-link#pills-upcoming-appearances-tab, .page-template-events-details .event-pills .nav-link#pills-past-events-tab {
     display: none; }
 
 .page-template-events-landing .event-block > p, .page-template-events-details .event-block > p {

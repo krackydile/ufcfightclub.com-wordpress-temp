@@ -33,8 +33,8 @@ if(have_posts()):
 	<div class="container container--video-header <?php if (has_post_thumbnail()) : ?>container--image-header<?php endif; ?>">
 		<!-- <h3 class="block-heading block-heading--red my-5"><span><?php the_title(); ?> </span></h3> -->
 		
-
-		<?php the_content(); ?>
+		<?php the_content(); ?>	
+    <?php ufc_events(); ?>
 		
 	</div>
 </section>

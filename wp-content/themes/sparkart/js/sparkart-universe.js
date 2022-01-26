@@ -430,7 +430,7 @@ universejs.on('ready', data => {
     if (data.customer && data.customer.subscription && document.getElementById("protected-box")) {
       const exclusiveEventLinks = document.querySelectorAll('.event-link-exclusive');
       if (exclusiveEventLinks.length) {
-console.log('hi 1');
+
         const eventId = (new URLSearchParams(window.location.search)).get('event');
         universejs.get('/events/'+eventId, function (err, data) {
           const exclusiveUrls = {};
@@ -456,7 +456,7 @@ console.log('hi 1');
           }
         });
       } else {
-console.log('hi 2');
+
         document.getElementById("protected-box").innerHTML = `
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
@@ -557,6 +557,7 @@ eventDetailBox = (containerId, type, data, pagination) => {
                  ${(group.events || []).map(item => {
             const upcomingLinks = item.links.filter(function (link) {return link.tickets_upcoming});
             const availableLinks = item.links.filter(function (link) {return link.tickets_available});
+            // const ufcPresaleLinks = item.links.filter(function (link) {return link.name == "Presale Tickets"});
         item.venue = item.venue || {name: '', city: '', state: ''};
             return `
                     <div class="col-lg-12 col-sm-12 col-xs-12 events-card__container">
@@ -699,6 +700,24 @@ pastEventAPI = (tempPastEventArray, eventScope) => {
 };
 
 jQuery(() => {
+
+    // UFC: merge events
+    if (jQuery('.upcoming-events').length && jQuery('.ufc-upcoming-events').length) {
+        jQuery('.upcoming-events .card').each(function(){
+            var date = jQuery(this).find('.card__date span').text();
+            var prepend = jQuery(this).find(jQuery('.ufc-presale'));
+            var buttons = jQuery(this).find(jQuery('.btn'));
+            var link = jQuery(this).find(jQuery('.card-title a')).attr('href');
+            var formattedlink = link.replace('events-details//','events-details/').replace('events-details/events','events-details');
+            buttons.attr('href',formattedlink);
+            if( buttons.length == 1){
+                buttons.addClass('button--wide');
+            }
+            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').prepend(prepend);
+            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').append(buttons);
+            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-subtitle').wrapInner('<a href="' + formattedlink + '"></a>');
+        })
+    }
 
     // JL: add condition
     if (jQuery('.event-list').length) {
