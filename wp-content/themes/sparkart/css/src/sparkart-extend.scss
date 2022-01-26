@@ -399,9 +399,9 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     }
   }
 
-  .upcoming-events {
+  /* .upcoming-events {
     display: none;
-  }
+  } */
 
   .ufc-upcoming-events {
 
@@ -1047,6 +1047,31 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   .ufc-upcoming-events {
     display: none;
   }
+}
+
+.event-detail .btn:focus,
+.card.events-card .btn:focus {
+  box-shadow: none;
+  background: #f6f7f7;
+  color: $ufc-black;
+  border: 1px solid #d8d6d8;
+}
+
+.event-detail .btn:active,
+.card.events-card .btn:active {
+  box-shadow: none !important;
+  background: #f6f7f7;
+  color: $ufc-red !important;
+  border: 1px solid #d8d6d8;
+}
+
+.event-disclaimers {
+  padding: 57px 0 0 0;
+}
+
+.event-disclaimers,
+.event-disclaimers p {
+  color: $ufc-black;
 }
 
 .page-template-events-landing, .page-template-events-details {
@@ -2107,6 +2132,9 @@ width: 1100px;
 }
 #subscription-plan {
   width: 100%;
+}
+.form-control {
+  color: $ufc-black;
 }
 .contest-form .form-control, .account-form .form-control,
 .contest-form .form-control:focus, .account-form .form-control:focus {
