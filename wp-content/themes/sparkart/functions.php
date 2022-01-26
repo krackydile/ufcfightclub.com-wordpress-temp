@@ -379,7 +379,7 @@ function ufc_event_card($event)
                     <h6 class="ufc-card-event-venue"><?php echo $event->location->city ?><br><?php echo $event->location->venue ?></h6>
             </div>
             <div class="ufc-card-actions">
-                <p class="ufc-upsell">UFC Fight Club Ultimate members get first access to pre-sale tickets.<a class="btn btn-primary ufc-upsell-join" href="/join">Join Fight Club</a><a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a></p>
+                <p class="ufc-upsell"><strong></strong><a class="btn btn-primary ufc-upsell-join" href="/join">Join Fight Club</a><a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a></p>
             </div>
         </div>
     </div>

@@ -10159,6 +10159,24 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     text-align: center;
     font-family: 'Klavika Bold Condensed'; }
 
+.ufc-events-card .ufc-card-actions {
+  display: none; }
+  .ufc-events-card .ufc-card-actions strong {
+    font-weight: normal;
+    padding: 10px 30px;
+    line-height: 1.2; }
+  .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell {
+    display: block;
+    margin: 0; }
+    .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell strong {
+      display: none; }
+    body.loggedin .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell {
+      display: none; }
+  .ufc-events-card .ufc-card-actions > .btn {
+    display: none; }
+    body.loggedin .ufc-events-card .ufc-card-actions > .btn {
+      display: inline-block; }
+
 .ufc-events-card {
   display: flex;
   position: relative;
@@ -10180,8 +10198,6 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     font-weight: normal;
     text-align: center;
     display: block; }
-  .ufc-events-card .ufc-presale + .ufc-upsell {
-    display: none; }
   .ufc-events-card .ufc-card-date span {
     color: initial; }
   @media (min-width: 768px) {

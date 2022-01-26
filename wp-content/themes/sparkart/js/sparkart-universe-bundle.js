@@ -8894,7 +8894,7 @@ universejs.on('ready', data => {
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
             <h2 class="tour-box__headline">Only UFC Fight Club Ultimate Members Get First Access To Tickets</h2>        
-            <p><a href="/join" class="btn btn-primary"><span>Upgrade Now</span></a></p>
+            <p><a href="/account" class="btn btn-primary"><span>Upgrade Now</span></a></p>
         </div>`
         ;
     }
@@ -9138,6 +9138,7 @@ jQuery(() => {
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').prepend(prepend);
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').append(buttons);
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-subtitle').wrapInner('<a href="' + formattedlink + '"></a>');
+            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').show();
         })
     }
 

@@ -435,6 +435,37 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   }
 }
 
+.ufc-events-card .ufc-card-actions {
+  display: none;
+
+  strong {
+    font-weight: normal;
+    padding: 10px 30px;
+    line-height: 1.2;
+  }
+
+  .ufc-presale + .ufc-upsell {
+    display: block;
+    margin: 0;
+    
+    strong {
+      display: none;
+    }
+
+    body.loggedin & {
+      display: none;
+    }
+  }
+
+  & > .btn {
+    display: none;
+
+    body.loggedin & {
+      display: inline-block;
+    }
+  }
+}
+
 .ufc-events-card {
   display: flex;
   position: relative;
@@ -460,10 +491,6 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     font-weight: normal;
     text-align: center;
     display: block;
-  }
-
-  .ufc-presale + .ufc-upsell {
-    display: none;
   }
 
   .ufc-card-date span {

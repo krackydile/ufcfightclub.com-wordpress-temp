@@ -733,6 +733,7 @@ jQuery(() => {
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').prepend(prepend);
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').append(buttons);
             jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-subtitle').wrapInner('<a href="' + formattedlink + '"></a>');
+            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').show();
         })
     }
 
