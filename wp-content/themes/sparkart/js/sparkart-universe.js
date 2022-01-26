@@ -427,7 +427,7 @@ universejs.on('ready', data => {
     }
 
     // Presale code and exclusive event ticket links
-    if (data.customer && data.customer.subscription && document.getElementById("protected-box")) {
+    if (data.customer && data.customer.subscription == "Ultimate" && document.getElementById("protected-box")) {
       const exclusiveEventLinks = document.querySelectorAll('.event-link-exclusive');
       if (exclusiveEventLinks.length) {
 
@@ -477,7 +477,24 @@ universejs.on('ready', data => {
       }
     }
 
-    if (data.customer && data.customer.subscription && document.getElementById("protectedTourContent")) {
+    if (data.customer && data.customer.subscription == "Ultimate" && document.getElementById("protectedTourContent")) {
+        document.getElementById("protectedTourContent").style.display = "block";
+        if (document.getElementById("unprotectedTourContent")) {
+            document.getElementById("unprotectedTourContent").style.display = "none";
+        }
+    }
+
+    if (data.customer && data.customer.subscription != "Ultimate" && document.getElementById("protected-box")) {
+        document.getElementById("protected-box").innerHTML = `
+        <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
+        <div>
+            <h2 class="tour-box__headline">Only UFC Fight Club Ultimate Members Get First Access To Tickets</h2>        
+            <p><a href="/account" class="btn btn-primary"><span>Upgrade Now</span></a></p>
+        </div>`
+        ;
+    }
+
+    if (data.customer && data.customer.subscription != "Ultimate" && document.getElementById("protectedTourContent")) {
         document.getElementById("protectedTourContent").style.display = "block";
         if (document.getElementById("unprotectedTourContent")) {
             document.getElementById("unprotectedTourContent").style.display = "none";
