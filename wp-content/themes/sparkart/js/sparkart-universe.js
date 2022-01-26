@@ -430,6 +430,7 @@ universejs.on('ready', data => {
     if (data.customer && data.customer.subscription && document.getElementById("protected-box")) {
       const exclusiveEventLinks = document.querySelectorAll('.event-link-exclusive');
       if (exclusiveEventLinks.length) {
+console.log('hi 1');
         const eventId = (new URLSearchParams(window.location.search)).get('event');
         universejs.get('/events/'+eventId, function (err, data) {
           const exclusiveUrls = {};
@@ -455,10 +456,11 @@ universejs.on('ready', data => {
           }
         });
       } else {
+console.log('hi 2');
         document.getElementById("protected-box").innerHTML = `
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
-        <h2 class="tour-box__headline">Only Fight Club Members Get First Access To Tickets</h2>
+        <h2 class="tour-box__headline">Only UFC Fight Club Ultimate Members Get First Access To Tickets</h2>
         
         <!--p class="tour-box--important">Once the presale is announced, your fan club presale password will be shown.</p-->
          

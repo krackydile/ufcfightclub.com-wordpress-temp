@@ -118,6 +118,7 @@ function homepage_more_events()
 
 function event_card($event)
 {
+    normalize_universe_event_links($event);
     ?>
     <div class="card events-card">
         <div class="card-body">
@@ -128,8 +129,21 @@ function event_card($event)
                 <h6 class="card-subtitle event-venue"><?php echo $event->venue->city ?>
                     , <?php echo $event->venue->state ?></h6>
             </div>
-            <?php if ($event->links) { ?>
-                <a href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>" class="btn btn-primary">Buy Tickets</a>
+            <div class="ufc-presale">
+            <?php foreach ($event->links as $link) {?>
+                <?php if ($link->name == 'Presale Tickets') {?>
+                    <?php if ($link->tickets_available) {?>
+                        <strong class="ufc-presale--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
+                    <?php } else {?>
+                        <strong class="ufc-presale--past">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                    <?php } ?>
+                <?php } ?>
+            <?php } ?>
+            </div>
+            <?php foreach ($event->links as $link) {?>
+                <?php if ($link->tickets_available) {?>
+                    <a class="btn btn-primary" href="<?php echo fw_get_events_detail_page() ?><?php echo add_query_arg( 'event', $event->id ); ?>">Buy <?php echo $link->name?></a>
+                <?php } ?>
             <?php } ?>
             </div>
         <?php if ($event->contests) { ?>
@@ -160,7 +174,20 @@ function event_detail_cards($id)
                             <a href="<?php echo map_quest_url($event_details->event->venue) ?>" target="_blank">MapQuest</a>
                         </li>
                 </ul>
-                <div><?php echo $event_details->event->description ?></div>
+                <div ><?php echo $event_details->event->description ?></div>
+
+                <div class="ufc-presale">
+                <?php foreach ($event_details->event->links as $link) {?>
+                    <?php if ($link->name == 'Presale Tickets') {?>
+                        <?php if ($link->tickets_available) {?>
+                            <strong class="ufc-presale--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
+                        <?php } else {?>
+                            <strong class="ufc-presale--past">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                        <?php } ?>
+                    <?php } ?>
+                <?php } ?>
+                </div>
+
                 <?php if ($event_details->event->tickets_upcoming) {?>
                     <h4>Upcoming Ticket Sales</h4>
                     <ul>
