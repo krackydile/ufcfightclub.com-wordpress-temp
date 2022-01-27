@@ -446,6 +446,7 @@ universejs.on('ready', data => {
 
           if (codes.length && document.getElementById("protected-box") !== null) {
               document.getElementById("protected-box").innerHTML = `
+                <h2 class="tour-box__headline">Only UFC Fight Club Ultimate Members Get First Access To Tickets</h2>
                 <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR PRE-SALE ACCESS CODE:</p>
                 <div class="accesscode protected block-protected\">
                  <div class="input-group my-2">
@@ -457,6 +458,7 @@ universejs.on('ready', data => {
         });
       } else {
 
+        var latestAffiliateIndex = data.customer.subscription.affiliates.length - 1;
         document.getElementById("protected-box").innerHTML = `
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
@@ -467,7 +469,7 @@ universejs.on('ready', data => {
           <p class="event-code-heading" id="presale-access-code-text" style="text-transform: uppercase">YOUR UNIQUE PRE-SALE ACCESS CODE:</p>
           <div class="accesscode protected block-protected">
            <div class="input-group">
-            <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[0].codes[0]}">
+            <input type="text" class="form-control" placeholder="Event Code" id="event-code-field" aria-label="Recipient's username" aria-describedby="button-addon2" value="${data.customer.subscription.affiliates[latestAffiliateIndex].codes[0]}">
             <button class="btn btn-outline-secondary clipboard-button" type="button" id="button-addon2" data-clipboard-target="#event-code-field"><i class="fa fa-copy"></i></button>
            </div>
           </div>
