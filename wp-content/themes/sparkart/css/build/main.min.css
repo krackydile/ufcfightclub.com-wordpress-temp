@@ -9807,9 +9807,11 @@ html {
 /* Navigation */
 /**/
 header #menu-main-navigation .nav-item {
+  border-top: 0;
   border-bottom: 0; }
 
 header #menu-main-navigation .nav-item > a {
+  padding-top: 20px;
   padding-bottom: 20px; }
 
 header #menu-main-navigation .nav-item.active > a {
@@ -9966,6 +9968,10 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 /**/
 /* Homepage */
 /**/
+.home .fw-container .fw-row:nth-child(2) {
+  min-height: 80vh;
+  background: #000; }
+
 .home .slider {
   width: 100%;
   height: 95vh !important;
