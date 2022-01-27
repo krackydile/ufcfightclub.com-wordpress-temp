@@ -74,7 +74,7 @@
           border: 1px solid #aaa;
       }
       .ot-dont-sell-button-light {
-          margin-left: 44px;
+          margin-left: 0;
       }
       .ot-dont-sell-button {
           margin-top: 10px;

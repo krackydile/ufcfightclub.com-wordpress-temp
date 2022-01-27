@@ -9888,6 +9888,9 @@ header #menu-main-navigation .nav-item > a {
 header #menu-main-navigation .nav-item.active > a {
   padding-bottom: 18px; }
 
+header #menu-main-navigation .nav-item.show {
+  display: inline-block; }
+
 .nav-item a {
   font-size: 16px;
   font-family: 'Klavika Bold Condensed';
@@ -10319,9 +10322,15 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 /**/
 /* Hero Banner */
 /**/
-.home .fw-container {
+.page-template-home-page .fw-page-builder-content .fw-container {
   width: 100%;
   padding: 0; }
+  .page-template-home-page .fw-page-builder-content .fw-container .fw-row {
+    margin: 0;
+    padding: 0; }
+    .page-template-home-page .fw-page-builder-content .fw-container .fw-row > div {
+      margin: 0;
+      padding: 0; }
 
 .home .banner {
   width: 100%;

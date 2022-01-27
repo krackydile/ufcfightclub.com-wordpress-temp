@@ -94,6 +94,10 @@ header #menu-main-navigation {
   .nav-item.active > a {
     padding-bottom: 18px;
   }
+
+  .nav-item.show {
+    display: inline-block;
+  }
 }
 
 .nav-item a{
@@ -662,9 +666,25 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 /**/
 /* Hero Banner */
 /**/
-.home .fw-container {
-  width: 100%;
-  padding: 0;
+.page-template-home-page {
+    .fw-page-builder-content{
+        .fw-container{
+          width: 100%;
+          padding: 0;
+          .fw-row{
+
+            margin: 0;
+              padding: 0;
+
+            > div{
+              margin: 0;
+              padding: 0;
+
+            }
+          }
+
+        }
+    }
 }
 
 .home .banner {
