@@ -9139,6 +9139,7 @@ jQuery(() => {
             jQuery(matchingCard).find('.ufc-card-footer').prepend(salesTime);
             jQuery(matchingCard).find('.ufc-card-footer').append(actionsContainer);
             jQuery(matchingCard).find('.ufc-card-subtitle').wrapInner('<a href="' + formattedUrl + '"></a>');
+            jQuery(matchingCard).find('.ufc-card-thumbnail').wrapInner('<a href="' + formattedUrl + '"></a>');
             jQuery(matchingCard).addClass('has-presale');
             // jQuery(matchingCard).find('.ufc-card-footer').show();
         })
