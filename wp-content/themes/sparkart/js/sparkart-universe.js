@@ -427,7 +427,7 @@ universejs.on('ready', data => {
     }
 
     // Presale code and exclusive event ticket links
-    if (data.customer && data.customer.subscription == "Ultimate" && document.getElementById("protected-box")) {
+    if (data.customer && (data.customer.subscription.plan.name == "Ultimate" || data.customer.subscription.plan.name == "Ultimate (moderator)") && document.getElementById("protected-box")) {
       const exclusiveEventLinks = document.querySelectorAll('.event-link-exclusive');
       if (exclusiveEventLinks.length) {
 
@@ -477,14 +477,14 @@ universejs.on('ready', data => {
       }
     }
 
-    if (data.customer && data.customer.subscription == "Ultimate" && document.getElementById("protectedTourContent")) {
+    if (data.customer && (data.customer.subscription.plan.name == "Ultimate" || data.customer.subscription.plan.name == "Ultimate (moderator)") && document.getElementById("protectedTourContent")) {
         document.getElementById("protectedTourContent").style.display = "block";
         if (document.getElementById("unprotectedTourContent")) {
             document.getElementById("unprotectedTourContent").style.display = "none";
         }
     }
 
-    if (data.customer && data.customer.subscription != "Ultimate" && document.getElementById("protected-box")) {
+    if (data.customer && (data.customer.subscription.plan.name != "Ultimate" && data.customer.subscription.plan.name != "Ultimate (moderator)") && document.getElementById("protected-box")) {
         document.getElementById("protected-box").innerHTML = `
         <div class="tour-box__image"><img src="/wp-content/uploads/2021/12/Stacked.png" alt="UFC Fight Club"></div>
         <div>
@@ -494,7 +494,7 @@ universejs.on('ready', data => {
         ;
     }
 
-    if (data.customer && data.customer.subscription != "Ultimate" && document.getElementById("protectedTourContent")) {
+    if (data.customer && (data.customer.subscription.plan.name != "Ultimate" && data.customer.subscription.plan.name != "Ultimate (moderator)") && document.getElementById("protectedTourContent")) {
         document.getElementById("protectedTourContent").style.display = "block";
         if (document.getElementById("unprotectedTourContent")) {
             document.getElementById("unprotectedTourContent").style.display = "none";
