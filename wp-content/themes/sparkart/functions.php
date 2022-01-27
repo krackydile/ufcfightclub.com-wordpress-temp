@@ -129,13 +129,13 @@ function event_card($event)
                 <h6 class="card-subtitle event-venue"><?php echo $event->venue->city ?>
                     , <?php echo $event->venue->state ?></h6>
             </div>
-            <div class="ufc-presale">
+            <div class="ufc-card-sales-time">
             <?php foreach ($event->links as $link) {?>
                 <?php if ($link->name == 'Presale Tickets') {?>
                     <?php if ($link->tickets_available) {?>
-                        <strong class="ufc-presale--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
+                        <strong class="ufc-card-sales-time--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
                     <?php } else {?>
-                        <strong class="ufc-presale--past">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                        <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
@@ -176,13 +176,13 @@ function event_detail_cards($id)
                 </ul>
                 <div ><?php echo $event_details->event->description ?></div>
 
-                <div class="ufc-presale">
+                <div class="ufc-card-sales-time">
                 <?php foreach ($event_details->event->links as $link) {?>
                     <?php if ($link->name == 'Presale Tickets') {?>
                         <?php if ($link->tickets_available) {?>
-                            <strong class="ufc-presale--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
+                            <strong class="ufc-card-sales-time--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
                         <?php } else {?>
-                            <strong class="ufc-presale--past">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                            <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
                         <?php } ?>
                     <?php } ?>
                 <?php } ?>

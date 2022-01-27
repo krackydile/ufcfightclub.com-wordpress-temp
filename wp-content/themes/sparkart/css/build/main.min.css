@@ -10168,12 +10168,12 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     font-weight: normal;
     padding: 10px 30px;
     line-height: 1.2; }
-  .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell {
+  .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell {
     display: block;
     margin: 0; }
-    .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell strong {
+    .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell strong {
       display: none; }
-    body.loggedin .ufc-events-card .ufc-card-actions .ufc-presale + .ufc-upsell {
+    body.loggedin .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell {
       display: none; }
   .ufc-events-card .ufc-card-actions > .btn {
     display: none; }
@@ -10193,11 +10193,11 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
       padding: 30px 0;
       margin: 0;
       box-shadow: none; } }
-  .ufc-events-card .ufc-presale--past {
+  .ufc-events-card .ufc-card-sales-time--finished {
     font-weight: normal;
     text-align: center;
     display: block; }
-  .ufc-events-card .ufc-presale--upcoming {
+  .ufc-events-card .ufc-card-sales-time--upcoming {
     font-weight: normal;
     text-align: center;
     display: block; }

@@ -9129,7 +9129,7 @@ jQuery(() => {
     if (jQuery('.upcoming-events').length && jQuery('.ufc-upcoming-events').length) {
         jQuery('.upcoming-events .card').each(function(){
             var date = jQuery(this).find('.card__date span').text();
-            var prepend = jQuery(this).find(jQuery('.ufc-presale'));
+            var prepend = jQuery(this).find(jQuery('.ufc-card-sales-time'));
             var buttons = jQuery(this).find(jQuery('.btn'));
             var link = jQuery(this).find(jQuery('.card-title a')).attr('href');
             var formattedlink = link.replace('events-details//','events-details/').replace('events-details/events','events-details');
