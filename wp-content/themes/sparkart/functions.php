@@ -380,7 +380,7 @@ function ufc_event_card($event)
             </div>
             <div class="ufc-card-footer">
                 <div class="ufc-card-actions actions-join">
-                    <a class="btn btn-primary" href="/join">Join Fight Club</a>
+                    <a class="btn btn-primary" href="/benefits">Join Fight Club</a>
                     <a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a>
                 </div>
             </div>

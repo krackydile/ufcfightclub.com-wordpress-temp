@@ -72,7 +72,7 @@
 				<div class="col">
 					<div class="alert alert-info alert-expired">
 						<h2>YOUR SUBSCRIPTION HAS EXPIRED</h2>
-						<h5>Click <a href="<?php echo get_bloginfo('wpurl') ?>/join" id="#renew-link">here</a> to renew your membership</h5>
+						<h5>Click <a href="<?php echo get_bloginfo('wpurl') ?>/benefits" id="#renew-link">here</a> to renew your membership</h5>
 					</div>			
 				</div>
 			</div>
