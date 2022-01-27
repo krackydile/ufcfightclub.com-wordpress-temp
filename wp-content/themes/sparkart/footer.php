@@ -125,7 +125,7 @@
 
 	<!-- GSAP Animations -->
 	<script>
-		gsap.utils.toArray(".ufc-card, .featured-videos figure").forEach((element, i) => {
+		gsap.utils.toArray(".ufc-card, .featured-videos figure, .club-card").forEach((element, i) => {
 			gsap.set(element, {opacity:0})
 			gsap.from(element, {
 				y: 100,
@@ -137,7 +137,7 @@
 
 		});
 
-		ScrollTrigger.batch(".ufc-card, .featured-videos figure", {
+		ScrollTrigger.batch(".ufc-card, .featured-videos figure, .club-card", {
 			onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, duration: 0.75, ease: Power3.easeOut, stagger: {each: 0.15, grid: [1, 3]}, overwrite: true}),
 			onLeaveBack: batch => gsap.set(batch, {opacity: 0, y: 100, overwrite: true})
 		});

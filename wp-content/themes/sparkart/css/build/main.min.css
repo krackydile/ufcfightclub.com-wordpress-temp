@@ -10232,7 +10232,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
 body.loggedin .ufc-card-footer .ufc-card-actions.actions-join {
   display: none; }
 
-body.loggedin .ufc-card-footer .ufc-card-sales-time + .ufc-card-actions + .ufc-card-actions {
+body.loggedin .ufc-card-footer .ufc-card-actions.actions-tickets {
   display: flex; }
 
 /**/
