@@ -9815,6 +9815,7 @@ header #menu-main-navigation .nav-item > a {
   padding-bottom: 20px; }
 
 header #menu-main-navigation .nav-item.active > a {
+  padding-top: 20px;
   padding-bottom: 18px; }
 
 header #menu-main-navigation .nav-item.show {
@@ -9832,7 +9833,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  padding: 0;
+  padding: 13px 0 0 0;
   margin: 0;
   white-space: nowrap; }
   header #menu-main-navigation .dropdown:hover > .dropdown-menu .nav-item,
@@ -10191,43 +10192,48 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
       text-decoration: none;
       background: #D5D6D8;
       color: #FAFBFD !important; }
-  .ufc-events-card .ufc-card-actions {
+  .ufc-events-card .ufc-card-footer {
     margin-top: auto;
-    display: none; }
-    .ufc-events-card .ufc-card-actions strong {
+    /* .ufc-card-actions {
+      body.loggedin & {
+        display: none;
+      }
+    } */ }
+    .ufc-events-card .ufc-card-footer strong {
       color: #19191E;
       font-weight: bold;
       padding: 10px 30px;
       line-height: 1.2; }
-    .ufc-events-card .ufc-card-actions .ufc-card-sales-time {
+    .ufc-events-card .ufc-card-footer .ufc-card-sales-time {
       font-size: 14px; }
-    .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell {
-      display: block;
-      margin: 0; }
-      .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell strong {
+    .ufc-events-card .ufc-card-footer .ufc-card-actions {
+      display: none;
+      justify-content: stretch;
+      text-align: center; }
+      .ufc-events-card .ufc-card-footer .ufc-card-actions a {
+        width: 100%; }
+    .ufc-events-card .ufc-card-footer .ufc-card-sales-time + .ufc-card-actions {
+      margin: 0;
+      display: flex; }
+      .ufc-events-card .ufc-card-footer .ufc-card-sales-time + .ufc-card-actions strong {
         display: none; }
-      body.loggedin .ufc-events-card .ufc-card-actions .ufc-card-sales-time + .ufc-upsell {
-        display: none; }
-    .ufc-events-card .ufc-card-actions > .btn {
-      display: none; }
-      body.loggedin .ufc-events-card .ufc-card-actions > .btn {
-        display: inline-block; }
-    .ufc-events-card .ufc-card-actions p {
+    .ufc-events-card .ufc-card-footer p {
       color: #19191E;
       text-align: center; }
-    .ufc-events-card .ufc-card-actions .button--wide {
+    .ufc-events-card .ufc-card-footer .button--wide {
       width: 100%; }
-    .ufc-events-card .ufc-card-actions p + p {
+    .ufc-events-card .ufc-card-footer p + p {
       margin: 0; }
-    .ufc-events-card .ufc-card-actions a {
-      width: 50%;
-      display: inline-block; }
-    body.loggedin .ufc-events-card .ufc-card-actions .ufc-upsell a {
-      display: none; }
-    .ufc-events-card .ufc-card-actions br + a {
+    .ufc-events-card .ufc-card-footer br + a {
       margin-left: -5px; }
-    .ufc-events-card .ufc-card-actions br {
+    .ufc-events-card .ufc-card-footer br {
       display: none; }
+
+body.loggedin .ufc-card-footer .ufc-card-actions.actions-join {
+  display: none; }
+
+body.loggedin .ufc-card-footer .ufc-card-sales-time + .ufc-card-actions + .ufc-card-actions {
+  display: flex; }
 
 /**/
 /* Events Page */

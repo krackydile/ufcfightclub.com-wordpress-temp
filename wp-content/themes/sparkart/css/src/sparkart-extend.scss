@@ -17,6 +17,7 @@ header #menu-main-navigation {
   }
 
   .nav-item.active > a {
+    padding-top: 20px;
     padding-bottom: 18px;
   }
 
@@ -40,7 +41,7 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  padding: 0;
+  padding: 13px 0 0 0;
   margin: 0;
   white-space: nowrap;
 
@@ -520,9 +521,9 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     }
   }
 
-  .ufc-card-actions {
+  .ufc-card-footer {
     margin-top: auto;
-    display: none;
+    
     strong {
       color: $ufc-black;
       font-weight: bold;
@@ -534,24 +535,21 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
       font-size: 14px;
     }
 
-    .ufc-card-sales-time + .ufc-upsell {
-      display: block;
-      margin: 0;
-      
-      strong {
-        display: none;
-      }
-
-      body.loggedin & {
-        display: none;
+    .ufc-card-actions {
+      display: none;
+      justify-content: stretch;
+      text-align: center;
+      a {
+        width: 100%;
       }
     }
 
-    & > .btn {
-      display: none;
-
-      body.loggedin & {
-        display: inline-block;
+    .ufc-card-sales-time + .ufc-card-actions {
+      margin: 0;
+      display: flex;
+      
+      strong {
+        display: none;
       }
     }
     p {
@@ -564,21 +562,27 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     p + p {
       margin: 0;
     }
-    a {
-      width: 50%;
-      display: inline-block;
-    }
-    .ufc-upsell a {
+    /* .ufc-card-actions {
       body.loggedin & {
         display: none;
       }
-    }
+    } */
     br + a {
       margin-left: -5px;
     }
     br {
       display: none;
     }
+  }
+}
+
+body.loggedin .ufc-card-footer {
+  .ufc-card-actions.actions-join {
+    display: none;
+  }
+
+  .ufc-card-sales-time + .ufc-card-actions + .ufc-card-actions {
+    display: flex;
   }
 }
 

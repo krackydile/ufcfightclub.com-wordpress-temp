@@ -9129,18 +9129,18 @@ jQuery(() => {
     if (jQuery('.upcoming-events').length && jQuery('.ufc-upcoming-events').length) {
         jQuery('.upcoming-events .card').each(function(){
             var date = jQuery(this).find('.card__date span').text();
-            var prepend = jQuery(this).find(jQuery('.ufc-card-sales-time'));
-            var buttons = jQuery(this).find(jQuery('.btn'));
-            var link = jQuery(this).find(jQuery('.card-title a')).attr('href');
-            var formattedlink = link.replace('events-details//','events-details/').replace('events-details/events','events-details');
-            buttons.attr('href',formattedlink);
-            if( buttons.length == 1){
-                buttons.addClass('button--wide');
-            }
-            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').prepend(prepend);
-            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').append(buttons);
-            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-subtitle').wrapInner('<a href="' + formattedlink + '"></a>');
-            jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card-content').find('.ufc-card-actions').show();
+            var salesTime = jQuery(this).find(jQuery('.ufc-card-sales-time'));
+            var links = jQuery(this).find(jQuery('.btn'));
+            var url = jQuery(this).find(jQuery('.card-title a')).attr('href');
+            var formattedUrl = url.replace('events-details//','events-details/').replace('events-details/events','events-details');
+            links.attr('href',formattedUrl);
+            var actionsContainer = jQuery('<div class="ufc-card-actions actions-tickets"</div>').append(links);
+            var matchingCard = jQuery('.ufc-card-date:contains(' + date + ')').parents('.ufc-card');
+            jQuery(matchingCard).find('.ufc-card-footer').prepend(salesTime);
+            jQuery(matchingCard).find('.ufc-card-footer').append(actionsContainer);
+            jQuery(matchingCard).find('.ufc-card-subtitle').wrapInner('<a href="' + formattedUrl + '"></a>');
+            jQuery(matchingCard).addClass('has-presale');
+            // jQuery(matchingCard).find('.ufc-card-footer').show();
         })
     }
 

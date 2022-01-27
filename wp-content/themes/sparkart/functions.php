@@ -378,8 +378,11 @@ function ufc_event_card($event)
                     <h6 class="ufc-card-date"><span><?php echo date_format(date_create($event->eventDate), 'D, M d') ?></span> at <?php echo $event->eventTimeText ?> <?php echo $event->eventTimeZoneText ?></h6>
                     <h6 class="ufc-card-event-venue"><?php echo $event->location->city ?><br><?php echo $event->location->venue ?></h6>
             </div>
-            <div class="ufc-card-actions">
-                <p class="ufc-upsell"><strong></strong><a class="btn btn-primary ufc-upsell-join" href="/join">Join Fight Club</a><a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a></p>
+            <div class="ufc-card-footer">
+                <div class="ufc-card-actions actions-join">
+                    <a class="btn btn-primary" href="/join">Join Fight Club</a>
+                    <a class="btn btn-primary" href="https://services.sparkart.net/1/login?popup=1">Log In</a>
+                </div>
             </div>
         </div>
     </div>
