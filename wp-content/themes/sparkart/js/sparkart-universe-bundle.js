@@ -8557,7 +8557,7 @@ universejs.init(function (err, data) {
               <div>
                 <h2 class="tour-box__headline">Not a UFC Fight Club Member?</h2>
                 <p>Join UFC Fight Club and enjoy exclusive members-only benefits including presale tickets, exclusive content, message board access and much more.</p>
-                <p><a href="/join" class="btn btn-primary"><span>Join Now</span></a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;"><span>Login Now</span></a></p>
+                <p><a href="/join" class="btn btn-primary"><span>Join Fight Club</span></a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;"><span>Log In</span></a></p>
               </div>
             `;
         }
@@ -8690,7 +8690,7 @@ universejs.on('ready', data => {
                             planOptions += "<h3 class=\"utransform column-heading\">" + plan.name + "</h3>";
                             planOptions += (plan.id ===61)? "<p>* Donation to C.A.T.S. Foundation</p>" : "<p></p>";
                             planOptions += (plan.upgrade)? "<h1 class=\"column-text-price\">" + plan.upgrade_price + " <del>"+plan.display_price+"</del></h1>" : "<h1 class=\"column-text-price\">" + plan.display_price + "</h1>";
-                            planOptions += "<a title=\"Join NOw\" href="+ plan.checkout +" class=\"utransform btn btn-primary\"><span>Renew Now</span></a>";
+                            planOptions += "<a title=\"Join Fight Club\" href="+ plan.checkout +" class=\"utransform btn btn-primary\"><span>Renew Now</span></a>";
                             planOptions += "</div>";
                             planOptions += (plan.id === 61)? "<p class=\"text-center additional mt-2\"><a href=\"http://catsfoundation.com\">Learn more about The C.A.T.S Foundation</a></p>": "<p class=\"text-center additional mt-2\"><a href=\"\"></a></p>";
                             planOptions += "</div>";
