@@ -135,7 +135,7 @@ function event_card($event)
                     <?php if ($link->tickets_available) {?>
                         <strong class="ufc-card-sales-time--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event->timezone->tz)?>.</strong>
                     <?php } else {?>
-                        <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                        <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate Members has finished.</strong>
                     <?php } ?>
                 <?php } ?>
             <?php } ?>
@@ -182,7 +182,7 @@ function event_detail_cards($id)
                         <?php if ($link->tickets_available) {?>
                             <strong class="ufc-card-sales-time--upcoming">UFC Fight Club pre-sale for Ultimate Members start on <?php echo format_upcoming_sales_time($link->publish_start, 'F j, Y', $event_details->event->timezone->tz)?>.</strong>
                         <?php } else {?>
-                            <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate members has finished.</strong>
+                            <strong class="ufc-card-sales-time--finished">UFC Fight Club pre-sale for Ultimate Members has finished.</strong>
                         <?php } ?>
                     <?php } ?>
                 <?php } ?>
