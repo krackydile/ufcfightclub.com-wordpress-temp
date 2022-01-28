@@ -152,7 +152,7 @@ universejs.init(function (err, data) {
               <div>
                 <h2 class="tour-box__headline">Not a UFC Fight Club Member?</h2>
                 <p>Join UFC Fight Club and enjoy exclusive members-only benefits including presale tickets, exclusive content, message board access and much more.</p>
-                <p><a href="/join" class="btn btn-primary"><span>Join Now</span></a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;"><span>Login Now</span></a></p>
+                <p><a href="/join" class="btn btn-primary"><span>Join Now</span></a><a href="${data.fanclub.links.login}?redirect=${encodeURIComponent(currentURL)}" class="btn btn-outline" style="margin-left:15px;"><span>Log In</span></a></p>
               </div>
             `;
         }
