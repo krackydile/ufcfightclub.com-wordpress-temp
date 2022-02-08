@@ -82,7 +82,7 @@ function format_date($date, $format, $timezone = '')
 
 function homepage_event_cards()
 {
-    $unique_presales = Universe\fetch_resource('events?scope=upcoming&limit=3', fw_get_db_settings_option('universe_key'));
+    $unique_presales = Universe\fetch_resource('events?scope=upcoming', fw_get_db_settings_option('universe_key'));
     if ($unique_presales->events) {
         ?>
         <div class="row">

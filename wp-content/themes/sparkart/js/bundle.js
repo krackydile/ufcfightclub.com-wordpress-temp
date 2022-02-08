@@ -11420,7 +11420,7 @@ let tempUpcomingTourArray = [];
 let tempPreSaleArray = [];
 let tempUpcomingAppearanceArray = [];
 let tempPastEventArray = [];
-let upcomingTourURL = '/events?scope=upcoming&tags=performance&limit=3';
+let upcomingTourURL = '/events?scope=upcoming&tags=performance&limit=12';
 let preSaleURL = '/events?scope=upcoming&tags=appearance,tv,radio&limit=12';
 let upcomingAppearanceURL = '/events?scope=upcoming&tags=appearance,tv,radio&limit=12';
 let pastEventURL = '/events?scope=past&order=DESC&limit=12';
