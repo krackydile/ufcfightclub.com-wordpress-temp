@@ -10095,13 +10095,15 @@ header #menu-main-navigation .dropdown:hover > .dropdown-menu {
     font-size: 14px; }
   .ufc-events-card .ufc-card-event-venue {
     font-size: 14px; }
-  @media (min-width: 768px) {
-    .ufc-events-card .ufc-card-thumbnail {
-      flex: 0 0 50%;
-      max-width: 50%; } }
-  .ufc-events-card .ufc-card-thumbnail img {
-    width: 100%;
-    object-fit: cover; }
+  .ufc-events-card .ufc-card-thumbnail {
+    background: #f6f7f7; }
+    @media (min-width: 768px) {
+      .ufc-events-card .ufc-card-thumbnail {
+        flex: 0 0 50%;
+        max-width: 50%; } }
+    .ufc-events-card .ufc-card-thumbnail img {
+      width: 100%;
+      object-fit: cover; }
   .ufc-events-card .ufc-card-content {
     display: flex;
     flex-direction: column;
